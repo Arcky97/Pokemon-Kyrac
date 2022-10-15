@@ -158,6 +158,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed several tiles on Route 2
 
+- Fixed several tiles on Farm map (temporarly name) and Tila Town
+
 ## Credits:
 
 Essentials: Maruno
