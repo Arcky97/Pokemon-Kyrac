@@ -1,0 +1,47 @@
+﻿Name       = v20.1 Hotfixes
+Version    = 1.0.2
+Essentials = 20.1
+Conflicts  = v19 Hotfixes
+Conflicts  = v19.1 Updates
+Conflicts  = v20 Hotfixes
+Website    = https://github.com/Maruno17/pokemon-essentials
+Credits    = Maruno
+#====================================================================
+# Change log
+#====================================================================
+#
+# 1.0.0:
+# - Fixed Heavy Ball's catch rate calculation being inaccurate.
+# - Added Obstruct to the blacklists of Assist and Copycat.
+# - Fixed mispositioning of text in Debug features that edit Game
+#   Switches and Game Variables.
+# - Fixed the "See ya!" option in the PC menu not working properly.
+# - Fixed Pokémon icons sometimes disappearing in Pokémon storage
+#   screen.
+# - Fixed playing the credits/changing $scene leaving a ghost image
+#   of the old map behind.
+#
+# 1.0.1:
+#
+# - Fixed crash when the Compiler rewrites a door event.
+# - Fixed the "Withdraw Pokémon" and "Deposit Pokémon" not working,
+#   caused by the previous version of this plugin.
+# - Fixed Rare Candy not reviving a fainted Shedinja.
+# - Fixed fainted Pokémon reviving if they evolve.
+# - Fixed error messages appearing in the console because of some
+#   script switches in the "Switches" debug feature.
+#
+# 1.0.2:
+#
+# - Fixed battle rule "forceCatchIntoParty" being circumventable.
+# - Fixed wrong message when sending a party Pokémon to storage and
+#   replacing it with a caught Pokémon.
+# - Fixed typo in Grassy Glide's effect.
+# - Fixed some special battle intro animations not playing when they
+#   should.
+# - Fixed SystemStackError when two events on connected maps have
+#   their backs to the other map.
+# - Fixed error when getting terrain tag when the player moves
+#   between connected maps.
+#
+#====================================================================

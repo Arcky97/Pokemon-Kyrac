@@ -1,0 +1,4 @@
+﻿Name      = Level scaling
+Version   = 1.0
+Essentials = 20.1
+Credits   = Benitex, Joltik, Umbreon, Grogro and Arcky

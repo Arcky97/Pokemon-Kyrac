@@ -1,0 +1,27 @@
+credits:
+Essentials: Maruno
+Name window: mr. Gela
+https://reliccastle.com/resources/197/
+Unreal Time System: FL
+https://www.pokecommunity.com/showthread.php?t=285831
+Marin's Footprints 
+https://reliccastle.com/resources/406/
+Show Species Introduction:
+https://www.pokecommunity.com/showthread.php?t=445437
+Gen 8 pack (credits are on the page)
+https://reliccastle.com/resources/952/
+Following pokemon ex (credits are on the page)
+https://reliccastle.com/resources/516/
+Gym Leader non lineary scaling:  Benitex, Joltik, Umbreon:
+https://reliccastle.com/resources/943/
+Grogo for making the script work.
+Rival team script: Grogo, Arcky and also parts of the script above was used (the lineary scaling script).
+
+
+
+
+edits in script:
+Settings: line 34, 38
+UI_pokemart: line 250,261,311,329
+UI_options: line 20,32
+Messages: line 324
