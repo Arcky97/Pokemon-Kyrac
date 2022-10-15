@@ -160,6 +160,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed several tiles on Farm map (temporarly name) and Tila Town
 
+- Updated the town map
+
 ## Credits:
 
 Essentials: Maruno
