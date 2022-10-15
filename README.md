@@ -149,6 +149,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed Several Tile bugs on Route 2
 
+- 
+
 ## Credits:
 
 Essentials: Maruno
