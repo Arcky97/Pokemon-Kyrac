@@ -11,6 +11,7 @@
   + [Beta Release October 2 2022](#Beta-Release-October-2-2022)
   + [Beta Release October 8 2022](#Beta-Release-October-8-2022)
   + [Beta Release October 14 2022](#Beta-Release-October-14-2022)
+  + [Beta Release October 15 2022](#Beta-Release-October-15-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -148,6 +149,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added more map connections from Tila Town to other maps
 
 - Fixed Several Tile bugs on Route 2
+
+### Beta Release October 15 2022
+
+- Added Tila Town
+
+- Updated Hester City
+
+- Fixed several tiles on Route 2
 
 ## Credits:
 
