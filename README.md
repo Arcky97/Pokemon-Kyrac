@@ -170,6 +170,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed several tiles in Flutford Town
 
 - Fixed a few things in Hester City
+
+- Added map transition between Tila Town and Route 3
+
+- Added map transition between Flutford Town and Route 3
  
 ## Credits:
 
