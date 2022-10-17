@@ -162,6 +162,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Updated the town map
 
+### Beta Release October 17 2022
+
+- Added Flutford Town
+
+- Fixed several tiles in Flutford Town
+
+- Fixed a few things in Hester City
+ 
 ## Credits:
 
 Essentials: Maruno
