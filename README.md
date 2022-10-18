@@ -13,6 +13,7 @@
   + [Beta Release October 14 2022](#Beta-Release-October-14-2022)
   + [Beta Release October 15 2022](#Beta-Release-October-15-2022)
   + [Beta Release October 17 2022](#Beta-Release-October-17-2022)
+  + [Beta Release October 18 2022](#Beta-Release-October-18-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -174,6 +175,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added map transition between Tila Town and Route 3
 
 - Added map transition between Flutford Town and Route 3
+
+### Beta Release October 17 2022
+
+- Added Route 3
  
 ## Credits:
 
