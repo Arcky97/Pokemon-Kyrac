@@ -138,55 +138,55 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 ### Beta Release October 8 2022
 
-- Added Route 2 and fixed several stuff on that map
+- Added Route 2 and fixed several bugs and issues on that map.
 
-- From the yacht you can go to Hester City (this is only because the boat isn't fully finished yet)
+- From the yacht you can go to Hester City (this is only because the boat isn't fully finished yet).
 
-- Other small improvements have been made
+- Other small improvements have been made.
 
 ### Beta Release October 14 2022
 
-- Added Farm map (temporarly name) connecting with Route 2 and Tila Town
+- Added Farm map (temporarly name) connecting with Route 2 and Tila Town.
 
-- Added more map connections from Tila Town to other maps
+- Added map connections (events) from Tila Town to other maps.
 
-- Fixed Several Tile bugs on Route 2
+- Fixed Several tile bugs on Route 2.
 
 ### Beta Release October 15 2022
 
-- Added Tila Town
+- Updated Tila Town.
 
-- Updated Hester City
+- Updated Hester City.
 
-- Fixed several tiles on Route 2
+- Fixed several tile bugs and issues on Route 2.
 
-- Fixed several tiles on Farm map (temporarly name) and Tila Town
+- Fixed several tiles bugs and issues on Farm map (temporarly name) and Tila Town.
 
-- Updated the town map
+- Updated the town map.
 
 ### Beta Release October 17 2022
 
-- Added Flutford Town
+- Added Flutford Town.
 
-- Fixed several tiles in Flutford Town
+- Fixed several tile bugs and issues in Flutford Town.
 
-- Fixed a few things in Hester City
+- Fixed a few issues in Hester City.
 
-- Added map transition between Tila Town and Route 3
+- Added map transition between Tila Town and Route 3.
 
-- Added map transition between Flutford Town and Route 3
+- Added map transition between Flutford Town and Route 3.
 
 ### Beta Release October 20 2022
 
-- Added Route 3
+- Updated Route 3.
 
-- Added Trainers and Items to Route 3
+- Added Trainers and Items to Route 3.
 
-- Added a Seashore location underneath Route 3
+- Added a Seashore location underneath Route 3.
 
-- Added improved map transition events
+- Added improved map transition events.
 
-- Updated Town map, Tila Town will now connect to another Route as well
+- Updated Town map: Tila Town will now connect to another Route as well and added Seashore location.
 
 ## Credits:
 
