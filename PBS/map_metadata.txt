@@ -336,12 +336,20 @@ MapPosition = 1,12,10
 SnapEdges = true
 #-------------------------------
 [066]   # Farm
-Name = Farm
+Name = A Farmer's farm
 Outdoor = true
 ShowArea = true
 MapPosition = 1,13,8
 SnapEdges = true
 MapSize = 1,1
+#-------------------------------
+[067]   # Sea shore
+Name = Sea Shore
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 1,9,7
+SnapEdges = true
 #-------------------------------
 [076]   # Player's House Room 2
 Name = Parent's Bedroom

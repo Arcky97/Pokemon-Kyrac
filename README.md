@@ -188,6 +188,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Updated Town map: Tila Town will now connect to another Route as well and added Seashore location.
 
+- Added Signs with information and Trainer tips.
+
 ## Credits:
 
 Essentials: Maruno
