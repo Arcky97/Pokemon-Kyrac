@@ -14,6 +14,7 @@
   + [Beta Release October 15 2022](#Beta-Release-October-15-2022)
   + [Beta Release October 17 2022](#Beta-Release-October-17-2022)
   + [Beta Release October 20 2022](#Beta-Release-October-20-2022)
+  + [Beta Release October 22 2022](#Beta-Release-October-22-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -154,15 +155,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 ### Beta Release October 15 2022
 
-- Updated Tila Town.
+- Edited Tila Town.
 
-- Updated Hester City.
+- Edited Hester City.
 
 - Fixed several tile bugs and issues on Route 2.
 
 - Fixed several tiles bugs and issues on Farm map (temporarly name) and Tila Town.
 
-- Updated the town map.
+- Edited the town map.
 
 ### Beta Release October 17 2022
 
@@ -178,7 +179,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 ### Beta Release October 20 2022
 
-- Updated Route 3.
+- Edited Route 3.
 
 - Added Trainers and Items to Route 3.
 
@@ -186,9 +187,17 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added improved map transition events.
 
-- Updated Town map: Tila Town will now connect to another Route as well and added Seashore location.
+- Edited Town map: Tila Town will now connect to another Route as well and added Seashore location.
 
 - Added Signs with information and Trainer tips.
+
+### Beta Release October 22 2022
+
+- Edited Route 3 (again).
+
+- Edited Items and trainers on Route 3.
+
+- Improved the map transition events.
 
 ## Credits:
 
