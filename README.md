@@ -199,6 +199,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Improved the map transition events.
 
+- Most of the Exterior maps have been added (just for me).
+
 ## Credits:
 
 Essentials: Maruno
