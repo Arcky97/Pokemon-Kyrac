@@ -15,6 +15,7 @@
   + [Beta Release October 17 2022](#Beta-Release-October-17-2022)
   + [Beta Release October 20 2022](#Beta-Release-October-20-2022)
   + [Beta Release October 22 2022](#Beta-Release-October-22-2022)
+  + [Beta Release October 25 2022](#Beta-Release-October-25-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -200,6 +201,18 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Improved the map transition events.
 
 - Most of the Exterior maps have been added (just for me).
+
+### Beta Release October 25 2022
+
+- The Radio Tower on Route Intersection has now a Poké Center and several mart floors.
+
+- Dinning Room map has been added to the Yacht.
+
+- Kitchen map has been added to the Yacht.
+
+- Storage map has been added to the Yacht.
+
+- Boat and inside tilesets have been edited.
 
 ## Credits:
 
