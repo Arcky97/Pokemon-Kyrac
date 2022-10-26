@@ -206,13 +206,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - The Radio Tower on Route Intersection has now a Poké Center and several mart floors.
 
-- Dinning Room map has been added to the Yacht.
+- Dining Room map has been added to the Yacht.
 
 - Kitchen map has been added to the Yacht.
 
 - Storage map has been added to the Yacht.
 
 - Boat and inside tilesets have been edited.
+
+- events and interactions have been added to the Dining Room map.
 
 ## Credits:
 

@@ -76,6 +76,7 @@ MapSize = 1,1
 #-------------------------------
 [018]   # Yacht - B1F - Cabins
 Name = Yacht B1F
+SnapEdges = true
 #-------------------------------
 [022]   # \PN's House (Map not used)
 Name = PN's Home
@@ -114,6 +115,7 @@ SnapEdges = true
 #-------------------------------
 [037]   # Yacht - F1 - Cabins
 Name = Yacht F1
+SnapEdges = true
 #-------------------------------
 [038]   # Yacht - F1 - PokéCenter - F1
 Name = Yacht F1
@@ -382,7 +384,7 @@ Bicycle = false
 MapPosition = 0,17,11
 SnapEdges = true
 #-------------------------------
-[082]   # Route 99
+[082]   # Route 18-19
 Name = Route 99
 Outdoor = true
 ShowArea = true
