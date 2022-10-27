@@ -216,6 +216,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - events and interactions have been added to the Dining Room map.
 
+- a few trainers have been added in the cabins on the B1F of the yacht.
+
 ## Credits:
 
 Essentials: Maruno
