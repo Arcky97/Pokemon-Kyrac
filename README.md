@@ -218,6 +218,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - a few trainers have been added in the cabins on the B1F of the yacht.
 
+- fixed the exit from the poke center on the yacht to Hester City
+
 ## Credits:
 
 Essentials: Maruno
