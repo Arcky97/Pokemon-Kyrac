@@ -254,4 +254,8 @@ Grogo for making the script work.
 
 Lily In The Water for helping with the story and ideas
 
-Zeta for helping making Maps and Events
+Zeta for helping making Maps and sprites
+
+AcobraYT for making the custom OST's
+
+
