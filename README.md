@@ -220,6 +220,12 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - fixed the exit from the poke center on the yacht to Hester City
 
+### Beta Release November 4 2022
+
+- Added the new yacht on the player's home map
+
+- Added a mid battle speech to the rival battle in the lab
+
 ## Credits:
 
 Essentials: Maruno

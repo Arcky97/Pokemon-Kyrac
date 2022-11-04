@@ -53,6 +53,9 @@ class Battle::Move::UseLastMoveUsed < Battle::Move
   end
 end
 
+#===============================================================================
+# Fixed battle rule "forceCatchIntoParty" being circumventable.
+#===============================================================================
 module Battle::CatchAndStoreMixin
   def pbStorePokemon(pkmn)
     # Nickname the Pokémon (unless it's a Shadow Pokémon)
@@ -148,5 +151,283 @@ class Battle::Move::HigherPriorityInGrassyTerrain < Battle::Move
     ret = super
     ret += 1 if @battle.field.terrain == :Grassy && user.affectedByTerrain?
     return ret
+  end
+end
+
+#===============================================================================
+# Fixed Eerie Spell's effect working like a status move.
+#===============================================================================
+class Battle::Move::LowerPPOfTargetLastMoveBy3 < Battle::Move
+  def pbFailsAgainstTarget?(user, target, show_message)
+    return super
+  end
+
+  def pbEffectAgainstTarget(user, target)
+    return if target.fainted?
+    last_move = target.pbGetMoveWithID(target.lastRegularMoveUsed)
+    return if !last_move || last_move.pp == 0 || last_move.total_pp <= 0
+    reduction = [3, last_move.pp].min
+    target.pbSetPP(last_move, last_move.pp - reduction)
+    @battle.pbDisplay(_INTL("It reduced the PP of {1}'s {2} by {3}!",
+                            target.pbThis(true), last_move.name, reduction))
+  end
+end
+
+#===============================================================================
+# Fixed error when shifting Pokémon at the end of a battle round.
+#===============================================================================
+class Battle
+  def pbEORShiftDistantBattlers
+    # Move battlers around if none are near to each other
+    # NOTE: This code assumes each side has a maximum of 3 battlers on it, and
+    #       is not generalised to larger side sizes.
+    if !singleBattle?
+      swaps = []   # Each element is an array of two battler indices to swap
+      2.times do |side|
+        next if pbSideSize(side) == 1   # Only battlers on sides of size 2+ need to move
+        # Check if any battler on this side is near any battler on the other side
+        anyNear = false
+        allSameSideBattlers(side).each do |battler|
+          anyNear = allOtherSideBattlers(battler).any? { |other| nearBattlers?(other.index, battler.index) }
+          break if anyNear
+        end
+        break if anyNear
+        # No battlers on this side are near any battlers on the other side; try
+        # to move them
+        # NOTE: If we get to here (assuming both sides are of size 3 or less),
+        #       there is definitely only 1 able battler on this side, so we
+        #       don't need to worry about multiple battlers trying to move into
+        #       the same position. If you add support for a side of size 4+,
+        #       this code will need revising to account for that, as well as to
+        #       add more complex code to ensure battlers will end up near each
+        #       other.
+        allSameSideBattlers(side).each do |battler|
+          # Get the position to move to
+          pos = -1
+          case pbSideSize(side)
+          when 2 then pos = [2, 3, 0, 1][battler.index]   # The unoccupied position
+          when 3 then pos = (side == 0) ? 2 : 3    # The centre position
+          end
+          next if pos < 0
+          # Can't move if the same trainer doesn't control both positions
+          idxOwner = pbGetOwnerIndexFromBattlerIndex(battler.index)
+          next if pbGetOwnerIndexFromBattlerIndex(pos) != idxOwner
+          swaps.push([battler.index, pos])
+        end
+      end
+      # Move battlers around
+      swaps.each do |pair|
+        next if pbSideSize(pair[0]) == 2 && swaps.length > 1
+        next if !pbSwapBattlers(pair[0], pair[1])
+        case pbSideSize(pair[1])
+        when 2
+          pbDisplay(_INTL("{1} moved across!", @battlers[pair[1]].pbThis))
+        when 3
+          pbDisplay(_INTL("{1} moved to the center!", @battlers[pair[1]].pbThis))
+        end
+      end
+    end
+  end
+end
+
+#===============================================================================
+# Fixed bugs when the AI determines the best replacement Pokémon to switch into.
+#===============================================================================
+class Battle::AI
+  def pbCalcTypeModPokemon(battlerThis, battlerOther)
+    mod1 = Effectiveness.calculate(battlerThis.types[0], battlerOther.types[0], battlerOther.types[1])
+    mod2 = Effectiveness::NORMAL_EFFECTIVE
+    if battlerThis.types.length > 1
+      mod2 = Effectiveness.calculate(battlerThis.types[1], battlerOther.types[0], battlerOther.types[1])
+      mod2 = mod2.to_f / Effectiveness::NORMAL_EFFECTIVE
+    end
+    return mod1 * mod2
+  end
+end
+
+#===============================================================================
+# Fixed Flame Orb/Toxic Orb being able to replace an existing status problem.
+#===============================================================================
+class Battle::Battler
+  def pbCanInflictStatus?(newStatus, user, showMessages, move = nil, ignoreStatus = false)
+    return false if fainted?
+    self_inflicted = (user && user.index == @index)   # Rest and Flame Orb/Toxic Orb only
+    # Already have that status problem
+    if self.status == newStatus && !ignoreStatus
+      if showMessages
+        msg = ""
+        case self.status
+        when :SLEEP     then msg = _INTL("{1} is already asleep!", pbThis)
+        when :POISON    then msg = _INTL("{1} is already poisoned!", pbThis)
+        when :BURN      then msg = _INTL("{1} already has a burn!", pbThis)
+        when :PARALYSIS then msg = _INTL("{1} is already paralyzed!", pbThis)
+        when :FROZEN    then msg = _INTL("{1} is already frozen solid!", pbThis)
+        end
+        @battle.pbDisplay(msg)
+      end
+      return false
+    end
+    # Trying to replace a status problem with another one
+    if self.status != :NONE && !ignoreStatus && !(self_inflicted && move)   # Rest can replace a status problem
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Trying to inflict a status problem on a Pokémon behind a substitute
+    if @effects[PBEffects::Substitute] > 0 && !(move && move.ignoresSubstitute?(user)) &&
+       !self_inflicted
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Weather immunity
+    if newStatus == :FROZEN && [:Sun, :HarshSun].include?(effectiveWeather)
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Terrains immunity
+    if affectedByTerrain?
+      case @battle.field.terrain
+      when :Electric
+        if newStatus == :SLEEP
+          if showMessages
+            @battle.pbDisplay(_INTL("{1} surrounds itself with electrified terrain!", pbThis(true)))
+          end
+          return false
+        end
+      when :Misty
+        @battle.pbDisplay(_INTL("{1} surrounds itself with misty terrain!", pbThis(true))) if showMessages
+        return false
+      end
+    end
+    # Uproar immunity
+    if newStatus == :SLEEP && !(hasActiveAbility?(:SOUNDPROOF) && !@battle.moldBreaker)
+      @battle.allBattlers.each do |b|
+        next if b.effects[PBEffects::Uproar] == 0
+        @battle.pbDisplay(_INTL("But the uproar kept {1} awake!", pbThis(true))) if showMessages
+        return false
+      end
+    end
+    # Type immunities
+    hasImmuneType = false
+    case newStatus
+    when :SLEEP
+      # No type is immune to sleep
+    when :POISON
+      if !(user && user.hasActiveAbility?(:CORROSION))
+        hasImmuneType |= pbHasType?(:POISON)
+        hasImmuneType |= pbHasType?(:STEEL)
+      end
+    when :BURN
+      hasImmuneType |= pbHasType?(:FIRE)
+    when :PARALYSIS
+      hasImmuneType |= pbHasType?(:ELECTRIC) && Settings::MORE_TYPE_EFFECTS
+    when :FROZEN
+      hasImmuneType |= pbHasType?(:ICE)
+    end
+    if hasImmuneType
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Ability immunity
+    immuneByAbility = false
+    immAlly = nil
+    if Battle::AbilityEffects.triggerStatusImmunityNonIgnorable(self.ability, self, newStatus)
+      immuneByAbility = true
+    elsif self_inflicted || !@battle.moldBreaker
+      if abilityActive? && Battle::AbilityEffects.triggerStatusImmunity(self.ability, self, newStatus)
+        immuneByAbility = true
+      else
+        allAllies.each do |b|
+          next if !b.abilityActive?
+          next if !Battle::AbilityEffects.triggerStatusImmunityFromAlly(b.ability, self, newStatus)
+          immuneByAbility = true
+          immAlly = b
+          break
+        end
+      end
+    end
+    if immuneByAbility
+      if showMessages
+        @battle.pbShowAbilitySplash(immAlly || self)
+        msg = ""
+        if Battle::Scene::USE_ABILITY_SPLASH
+          case newStatus
+          when :SLEEP     then msg = _INTL("{1} stays awake!", pbThis)
+          when :POISON    then msg = _INTL("{1} cannot be poisoned!", pbThis)
+          when :BURN      then msg = _INTL("{1} cannot be burned!", pbThis)
+          when :PARALYSIS then msg = _INTL("{1} cannot be paralyzed!", pbThis)
+          when :FROZEN    then msg = _INTL("{1} cannot be frozen solid!", pbThis)
+          end
+        elsif immAlly
+          case newStatus
+          when :SLEEP
+            msg = _INTL("{1} stays awake because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :POISON
+            msg = _INTL("{1} cannot be poisoned because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :BURN
+            msg = _INTL("{1} cannot be burned because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :PARALYSIS
+            msg = _INTL("{1} cannot be paralyzed because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :FROZEN
+            msg = _INTL("{1} cannot be frozen solid because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          end
+        else
+          case newStatus
+          when :SLEEP     then msg = _INTL("{1} stays awake because of its {2}!", pbThis, abilityName)
+          when :POISON    then msg = _INTL("{1}'s {2} prevents poisoning!", pbThis, abilityName)
+          when :BURN      then msg = _INTL("{1}'s {2} prevents burns!", pbThis, abilityName)
+          when :PARALYSIS then msg = _INTL("{1}'s {2} prevents paralysis!", pbThis, abilityName)
+          when :FROZEN    then msg = _INTL("{1}'s {2} prevents freezing!", pbThis, abilityName)
+          end
+        end
+        @battle.pbDisplay(msg)
+        @battle.pbHideAbilitySplash(immAlly || self)
+      end
+      return false
+    end
+    # Safeguard immunity
+    if pbOwnSide.effects[PBEffects::Safeguard] > 0 && !self_inflicted && move &&
+       !(user && user.hasActiveAbility?(:INFILTRATOR))
+      @battle.pbDisplay(_INTL("{1}'s team is protected by Safeguard!", pbThis)) if showMessages
+      return false
+    end
+    return true
+  end
+end
+
+#===============================================================================
+# Fixed Pastel Veil not providing poison immunity to allies, and not healing the
+# bearer if it becomes poisoned anyway.
+#===============================================================================
+Battle::AbilityEffects::StatusImmunityFromAlly.add(:PASTELVEIL,
+  proc { |ability, battler, status|
+    next true if status == :POISON
+  }
+)
+
+Battle::AbilityEffects::StatusCure.copy(:IMMUNITY, :PASTELVEIL)
+
+#===============================================================================
+# Fixed moves that deal fixed damage showing an effectiveness message.
+#===============================================================================
+class Battle::Move
+  alias __hotfixes__pbEffectivenessMessage pbEffectivenessMessage
+  def pbEffectivenessMessage(user, target, numTargets = 1)
+    return if self.is_a?(Battle::Move::FixedDamageMove)
+    __hotfixes__pbEffectivenessMessage(user, target, numTargets)
+  end
+end
+
+#===============================================================================
+# Fixed Chip Away/Darkest Lariat/Sacred Sword not ignoring the target's evasion.
+#===============================================================================
+class Battle::Move::IgnoreTargetDefSpDefEvaStatStages < Battle::Move
+  def pbCalcAccuracyModifiers(user, target, modifiers)
+    super
+    modifiers[:evasion_stage] = 0
   end
 end

@@ -5,12 +5,10 @@ Battle 1 & 1 - Double - Lab - Version 1-12
 #Player chooses Roggenrola:
 #-------------------------------
 [RIVAL1_F,Lab,1]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = KLINK,5
 #-------------------------------
 [RIVAL1_M,Lab,1]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = KLINK,5
 #-------------------------------
@@ -27,12 +25,10 @@ Pokemon = SPHEAL,5
 #Player chooses Trapinch:
 #-------------------------------
 [RIVAL1_F,Lab,2]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = SPHEAL,5
 #-------------------------------
 [RIVAL1_M,Lab,2]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = SPHEAL,5
 #-------------------------------
@@ -49,12 +45,10 @@ Pokemon = PICHU,5
 #Player chooses Pichu:
 #-------------------------------
 [RIVAL1_F,Lab,3]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = TRAPINCH,5
 #-------------------------------
 [RIVAL1_M,Lab,3]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = TRAPINCH,5
 #-------------------------------
@@ -71,12 +65,10 @@ Pokemon = FLETCHLING,5
 #Player chooses Grubbin:
 #-------------------------------
 [RIVAL1_F,Lab,4]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = FLETCHLING,5
 #-------------------------------
 [RIVAL1_M,Lab,4]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = FLETCHLING,5
 #-------------------------------
@@ -95,12 +87,10 @@ Pokemon = ZIGZAGOON,5
 #Player chooses Spheal:
 #-------------------------------
 [RIVAL1_F,Lab,5]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = ROGGENROLA,5
 #-------------------------------
 [RIVAL1_M,Lab,5]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = ROGGENROLA,5
 #-------------------------------
@@ -117,12 +107,10 @@ Pokemon = TRAPINCH,5
 #Player chooses Fletchling:
 #-------------------------------
 [RIVAL1_F,Lab,6]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = PICHU,5
 #-------------------------------
 [RIVAL1_M,Lab,6]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = PICHU,5
 #-------------------------------
@@ -139,12 +127,10 @@ Pokemon = GRUBBIN,5
 #Player chooses Klink:
 #-------------------------------
 [RIVAL1_F,Lab,7]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = TIMBURR,5
 #-------------------------------
 [RIVAL1_M,Lab,7]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = TIMBURR,5
 #-------------------------------
@@ -161,12 +147,10 @@ Pokemon = ROGGENROLA,5
 #Player chooses Zigzagoon:
 #-------------------------------
 [RIVAL1_F,Lab,8]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = GRUBBIN,5
 #-------------------------------
 [RIVAL1_M,Lab,8]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = GRUBBIN,5
 #-------------------------------
@@ -183,12 +167,10 @@ Pokemon = SOLOSIS,5
 #Player chooses Budew:
 #-------------------------------
 [RIVAL1_F,Lab,9]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = SOLOSIS,5
 #-------------------------------
 [RIVAL1_M,Lab,9]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = SOLOSIS,5
 #-------------------------------
@@ -205,12 +187,10 @@ Pokemon = TOGEPI,5
 #Player chooses Timburr:
 #-------------------------------
 [RIVAL1_F,Lab,10]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = TOGEPI,5
 #-------------------------------
 [RIVAL1_M,Lab,10]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = TOGEPI,5
 #-------------------------------
@@ -227,13 +207,11 @@ Pokemon = KLINK,5
 #Player chooses Solosis:
 #-------------------------------
 [RIVAL1_F,Lab,11]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = ZIGZAGOON,5
 	Form = 1
 #-------------------------------
 [RIVAL1_M,Lab,11]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = ZIGZAGOON,5
 	Form = 1
@@ -251,12 +229,10 @@ Pokemon = BUDEW,5
 #Player chooses Togepi:
 #-------------------------------
 [RIVAL1_F,Lab,12]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = BUDEW,5
 #-------------------------------
 [RIVAL1_M,Lab,12]
-Items = POTION
 LoseText = What a good battle!
 Pokemon = BUDEW,5
 #-------------------------------

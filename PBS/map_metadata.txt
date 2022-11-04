@@ -162,16 +162,16 @@ Name = Tila Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 1,11,7
+MapPosition = 1,12,7
 SnapEdges = true
-MapSize = 2,1100
+MapSize = 2,11
 #-------------------------------
 [045]   # Route 03
 Name = Route 3
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 1,8,6
+MapPosition = 1,9,6
 SnapEdges = true
 MapSize = 3,110011
 #-------------------------------
@@ -180,7 +180,7 @@ Name = Flutford Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 1,7,6
+MapPosition = 1,8,6
 SnapEdges = true
 MapSize = 1,11
 #-------------------------------
