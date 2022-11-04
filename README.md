@@ -16,6 +16,7 @@
   + [Beta Release October 20 2022](#Beta-Release-October-20-2022)
   + [Beta Release October 22 2022](#Beta-Release-October-22-2022)
   + [Beta Release October 25 2022](#Beta-Release-October-25-2022)
+  + [Beta Release November 4 2022](#Beta-Release-November-4-2022)
 - [Credits](#Credits)
 
 ## Story
