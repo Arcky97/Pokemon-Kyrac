@@ -219,13 +219,17 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - a few trainers have been added in the cabins on the B1F of the yacht.
 
-- fixed the exit from the poke center on the yacht to Hester City
+- fixed the exit from the poke center on the yacht to Hester City.
 
 ### Beta Release November 4 2022
 
-- Added the new yacht on the player's home map
+- Added the new yacht on the player's home map.
 
-- Added a mid battle speech to the rival battle in the lab
+- Added a mid battle speech to the rival battle in the lab.
+
+- Added the Outside Deck of the F1 of the Yacht.
+
+- Remade an event in Hester City.
 
 ## Credits:
 
