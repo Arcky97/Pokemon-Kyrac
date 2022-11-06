@@ -231,6 +231,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Remade an event in Hester City.
 
+- Edited the map transition between Route 2 and Route Intersection.
+
+- Edited the map transition between Route Intersection and Route 2.
+
+- Edited the map transition between Route Intersection and Route 1.
+
+- Edited the map transition between Route 1 and Hester City.
+
 ## Credits:
 
 Essentials: Maruno
