@@ -16,7 +16,7 @@
   + [Beta Release October 20 2022](#Beta-Release-October-20-2022)
   + [Beta Release October 22 2022](#Beta-Release-October-22-2022)
   + [Beta Release October 25 2022](#Beta-Release-October-25-2022)
-  + [Beta Release October 29 2022](#Beta-Release-October-29-2022)
+  + [Beta Release October 30 2022](#Beta-Release-October-29-2022)
   + [Beta Release November 4 2022](#Beta-Release-November-4-2022)
   + [Beta Release November 6 2022](#Beta-Release-November-6-2022)
 - [Credits](#Credits)
@@ -217,7 +217,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Boat and inside tilesets have been edited.
 
-### Beta Release October 29 2022
+### Beta Release October 30 2022
 
 - events and interactions have been added to the Dining Room map.
 
