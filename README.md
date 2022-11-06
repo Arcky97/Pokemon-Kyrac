@@ -16,7 +16,9 @@
   + [Beta Release October 20 2022](#Beta-Release-October-20-2022)
   + [Beta Release October 22 2022](#Beta-Release-October-22-2022)
   + [Beta Release October 25 2022](#Beta-Release-October-25-2022)
+  + [Beta Release October 29 2022](#Beta-Release-October-29-2022)
   + [Beta Release November 4 2022](#Beta-Release-November-4-2022)
+  + [Beta Release November 6 2022](#Beta-Release-November-6-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -215,6 +217,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Boat and inside tilesets have been edited.
 
+### Beta Release October 29 2022
+
 - events and interactions have been added to the Dining Room map.
 
 - a few trainers have been added in the cabins on the B1F of the yacht.
@@ -230,6 +234,9 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added the Outside Deck of the F1 of the Yacht.
 
 - Remade an event in Hester City.
+
+
+### Beta Release November 6 2022
 
 - Edited the map transition between Route 2 and Route Intersection.
 
