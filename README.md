@@ -235,7 +235,6 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Remade an event in Hester City.
 
-
 ### Beta Release November 6 2022
 
 - Edited the map transition between Route 2 and Route Intersection.
