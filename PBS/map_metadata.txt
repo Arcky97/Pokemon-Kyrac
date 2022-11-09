@@ -56,7 +56,7 @@ Name = Route 1
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,17,10
+MapPosition = 1,11,10
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
@@ -69,7 +69,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 BicycleAlways = false
-MapPosition = 0,18,10
+MapPosition = 1,12,10
 SafariMap = false
 SnapEdges = true
 MapSize = 1,1
@@ -141,7 +141,7 @@ ShowArea = true
 Bicycle = true
 MapPosition = 1,12,8
 SnapEdges = true
-MapSize = 2,1010
+MapSize = 1,11
 #-------------------------------
 [042]   # Franta Town
 Name = Franta Town
@@ -318,6 +318,26 @@ Bicycle = false
 BicycleAlways = false
 MapPosition = 1,12,10
 SnapEdges = true
+#-------------------------------
+[062]   # Route 5
+Name = Route 5
+Outdoor = true
+ShowArea = true
+Bicycle = true
+BicycleAlways = false
+MapPosition = 1,14,6
+SnapEdges = true
+MapSize = 2,0111
+#-------------------------------
+[063]   # Route 6
+Name = Route 6
+Outdoor = true
+ShowArea = true
+Bicycle = true
+BicycleAlways = false
+MapPosition = 1,16,7
+SnapEdges = true
+MapSize = 1,111
 #-------------------------------
 [064]   # Radio Tower - Elevator Left
 Name = Radio Tower Elevator

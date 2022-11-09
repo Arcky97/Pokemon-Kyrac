@@ -19,6 +19,7 @@
   + [Beta Release October 30 2022](#Beta-Release-October-29-2022)
   + [Beta Release November 4 2022](#Beta-Release-November-4-2022)
   + [Beta Release November 6 2022](#Beta-Release-November-6-2022)
+  + [Beta Release November 9 2022](#Beta-Release-November-9-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -244,6 +245,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Edited the map transition between Route Intersection and Route 1.
 
 - Edited the map transition between Route 1 and Hester City.
+
+### Beta Release November 9 2022
+
+- Edited first Rival battle in the lab on the yacht.
+
+- Added more pokemon to the pokedex.
+
+- 
 
 ## Credits:
 
