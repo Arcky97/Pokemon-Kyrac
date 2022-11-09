@@ -252,7 +252,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added more pokemon to the pokedex.
 
-- 
+- Edited the map transition between Tila Town and Route 3.
+
+- Edited the map transition between Route 3 and Flutford Town.
+
+- Edited the map transition between Route 3 and Sea Shore.
+
+- Added a connection with Route 5 in Tila Town.
 
 ## Credits:
 
