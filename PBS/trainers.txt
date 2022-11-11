@@ -220,6 +220,8 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = TIMBURR,5
 #-------------------------------
+Yacht - B1F
+#-------------------------------
 [BEAUTY,Liz]
 LoseText = Get out of my room!
 Pokemon = NIDORANfE,6
@@ -245,6 +247,8 @@ Pokemon = TIRTOUGA,6
 LoseText = You're a prodigy!
 Pokemon = AIPOM,7
 Pokemon = MIMEJR,9
+#-------------------------------
+Route 1
 #-------------------------------
 [BRIDGE_GUARDS,John & John]
 LoseText = We'll forgive you!
