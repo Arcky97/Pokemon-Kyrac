@@ -315,4 +315,6 @@ AcobraYT for making the custom OST's.
 
 Pancreas for making trainer teams and NPC lines.
 
+Alpal76, Zeta, Pancreas for testing the game.
+
 
