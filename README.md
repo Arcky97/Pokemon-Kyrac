@@ -317,4 +317,4 @@ Pancreas for making trainer teams and NPC lines.
 
 Alpal76, Zeta, Pancreas for testing the game.
 
-
+And Arcky, the main developer, for doing a bit of everything.
