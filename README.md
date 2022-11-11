@@ -307,10 +307,12 @@ https://reliccastle.com/resources/943/
 
 Grogo for making the script work.
 
-Lily In The Water for helping with the story and ideas
+Lily In The Water for helping with the story and ideas.
 
-Zeta for helping making Maps and sprites
+Zeta for helping making Maps and sprites.
 
-AcobraYT for making the custom OST's
+AcobraYT for making the custom OST's.
+
+Pancreas for making trainer teams and NPC lines.
 
 
