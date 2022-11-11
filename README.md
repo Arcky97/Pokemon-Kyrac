@@ -20,6 +20,7 @@
   + [Beta Release November 4 2022](#Beta-Release-November-4-2022)
   + [Beta Release November 6 2022](#Beta-Release-November-6-2022)
   + [Beta Release November 9 2022](#Beta-Release-November-9-2022)
+  + [Beta Release November 11 2022](#Beta-Release-November-11-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -259,6 +260,18 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Edited the map transition between Route 3 and Sea Shore.
 
 - Added a connection with Route 5 in Tila Town.
+
+### Beta Release November 11 2022
+
+- Edited Route 4 (it looks a lot different now).
+
+- Edited the map transition between Route Intersection and Route 4.
+
+- Edited the map transition between Route 4 and Franta Town
+
+- Added 2 more trainers in the cabins on the B1F of the yacht.
+
+- Edited a line Prof. Oak says after defeating your rivals for the first time.
 
 ## Credits:
 

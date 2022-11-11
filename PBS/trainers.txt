@@ -1,9 +1,5 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-Battle 1 & 1 - Double - Lab - Version 1-12
-#-------------------------------
-#Player chooses Roggenrola:
-#-------------------------------
 [RIVAL1_F,Lab,1]
 LoseText = What a good battle!
 Pokemon = KLINK,5
@@ -21,8 +17,6 @@ Pokemon = SPHEAL,5
 Items = POTION
 LoseText = You were just lucky!
 Pokemon = SPHEAL,5
-#-------------------------------
-#Player chooses Trapinch:
 #-------------------------------
 [RIVAL1_F,Lab,2]
 LoseText = What a good battle!
@@ -42,8 +36,6 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = PICHU,5
 #-------------------------------
-#Player chooses Pichu:
-#-------------------------------
 [RIVAL1_F,Lab,3]
 LoseText = What a good battle!
 Pokemon = TRAPINCH,5
@@ -62,8 +54,6 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = FLETCHLING,5
 #-------------------------------
-#Player chooses Grubbin:
-#-------------------------------
 [RIVAL1_F,Lab,4]
 LoseText = What a good battle!
 Pokemon = FLETCHLING,5
@@ -76,15 +66,13 @@ Pokemon = FLETCHLING,5
 Items = POTION
 LoseText = You were just lucky!
 Pokemon = ZIGZAGOON,5
-	Form = 1
+    Form = 1
 #-------------------------------
 [RIVAL2_F,Lab,4]
 Items = POTION
 LoseText = You were just lucky!
 Pokemon = ZIGZAGOON,5
-	Form = 1
-#-------------------------------
-#Player chooses Spheal:
+    Form = 1
 #-------------------------------
 [RIVAL1_F,Lab,5]
 LoseText = What a good battle!
@@ -104,8 +92,6 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = TRAPINCH,5
 #-------------------------------
-#Player chooses Fletchling:
-#-------------------------------
 [RIVAL1_F,Lab,6]
 LoseText = What a good battle!
 Pokemon = PICHU,5
@@ -123,8 +109,6 @@ Pokemon = GRUBBIN,5
 Items = POTION
 LoseText = You were just lucky!
 Pokemon = GRUBBIN,5
-#-------------------------------
-#Player chooses Klink:
 #-------------------------------
 [RIVAL1_F,Lab,7]
 LoseText = What a good battle!
@@ -144,8 +128,6 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = ROGGENROLA,5
 #-------------------------------
-#Player chooses Zigzagoon:
-#-------------------------------
 [RIVAL1_F,Lab,8]
 LoseText = What a good battle!
 Pokemon = GRUBBIN,5
@@ -163,8 +145,6 @@ Pokemon = SOLOSIS,5
 Items = POTION
 LoseText = You were just lucky!
 Pokemon = SOLOSIS,5
-#-------------------------------
-#Player chooses Budew:
 #-------------------------------
 [RIVAL1_F,Lab,9]
 LoseText = What a good battle!
@@ -184,8 +164,6 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = TOGEPI,5
 #-------------------------------
-#Player chooses Timburr:
-#-------------------------------
 [RIVAL1_F,Lab,10]
 LoseText = What a good battle!
 Pokemon = TOGEPI,5
@@ -204,17 +182,15 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = KLINK,5
 #-------------------------------
-#Player chooses Solosis:
-#-------------------------------
 [RIVAL1_F,Lab,11]
 LoseText = What a good battle!
 Pokemon = ZIGZAGOON,5
-	Form = 1
+    Form = 1
 #-------------------------------
 [RIVAL1_M,Lab,11]
 LoseText = What a good battle!
 Pokemon = ZIGZAGOON,5
-	Form = 1
+    Form = 1
 #-------------------------------
 [RIVAL2_M,Lab,11]
 Items = POTION
@@ -225,8 +201,6 @@ Pokemon = BUDEW,5
 Items = POTION
 LoseText = You were just lucky!
 Pokemon = BUDEW,5
-#-------------------------------
-#Player chooses Togepi:
 #-------------------------------
 [RIVAL1_F,Lab,12]
 LoseText = What a good battle!
@@ -246,27 +220,31 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = TIMBURR,5
 #-------------------------------
-Yacht
-#-------------------------------
-B1F
-#-------------------------------
 [BEAUTY,Liz]
 LoseText = Get out of my room!
-Pokemon = NIDORANfE, 6
-Pokemon = HOPPIP, 5
+Pokemon = NIDORANfE,6
+Pokemon = HOPPIP,5
 #-------------------------------
 [BLACKBELT,Ralph]
 LoseText = I have no words for what I just witnessed!
-Pokemon = MANKEY, 7
+Pokemon = MANKEY,7
 #-------------------------------
 [CRUSHGIRL,Cathy]
 LoseText = This battle was truely amazing!
-Pokemon = GRIMER, 6
-Pokemon = WOOPER, 6
-Pokemon = ODDISH, 7
+Pokemon = GRIMER,6
+Pokemon = WOOPER,6
+Pokemon = ODDISH,7
 #-------------------------------
+[GENTLEMAN,John]
+LoseText = My relic!
+Pokemon = TIRTOUGA,6
+    Gender = male
+    Nature = GENTLE
 #-------------------------------
-Route 1
+[JUGGLER,James]
+LoseText = You're a prodigy!
+Pokemon = AIPOM,7
+Pokemon = MIMEJR,9
 #-------------------------------
 [BRIDGE_GUARDS,John & John]
 LoseText = We'll forgive you!
@@ -315,3 +293,4 @@ Items = FULLRESTORE,FULLRESTORE
 LoseText = Very good.
 Pokemon = PIKACHU,24
 Pokemon = RAICHU,26
+
