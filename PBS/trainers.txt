@@ -237,7 +237,7 @@ Pokemon = GRIMER,6
 Pokemon = WOOPER,6
 Pokemon = ODDISH,7
 #-------------------------------
-[GENTLEMAN,John]
+[GENTLEMAN,Donald]
 LoseText = My relic!
 Pokemon = TIRTOUGA,6
     Gender = male
@@ -246,7 +246,36 @@ Pokemon = TIRTOUGA,6
 [JUGGLER,James]
 LoseText = You're a prodigy!
 Pokemon = AIPOM,7
-Pokemon = MIMEJR,9
+Pokemon = MIMEJR,8
+#-------------------------------
+Yacht - F1
+#-------------------------------
+[GAMBLER,Old Man]
+LoseText = Skiddadle already!!!
+Pokemon = MUNNA,6
+#-------------------------------
+[SAILOR,Giuseppie]
+LoseText = I haven't seen a strong trainer like you in ages.
+Pokemon = MACHOP,7
+Pokemon = TIMBURR,7
+#-------------------------------
+[GENTLEMAN,Marx]
+LoseText = Im-Impossible!
+Pokemon = MAGIKARP,5
+#-------------------------------
+[AROMALADY,Clara]
+LoseText = Fantastica!
+Pokemon = PSYDUCK,6
+#-------------------------------
+[AROMALADY,Clara,1]
+LoseText = Fantastico!
+Pokemon = PSYDUCK,6
+#-------------------------------
+[TWINS,Rose & Ruby]
+LoseText = Our supa sneaky surprize combo didn't work!?
+Pokemon = CATERPIE,6
+Pokemon = WEEDLE,6
+Pokemon = EKANS,8
 #-------------------------------
 Route 1
 #-------------------------------

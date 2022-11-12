@@ -273,6 +273,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited a line Prof. Oak says after defeating your rivals for the first time.
 
+### Beta Release November 12 2022
+
+- Continues editing Route 4.
+
+- Added trainers in the cabins on the F1 of the yacht.
+
+- Added speeches to the cooks in the kitchen on the yacht.
+
 ## Credits:
 
 Essentials: Maruno
