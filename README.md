@@ -21,6 +21,7 @@
   + [Beta Release November 6 2022](#Beta-Release-November-6-2022)
   + [Beta Release November 9 2022](#Beta-Release-November-9-2022)
   + [Beta Release November 11 2022](#Beta-Release-November-11-2022)
+  + [Beta Release November 12 2022](#Beta-Release-November-12-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -280,6 +281,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added trainers in the cabins on the F1 of the yacht.
 
 - Added speeches to the cooks in the kitchen on the yacht.
+
+- Bridges on Route 4 go transparant when underneath it.
 
 ## Credits:
 
