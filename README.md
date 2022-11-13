@@ -284,6 +284,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Bridges on Route 4 go transparant when underneath it.
 
+- Changed the ledges around the lakes on several routes.
+
+- Edited the map transition between Tila Town and Farmer's Farm.
+
+- Edited the map transition between Route 2 and Farmer's Farm.
+
+- Edited Cycling Bridge on Route 2.
+
 ## Credits:
 
 Essentials: Maruno
