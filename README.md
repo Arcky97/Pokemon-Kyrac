@@ -292,6 +292,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited Cycling Bridge on Route 2.
 
+### Beta Release November 14 2022
+
+- NPC's added on the F1 Hallway of the Yacht.
+
+- Stairs (going up to the F1) on the B1F have been moved to the left.
+
+- Some adjustments to the BF1 and F1 hallway maps have been made.
+
 ## Credits:
 
 Essentials: Maruno
