@@ -301,6 +301,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Some adjustments to the BF1 and F1 hallway maps have been made.
 
+- Fused the PokeCenter and Pokemart on the Yacht.
+
 ## Credits:
 
 Essentials: Maruno
