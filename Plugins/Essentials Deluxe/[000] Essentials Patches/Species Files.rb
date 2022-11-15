@@ -554,10 +554,10 @@ class PokemonSpeciesIconSprite < SpriteWrapper
     @gender       = 0
     @form         = 0
     @shiny        = 0
-    @shadow       = 0
-    @dmax         = 0
-    @gmax         = 0
-    @celestial    = 0
+    @shadow       = false
+    @dmax         = false
+    @gmax         = false
+    @celestial    = false
     @numFrames    = 0
     @currentFrame = 0
     @counter      = 0

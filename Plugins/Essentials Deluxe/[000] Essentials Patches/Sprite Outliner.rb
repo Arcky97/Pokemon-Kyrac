@@ -63,7 +63,7 @@ end
 #-------------------------------------------------------------------------------
 # Adjusts outline coordinates.
 #-------------------------------------------------------------------------------
-def pbSetWithOutline(sprite, coords = [], border = 2)
+def pbSetWithOutline(sprite, coords = [], color = Color.white, border = 2)
   return if !@sprites || !@sprites.has_key?(sprite)
   @sprites[sprite].x = coords[0] if coords[0]
   @sprites[sprite].y = coords[1] if coords[1]
@@ -141,13 +141,28 @@ end
 
 
 #-------------------------------------------------------------------------------
+# Adjusts outline color.
+#-------------------------------------------------------------------------------
+def pbColorOutline(sprite, color)
+  return if !@sprites || !@sprites.has_key?(sprite)
+  color = Color.white if color.nil?
+  for i in 0..7
+    key = sprite + "_outline#{i}"
+    next if !@sprites[key]
+    @sprites[key].color = color
+  end  
+end
+
+
+#-------------------------------------------------------------------------------
 # Updates outlines for Pokemon sprites.
 #-------------------------------------------------------------------------------
-def pbUpdateOutline(sprite, pokemon)
+def pbUpdateOutline(sprite, pokemon, battle = false)
   return if !@sprites || !@sprites.has_key?(sprite)
   for i in 0..7
     key = sprite + "_outline#{i}"
     next if !@sprites[key] || !(@sprites[key].is_a?(PokemonSprite) || @sprites[key].is_a?(PokemonIconSprite))
     @sprites[key].pokemon = pokemon
+    @sprites[key].applyDynamaxIcon(battle)
   end
 end

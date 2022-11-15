@@ -1,7 +1,7 @@
 Name         = Essentials Deluxe
-Version      = 1.1.4
+Version      = 1.1.5
 Essentials   = 20.1
-Requires     = v20.1 Hotfixes,1.0.6
+Requires     = v20.1 Hotfixes,1.0.7
 Optional     = Generation 8 Pack Scripts,1.0.3
 Optional     = Following Pokemon EX,2.2.2
 Optional     = Visible Overworld Wild Encounters,20.0

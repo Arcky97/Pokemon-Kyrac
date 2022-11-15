@@ -116,14 +116,23 @@ def pbApplyBattleRules(foeside, wildbattle = false)
   #-----------------------------------------------------------------------------
   if rules[:partner].is_a?(Array)
     pbRegisterPartner(*rules[:partner])
-	setBattleRule("double")
+    setBattleRule("double")
   end
   #-----------------------------------------------------------------------------
   # Sets the battle size.
   # Caps out at 3, and scales down if the player doesn't have enough viable
   # Pokemon to meet the set size.
   #-----------------------------------------------------------------------------
-  if rules[:size]
+  case rules[:size]
+  when "double"
+    if foeside == 2 || !wildbattle && foeside == 1
+      setBattleRule("double")
+    end
+  when "triple"
+    if foeside == 3 || !wildbattle && foeside == 1
+      setBattleRule("triple")
+    end
+  when Numeric
     rules[:size] = 1 if rules[:size] < 1
     rules[:size] = 3 if rules[:size] > 3
     if rules[:size] > $player.able_pokemon_count

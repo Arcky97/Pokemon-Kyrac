@@ -89,9 +89,9 @@ class Battle::Scene
           #---------------------------------------------------------------------	
           when :delay
             if value.is_a?(String) || value.is_a?(Array)
-            delay = true
-            break
-          end
+              delay = true
+              break
+            end
           #---------------------------------------------------------------------
           # Pauses further actions for a number of frames.
           #---------------------------------------------------------------------

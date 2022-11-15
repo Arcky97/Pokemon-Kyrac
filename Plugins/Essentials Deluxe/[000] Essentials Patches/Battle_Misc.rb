@@ -38,9 +38,9 @@ end
 # Pokemon sprite compatibility.
 #-------------------------------------------------------------------------------
 class Sprite
-  def applyDynamax(arg); end
-  def unDynamax;         end
-  def applyDynamaxIcon;  end
+  def applyDynamax(arg);     end
+  def unDynamax;             end
+  def applyDynamaxIcon(arg); end
 end
 
 class Battle::Scene::BattlerSprite < RPG::Sprite

@@ -296,10 +296,11 @@ class Battle::Scene
   end
   
   def pbHidePluginUI
-    @battle.allBattlers.each { |b| @sprites["battler_icon#{b.index}"].visible = false }
     pbHideMoveInfo
     pbHideBattleInfo
     pbHideFocusPanel
+    return if pbInSafari?
+    @battle.allBattlers.each { |b| @sprites["battler_icon#{b.index}"].visible = false }
   end
   
   def pbHideMoveInfo

@@ -195,7 +195,7 @@ class Battle::Move
   end
 
   #-----------------------------------------------------------------------------
-  # Mid-battle triggers for when a used move lands a critical hit.
+  # Mid-battle triggers for when a used move deals damage.
   #-----------------------------------------------------------------------------
   def pbHitEffectivenessMessages(user, target, numTargets = 1)
     return if target.damageState.disguise || target.damageState.iceFace
