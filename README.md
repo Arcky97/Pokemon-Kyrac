@@ -23,6 +23,7 @@
   + [Beta Release November 11 2022](#Beta-Release-November-11-2022)
   + [Beta Release November 12 2022](#Beta-Release-November-12-2022)
   + [Beta Release November 14 2022](#Beta-Release-November-14-2022)
+  + [Beta Release November 16 2022](#Beta-Release-November-16-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -302,6 +303,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Some adjustments to the BF1 and F1 hallway maps have been made.
 
 - Fused the PokeCenter and Pokemart on the Yacht.
+
+### Beta Release November 14 2022
+
+- Edited the Dinning room map on the yacht.
+
+- Edited the Kitchen map on the yacht.
+
+- Edited the lab on the yacht.
+
+- Edited the camera movement when Rivals are choosing their starters.
 
 ## Credits:
 
