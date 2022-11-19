@@ -314,6 +314,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited the camera movement when Rivals are choosing their starters.
 
+- Edited and finished Route 2.
+
 ## Credits:
 
 Essentials: Maruno
