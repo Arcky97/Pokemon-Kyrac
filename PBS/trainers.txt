@@ -292,6 +292,15 @@ Pokemon = LEAFEON,15
 LoseText = You first defeated John and now you defeated me, John, too? Very nice!
 Pokemon = GLACEON,15
 #-------------------------------
+Route 2
+#-------------------------------
+[BIKER,Carl]
+LoseText = You still can't pass though!
+Pokemon = GROTLE,18
+Pokemon = TORKOAL,17
+Pokemon = WARTORTLE,18
+Pokemon = CHEWTLE,19
+#-------------------------------
 [YOUNGSTER,Dave]
 LoseText = You got magic battle powers too!?
 Pokemon = SPHEAL,5

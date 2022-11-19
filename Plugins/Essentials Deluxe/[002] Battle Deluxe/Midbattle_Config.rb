@@ -267,4 +267,12 @@ module EssentialsDeluxe
       :speech  => ["This is a good time to use a Potion!"]
     }
   }
+   #-----------------------------------------------------------------------------
+  # Cyclist Carl on Route 2
+  #-----------------------------------------------------------------------------
+  BIKER_ROUTE_2 = {
+    "beforeLast_foe" => {
+      :speech  => ["It's not over yet!"]
+    }
+  }
 end
