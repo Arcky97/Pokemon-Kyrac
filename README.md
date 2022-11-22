@@ -24,6 +24,7 @@
   + [Beta Release November 12 2022](#Beta-Release-November-12-2022)
   + [Beta Release November 14 2022](#Beta-Release-November-14-2022)
   + [Beta Release November 16 2022](#Beta-Release-November-16-2022)
+  + [Beta Release November 22 2022](#Beta-Release-November-22-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -304,7 +305,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fused the PokeCenter and Pokemart on the Yacht.
 
-### Beta Release November 14 2022
+### Beta Release November 16 2022
 
 - Edited the Dinning room map on the yacht.
 
@@ -314,7 +315,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited the camera movement when Rivals are choosing their starters.
 
-- Edited and finished Route 2.
+- Edited Route 2.
+
+### Beta Release November 22 2022
+
+- Edited and Finished Route 2.
+
+- Added trainers and items on Route 2.
+
+- Added an event/quest on Route 2.
 
 ## Credits:
 
