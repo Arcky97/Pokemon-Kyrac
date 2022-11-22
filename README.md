@@ -8,7 +8,7 @@
   + [New Forms](#New-Forms)
 - [Future Plans](#Future-Plans)
 - [Release Notes](#Release-Notes)
-  + [Beta Release October 2 2022](#v105---release-october-2-2022)
+  + [Beta Release October 2 2022](#V105---Release-October-2-2022)
   + [Beta Release October 8 2022](#Beta-Release-October-8-2022)
   + [Beta Release October 14 2022](#Beta-Release-October-14-2022)
   + [Beta Release October 15 2022](#Beta-Release-October-15-2022)
