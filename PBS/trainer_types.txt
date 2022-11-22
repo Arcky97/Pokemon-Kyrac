@@ -163,6 +163,11 @@ Name = Camper
 Gender = Male
 BaseMoney = 16
 #-------------------------------
+[CAMPERS]
+Name = Campers
+Gender = Male
+BaseMoney = 32
+#-------------------------------
 [PICNICKER]
 Name = Picnicker
 Gender = Female
@@ -431,3 +436,10 @@ Name = Rival
 Gender = Male
 BaseMoney = 30
 BattleBGM = hgssgrunt
+#-------------------------------
+[LEADER_Bergium]
+Name = Gym Leader
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle Gym Leader
+VictoryBGM = Battle victory leader
