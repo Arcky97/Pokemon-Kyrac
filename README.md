@@ -8,7 +8,7 @@
   + [New Forms](#New-Forms)
 - [Future Plans](#Future-Plans)
 - [Release Notes](#Release-Notes)
-  + [Beta Release October 2 2022](#V1.0.5-(Release-October-2-2022))
+  + [Beta Release October 2 2022](#v105-release-october-2-2022)
   + [Beta Release October 8 2022](#Beta-Release-October-8-2022)
   + [Beta Release October 14 2022](#Beta-Release-October-14-2022)
   + [Beta Release October 15 2022](#Beta-Release-October-15-2022)
@@ -135,7 +135,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 ## Release Notes
 
-### V1.0.5 (Release October 2 2022)
+### V1.0.5 - Release October 2 2022
 
 -	Fixed a typo when talking to the parent’s bedroom door in the player’s house on F2.
 
