@@ -252,32 +252,80 @@ Yacht - F1
 #-------------------------------
 [GAMBLER,Old Man]
 LoseText = Skiddadle already!!!
-Pokemon = MUNNA,6
+Pokemon = MUNNA,7
 #-------------------------------
 [SAILOR,Giuseppie]
 LoseText = I haven't seen a strong trainer like you in ages.
 Pokemon = MACHOP,7
-Pokemon = TIMBURR,7
+Pokemon = TIMBURR,8
 #-------------------------------
 [GENTLEMAN,Marx]
 LoseText = Im-Impossible!
-Pokemon = MAGIKARP,5
+Pokemon = MAGIKARP,7
 #-------------------------------
 [AROMALADY,Clara]
 LoseText = Fantastica!
-Pokemon = PSYDUCK,6
+Pokemon = PSYDUCK,8
 #-------------------------------
 [AROMALADY,Clara,1]
 LoseText = Fantastico!
-Pokemon = PSYDUCK,6
+Pokemon = PSYDUCK,8
 #-------------------------------
 [TWINS,Rose & Ruby]
 LoseText = Our supa sneaky surprize combo didn't work!?
-Pokemon = CATERPIE,6
-Pokemon = WEEDLE,6
-Pokemon = EKANS,8
+Pokemon = CATERPIE,7
+Pokemon = WEEDLE,7
+Pokemon = EKANS,9
+#-------------------------------
+Yacht - F1 Deck
+#-------------------------------
+[FISHERMAN,Frank]
+LoseText = Or is it?
+Pokemon = POLIWAG,8
+Pokemon = FINNEON,8
+#-------------------------------
+[SWIMMER2_M, Rick]
+LoseText = I almost drowned when I realised I lost!
+Pokemon = STARYU,9
+Pokemon = HORSEA,10
+#-------------------------------
+[SWIMMER2_M, Gregg]
+LoseText = My Pokémon!
+Pokemon = WINGULL,10
+#-------------------------------
+[SWIMMER_M, Ron]
+LoseText = It's my wife's fault!
+Pokemon = SHELLOS,9
+	Form = 1
+#-------------------------------
+[SWIMMER_F, Wendy]
+LoseText = ...
+Pokemon = SHELLOS,9
+#-------------------------------
+[TUBER_M, Toby]
+LoseText = One day I'll be as strong as you are!
+Pokemon = MUDKIP,9
+#-------------------------------
+Hester City Gym
+#-------------------------------
+[LEADER_Bergium,Bergium]
+Items = FULLRESTORE,FULLRESTORE
+LoseText = Very good.
+Pokemon = UMBREON,12
+Pokemon = MAGIKARP,14
+Pokemon = ZORUA,15
 #-------------------------------
 Route 1
+#-------------------------------
+[YOUNGSTER,Dave]
+LoseText = You got magic battle powers too!?
+Pokemon = TAILLOW,13
+Pokemon = ROOKIDEE,14
+#-------------------------------
+[CAMPERS,Jack & Ned]
+LoseText = We can't believe it!
+Pokemon = CHIKORITA,13
+Pokemon = TOTODILE,13
 #-------------------------------
 [BRIDGE_GUARDS,John & John]
 LoseText = We'll forgive you!
@@ -301,13 +349,6 @@ Pokemon = TORKOAL,17
 Pokemon = WARTORTLE,18
 Pokemon = CHEWTLE,19
 #-------------------------------
-[YOUNGSTER,Dave]
-LoseText = You got magic battle powers too!?
-Pokemon = SPHEAL,5
-Pokemon = SPHEAL,5
-Pokemon = PICHU,5
-Pokemon = PICHU,5
-#-------------------------------
 [PRINCIPAL_DUDE,Paul]
 LoseText = You prove your strength to me!
 Pokemon = CATERPIE,15
@@ -317,12 +358,7 @@ Pokemon = WEEDLE,15
 Pokemon = KAKUNA,18
 Pokemon = BEEDRILL,21
 #-------------------------------
-[LEADER_Brock,Brock]
-Items = FULLRESTORE,FULLRESTORE
-LoseText = Very good.
-Pokemon = GEODUDE,12
-Pokemon = ONIX,14
-Pokemon = GRAVELER,15
+
 #-------------------------------
 [LEADER_Misty,Misty]
 Items = FULLRESTORE,FULLRESTORE

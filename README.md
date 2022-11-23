@@ -25,6 +25,7 @@
   + [V.112.1 - Release November 14 2022](#V1121---Release-November-14-2022)
   + [V1.13.4 - Release November 16 2022](#V1134---Release-November-16-2022)
   + [V1.13.8 - Release November 22 2022](#V1138---Release-November-22-2022)
+
 - [Credits](#Credits)
 
 ## Story
@@ -317,7 +318,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited Route 2.
 
-### V1.13.8 - Release November 22 2022
+### V1.13.9 - Release November 22 2022
 
 - Edited and Finished Route 2.
 
@@ -326,6 +327,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added an event/quest on Route 2.
 
 - Edited Yacht F1 Deck.
+
+- Added trainers on the Yacht's F1 Deck.
 
 ## Credits:
 
