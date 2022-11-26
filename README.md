@@ -26,6 +26,7 @@
   + [V1.13.4 - Release November 16 2022](#V1134---Release-November-16-2022)
   + [V1.13.9 - Release November 22 2022](#V1139---Release-November-22-2022)
   + [V1.13.15 - Release November 26 2022](#V11315---Release-November-26-2022)
+  + [V1.14.0 - Release November 26 2022](#V1140---Release-November-27-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -343,6 +344,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added NPC's on both Hallways on the B1F of the yacht.
 
 - Made it possible to leave the Yacht after certain tasks are completed.
+
+### V1.14.0 - Release November 27 2022
+
+- Added a quest system.
 
 ## Credits:
 
