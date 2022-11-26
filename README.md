@@ -25,6 +25,7 @@
   + [V.112.1 - Release November 14 2022](#V1121---Release-November-14-2022)
   + [V1.13.4 - Release November 16 2022](#V1134---Release-November-16-2022)
   + [V1.13.9 - Release November 22 2022](#V1139---Release-November-22-2022)
+  + [V1.13.15 - Release November 26 2022](#V11315---Release-November-26-2022)
 - [Credits](#Credits)
 
 ## Story
