@@ -13,7 +13,7 @@
   + [V1.2.1 - Release October 14 2022](#V121---Release-October-14-2022)
   + [V1.3.2 - Release October 15 2022](#V132---Release-October-15-2022)
   + [V1.4.2 - Release October 17 2022](#V142---Release-October-17-2022)
-  + [V1.5.0 - Release October 20 2022](#V150---Release-October-20-2022)
+  + [V1.5.5 - Release October 20 2022](#V155---Release-October-20-2022)
   + [V1.6.1 - Release October 22 2022](#V161---Release-October-22-2022)
   + [V1.7.0 - Release October 25 2022](#V170---Release-October-25-2022)
   + [V1.8.1 - Release October 30 2022](#V181---Release-October-29-2022)
@@ -24,8 +24,7 @@
   + [V1.11.3 - Release November 12 2022](#V1113---Release-November-12-2022)
   + [V.112.1 - Release November 14 2022](#V1121---Release-November-14-2022)
   + [V1.13.4 - Release November 16 2022](#V1134---Release-November-16-2022)
-  + [V1.13.8 - Release November 22 2022](#V1138---Release-November-22-2022)
-
+  + [V1.13.9 - Release November 22 2022](#V1139---Release-November-22-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -166,7 +165,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 ### V1.3.2 - Release October 15 2022
 
-- Edited Tila Town.
+- Added Tila Town.
 
 - Edited Hester City.
 
@@ -188,13 +187,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added map transition between Flutford Town and Route 3.
 
-### V1.5.0 - Release October 20 2022
+### V1.5.5 - Release October 20 2022
+
+- Added a Seashore map underneath Route 3.
 
 - Edited Route 3.
 
 - Added Trainers and Items to Route 3.
-
-- Added a Seashore location underneath Route 3.
 
 - Added improved map transition events.
 
@@ -329,6 +328,20 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Edited Yacht F1 Deck.
 
 - Added trainers on the Yacht's F1 Deck.
+
+### V1.13.15 - Release November 26 2022
+
+- Edited the PokeCenter map on the yacht.
+
+- Edited the mart layout (graphic wise) for mart counters on the right.
+
+- Added NPC's in the PokeCenter on the yacht.
+
+- Added NPC's on the Deck on the B1F of the yacht.
+
+- Added NPC's on both Hallways on the B1F of the yacht.
+
+- Made it possible to leave the Yacht after certain tasks are completed.
 
 ## Credits:
 

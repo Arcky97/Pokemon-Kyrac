@@ -302,8 +302,8 @@ Pokemon = SHELLOS,9
 LoseText = ...
 Pokemon = SHELLOS,9
 #-------------------------------
-[TUBER_M, Toby]
-LoseText = One day I'll be as strong as you are!
+[TUBER2_M, Toby]
+LoseText = You are really strong!
 Pokemon = MUDKIP,9
 #-------------------------------
 Hester City Gym
