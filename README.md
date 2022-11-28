@@ -345,9 +345,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Made it possible to leave the Yacht after certain tasks are completed.
 
-### V1.14.0 - Release November 27 2022
+### V1.14.3 - Release November 27 2022
 
 - Added a quest system.
+
+- You get the PokeGear earlier now.
+
+- Several new quests have been made.
+
+- The PC in the house keeps the music on resetting the game.
 
 ## Credits:
 

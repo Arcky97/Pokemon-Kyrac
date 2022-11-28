@@ -13,18 +13,21 @@ BattleBack = field
 #-------------------------------
 [003]   # Player's House F1
 Name = \PN's house F1
-HealingSpot = 3,26,6
-MapPosition = 0,7,9
+MapPosition = 0,16,11
 SnapEdges = true
 #-------------------------------
 [004]   # Player's House Elevator
 Name = Player's House Elevator
-MapPosition = 0,7,9
+MapPosition = 0,16,11
 #-------------------------------
 [005]   # Player's House F3
 Name = Player's House F3
 MapPosition = 0,7,9
 SnapEdges = true
+#-------------------------------
+[006]   # Player's House Room 3
+Name = Player's House Room 3
+MapPosition = 0,16,11
 #-------------------------------
 [007]   # Trainer School F1
 Name = Trainer School
@@ -78,7 +81,7 @@ MapSize = 1,1
 Name = Yacht B1F
 SnapEdges = true
 #-------------------------------
-[022]   # \PN's House (Map not used)
+[022]
 Name = PN's Home
 Outdoor = true
 Bicycle = true
@@ -107,6 +110,7 @@ SnapEdges = true
 #-------------------------------
 [033]   # Player's House Room 1
 Name = \PN's Bedroom
+MapPosition = 0,16,11
 SnapEdges = true
 #-------------------------------
 [036]   # Yacht - F1 - Hallway
@@ -121,11 +125,11 @@ SnapEdges = true
 Name = Yacht F1
 SnapEdges = true
 #-------------------------------
-[039]   # Yacht - F2 - PokéCenter - F2
+[039]
 Name = Yacht F2
 SnapEdges = true
 #-------------------------------
-[040]   # Route 04
+[040]   # Route 04 New
 Name = Route 4
 Outdoor = true
 ShowArea = true
@@ -154,7 +158,7 @@ MapSize = 1,1
 #-------------------------------
 [043]   # Player's House F2
 Name = \PN's House F2
-MapPosition = 0,7,9
+MapPosition = 0,16,11
 SnapEdges = true
 #-------------------------------
 [044]   # Tila Town
@@ -357,7 +361,7 @@ BicycleAlways = false
 MapPosition = 1,12,10
 SnapEdges = true
 #-------------------------------
-[066]   # Farm
+[066]   # Farmer's Farm
 Name = A Farmer's farm
 Outdoor = true
 ShowArea = true
@@ -375,6 +379,7 @@ SnapEdges = true
 #-------------------------------
 [076]   # Player's House Room 2
 Name = Parent's Bedroom
+MapPosition = 0,16,11
 SnapEdges = true
 #-------------------------------
 [077]   # Player's House B3F
