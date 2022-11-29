@@ -355,6 +355,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - The PC in the house keeps the music on resetting the game.
 
+- Elevator events have been improved and made much shorter.
+
+- Edited Indigo Plateau (Dream map).
+
 ## Credits:
 
 Essentials: Maruno
