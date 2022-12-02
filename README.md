@@ -345,7 +345,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Made it possible to leave the Yacht after certain tasks are completed.
 
-### V1.14.7 - Release November 27 2022
+### V1.14.9 - Release November 27 2022
 
 - Added a quest system.
 
@@ -359,6 +359,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited Indigo Plateau (Dream map).
 
+- Added access to the pc through the pokegear (temporarly).
 ## Credits:
 
 Essentials: Maruno
