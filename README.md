@@ -26,7 +26,8 @@
   + [V1.13.4 - Release November 16 2022](#V1134---Release-November-16-2022)
   + [V1.13.9 - Release November 22 2022](#V1139---Release-November-22-2022)
   + [V1.13.15 - Release November 26 2022](#V11315---Release-November-26-2022)
-  + [V1.14.0 - Release November 27 2022](#V1140---Release-November-27-2022)
+  + [V1.14.10 - Release November 27 2022](#V11410---Release-November-27-2022)
+  + [V1.14.14 - Release December 3 2022](#V11414---Release-December-3-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -360,6 +361,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Edited Indigo Plateau (Dream map).
 
 - Added access to the boxes through the menu to view your team (outside of battle).
+
+### V1.14.14 - Release December 3 2022
+
+- Added more quests.
+
+- Edited the Lab scene.
+
+- Edited the Servant's room.
+
 ## Credits:
 
 Essentials: Maruno
