@@ -27,7 +27,7 @@
   + [V1.13.9 - Release November 22 2022](#V1139---Release-November-22-2022)
   + [V1.13.15 - Release November 26 2022](#V11315---Release-November-26-2022)
   + [V1.14.10 - Release November 27 2022](#V11410---Release-November-27-2022)
-  + [V1.14.16 - Release December 3 2022](#V11416---Release-December-3-2022)
+  + [V1.14.17 - Release December 3 2022](#V11417---Release-December-3-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -362,7 +362,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added access to the boxes through the menu to view your team (outside of battle).
 
-### V1.14.16 - Release December 3 2022
+### V1.14.17 - Release December 3 2022
 
 - Added more quests.
 
@@ -371,6 +371,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Edited the Servant's room.
 
 - Edited the Elevators events in the Radio Tower.
+
+- Edited several NPC's across the yacht.
 
 ## Credits:
 
