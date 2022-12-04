@@ -1,5 +1,8 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-[122,1] # Yacht - F1 - Outside
-OldRod,25
-    20,POLIWAG,5,8
+[122] # Yacht - F1 - Outside
+OldRod
+    30,MAGIKARP,5,8
+    25,LOTAD,7,9
+    25,MARILL,6,8
+    20,WOOPER,6,9
