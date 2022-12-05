@@ -378,6 +378,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Renamed and modified a lot of events.
 
+### V1.15.3 - Release December 5 2022
+
+- Added overworld Encounter system.
+
+- Added wild encounters on the Outside Deck of the yacht.
+
+- Added some NPC's on the Yacht's B1F's Hallway.
+
+- Edited some event names.
+
 ## Credits:
 
 Essentials: Maruno

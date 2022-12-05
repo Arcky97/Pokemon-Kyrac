@@ -26,3 +26,5 @@ UI_pokemart: line 250,261,311,329
 UI_options: line 20,32
 Messages: line 324
 TerrainTag: line 202-206
+UI_pokegear: line 204-219
+UI_pokeMartMirrored: copied UI_pokemart with some edits

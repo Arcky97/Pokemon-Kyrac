@@ -6,3 +6,5 @@ OldRod
     25,LOTAD,7,9
     25,MARILL,6,8
     20,WOOPER,6,9
+Land,21
+    100,WINGULL,5,9
