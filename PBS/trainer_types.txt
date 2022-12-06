@@ -413,6 +413,12 @@ Gender = Male
 BaseMoney = 50
 SkillLevel = 20
 #-------------------------------
+[YACHT_SECURITY]
+Name = Yacht Security
+Gender = Male
+BaseMoney = 72
+SkillLevel = 48
+#-------------------------------
 [RIVAL1_F]
 Name = Rival
 Gender = Female

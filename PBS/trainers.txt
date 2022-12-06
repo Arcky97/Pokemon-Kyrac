@@ -248,6 +248,18 @@ LoseText = You're a prodigy!
 Pokemon = AIPOM,7
 Pokemon = MIMEJR,8
 #-------------------------------
+[YACHT_SECURITY,Benjamin]
+LoseText = You are a tough one!
+Pokemon = GROWLITHE,6
+#-------------------------------
+[YACHT_SECURITY,Benjamin,1]
+LoseText = You are a tough one!
+Pokemon = GROWLITHE,8
+#-------------------------------
+[YACHT_SECURITY,Benjamin,2]
+LoseText = You are a tough one!
+Pokemon = GROWLITHE,10
+#-------------------------------
 Yacht - F1
 #-------------------------------
 [GAMBLER,Old Man]
