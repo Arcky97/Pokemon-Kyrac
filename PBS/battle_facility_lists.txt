@@ -1,3 +1,0 @@
-﻿[DefaultTrainerList]
-Trainers = battle_tower_trainers.txt
-Pokemon = battle_tower_pokemon.txt
