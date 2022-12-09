@@ -81,10 +81,12 @@ MapSize = 1,1
 Name = Yacht B1F
 SnapEdges = true
 #-------------------------------
-[022]
-Name = PN's Home
-Outdoor = true
-Bicycle = true
+[022]   # Yacht - B1F - Cabins
+Name = Cabins
+Outdoor = false
+ShowArea = false
+Bicycle = false
+BicycleAlways = false
 MapPosition = 0,7,9
 SnapEdges = true
 #-------------------------------
@@ -102,6 +104,14 @@ SnapEdges = true
 #-------------------------------
 [028]   # Yacht - B1F - Locked Room
 Name = Yacht B1F
+SnapEdges = true
+#-------------------------------
+[030]   # Yacht - B1F - GameCorner
+Name = Game Corner
+Outdoor = false
+ShowArea = false
+Bicycle = false
+BicycleAlways = false
 SnapEdges = true
 #-------------------------------
 [032]   # Yacht - B1F - Entrance
@@ -125,7 +135,7 @@ SnapEdges = true
 Name = Yacht F1
 SnapEdges = true
 #-------------------------------
-[039]
+[039]   # Yacht - B1F - Jojo/Gym
 Name = Yacht F2
 SnapEdges = true
 #-------------------------------

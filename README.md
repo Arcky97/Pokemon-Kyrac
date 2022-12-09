@@ -29,7 +29,7 @@
   + [V1.8.6A - Release November 27 2022](#V186A---Release-November-27-2022)
   + [V1.8.4B - Release December 3 2022](#V184B---Release-December-3-2022)
   + [V1.9.6A - Release December 6 2022](#V196A---Release-December-6-2022)
-  + [V1.9.?B - Release December 9 2022](#19?B---Release-December-9-2022)
+  + [V1.9.6B - Release December 9 2022](#196B---Release-December-9-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -396,9 +396,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Small edits to other maps of the Yacht.
 
-### V1.9.?B - Release December 9 2022
+### V1.9.6B - Release December 9 2022
 
+- Made a few small tile improvements on the Route 4 map.
 
+- Added a game corner to the yacht.
+
+- Added several things on the yacht map.
 
 ## Credits:
 
