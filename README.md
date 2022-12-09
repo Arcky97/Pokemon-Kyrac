@@ -8,27 +8,28 @@
   + [New Forms](#New-Forms)
 - [Future Plans](#Future-Plans)
 - [Release Notes](#Release-Notes)
-  + [V1.0.5 - Release October 2 2022](#V105---Release-October-2-2022)
-  + [V1.1.2 - Release October 8 2022](#V112---Release-October-8-2022)
-  + [V1.2.1 - Release October 14 2022](#V121---Release-October-14-2022)
-  + [V1.3.2 - Release October 15 2022](#V132---Release-October-15-2022)
-  + [V1.4.2 - Release October 17 2022](#V142---Release-October-17-2022)
-  + [V1.5.5 - Release October 20 2022](#V155---Release-October-20-2022)
-  + [V1.6.1 - Release October 22 2022](#V161---Release-October-22-2022)
-  + [V1.7.0 - Release October 25 2022](#V170---Release-October-25-2022)
-  + [V1.8.1 - Release October 30 2022](#V181---Release-October-29-2022)
-  + [V1.9.0 - Release November 4 2022](#V190---Release-November-4-2022)
-  + [V1.9.4 - Release November 6 2022](#V194---Release-November-6-2022)
-  + [V1.9.11 - Release November 9 2022](#V1911---Release-November-9-2022)
-  + [V1.10.3 - Release November 11 2022](#V1103---Release-November-11-2022)
-  + [V1.11.3 - Release November 12 2022](#V1113---Release-November-12-2022)
-  + [V.112.1 - Release November 14 2022](#V1121---Release-November-14-2022)
-  + [V1.13.4 - Release November 16 2022](#V1134---Release-November-16-2022)
-  + [V1.13.9 - Release November 22 2022](#V1139---Release-November-22-2022)
-  + [V1.13.15 - Release November 26 2022](#V11315---Release-November-26-2022)
-  + [V1.14.10 - Release November 27 2022](#V11410---Release-November-27-2022)
-  + [V1.14.19 - Release December 3 2022](#V11419---Release-December-3-2022)
-   + [V1.15.7 - Release December 6 2022](#V1157---Release-December-6-2022)
+  + [V1.0.5A - Release October 2 2022](#V105A---Release-October-2-2022)
+  + [V1.1.3A - Release October 8 2022](#V113A---Release-October-8-2022)
+  + [V1.2.5A - Release October 14 2022](#V125A---Release-October-14-2022)
+  + [V1.3.1A - Release October 15 2022](#V131A---Release-October-15-2022)
+  + [V1.4.8A - Release October 17 2022](#V148A---Release-October-17-2022)
+  + [V1.5.5A - Release October 20 2022](#V155A---Release-October-20-2022)
+  + [V1.6.8A - Release October 22 2022](#V168A---Release-October-22-2022)
+  + [V1.7.3A - Release October 25 2022](#V173A---Release-October-25-2022)
+  + [V1.7.6A - Release October 30 2022](#V176A---Release-October-29-2022)
+  + [V1.7.1B - Release November 4 2022](#V171B---Release-November-4-2022)
+  + [V1.7.5B - Release November 6 2022](#V175B---Release-November-6-2022)
+  + [V1.7.2C - Release November 9 2022](#V172C---Release-November-9-2022)
+  + [V1.7.7C - Release November 11 2022](#V177C---Release-November-11-2022)
+  + [V1.7.6D - Release November 12 2022](#V176D---Release-November-12-2022)
+  + [V1.7.1E - Release November 14 2022](#V171E---Release-November-14-2022)
+  + [V1.7.6E - Release November 16 2022](#V176E---Release-November-16-2022)
+  + [V1.7.2F - Release November 22 2022](#V172F---Release-November-22-2022)
+  + [V1.7.8F - Release November 26 2022](#V178F---Release-November-26-2022)
+  + [V1.8.6A - Release November 27 2022](#V186A---Release-November-27-2022)
+  + [V1.8.4B - Release December 3 2022](#V184B---Release-December-3-2022)
+  + [V1.9.6A - Release December 6 2022](#V196A---Release-December-6-2022)
+  + [V1.9.?B - Release December 9 2022](#19?B---Release-December-9-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -139,7 +140,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 ## Release Notes
 
-### V1.0.5 - Release October 2 2022
+### V1.0.5A - Release October 2 2022
 
 -	Fixed a typo when talking to the parent’s bedroom door in the player’s house on F2.
 
@@ -151,7 +152,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 -	Fixed an issue that the player can’t enter the lab again.
 
-### V1.1.2 - Release October 8 2022
+### V1.1.3A - Release October 8 2022
 
 - Added Route 2 and fixed several bugs and issues on that map.
 
@@ -159,7 +160,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Other small improvements have been made.
 
-### V1.2.1 - Release October 14 2022
+### V1.2.5A - Release October 14 2022
 
 - Added Farm map (temporarly name) connecting with Route 2 and Tila Town.
 
@@ -167,7 +168,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed Several tile bugs on Route 2.
 
-### V1.3.2 - Release October 15 2022
+### V1.3.1A - Release October 15 2022
 
 - Added Tila Town.
 
@@ -179,7 +180,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited the town map.
 
-### V1.4.2 - Release October 17 2022
+### V1.4.8A - Release October 17 2022
 
 - Added Flutford Town.
 
@@ -191,7 +192,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added map transition between Flutford Town and Route 3.
 
-### V1.5.5 - Release October 20 2022
+### V1.5.5A - Release October 20 2022
 
 - Added a Seashore map underneath Route 3.
 
@@ -205,7 +206,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added Signs with information and Trainer tips.
 
-### V1.6.1 - Release October 22 2022
+### V1.6.8A - Release October 22 2022
 
 - Edited Route 3 (again).
 
@@ -215,7 +216,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Most of the Exterior maps have been added (just for me).
 
-### V1.7.0 - Release October 25 2022
+### V1.7.3A - Release October 25 2022
 
 - The Radio Tower on Route Intersection has now a Poké Center and several mart floors.
 
@@ -227,7 +228,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Boat and inside tilesets have been edited.
 
-### V1.8.1 - Release October 30 2022
+### V1.7.6A - Release October 30 2022
 
 - events and interactions have been added to the Dining Room map.
 
@@ -235,7 +236,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - fixed the exit from the poke center on the yacht to Hester City.
 
-### V1.9.0 - Release November 4 2022
+### V1.7.1B - Release November 4 2022
 
 - Added the new yacht on the player's home map.
 
@@ -245,7 +246,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Remade an event in Hester City.
 
-### V1.9.4 - Release November 6 2022
+### V1.7.5B - Release November 6 2022
 
 - Edited the map transition between Route 2 and Route Intersection.
 
@@ -255,7 +256,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited the map transition between Route 1 and Hester City.
 
-### V1.9.11 - Release November 9 2022
+### V1.7.2C - Release November 9 2022
 
 - Edited first Rival battle in the lab on the yacht.
 
@@ -269,7 +270,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added a connection with Route 5 in Tila Town.
 
-### V1.10.3 - Release November 11 2022
+### V1.7.7C - Release November 11 2022
 
 - Edited Route 4 (it looks a lot different now).
 
@@ -281,7 +282,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited a line Prof. Oak says after defeating your rivals for the first time.
 
-### V1.11.3 - Release November 12 2022
+### V1.7.6D - Release November 12 2022
 
 - Continues editing Route 4.
 
@@ -299,7 +300,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited Cycling Bridge on Route 2.
 
-### V1.12.1 - Release November 14 2022
+### V1.7.1E - Release November 14 2022
 
 - NPC's added on the F1 Hallway of the Yacht.
 
@@ -309,7 +310,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fused the PokeCenter and Pokemart on the Yacht.
 
-### V1.13.4 - Release November 16 2022
+### V1.7.6E - Release November 16 2022
 
 - Edited the Dinning room map on the yacht.
 
@@ -321,7 +322,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited Route 2.
 
-### V1.13.9 - Release November 22 2022
+### V1.7.2F - Release November 22 2022
 
 - Edited and Finished Route 2.
 
@@ -333,7 +334,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added trainers on the Yacht's F1 Deck.
 
-### V1.13.15 - Release November 26 2022
+### V1.7.8F - Release November 26 2022
 
 - Edited the PokeCenter map on the yacht.
 
@@ -347,7 +348,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Made it possible to leave the Yacht after certain tasks are completed.
 
-### V1.14.10 - Release November 27 2022
+### V1.8.6A - Release November 27 2022
 
 - Added a quest system.
 
@@ -363,7 +364,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added access to the boxes through the menu to view your team (outside of battle).
 
-### V1.14.19 - Release December 3 2022
+### V1.8.4B - Release December 3 2022
 
 - Added more quests.
 
@@ -379,7 +380,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Renamed and modified a lot of events.
 
-### V1.15.7 - Release December 6 2022
+### V1.9.6A - Release December 6 2022
 
 - Added overworld Encounter system.
 
@@ -394,6 +395,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added more cabins in the Yacht
 
 - Small edits to other maps of the Yacht.
+
+### V1.9.?B - Release December 9 2022
+
+
 
 ## Credits:
 
