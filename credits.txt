@@ -28,3 +28,4 @@ Messages: line 324
 TerrainTag: line 202-206
 UI_pokegear: line 204-219
 UI_pokeMartMirrored: copied UI_pokemart with some edits
+MessageConfig: Line 345-362 (more colors added)
