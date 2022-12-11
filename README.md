@@ -409,6 +409,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Improvements have been made to colors used in messages of NPC's
 
+- A few trainers and NPCs have been added across the yacht.
+
 ## Credits:
 
 Essentials: Maruno
