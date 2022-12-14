@@ -411,6 +411,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - A few trainers and NPCs have been added across the yacht.
 
+- More cabins have been added on the B1F of the floor.
+
 - A mart like in Slateport City (RSE) has been added to Hester City.
 
 ## Credits:
