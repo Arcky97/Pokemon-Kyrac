@@ -222,46 +222,6 @@ Pokemon = TIMBURR,5
 #-------------------------------
 Yacht - B1F
 #-------------------------------
-[BEAUTY,Liz]
-LoseText = Get out of my room!
-Pokemon = NIDORANfE,6
-Pokemon = HOPPIP,5
-#-------------------------------
-[BLACKBELT,Ralph]
-LoseText = I have no words for what I just witnessed!
-Pokemon = MANKEY,7
-#-------------------------------
-[CRUSHGIRL,Cathy]
-LoseText = This battle was truely amazing!
-Pokemon = GRIMER,6
-Pokemon = WOOPER,6
-Pokemon = ODDISH,7
-#-------------------------------
-[GENTLEMAN,Donald]
-LoseText = My relic!
-Pokemon = TIRTOUGA,6
-    Gender = male
-    Nature = GENTLE
-#-------------------------------
-[JUGGLER,James]
-LoseText = You're a prodigy!
-Pokemon = AIPOM,7
-Pokemon = MIMEJR,8
-#-------------------------------
-[YACHT_SECURITY,Benjamin]
-LoseText = You are a tough one!
-Pokemon = GROWLITHE,6
-#-------------------------------
-[YACHT_SECURITY,Benjamin,1]
-LoseText = You are a tough one!
-Pokemon = GROWLITHE,8
-#-------------------------------
-[YACHT_SECURITY,Benjamin,2]
-LoseText = You are a tough one!
-Pokemon = GROWLITHE,10
-#-------------------------------
-Yacht - F1
-#-------------------------------
 [GAMBLER,Old Man]
 LoseText = Skiddadle already!!!
 Pokemon = MUNNA,7
@@ -288,6 +248,46 @@ LoseText = Our supa sneaky surprize combo didn't work!?
 Pokemon = CATERPIE,7
 Pokemon = WEEDLE,7
 Pokemon = EKANS,9
+#-------------------------------
+Yacht - F1
+#-------------------------------
+[GENTLEMAN,Donald]
+LoseText = My relic!
+Pokemon = TIRTOUGA,6
+    Gender = male
+    Nature = GENTLE
+#-------------------------------
+[JUGGLER,James]
+LoseText = You're a prodigy!
+Pokemon = AIPOM,7
+Pokemon = MIMEJR,8
+#-------------------------------
+[CRUSHGIRL,Cathy]
+LoseText = This battle was truely amazing!
+Pokemon = GRIMER,6
+Pokemon = WOOPER,6
+Pokemon = ODDISH,7
+#-------------------------------
+[BLACKBELT,Ralph]
+LoseText = I have no words for what I just witnessed!
+Pokemon = MANKEY,7
+#-------------------------------
+[BEAUTY,Liz]
+LoseText = Get out of my room!
+Pokemon = NIDORANfE,6
+Pokemon = HOPPIP,5
+#-------------------------------
+[YACHT_SECURITY,Benjamin]
+LoseText = You are a tough one!
+Pokemon = GROWLITHE,6
+#-------------------------------
+[YACHT_SECURITY,Benjamin,1]
+LoseText = You are a tough one!
+Pokemon = GROWLITHE,8
+#-------------------------------
+[YACHT_SECURITY,Benjamin,2]
+LoseText = You are a tough one!
+Pokemon = GROWLITHE,10
 #-------------------------------
 Yacht - F1 Deck
 #-------------------------------
