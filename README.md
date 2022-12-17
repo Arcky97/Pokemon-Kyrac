@@ -31,7 +31,7 @@
   + [V1.9.6A - Release December 6 2022](#V196A---Release-December-6-2022)
   + [V1.9.6B - Release December 9 2022](#196B---Release-December-9-2022)
   + [V1.9.4C - Release December 11 2022](#194C---Release-December-11-2022)
-  + [V1.9.5E - Release December 15 2022](#194C---Release-December-15-2022)
+  + [V1.9.5E - Release December 14 2022](#194C---Release-December-14-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -416,7 +416,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - A mart like in Slateport City (RSE) has been added to Hester City.
 
-### V1.9.5E - Release December 15 2022
+### V1.9.5E - Release December 14 2022
 
 - The beach in Hester City has been edited.
 
