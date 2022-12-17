@@ -30,7 +30,7 @@
   + [V1.8.4B - Release December 3 2022](#V184B---Release-December-3-2022)
   + [V1.9.6A - Release December 6 2022](#V196A---Release-December-6-2022)
   + [V1.9.6B - Release December 9 2022](#196B---Release-December-9-2022)
-  + [V1.9.6C - Release December 11 2022](#196C---Release-December-11-2022)
+  + [V1.9.9C - Release December 11 2022](#199C---Release-December-11-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -405,7 +405,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added several things on the yacht map.
 
-### V1.9.6C - Release December 11 2022
+### V1.9.9C - Release December 11 2022
 
 - Improvements have been made to colors used in messages of NPC's
 
@@ -416,6 +416,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - A mart like in Slateport City (RSE) has been added to Hester City.
 
 - The beach in Hester City has been edited.
+
+- More trainers added on the yacht.
 
 ## Credits:
 

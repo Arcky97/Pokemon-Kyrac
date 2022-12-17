@@ -249,6 +249,17 @@ Pokemon = CATERPIE,7
 Pokemon = WEEDLE,7
 Pokemon = EKANS,9
 #-------------------------------
+[BIKER,Brent]
+LoseText = What! How?
+Pokemon = MAGIKARP,14
+	Name = Gyarados
+#-------------------------------
+[BUGCATCHER, Matthew]
+LoseText = Wow, you are pretty strong!
+Pokemon = SCATTERBUG,8
+Pokemon = VENONAT,8
+Pokemon = DUSTOX,9
+#-------------------------------
 Yacht - F1
 #-------------------------------
 [GENTLEMAN,Donald]
