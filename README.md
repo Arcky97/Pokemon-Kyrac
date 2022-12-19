@@ -32,6 +32,7 @@
   + [V1.9.6B - Release December 9 2022](#196B---Release-December-9-2022)
   + [V1.9.4C - Release December 11 2022](#194C---Release-December-11-2022)
   + [V1.9.5E - Release December 14 2022](#194C---Release-December-14-2022)
+  + [V1.9.1F - Release December 17 2022](#194C---Release-December-17-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -427,6 +428,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Some items have been added around Hester City
 
 - Some trainers and NPC's have been added to Hester City.
+
+### V1.9.1F - Release December 17 2022
+
+- Added more Trainers in the cabins on the yacht.
+
+- Fixed several small bugs
+
+- Created a second Player's home garden map with a bigger maze.
 
 ## Credits:
 

@@ -443,6 +443,12 @@ Gender = Male
 BaseMoney = 30
 BattleBGM = hgssgrunt
 #-------------------------------
+[OLD_MAN]
+Name = Old Man
+Gender = Male
+BaseMoney = 45
+SkillLevel = 38
+#-------------------------------
 [LEADER_Bergium]
 Name = Gym Leader
 Gender = Male

@@ -220,7 +220,7 @@ Items = POTION
 LoseText = You were just lucky!
 Pokemon = TIMBURR,5
 #-------------------------------
-Yacht - B1F
+Yacht - B1F - Cabins
 #-------------------------------
 [GAMBLER,Old Man]
 LoseText = Skiddadle already!!!
@@ -260,7 +260,7 @@ Pokemon = SCATTERBUG,8
 Pokemon = VENONAT,8
 Pokemon = DUSTOX,9
 #-------------------------------
-Yacht - F1
+Yacht - F1 - Cabins
 #-------------------------------
 [GENTLEMAN,Donald]
 LoseText = My relic!
@@ -300,7 +300,37 @@ Pokemon = GROWLITHE,8
 LoseText = You are a tough one!
 Pokemon = GROWLITHE,10
 #-------------------------------
-Yacht - F1 Deck
+[YOUNGSTER,Simon]
+LoseText = Oof, that one hurts!
+Pokemon = EEVEE,9
+Pokemon = SLAKOTH,8
+#-------------------------------
+[OLD_MAN,Blaime]
+LoseText = I'm nothing compared to my brother!
+Pokemon = NUMEL,9
+Pokemon = HOUNDOUR,9
+Pokemon = LITWICK,10
+#-------------------------------
+[YOUNGSTER,Jill]
+LoseText = This was a lot of fun!
+Pokemon = BUIZEL,7
+Pokemon = TEPIG,8
+#-------------------------------
+[AROMALADY,Lori]
+LoseText = Oh my!
+Pokemon = STARMIE,7
+#-------------------------------
+[COOLTRAINER_F,Leona]
+LoseText = You are a though one!
+Pokemon = DARUMAKA,8
+Pokemon = STUFFUL,8
+#-------------------------------
+[COOLTRAINER_M,Tyson]
+LoseText = You are really strong!
+Pokemon = LITLEO,8
+Pokemon = CHEWTLE,8
+#-------------------------------
+Yacht - F1 - Deck
 #-------------------------------
 [FISHERMAN,Frank]
 LoseText = Or is it?
