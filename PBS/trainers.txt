@@ -288,15 +288,15 @@ LoseText = Get out of my room!
 Pokemon = NIDORANfE,6
 Pokemon = HOPPIP,5
 #-------------------------------
-[YACHT_SECURITY,Benjamin]
+[YACHTGUARD,Benjamin]
 LoseText = You are a tough one!
 Pokemon = GROWLITHE,6
 #-------------------------------
-[YACHT_SECURITY,Benjamin,1]
+[YACHTGUARD,Benjamin,1]
 LoseText = You are a tough one!
 Pokemon = GROWLITHE,8
 #-------------------------------
-[YACHT_SECURITY,Benjamin,2]
+[YACHTGUARD,Benjamin,2]
 LoseText = You are a tough one!
 Pokemon = GROWLITHE,10
 #-------------------------------
@@ -305,7 +305,7 @@ LoseText = Oof, that one hurts!
 Pokemon = EEVEE,9
 Pokemon = SLAKOTH,8
 #-------------------------------
-[OLD_MAN,Blaime]
+[OLDMAN,Blaime]
 LoseText = I'm nothing compared to my brother!
 Pokemon = NUMEL,9
 Pokemon = HOUNDOUR,9
@@ -318,7 +318,7 @@ Pokemon = TEPIG,8
 #-------------------------------
 [AROMALADY,Lori]
 LoseText = Oh my!
-Pokemon = STARMIE,7
+Pokemon = STARYU,7
 #-------------------------------
 [COOLTRAINER_F,Leona]
 LoseText = You are a though one!
@@ -358,6 +358,14 @@ Pokemon = SHELLOS,9
 [TUBER2_M, Toby]
 LoseText = You are really strong!
 Pokemon = MUDKIP,9
+#-------------------------------
+Hester City Forest
+#-------------------------------
+[BUGCATCHER, Matthew,1]
+LoseText = Wow, you are pretty strong!
+Pokemon = SCATTERBUG,8
+Pokemon = VENONAT,8
+Pokemon = DUSTOX,9
 #-------------------------------
 Hester City Gym
 #-------------------------------

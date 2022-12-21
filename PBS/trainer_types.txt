@@ -413,7 +413,7 @@ Gender = Male
 BaseMoney = 50
 SkillLevel = 20
 #-------------------------------
-[YACHT_SECURITY]
+[YACHTGUARD]
 Name = Yacht Security
 Gender = Male
 BaseMoney = 72
@@ -443,7 +443,7 @@ Gender = Male
 BaseMoney = 30
 BattleBGM = hgssgrunt
 #-------------------------------
-[OLD_MAN]
+[OLDMAN]
 Name = Old Man
 Gender = Male
 BaseMoney = 45
