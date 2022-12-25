@@ -31,8 +31,10 @@
   + [V1.9.6A - Release December 6 2022](#V196A---Release-December-6-2022)
   + [V1.9.6B - Release December 9 2022](#196B---Release-December-9-2022)
   + [V1.9.4C - Release December 11 2022](#194C---Release-December-11-2022)
-  + [V1.9.5E - Release December 14 2022](#194C---Release-December-14-2022)
-  + [V1.9.1F - Release December 17 2022](#194C---Release-December-17-2022)
+  + [V1.9.5E - Release December 14 2022](#195E---Release-December-14-2022)
+  + [V1.9.1F - Release December 17 2022](#191F---Release-December-17-2022)
+  + [V1.9.2G - Release December 21 2022](#192G---Release-December-21-2022)
+  + [V1.9.9G - Release December 25 2022](#199G---Release-December-25-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -436,6 +438,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed several small bugs
 
 - Created a second Player's home garden map with a bigger maze.
+
+### V1.9.2G - Release December 21 2022
+
+- Fixed an issue with the player being able to leave the player's room before having the PokeGear
+
+### V1.9.9G - Release December 25 2022
+
+- Added some code to the modern quest system so the stages advance silencly now too.
 
 ## Credits:
 

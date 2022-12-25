@@ -80,4 +80,34 @@ module QuestModule
     :QuestDescription => "Explore the yacht the way you want but you'll need to talk to both your rivals, defeat at least 5 trainers and receive the Oldrod to arrive in Hester City.",
     :RewardString => "You'll arrive at your destination"
   }
+
+  Quest8 = {
+    :ID => "8",
+    :Name => "Talk to trees",
+    :QuestGiver => "Yourself",
+    :Stage1 => "Talk to 10 trees (0/10)",
+    :Stage2 => "Talk to 10 trees (1/10)",
+    :Stage3 => "Talk to 10 trees (2/10)",
+    :Stage4 => "Talk to 10 trees (3/10)",
+    :Stage5 => "Talk to 10 trees (4/10)",
+    :Stage6 => "Talk to 10 trees (5/10)",
+    :Stage7 => "Talk to 10 trees (6/10)",
+    :Stage8 => "Talk to 10 trees (7/10)",
+    :Stage9 => "Talk to 10 trees (8/10)",
+    :Stage10 => "Talk to 10 trees (9/10)",
+    :Stage11 => "Talk to 10 trees (10/10)",
+    :Location1 => "Your Garden",
+    :Location2 => "Your Garden",
+    :Location3 => "Your Garden",
+    :Location4 => "Your Garden",
+    :Location5 => "Your Garden",
+    :Location6 => "Your Garden",
+    :Location7 => "Your Garden",
+    :Location8 => "Your Garden",
+    :Location9 => "Your Garden",
+    :Location10 => "Your Garden",
+    :Location11 => "Your Garden",
+    :QuestDescription => "This is just a Test for a Quest to Advance quietly to the next stage upon completing a stage. If this works, I'm a genius of the copy-paste ;)",
+    :RewardString => "You are now the Genius of the Copy-Paste!!"
+  }
 end

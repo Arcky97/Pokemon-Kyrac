@@ -165,6 +165,28 @@ class Player_Quests
       @active_quests.push(questNew)
     end
   end
+
+  def advanceSilentQuestToStage(quest,stageNum,color,story)
+    if !quest.is_a?(Symbol)
+      raise _INTL("The 'quest' argument should be a symbol, e.g. ':Quest1'.")
+    end
+    found = false
+    for i in 0...@active_quests.length
+      if @active_quests[i].id == quest
+        @active_quests[i].stage = stageNum
+        @active_quests[i].color = color if color != nil
+        @active_quests[i].new = true # Setting this back to true makes the "!" icon appear when the quest updates
+        found = true
+      end
+      return if found
+    end
+    if !found
+      color = colorQuest(nil) if color == nil
+      questNew = Quest.new(quest,color,story)
+      questNew.stage = stageNum
+      @active_quests.push(questNew)
+    end
+  end
 end
 
 #===============================================================================
@@ -211,6 +233,12 @@ end
 def advanceQuestToStage(quest,stageNum,color=nil,story=false)
   return if !$PokemonGlobal
   $PokemonGlobal.quests.advanceQuestToStage(quest,stageNum,color,story)
+end
+
+# Helper function for advancing silence quests to given stage
+def advanceSilentQuestToStage(quest,stageNum,color=nil,story=false)
+  return if !$PokemonGlobal
+  $PokemonGlobal.quests.advanceSilentQuestToStage(quest,stageNum,color,story)
 end
 
 # Get symbolic names of active quests

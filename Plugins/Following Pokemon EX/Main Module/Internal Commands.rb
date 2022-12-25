@@ -73,7 +73,9 @@ module FollowingPkmn
         pbMessage(_INTL("\\me[{1}]{3} found a \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename))
       end
       pbMessage(_INTL("You put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
-         itemname, pocket, PokemonBag.pocket_names[pocket]))
+        itemname, pocket, PokemonBag.pocket_names[pocket - 1]))
+      #pbMessage(_INTL("You put the {1} in\\nyour Bag's <icon=bagPocket{2}>\\c[1]{3}\\c[0] pocket.",
+      #  itemname, pocket, PokemonBag.pocket_names[pocket - 1]))
       $PokemonGlobal.follower_hold_item = false
       $PokemonGlobal.time_taken         = 0
       return true
