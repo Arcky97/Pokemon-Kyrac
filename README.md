@@ -152,7 +152,7 @@ V1.0.0A
  | |->maps and features added.
  |->Releases.
 
-### V0.0.0E - Release October 2 2022
+### V0.0.0E - Release October 2 2022 ([Go up](#Release-Notes))
 
 -	Fixed a typo when talking to the parent’s bedroom door in the player’s house on F2.
 
