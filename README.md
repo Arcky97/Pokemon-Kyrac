@@ -8,7 +8,7 @@
   + [New Forms](#New-Forms)
 - [Future Plans](#Future-Plans)
 - [Release Notes](#Release-Notes)
-  + [Demo 1 Release Notes and Download](url:https://github.com/Arcky97/Pokemon-Kyrac/tree/V0.12.1F-Demo-1)
+  + [Demo 1 Release Notes and Download](https://github.com/Arcky97/Pokemon-Kyrac/tree/V0.12.1F-Demo-1)
   + [V1.0.1B - Release December 21 2022](#V101B---Release-December-21-2022)
   + [V1.0.2H - Release December 25 2022](#V102H---Release-December-25-2022)
 - [Credits](#Credits)
