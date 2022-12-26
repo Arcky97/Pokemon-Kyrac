@@ -10,7 +10,7 @@
 - [Release Notes](#Release-Notes)
   + [Demo 1 Release Notes and Download](https://github.com/Arcky97/Pokemon-Kyrac/tree/V0.12.1F-Demo-1)
   + [V1.0.1B - Release December 21 2022](#V101B---Release-December-21-2022)
-  + [V1.1.2F - Release December 25 2022](#V112F---Release-December-25-2022)
+  + [V1.1.3F - Release December 25 2022](#V113F---Release-December-25-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -127,7 +127,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added some code to the modern quest system so the stages advance silencly now too.
 
-### V1.1.2F - Release December 25 2022
+### V1.1.3F - Release December 25 2022
 
 - Added a small script that creates a counter window for certain quests.
 
@@ -144,6 +144,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - fixed an issue with pokemon spawning on top of the building on the F1 deck of the yacht.
 
 - Added the counter to the Maze Quest
+
+- When you find money in trees, a window shows your money and adds it.
 
 ## Credits:
 
