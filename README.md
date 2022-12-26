@@ -8,34 +8,34 @@
   + [New Forms](#New-Forms)
 - [Future Plans](#Future-Plans)
 - [Release Notes](#Release-Notes)
-  + [V1.0.5A - Release October 2 2022](#V105A---Release-October-2-2022)
-  + [V1.1.3A - Release October 8 2022](#V113A---Release-October-8-2022)
-  + [V1.2.5A - Release October 14 2022](#V125A---Release-October-14-2022)
-  + [V1.3.1A - Release October 15 2022](#V131A---Release-October-15-2022)
-  + [V1.4.8A - Release October 17 2022](#V148A---Release-October-17-2022)
-  + [V1.5.5A - Release October 20 2022](#V155A---Release-October-20-2022)
-  + [V1.6.8A - Release October 22 2022](#V168A---Release-October-22-2022)
-  + [V1.7.3A - Release October 25 2022](#V173A---Release-October-25-2022)
-  + [V1.7.6A - Release October 30 2022](#V176A---Release-October-29-2022)
-  + [V1.7.1B - Release November 4 2022](#V171B---Release-November-4-2022)
-  + [V1.7.5B - Release November 6 2022](#V175B---Release-November-6-2022)
-  + [V1.7.2C - Release November 9 2022](#V172C---Release-November-9-2022)
-  + [V1.7.7C - Release November 11 2022](#V177C---Release-November-11-2022)
-  + [V1.7.6D - Release November 12 2022](#V176D---Release-November-12-2022)
-  + [V1.7.1E - Release November 14 2022](#V171E---Release-November-14-2022)
-  + [V1.7.6E - Release November 16 2022](#V176E---Release-November-16-2022)
-  + [V1.7.2F - Release November 22 2022](#V172F---Release-November-22-2022)
-  + [V1.7.8F - Release November 26 2022](#V178F---Release-November-26-2022)
-  + [V1.8.6A - Release November 27 2022](#V186A---Release-November-27-2022)
-  + [V1.8.4B - Release December 3 2022](#V184B---Release-December-3-2022)
-  + [V1.9.6A - Release December 6 2022](#V196A---Release-December-6-2022)
-  + [V1.9.6B - Release December 9 2022](#196B---Release-December-9-2022)
-  + [V1.9.4C - Release December 11 2022](#194C---Release-December-11-2022)
-  + [V1.9.5E - Release December 14 2022](#195E---Release-December-14-2022)
-  + [V1.9.1F - Release December 17 2022](#191F---Release-December-17-2022)
-
-  + [V1.9.2G - Release December 21 2022](#192G---Release-December-21-2022)
-  + [V1.9.9G - Release December 25 2022](#199G---Release-December-25-2022)
+  + [V0.0.0E - Release October 2 2022](#V000E---Release-October-2-2022)
+  + [V0.1.2I - Release October 8 2022](#V012I---Release-October-8-2022)
+  + [V0.2.1D - Release October 14 2022](#V021D---Release-October-14-2022)
+  + [V0.3.2J - Release October 15 2022](#V032J---Release-October-15-2022)
+  + [V0.4.2H - Release October 17 2022](#V042H---Release-October-17-2022)
+  + [V0.5.5D - Release October 20 2022](#V055D---Release-October-20-2022)
+  + [V0.5.9C - Release October 22 2022](#V059C---Release-October-22-2022)
+  + [V0.6.6C - Release October 25 2022](#V066C---Release-October-25-2022)
+  + [V0.6.8B - Release October 30 2022](#V068B---Release-October-29-2022)
+  + [V0.6.12F - Release November 4 2022](#V0612F---Release-November-4-2022)
+  + [V0.6.16I - Release November 6 2022](#V0616I---Release-November-6-2022)
+  + [V0.6.22E - Release November 9 2022](#V0622E---Release-November-9-2022)
+  + [V0.6.27D - Release November 11 2022](#V0627D---Release-November-11-2022)
+  + [V0.6.35C - Release November 12 2022](#V0635C---Release-November-12-2022)
+  + [V0.6.38E - Release November 14 2022](#V0638E---Release-November-14-2022)
+  + [V0.6.43B - Release November 16 2022](#V0643B---Release-November-16-2022)
+  + [V0.6.48F - Release November 22 2022](#V0648F---Release-November-22-2022)
+  + [V0.7.5D - Release November 26 2022](#V075D---Release-November-26-2022)
+  + [V0.8.3D - Release November 27 2022](#V083D---Release-November-27-2022)
+  + [V0.9.2C - Release November 30 2022](#V092C---Release-November-30-2022)
+  + [V0.9.6N - Release December 3 2022](#V096N---Release-December-3-2022)
+  + [V0.10.6J - Release December 6 2022](#V0106J---Release-December-6-2022)
+  + [V0.11.2F - Release December 9 2022](#V0112F---Release-December-9-2022)
+  + [V0.11.6E - Release December 11 2022](#V0116E---Release-December-11-2022)
+  + [V0.11.11C - Release December 14 2022](#V01111C---Release-December-14-2022)
+  + [V0.12.1F - Release December 17 2022](#V0121F---Release-December-17-2022)
+  + [V1.0.1B - Release December 21 2022](#V101B---Release-December-21-2022)
+  + [V1.0.2H - Release December 25 2022](#V102H---Release-December-25-2022)
 - [Credits](#Credits)
 
 ## Story
@@ -442,19 +442,19 @@ V1.0.0A
 
 ### V0.12.1F - Release December 17 2022
 
+- Created a second Player's home garden map with a bigger maze.
+
 - Added more Trainers in the cabins on the yacht.
 
 - Fixed several small bugs
 
-- Created a second Player's home garden map with a bigger maze.
-
-### V1.0.0A - Release December 21 2022
+### V1.0.1B - Release December 21 2022
 
 - Fixed an issue with the player being able to leave the player's room before having the PokeGear
 
-### V1.0.2F - Release December 25 2022
-
 - Added some code to the modern quest system so the stages advance silencly now too.
+
+### V1.0.2H - Release December 25 2022
 
 - Added a small script that creates a counter window for certain quests.
 
