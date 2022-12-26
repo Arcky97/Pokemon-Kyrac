@@ -126,7 +126,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added some code to the modern quest system so the stages advance silencly now too.
 
-### V1.0.2H - Release December 25 2022
+### V1.0.3H - Release December 25 2022
 
 - Added a small script that creates a counter window for certain quests.
 
@@ -141,6 +141,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - fixed an issue with the colors when Prof. Oak mentions "grass, fire and water".
 
 - fixed an issue with pokemon spawning on top of the building on the F1 deck of the yacht.
+
+- Added the counter to the Maze Quest
 
 ## Credits:
 
