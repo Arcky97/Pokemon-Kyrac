@@ -8,7 +8,7 @@
   + [New Forms](#New-Forms)
 - [Future Plans](#Future-Plans)
 - [Release Notes](#Release-Notes)
-  + [V0.0.0E - Release October 2 2022](#V000E---Release-October-2-2022)
+  + [V0.0.0E - Release October 2 2022](#V000E---Release-October-2-2022-([Go-up]-(#Table-of-Content))-)
   + [V0.1.2I - Release October 8 2022](#V012I---Release-October-8-2022)
   + [V0.2.1D - Release October 14 2022](#V021D---Release-October-14-2022)
   + [V0.3.2J - Release October 15 2022](#V032J---Release-October-15-2022)
@@ -152,8 +152,7 @@ V1.0.0A
  | |->maps and features added.
  |->Releases.
 
-### V0.0.0E - Release October 2 2022 
-([Go up](#Table-of-Content))
+### V0.0.0E - Release October 2 2022 ([Go up](#Table-of-Content))
 
 -	Fixed a typo when talking to the parent’s bedroom door in the player’s house on F2.
 
