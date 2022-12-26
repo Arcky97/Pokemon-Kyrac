@@ -30,6 +30,4 @@ UI_pokegear: line 204-219
 UI_pokeMartMirrored: copied UI_pokemart with some edits
 MessageConfig: Line 345-362 (more colors added)
 002_Quest_Main (plugin): Line 169-189 added and 238-243 added (I made an Advance to Next Stage Silent Function)
-Compiler_MapsAndEvents: line 1373
-Messages: 369-387, 443, 622-624 and 704
-Name_Windows: line 422-424
+Messages: 369-382
