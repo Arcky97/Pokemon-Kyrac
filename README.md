@@ -147,6 +147,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - When you find money in trees, a window shows your money and adds it.
 
+### V1.2.0A - Release December 28 2022
+
+- Added a Vending Machine script that can generate different prices and funny scenarios.
+
 ## Credits:
 
 Essentials: Maruno
