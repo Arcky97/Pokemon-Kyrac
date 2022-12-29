@@ -1263,7 +1263,7 @@ Price = 4000
 Flags = Fling_80
 Description = A held item that damages the holder on every turn. It may latch on to Pokémon that touch the holder.
 #-------------------------------
-[IRONBALL]
+[IRONBALLI]
 Name = Iron Ball
 NamePlural = Iron Balls
 Pocket = 1
@@ -3683,6 +3683,168 @@ Price = 1000
 BattleUse = OnFoe
 Flags = PokeBall
 Description = A special Poké Ball designed to catch Ultra Beasts. It has a low success rate for catching others.
+#-------------------------------
+[INSECTBALL]
+Name = Insect Ball
+NamePlural = Insect Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Bug-Type Pokémon.
+#-------------------------------
+[CDREADBALL]
+Name = Dread Ball
+NamePlural = Dread Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Dark-Type Pokémon.
+#-------------------------------
+[DRACOBALL]
+Name = Draco Ball
+NamePlural = Draco Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Dragon-Type Pokémon.
+#-------------------------------
+[ZAPBALL]
+Name = Zap Ball
+NamePlural = Zap Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Electric-Type Pokémon.
+#-------------------------------
+[PIXIEBALL]
+Name = Pixie Ball
+NamePlural = Pixie Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Fairy-Type Pokémon.
+#-------------------------------
+[FISTBALL]
+Name = Fist Ball
+NamePlural = Fist Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Fighting-Type Pokémon.
+#-------------------------------
+[FLAMEBALL]
+Name = Flame Ball
+NamePlural = Flame Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Fire-Type Pokémon.
+#-------------------------------
+[SKYBALL]
+Name = Sky Ball
+NamePlural = Sky Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Flying-Type Pokémon.
+#-------------------------------
+[SPOOKYBALL]
+Name = Spooky Ball
+NamePlural = Spooky Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Ghost-Type Pokémon.
+#-------------------------------
+[MEADOWBALL]
+Name = Meadow Ball
+NamePlural = Meadow Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Grass-Type Pokémon.
+#-------------------------------
+[EARTHBALL]
+Name = Earth Ball
+NamePlural = Earth Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Ground-Type Pokémon.
+#-------------------------------
+[ICICLEBALL]
+Name = Icicle Ball
+NamePlural = Icicle Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Ice-Type Pokémon.
+#-------------------------------
+[BLANKBALL]
+Name = Blank Ball
+NamePlural = Blank Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Normal-Type Pokémon.
+#-------------------------------
+[TOXICBALL]
+Name = Toxic Ball
+NamePlural = Toxic Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Poison-Type Pokémon.
+#-------------------------------
+[MINDBALL]
+Name = Mind Ball
+NamePlural = Mind Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Psychic-Type Pokémon.
+#-------------------------------
+[STONEBALL]
+Name = Stone Ball
+NamePlural = Stone Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Rock-Type Pokémon.
+#-------------------------------
+[IRONBALL]
+Name = Iron Ball
+NamePlural = Iron Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Steel-Type Pokémon.
+#-------------------------------
+[SPLASHBALL]
+Name = Splash Ball
+NamePlural = Splash Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A new type of Poké Ball that increases the catch-rate when used on Water-Type Pokémon.
 #-------------------------------
 [TM01]
 Name = TM01

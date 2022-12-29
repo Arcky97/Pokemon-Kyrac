@@ -22,12 +22,12 @@ Rival team script: Grogo, Arcky and also parts of the script above was used (the
 
 edits in script:
 Settings: line 34, 38
-UI_pokemart: line 250,261,311,329
+UI_pokemart: line 225-229, 232-240, 258, 261-265, 273, 275-278, 327, 729, 740 and 743
 UI_options: line 20,32
 Messages: line 324
 TerrainTag: line 202-206
 UI_pokegear: line 204-219
-UI_pokeMartMirrored: copied UI_pokemart with some edits
 MessageConfig: Line 345-362 (more colors added)
 002_Quest_Main (plugin): Line 169-189 added and 238-243 added (I made an Advance to Next Stage Silent Function)
-Messages: 369-382
+Messages: Line: 369-382
+Battle_PokeBallEffects: Line 187-196

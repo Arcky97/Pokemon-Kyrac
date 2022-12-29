@@ -1,76 +1,75 @@
-$Snacks = [:PEWTERCRUNCHIES, :RAGECANDYBAR,:LAVACOOKIE,:OLDGATEAU,:CASTELIACONE,:LUMIOSEGALETTE,:SHALOURSABLE,:BIGMALASADA]
-$Drinks = [:FRESHWATER, :SODAPOP, :LEMONADE, :MOOMOOMILK, :BERRYJUICE]
-$ItemList = []
-
-def pbVendingMachine(input,discount)
-    $input = input
-    $discount = discount
-    pbMessage(_INTL("Look! It's a Vending Machine"))
-    if $input == "snack"
-        $ItemList = $Snacks
-    elsif $input == "drink"
-        $ItemList = $Drinks
-    end
-    pbMenu
+def pbVendingMachine(name,number,items)
+    discount = (100 - number).to_f / 100
+    pbMessage(_INTL("Look! It's a Vending Machine!"))
+    pbMenu(name, discount, items)
 end
 
-def pbMenu
-    choice = pbMessage(_INTL("Which {1} would you like to buy?\\G", $input), 
-    (0...$Snacks.size).to_a.map{|i| 
-      next _INTL("{1} - ${2}", GameData::Item.get($ItemList[i]).name, (GameData::Item.get($ItemList[i]).price) - $discount)
-    }, -1, choice)
-    case choice
-    when 0..7
-        if $player.money >= (GameData::Item.get($ItemList[choice]).price) - $discount
-            if $bag.can_add?($ItemList[choice])
-               $player.money -= (GameData::Item.get($ItemList[choice]).price) - $discount
-               $game_variables[39] += 1
-               $Item = GameData::Item.get($ItemList[choice]).name
-               number = 0
-                if random(number) == 5
-                    kick = pbMessage(_INTL("\\GOh no! Your {1} got stuck! Do you want to try to kick the machine?", $Item),
-                    [_INTL("Yes"),_INTL('No')], -1)
-                    case kick
-                    when 0
-                        if random(number) != 5
-                            $bag.add($ItemList[choice])
-                            pbMessage(_INTL("\\GYour kick worked and the \\c[1]{1} \\c[0]dropped down!", $Item))
-                            if random(number) ==5
-                                bonus(choice)
-                            end
-                            pbMenu
-                        else
-                            pbMessage(_INTL("\\GYour kick didn't work and the you lost your \\c[1]{1} \\c[0]!", $Item))
-                        end
-                    else
-                        pbMessage(_INTL("\\GLooks like you don't mind wasting your money!"))
-                    end
-                else
-                    $bag.add($ItemList[choice])
-                    pbMessage(_INTL("\\se[Vending machine sound]\\GA \\c[1]{1} \\c[0]dropped down!", $Item))
-                    if random(number) == 5
-                        bonus(choice)
-                    end
-                    pbMenu
-                end
-            else
-                pbMessage(_INTL("\\GYou have no room left in your Bag."))
-            end
-        else
-            pbMessage(_INTL("\\GYou don't have enought money!"))
+def pbMenu(input, discount, itemlist)
+    choice = pbMessage(_INTL("Which {1} would you like to buy?\\G", input), 
+    (0...itemlist.size).to_a.map{|i| 
+      next _INTL("{1} - ${2}", GameData::Item.get(itemlist[i]).name, ((GameData::Item.get(itemlist[i]).price) * discount).round)
+    }, -1)
+    return if 0>choice || choice>7
+    if $player.money < ((GameData::Item.get(itemlist[choice]).price) * discount).round
+      pbMessage(_INTL("\\GYou don't have enought \\c[3]money\\c[0]!"))
+      return
+    end
+    if !$bag.can_add?(itemlist[choice])
+      pbMessage(_INTL("\\GYou have no room left in your Bag."))
+      return
+    end
+    $player.money -= ((GameData::Item.get(itemlist[choice]).price) * discount).round
+    $game_variables[39] += 1
+    item = GameData::Item.get(itemlist[choice]).name
+    numb = 0
+    if random(numb, item) == 5
+        return if onItemStuck(numb, item)
+    else
+        start = letterChecker(item)
+        pbMessage(_INTL("\\se[Vending machine sound]\\G{1} \\c[1]{2} \\c[0]dropped down!",start, item))
+    end
+    $bag.add(itemlist[choice])
+    bonus(choice, item, itemlist) if random(numb, item) == 5
+    pbMenu(input, discount, itemlist)
+  end
+
+def letterChecker(item)
+    if item.starts_with_vowel?
+        word = "An"
+    elsif item.last == "s" 
+        word = "Some"
+    else
+        word = "A"
+    end
+end
+
+
+def random(numb, item)
+    return numb = numb.rand(1..10)
+end
+
+def bonus(choice, item, itemlist)
+    if $bag.can_add?(itemlist[choice])
+        $bag.add(itemlist[choice])
+        if item.last == "s"
+            start = "Some more"
         end
-    end
-end
-
-def random(number)
-    return $number = $number.rand(0..10)
-end
-
-def bonus(choice)
-    if $bag.can_add?($ItemList[choice])
-        $bag.add($ItemList[choice])
-        pbMessage(_INTL("\\se[Vending machine sound]\\GBonus! Another \\c[1]{1} \\c[0]dropped down!", $Item))
+        pbMessage(_INTL("\\se[Vending machine sound]\\GBonus! {1} \\c[1]{2} \\c[0]dropped down!",start, item))
         $game_variables[40] += 1
-        pbMenu
     end
+end
+
+def onItemStuck(numb, item)
+    kick = pbMessage(_INTL("\\GOh no! Your \\c[1]{1} \\c[0]got stuck! Do you want to try to kick the machine?", item),
+        [_INTL("Yes"),_INTL('No')], -1)
+    if kick != 0
+        pbMessage(_INTL("\\GLooks like you don't mind wasting your money!"))
+        return true
+    end
+    if random(numb, item) == 5
+        pbMessage(_INTL("\\GYour kick didn't work and you lost your \\c[1]{1} \\c[0]!", item))
+        return true
+    end
+    pbMessage(_INTL("\\GYour kick worked and the \\c[1]{1} \\c[0]dropped down!", item))
+    return false
 end
