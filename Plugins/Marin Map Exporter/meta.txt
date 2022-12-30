@@ -1,6 +1,6 @@
-Name         = Marin's Map Exporter
+Name         = Marin Map Exporter
 Version      = 2.1
 Credits      = Marin
 Essentials   = 20.1
-Requires     = Marin's Scripting Utilities, 2.0
+Requires     = Marin Scripting Utilities, 2.0
 Link         = https://reliccastle.com/resources/184/
