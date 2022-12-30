@@ -117,7 +117,7 @@ module TrainersSpeciesUsage
   def self.generate_txt_for_every_dex
     validate
     occurrences_by_species = get_occurrences_by_species
-    for dex_index in -1...pbLoadRegionalDexes.size
+    for dex_index in -1...(Settings.pokedex_names.size-1)
       generate_txt(get_dex_name(dex_index), get_dex_string(
         get_table(occurrences_by_species, get_dex_list(dex_index))
       ))
@@ -163,8 +163,10 @@ module TrainersSpeciesUsage
   end
 
   def self.get_occurrences_by_species
-    ret = Hash[GameData::Species.keys.zip([0]*GameData::Species.keys.size)]
-    echoln("k:#{GameData::Species.keys}")
+    ret ={}
+    for key in GameData::Species.keys
+      ret[key] = 0
+    end
     for inner_hash in get_trainers_double_hash.values
       for species_array in inner_hash.values
         for species in species_array

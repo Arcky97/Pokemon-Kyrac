@@ -1,0 +1,253 @@
+Created at 2022-12-30 18:53:42
+
+# Normal
+0016 0 Fletchling
+0022 0 Zigzagoon
+0022 0 Zigzagoon 1
+0023 0 Linoone
+0023 0 Linoone 1
+0024 0 Obstagoon
+0071 0 Ambipom
+0070 1 Aipom
+
+# Fighting
+0029 0 Gurdurr
+0030 0 Conkeldurr
+0040 0 Primeape
+0066 0 Machoke
+0067 0 Machamp
+0028 1 Timburr
+0039 1 Mankey
+0065 1 Machop
+
+# Flying
+0016 0 Fletchling
+0017 0 Fletchinder
+0018 0 Talonflame
+0035 0 Togetic
+0036 0 Togekiss
+0043 0 Archen
+0044 0 Archeops
+0053 0 Skiploom
+0054 0 Jumpluff
+0064 0 Gyarados
+0052 1 Hoppip
+0077 1 Butterfree
+
+# Poison
+0025 0 Budew
+0026 0 Roselia
+0027 0 Roserade
+0045 0 Grimer 1
+0046 0 Muk
+0046 0 Muk 1
+0048 0 Gloom
+0049 0 Vileplume
+0056 0 Arbok
+0057 0 Nidoran♂
+0058 0 Nidorino
+0059 0 Nidoking
+0061 0 Nidorina
+0062 0 Nidoqueen
+0045 1 Grimer
+0047 1 Oddish
+0055 1 Ekans
+0060 1 Nidoran♀
+0079 1 Kakuna
+0080 1 Beedrill
+0078 2 Weedle
+
+# Ground
+0004 0 Trapinch
+0005 0 Vibrava
+0006 0 Flygon
+0059 0 Nidoking
+0062 0 Nidoqueen
+
+# Rock
+0001 0 Roggenrola
+0002 0 Boldore
+0003 0 Gigalith
+0042 0 Carracosta
+0043 0 Archen
+0044 0 Archeops
+0041 1 Tirtouga
+
+# Bug
+0010 0 Grubbin
+0011 0 Charjabug
+0012 0 Vikavolt
+0076 1 Metapod
+0077 1 Butterfree
+0079 1 Kakuna
+0080 1 Beedrill
+0075 2 Caterpie
+0078 2 Weedle
+
+# Ghost
+
+# Steel
+0019 0 Klink
+0020 0 Klang
+0021 0 Klinklang
+
+# Fire
+0017 0 Fletchinder
+0018 0 Talonflame
+0038 0 Arcanine
+0037 1 Growlithe
+
+# Water
+0013 0 Spheal
+0014 0 Sealeo
+0015 0 Walrein
+0042 0 Carracosta
+0064 0 Gyarados
+0069 0 Golduck
+0041 1 Tirtouga
+0068 1 Psyduck
+0063 3 Magikarp
+
+# Grass
+0025 0 Budew
+0026 0 Roselia
+0027 0 Roserade
+0048 0 Gloom
+0049 0 Vileplume
+0053 0 Skiploom
+0054 0 Jumpluff
+0047 1 Oddish
+0052 1 Hoppip
+
+# Electric
+0007 0 Pichu
+0009 0 Raichu 1
+0011 0 Charjabug
+0012 0 Vikavolt
+0008 1 Pikachu
+0009 1 Raichu
+
+# Psychic
+0009 0 Raichu 1
+0031 0 Solosis
+0032 0 Duosion
+0033 0 Reuniclus
+0051 0 Musharna
+0073 0 Mr. Mime 1
+0073 0 Mr. Mime
+0074 0 Mr. Rime
+0050 1 Munna
+0072 1 Mime Jr.
+
+# Ice
+0013 0 Spheal
+0014 0 Sealeo
+0015 0 Walrein
+0073 0 Mr. Mime 1
+0074 0 Mr. Rime
+
+# Dragon
+0005 0 Vibrava
+0006 0 Flygon
+
+# Dark
+0022 0 Zigzagoon 1
+0023 0 Linoone 1
+0024 0 Obstagoon
+0045 0 Grimer 1
+0046 0 Muk 1
+
+# Fairy
+0034 0 Togepi
+0035 0 Togetic
+0036 0 Togekiss
+0073 0 Mr. Mime
+0072 1 Mime Jr.
+
+# ALL
+0001 0 Roggenrola
+0002 0 Boldore
+0003 0 Gigalith
+0004 0 Trapinch
+0005 0 Vibrava
+0006 0 Flygon
+0007 0 Pichu
+0009 0 Raichu 1
+0010 0 Grubbin
+0011 0 Charjabug
+0012 0 Vikavolt
+0013 0 Spheal
+0014 0 Sealeo
+0015 0 Walrein
+0016 0 Fletchling
+0017 0 Fletchinder
+0018 0 Talonflame
+0019 0 Klink
+0020 0 Klang
+0021 0 Klinklang
+0022 0 Zigzagoon
+0022 0 Zigzagoon 1
+0023 0 Linoone
+0023 0 Linoone 1
+0024 0 Obstagoon
+0025 0 Budew
+0026 0 Roselia
+0027 0 Roserade
+0029 0 Gurdurr
+0030 0 Conkeldurr
+0031 0 Solosis
+0032 0 Duosion
+0033 0 Reuniclus
+0034 0 Togepi
+0035 0 Togetic
+0036 0 Togekiss
+0038 0 Arcanine
+0040 0 Primeape
+0042 0 Carracosta
+0043 0 Archen
+0044 0 Archeops
+0045 0 Grimer 1
+0046 0 Muk
+0046 0 Muk 1
+0048 0 Gloom
+0049 0 Vileplume
+0051 0 Musharna
+0053 0 Skiploom
+0054 0 Jumpluff
+0056 0 Arbok
+0057 0 Nidoran♂
+0058 0 Nidorino
+0059 0 Nidoking
+0061 0 Nidorina
+0062 0 Nidoqueen
+0064 0 Gyarados
+0066 0 Machoke
+0067 0 Machamp
+0069 0 Golduck
+0071 0 Ambipom
+0073 0 Mr. Mime 1
+0073 0 Mr. Mime
+0074 0 Mr. Rime
+0008 1 Pikachu
+0009 1 Raichu
+0028 1 Timburr
+0037 1 Growlithe
+0039 1 Mankey
+0041 1 Tirtouga
+0045 1 Grimer
+0047 1 Oddish
+0050 1 Munna
+0052 1 Hoppip
+0055 1 Ekans
+0060 1 Nidoran♀
+0065 1 Machop
+0068 1 Psyduck
+0070 1 Aipom
+0072 1 Mime Jr.
+0076 1 Metapod
+0077 1 Butterfree
+0079 1 Kakuna
+0080 1 Beedrill
+0075 2 Caterpie
+0078 2 Weedle
+0063 3 Magikarp
