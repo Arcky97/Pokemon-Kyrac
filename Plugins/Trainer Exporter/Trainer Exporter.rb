@@ -164,7 +164,7 @@ module TrainersSpeciesUsage
 
   def self.get_occurrences_by_species
     ret = Hash[GameData::Species.keys.zip([0]*GameData::Species.keys.size)]
-    echoln("r:#{ret}")
+    echoln("k:#{GameData::Species.keys}")
     for inner_hash in get_trainers_double_hash.values
       for species_array in inner_hash.values
         for species in species_array
