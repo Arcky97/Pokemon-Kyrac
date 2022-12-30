@@ -151,6 +151,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added a Vending Machine script that can generate different prices and funny scenarios.
 
+- Added the Counter Window as a plugin (makes no difference for the player).
+
+- Added a Trainer Exporter that exports all the Pokémon used by each trainer (For developers only).
+
 ## Credits:
 
 Essentials: Maruno
