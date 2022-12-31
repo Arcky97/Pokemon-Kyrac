@@ -1,23 +1,45 @@
 credits:
 Essentials: Maruno
+
 Name window: mr. Gela
 https://reliccastle.com/resources/197/
+
 Unreal Time System: FL
 https://www.pokecommunity.com/showthread.php?t=285831
+
 Marin's Footprints 
 https://reliccastle.com/resources/406/
-Show Species Introduction:
+
+Show Species Introduction: FL
 https://www.pokecommunity.com/showthread.php?t=445437
+
 Gen 8 pack (credits are on the page)
 https://reliccastle.com/resources/952/
+
 Following pokemon ex (credits are on the page)
 https://reliccastle.com/resources/516/
+
 Gym Leader non lineary scaling:  Benitex, Joltik, Umbreon:
 https://reliccastle.com/resources/943/
+
 Grogo for making the script work.
+
 Rival team script: Grogo, Arcky and also parts of the script above was used (the lineary scaling script).
 
+Essentials Deluxe: Lucidious89
+https://www.pokecommunity.com/showthread.php?t=478494
 
+Visible Overworld Wild Encounters: derFischae
+https://www.pokecommunity.com/showthread.php?t=429019
+
+Modern Quest System + UI: ThatWelshOne_,mej71,derFischae,Marin
+https://reliccastle.com/resources/709/
+
+Gen 8 move animation project: (credits are on the page)
+https://www.pokecommunity.com/showthread.php?t=446303
+
+Gen 5 Battle UI: Taiga
+https://reliccastle.com/resources/1134/
 
 
 edits in script:
@@ -27,7 +49,11 @@ UI_options: line 20,32
 Messages: line 324
 TerrainTag: line 202-206
 UI_pokegear: line 204-219
-MessageConfig: Line 345-362 (more colors added)
-002_Quest_Main (plugin): Line 169-189 added and 238-243 added (I made an Advance to Next Stage Silent Function)
-Messages: Line: 369-382
-Battle_PokeBallEffects: Line 187-196
+MessageConfig: line 345-362 (more colors added)
+002_Quest_Main (plugin): line 169-189 added and 238-243 added (I made an Advance to Next Stage Silent Function)
+Messages: line 369-382 (replaced with a plugin now)
+Battle_PokeBallEffects: line 187-196
+Battle_scene: line 10-11
+Battle_Scene_Menus: line 206, 217-222
+Battle_Scene_Objects: line 14-15, 221-228
+SafariBattle: line 86-87

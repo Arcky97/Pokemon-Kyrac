@@ -11,7 +11,9 @@
   + [Demo 1 Release Notes and Download](https://github.com/Arcky97/Pokemon-Kyrac/tree/V0.12.1F-Demo-1)
   + [V1.0.1B - Release December 21 2022](#V101B---Release-December-21-2022)
   + [V1.1.3F - Release December 25 2022](#V113F---Release-December-25-2022)
-  + [V1.2.0A - Release December 28 2022](#V113f---Release-December-25-2022)
+  + [V1.2.0A - Release December 28 2022](#V120A---Release-December-28-2022)
+  + [V1.3.2A - Release December 31 2022](#V132B---Release-December-31-2022)
+
 - [Credits](#Credits)
 
 ## Story
@@ -155,6 +157,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added the Counter Window as a plugin (makes no difference for the player).
 
 - Added a Trainer Exporter that exports all the Pokémon used by each trainer (For developers only).
+
+### V1.3.2A - Release December 31 2022
+
+- Added a new battle UI that looks like the gen 5 Battle UI thanks to Taiga.
+
+- Added Battle Move animations thanks to StCooler and everyone else that worked on this recourse pack.
+
+- Edited the Trainer Counter for the Yacht Quest.
 
 ## Credits:
 
