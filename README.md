@@ -12,7 +12,7 @@
   + [V1.0.1B - Release December 21 2022](#V101B---Release-December-21-2022)
   + [V1.1.3F - Release December 25 2022](#V113F---Release-December-25-2022)
   + [V1.2.0A - Release December 28 2022](#V120A---Release-December-28-2022)
-  + [V1.3.2A - Release December 31 2022](#V132B---Release-December-31-2022)
+  + [V1.3.2A - Release December 31 2022](#V132A---Release-December-31-2022)
 
 - [Credits](#Credits)
 
