@@ -57,3 +57,4 @@ Battle_scene: line 10-11
 Battle_Scene_Menus: line 206, 217-222
 Battle_Scene_Objects: line 14-15, 221-228
 SafariBattle: line 86-87
+Battle_Scene: line 128-130 (essentials deluxe)

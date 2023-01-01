@@ -125,7 +125,7 @@ class Battle::Scene
       @sprites["messageWindow"].shadowColor = MessageConfig::LIGHT_TEXT_SHADOW_COLOR
       @sprites["messageWindow"].z += 1
     else
-      colors = getDefaultTextColors(@sprites["messageWindow"].windowskin)
+      colors = [MESSAGE_BASE_COLOR,MESSAGE_SHADOW_COLOR]#getDefaultTextColors(@sprites["messageWindow"].windowskin)
       @sprites["messageWindow"].baseColor = colors[0]
       @sprites["messageWindow"].shadowColor = colors[1]
       @sprites["messageWindow"].z -= 1
