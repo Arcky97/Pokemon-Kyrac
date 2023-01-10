@@ -1,4 +1,4 @@
-Name         = Marin Scripting Utilities
+Name         = Marin's Scripting Utilities
 Version      = 2.0
 Essentials   = 20.1
 Credits      = Marin
