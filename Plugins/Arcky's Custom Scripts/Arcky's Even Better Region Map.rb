@@ -1,25 +1,3 @@
-#==============================================================================#
-#                              Better Region Map                               #
-#                       By Marin, with edits by Boonzeet                       #
-#==============================================================================#
-#   This region map is smoother and allows you to use region maps larger than  #
-#                                   480x320.                                   #
-#                                                                              #
-#     This resource also comes with a new townmapgen.html to support for the   #
-#                                larger images.                                #
-#==============================================================================#
-#  This region map now supports hidden islands (e.g. Berth or Faraday).        #
-#==============================================================================#
-#                    Please give credit when using this.                       #
-#==============================================================================#
-
-PluginManager.register({
-  :name => "Even Better Region Map",
-  :version => "1.3",
-  :credits => ["Marin", "Boonzeet", "Arcky"],
-  :dependencies => ["Marin's Scripting Utilities"],
-  :link => "https://reliccastle.com/resources/174/"
-})
 
 def pbBetterRegionMap(region = -1, show_player = true, can_fly = false, wallmap = false, species = nil)
   scene = BetterRegionMap.new(region, show_player, can_fly, wallmap, species)
@@ -43,7 +21,7 @@ end
 
 
 def regionArray
-  regionmapinfo = [[true, 0, 0, "MapRegion0"], [$game_switches[135], 24, 4, "MapRegion1"], [$game_switches[136], 27, 9, "MapRegion2"], [$game_switches[137], 30, 27, "MapRegion3"]]
+  regionmapinfo = [[true, 0, 0, "MapRegion0"], [$game_switches[135], 24, 4, "MapRegion1"], [$game_switches[136], 27, 14, "MapRegion2"], [$game_switches[137], 30, 33, "MapRegion3"]]
   for i in 0...regionmapinfo.length
     if regionmapinfo[i][0]  
       regiondata = regionmapinfo[i].clone
@@ -55,6 +33,20 @@ end
 def changePlayerPos
   position = $game_map ? $game_map.metadata&.town_map_position.clone : nil
   position[1] -= regionArray[1]
+  if $game_switches[85] # the player is on the yacht
+    case $game_variables[47] # check value of the game variable ID 47
+    when 1 
+      position[1] += 1
+    when 2
+      position[1] += 2
+    when 3
+      position[1] += 3
+    when 4
+      position[1] += 4
+    when 5
+      position[1] += 5
+    end
+  end
   return position
 end
 
@@ -68,6 +60,7 @@ def changeTownMapData(region)
   return newdata
 end
 
+
 class BetterRegionMap
   CursorAnimateDelay = 12.0
   CursorMoveSpeed = 4.0
@@ -80,9 +73,8 @@ class BetterRegionMap
 
   def initialize(region = -1, show_player = true, can_fly = true, wallmap = false, species = nil)
     showBlk
-    if !species
-      playerpos = changePlayerPos
-    end
+    playerpos = changePlayerPos
+    echoln(playerpos)
     @region = (region < 0) ? playerpos[0] : region
     @species = species
     @show_player = (show_player && playerpos[0] == @region)
@@ -121,8 +113,13 @@ class BetterRegionMap
         gender = $Trainer.gender.to_digits(3)
         @map_x = playerpos[1] 
         @map_y =  playerpos[2] 
-        sqwidth  = mapsize[0]
-        sqheight = (mapsize[1].length.to_f / mapsize[0]).ceil
+        if mapsize != nil
+          sqwidth  = mapsize[0]
+          sqheight = (mapsize[1].length.to_f / mapsize[0]).ceil
+        else
+          sqwidth = 1
+          sqheight = 1
+        end
         @map_x += ($game_player.x * sqwidth / $game_map.width).floor if sqwidth > 1
         @map_y += ($game_player.y * sqheight / $game_map.height).floor if sqheight > 1
         @window["player"].bmp("Graphics/Pictures/mapPlayer#{gender}")
@@ -186,8 +183,13 @@ class BetterRegionMap
       mapsize = map_metadata.town_map_size
       @map_x = playerpos[1] 
       @map_y =  playerpos[2] 
-      sqwidth  = mapsize[0]
-      sqheight = (mapsize[1].length.to_f / mapsize[0]).ceil
+      if mapsize != nil
+        sqwidth  = mapsize[0]
+        sqheight = (mapsize[1].length.to_f / mapsize[0]).ceil
+      else
+        sqwidth = 1
+        sqheight = 1
+      end
       @map_x += ($game_player.x * sqwidth / $game_map.width).floor if sqwidth > 1
       @map_y += ($game_player.y * sqheight / $game_map.height).floor if sqheight > 1
     end
@@ -203,18 +205,25 @@ class BetterRegionMap
     windowminy = -1 * (@window["map"].bmp.height / 2)
     windowminy = 0 if windowminy > 0
     
+    mapwidth = @window["map"].bmp.width
+    mapheigth = @window["map"].bmp.height
+    
     if @sprites["cursor"].x > (Settings::SCREEN_WIDTH / 2)
-      @window.x = (Settings::SCREEN_WIDTH / 2 ) - @sprites["cursor"].x
-      if (@window.x < windowminx)
-        @window.x = windowminx
-      end     
+      if mapwidth > Settings::SCREEN_WIDTH
+        @window.x = (Settings::SCREEN_WIDTH / 2 ) - @sprites["cursor"].x
+        if (@window.x < windowminx)
+          @window.x = windowminx
+        end     
+      end
       @sprites["cursor"].x += @window.x
     end
     if @sprites["cursor"].y > (Settings::SCREEN_HEIGHT / 2)
-      @window.y = (Settings::SCREEN_HEIGHT / 2 ) - @sprites["cursor"].y
-      if @window.y < windowminy
-        @window.y = windowminy
-      end   
+      if mapheigth > Settings::SCREEN_HEIGHT
+        @window.y = (Settings::SCREEN_HEIGHT / 2 ) - @sprites["cursor"].y
+        if @window.y < windowminy
+          @window.y = windowminy
+        end   
+      end
       @sprites["cursor"].y += @window.y
     end
     
@@ -272,14 +281,10 @@ class BetterRegionMap
 
   def pbGetHealingSpot(x, y)
     return nil if !@data[2]
-    for loc in @data[2]
-      if loc[0] == x && loc[1] == y
-        if !loc[4] || !loc[5] || !loc[6]
-          return nil
-        else
-          return [loc[4], loc[5], loc[6]]
-        end
-      end
+    @data[2].each do |point|
+      next if point[0] != x || point[1] != y
+      return nil if point[7] && (@wallmap || point[7] <= 0 || !$game_switches[point[7]])
+      return (point[4] && point[5] && point[6]) ? [point[4], point[5], point[6]] : nil
     end
     return nil
   end
@@ -558,12 +563,20 @@ MenuHandlers.add(:pause_menu, :town_map, {
   }
 })
 
+class PokemonRegionMapScreen
+  def pbStartFlyScreen
+    ret = pbBetterRegionMap(-1, true, true)
+    return ret
+  end
+end
+
+
 class PokemonPartyScreen
   def pbPokemonScreen
     can_access_storage = false
     if ($player.has_box_link || $bag.has?(:POKEMONBOXLINK)) &&
-       !$game_switches[Settings::DISABLE_BOX_LINK_SWITCH] &&
-       !$game_map.metadata&.has_flag?("DisableBoxLink")
+        !$game_switches[Settings::DISABLE_BOX_LINK_SWITCH] &&
+        !$game_map.metadata&.has_flag?("DisableBoxLink")
       can_access_storage = true
     end
     @scene.pbStartScene(@party,
@@ -676,12 +689,6 @@ def pbFindEncounter(enc_types, species)
   return false
 end
 
-def changeMapPos(map_metadata)
-  position = map_metadata.town_map_position.clone
-  position[1] -= regionArray[1]
-  return position
-end
-
 def calculatePointsAndCenter(mapwidth)
   # Fill the array "points" with all squares of the region map in which the
   # species can be found
@@ -693,8 +700,7 @@ def calculatePointsAndCenter(mapwidth)
     # Get the map belonging to the encounter table
     map_metadata = GameData::MapMetadata.try_get(enc_data.map)
     next if !map_metadata || map_metadata.has_flag?("HideEncountersInPokedex")
-    #mappos = map_metadata.town_map_position
-    mappos = changeMapPos(map_metadata)
+    mappos = map_metadata.town_map_position
     next if mappos[0] != @region   # Map isn't in the region being shown
     # Get the size and shape of the map in the Town Map
     mapsize = map_metadata.town_map_size
@@ -727,56 +733,55 @@ end
 
 class PokemonReadyMenu
   def pbStartReadyMenu(moves, items)
-    commands = [[], []] # Moves, items
-    for i in moves
-      commands[0].push([i[0], PBMoves.getName(i[0]), true, i[1]])
+    commands = [[], []]   # Moves, items
+    moves.each do |i|
+      commands[0].push([i[0], GameData::Move.get(i[0]).name, true, i[1]])
     end
     commands[0].sort! { |a, b| a[1] <=> b[1] }
-    for i in items
-      commands[1].push([i, PBItems.getName(i), false])
+    items.each do |i|
+      commands[1].push([i, GameData::Item.get(i).name, false])
     end
     commands[1].sort! { |a, b| a[1] <=> b[1] }
-
     @scene.pbStartScene(commands)
     loop do
       command = @scene.pbShowCommands
-      if command == -1
-        break
-      else
-        if command[0] == 0 # Use a move
-          move = commands[0][command[1]][0]
-          user = $Trainer.party[commands[0][command[1]][3]]
-          if isConst?(move, PBMoves, :FLY)
-            ###############################################
+      break if command == -1
+      if command[0] == 0   # Use a move
+        move = commands[0][command[1]][0]
+        user = $player.party[commands[0][command[1]][3]]
+        if move == :FLY
+          ret = nil
+          pbFadeOutInWithUpdate(99999, @scene.sprites) {
             pbHideMenu
             ret = pbBetterRegionMap(-1, true, true)
-            pbShowMenu unless ret
-            ###############################################
-            if ret
-              $PokemonTemp.flydata = ret
-              $game_temp.in_menu = false
-              Kernel.pbUseHiddenMove(user, move)
-              break
-            end
-          else
-            pbHideMenu
-            if Kernel.pbConfirmUseHiddenMove(user, move)
-              $game_temp.in_menu = false
-              Kernel.pbUseHiddenMove(user, move)
-              break
-            else
-              pbShowMenu
-            end
+            pbShowMenu if !ret
+          }
+          if ret
+            $game_temp.fly_destination = ret
+            $game_temp.in_menu = false
+            pbUseHiddenMove(user, move)
+            break
           end
-        else # Use an item
-          item = commands[1][command[1]][0]
+        else
           pbHideMenu
-          if ItemHandlers.triggerConfirmUseInField(item)
-            break if Kernel.pbUseKeyItemInField(item)
+          if pbConfirmUseHiddenMove(user, move)
+            $game_temp.in_menu = false
+            pbUseHiddenMove(user, move)
+            break
+          else
+            pbShowMenu
           end
         end
-        pbShowMenu
+      else   # Use an item
+        item = commands[1][command[1]][0]
+        pbHideMenu
+        if ItemHandlers.triggerConfirmUseInField(item)
+          $game_temp.in_menu = false
+          break if pbUseKeyItemInField(item)
+          $game_temp.in_menu = true
+        end
       end
+      pbShowMenu
     end
     @scene.pbEndScene
   end
@@ -863,11 +868,11 @@ class PokemonPokedexInfo_Scene
       ])
       textpos.push([_INTL("Area unknown"),Graphics.width/2,Graphics.height/2,2,base,shadow])
     end
-    textpos.push([pbGetMessage(MessageTypes::RegionNames,@region),414,44,2,base,shadow])
+    textpos.push([pbGetMessage(MessageTypes::RegionNames,@region),414,50,2,base,shadow])
     textpos.push([_INTL("{1}'s area",GameData::Species.get(@species).name),
-       Graphics.width/2,352,2,base,shadow])
+       Graphics.width/2,358,2,base,shadow])
        
-    textpos.push([_INTL("Full view"),Graphics.width/2,306,2,base,shadow])
+    textpos.push([_INTL("Full view"),Graphics.width/2,310,2,base,shadow])
     pbDrawTextPositions(overlay,textpos)
   end
 end
@@ -942,151 +947,4 @@ class PokemonPokedexInfo_Scene
     return @index
   end
 end
-
-[
-  ["FPO Region", 
-   "mapRegion0.png", 
-    [
-      [39, 9, "Home", "Your house", 13, 36, 12, nil], 
-      [38, 9, "Home", "", 13, 36, 12, nil], 
-      [39, 10, "Home", "Dock", 13, 36, 12, nil], 
-      [38, 10, "Home", "13", 36, 12, nil, nil], 
-      [36, 5, "FPO facilities", "", nil, nil, nil, nil], 
-      [37, 5, "FPO facilities", "", nil, nil, nil, nil], 
-      [36, 6, "Hugend City", "", nil, nil, nil, nil], 
-      [37, 6, "Hugend City", "", nil, nil, nil, nil], 
-      [38, 6, "Hugend City", "", nil, nil, nil, nil], 
-      [36, 7, "Hugend City", "", nil, nil, nil, nil], 
-      [37, 7, "Hugend City", "", nil, nil, nil, nil], 
-      [38, 7, "Hugend City", "", nil, nil, nil, nil], 
-      [36, 8, "Hugend City", "", nil, nil, nil, nil], 
-      [37, 8, "Hugend City", "", nil, nil, nil, nil], 
-      [38, 8, "Hugend City", "", nil, nil, nil, nil], 
-      [45, 10, "Hester City", "Haven", 79, 52, 18, nil],
-      [46, 10, "Hester City", "Flower Garden", 79, 52, 18, nil], 
-      [45, 11, "Hester City", "Mart", 79, 52, 18, nil], 
-      [46, 11, "Hester City", "Trainer School", 79, 52, 18, nil], 
-      [45, 12, "Route 18", "", nil, nil, nil, nil], 
-      [45, 13, "Route 18", "", nil, nil, nil, nil], 
-      [45, 14, "Route 19", "", nil, nil, nil, nil], 
-      [45, 15, "Route 19", "", nil, nil, nil, nil], 
-      [45, 16, "Route 20", "", nil, nil, nil, nil], 
-      [45, 17, "Route 20", "", nil, nil, nil, nil], 
-      [46, 17, "Route 20", "", nil, nil, nil, nil], 
-      [42, 14, "Onaphia Town", "", nil, nil, nil, nil],
-      [43, 14, "Onaphia Town", "", nil, nil, nil, nil], 
-      [48, 12, "Route 23", "", nil, nil, nil, nil], 
-      [48, 11, "Route 24", "", nil, nil, nil, nil], 
-      [48, 10, "Route Intersection", "Radio Tower", 17, 17, 20, nil], 
-      [48, 9, "Route 2", "", nil, nil, nil, nil], 
-      [48, 8, "Route 2", "", nil, nil, nil, nil], 
-      [47, 7, "Route 3", "", nil, nil, nil, nil], 
-      [46, 7, "Route 3", "", nil, nil, nil, nil], 
-      [46, 6, "Route 3", "", nil, nil, nil, nil], 
-      [45, 6, "Route 3", "", nil, nil, nil, nil], 
-      [47, 10, "Route 1", "", nil, nil, nil, nil], 
-      [49, 10, "Route 4", "", nil, nil, nil, nil], 
-      [50, 10, "Route 4", "", nil, nil, nil, nil], 
-      [51, 10, "Route 4", "", nil, nil, nil, nil], 
-      [52, 9, "Route 6", "", nil, nil, nil, nil], 
-      [52, 8, "Route 6", "", nil, nil, nil, nil], 
-      [52, 7, "Route 6", "Cave", nil, nil, nil, nil], 
-      [51, 7, "Route 5", "", nil, nil, nil, nil], 
-      [51, 6, "Route 5", "", nil, nil, nil, nil], 
-      [50, 7, "Route 5", "", nil, nil, nil, nil], 
-      [50, 3, "Route 7", "", nil, nil, nil, nil], 
-      [50, 2, "Route 7", "", nil, nil, nil, nil], 
-      [50, 1, "Route 8", "", nil, nil, nil, nil], 
-      [49, 1, "Route 8", "", nil, nil, nil, nil], 
-      [48, 1, "Route 8", "", nil, nil, nil, nil], 
-      [53, 10, "Route 9", "", nil, nil, nil, nil], 
-      [54, 10, "Route 9", "Cave", nil, nil, nil, nil], 
-      [55, 10, "Route 10", "", nil, nil, nil, nil], 
-      [56, 10, "Route 10", "", nil, nil, nil, nil], 
-      [53, 5, "Route 16", "", nil, nil, nil, nil], 
-      [54, 5, "Route 16", "", nil, nil, nil, nil],
-      [55, 5, "Route 16", "", nil, nil, nil, nil], 
-      [56, 5, "Route 16", "", nil, nil, nil, nil], 
-      [57, 3, "Route 12", "", nil, nil, nil, nil], 
-      [57, 5, "Route 12", "", nil, nil, nil, nil], 
-      [57, 4, "Route 12", "", nil, nil, nil, nil], 
-      [57, 6, "Route 11", "", nil, nil, nil, nil], 
-      [57, 7, "Route 11", "", nil, nil, nil, nil], 
-      [57, 8, "Route 11", "", nil, nil, nil, nil], 
-      [57, 9, "Route 11", "", nil, nil, nil, nil], 
-      [57, 10, "Route 10", "", nil, nil, nil, nil], 
-      [57, 11, "Route 13", "", nil, nil, nil, nil], 
-      [57, 12, "Route 13", "", nil, nil, nil, nil], 
-      [54, 13, "Route 15", "", nil, nil, nil, nil], 
-      [55, 13, "Route 15", "", nil, nil, nil, nil], 
-      [56, 13, "Route 15", "", nil, nil, nil, nil], 
-      [57, 15, "Route 14", "", nil, nil, nil, nil], 
-      [57, 16, "Route 14", "", nil, nil, nil, nil], 
-      [57, 17, "Route 14", "", nil, nil, nil, nil], 
-      [47, 16, "Flale Town", "", nil, nil, nil, nil], 
-      [47, 17, "Flale Town", "", nil, nil, nil, nil], 
-      [48, 13, "Dalo Town", "", nil, nil, nil, nil], 
-      [49, 13, "Dalo Town", "", nil, nil, nil, nil], 
-      [52, 10, "Franta Town", "", 42, 8, 12, nil], 
-      [57, 13, "Linas City", "", nil, nil, nil, nil], 
-      [58, 13, "Linas City", "", nil, nil, nil, nil], 
-      [57, 14, "Linas City", "", nil, nil, nil, nil], 
-      [58, 14, "Linas City", "", nil, nil, nil, nil], 
-      [56, 18, "Oraham Town", "", nil, nil, nil, nil], 
-      [57, 18, "Oraham Town", "", nil, nil, nil, nil], 
-      [44, 6, "Flutford Town", "", 46, 14, 34, nil], 
-      [44, 7, "Flutford Town", "", 46, 14, 34, nil], 
-      [46, 1, "Rison City", "", nil, nil, nil, nil], 
-      [47, 1, "Rison City", "", nil, nil, nil, nil], 
-      [56, 2, "Rison City", "", nil, nil, nil, nil], 
-      [57, 2, "Rison City", "", nil, nil, nil, nil], 
-      [48, 7, "Tila Town", "", 44, 15, 19, nil], 
-      [49, 7, "Tila Town", "", 44, 15, 19, nil], 
-      [52, 13, "Lewood City", "", nil, nil, nil, nil], 
-      [53, 13, "Lewood City", "", nil, nil, nil, nil], 
-      [52, 14, "Lewood City", "", nil, nil, nil, nil], 
-      [53, 14, "Lewood City", "", nil, nil, nil, nil], 
-      [52, 15, "Lewood City", "", nil, nil, nil, nil], 
-      [53, 15, "Lewood City", "", nil, nil, nil, nil], 
-      [56, 1, "Fuwell City", "", nil, nil, nil, nil], 
-      [57, 1, "Fuwell City", "", nil, nil, nil, nil], 
-      [56, 2, "Fuwell City", "", nil, nil, nil, nil], 
-      [57, 2, "Fuwell City", "", nil, nil, nil, nil], 
-      [50, 4, "Eblaso City", "", nil, nil, nil, nil], 
-      [51, 4, "Eblaso City", "", nil, nil, nil, nil], 
-      [52, 4, "Eblaso City", "", nil, nil, nil, nil], 
-      [50, 5, "Eblaso City", "", nil, nil, nil, nil], 
-      [51, 5, "Eblaso City", "", nil, nil, nil, nil], 
-      [52, 5, "Eblaso City", "", nil, nil, nil, nil], 
-      [44, 1, "Route 17", "", nil, nil, nil, nil], 
-      [45, 1, "Route 17", "", nil, nil, nil, nil], 
-      [47, 11, "Hester Forest", "", nil, nil, nil, nil], 
-      [51, 1, "Waterfalls", "", nil, nil, nil, nil], 
-      [43, 1, "Secret Lab", "", nil, nil, nil, nil], 
-      [43, 2, "Secret Lab", "", nil, nil, nil, nil], 
-      [54, 1, "Park", "", nil, nil, nil, nil], 
-      [5, 1, "Park", "", nil, nil, nil, nil], 
-      [45, 7, "Sea Shore", "", nil, nil, nil, nil], 
-      [49, 8, "Farmers Farm,,,,,", "", nil, nil, nil, nil], 
-      [48, 16, "Route 21", "", nil, nil, nil, nil], 
-      [49, 16, "Route 21", "", nil, nil, nil, nil], 
-      [49, 15, "Route 22", "", nil, nil, nil, nil], 
-      [49, 14, "Route 22", "", nil, nil, nil, nil], 
-      [44, 14, "Route 24", "", nil, nil, nil, nil], 
-      [44, 10, "Route 25", "", nil, nil, nil, nil], 
-      [43, 10, "Route 25", "", nil, nil, nil, nil], 
-      [42, 10, "Route 26", "", nil, nil, nil, nil], 
-      [42, 9, "Route 26", "", nil, nil, nil, nil], 
-      [41, 10, "Route 27", "", nil, nil, nil, nil], 
-      [40, 10, "Route 27", "", nil, nil, nil, nil], 
-      [42, 8, "Route 28", "", nil, nil, nil, nil], 
-      [43, 8, "Route 28", "", nil, nil, nil, nil], 
-      [44, 8, "Route 29", "", nil, nil, nil, nil], 
-      [45, 8, "Route 29", "", nil, nil, nil, nil], 
-      [42, 7, "Route 30", "", nil, nil, nil, nil], 
-      [41, 7, "Route 30", "", nil, nil, nil, nil], 
-      [40, 7, "Route 31", "", nil, nil, nil, nil], 
-      [39, 7, "Route 31", "", nil, nil, nil, nil]
-    ]
-  ]
-]                                            
+                                          

@@ -1,10 +1,14 @@
 def DisplayCounterWindow(object,var,total)
     close_counter
     var = $game_variables[var]
-    $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}/{3}</ar>", object, var, total))
+    if total != nil
+      $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}/{3}</ar>", object, var, total))
+    else
+      $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}</ar>", object, var))
+    end
     $counterwindow.setSkin("Graphics/Windowskins")
     $counterwindow.resizeToFit($counterwindow.text, Graphics.width)
-    $counterwindow.width = 130 if $counterwindow.width >= 130
+    $counterwindow.width = 160 if $counterwindow.width >= 130
     return $counterwindow
   end
   
