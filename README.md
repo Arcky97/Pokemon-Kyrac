@@ -13,7 +13,7 @@
   + [V1.1.3F - Release December 25 2022](#V113F---Release-December-25-2022)
   + [V1.2.0A - Release December 28 2022](#V120A---Release-December-28-2022)
   + [V1.3.3A - Release December 31 2022](#V133A---Release-December-31-2022)
-  + [V1.4.4C - Release January 13 2023](#V144C---Release-January-13-2023)
+  + [V1.4.5C - Release January 13 2023](#V145C---Release-January-13-2023)
 
 - [Credits](#Credits)
 
@@ -169,7 +169,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added a script for double battles with the Rivals.
 
-### V1.4.4C - Release January 13 2023
+### V1.4.5C - Release January 13 2023
 
 - First Release of the Year
 
@@ -182,6 +182,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - The Player's position shown on the Region Map will now be updated on every task completed while being on the yacht.
 
 - The Region map will show new parts of the Region when you have completed certain parts of the story.
+
+- Added another counter that tells you how many items you can find on a map (works differently for the yacht and other bigger buildings).
 
 ## Credits:
 

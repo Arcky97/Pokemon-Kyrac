@@ -21,7 +21,7 @@ end
 
 
 def regionArray
-  regionmapinfo = [[true, 0, 0, "MapRegion0"], [$game_switches[135], 24, 4, "MapRegion1"], [$game_switches[136], 27, 14, "MapRegion2"], [$game_switches[137], 30, 33, "MapRegion3"]]
+  regionmapinfo = [[$game_switches[140], 0, 0, "MapRegion0"], [$game_switches[135], 24, 4, "MapRegion1"], [$game_switches[136], 27, 14, "MapRegion2"], [$game_switches[137], 30, 33, "MapRegion3"]]
   for i in 0...regionmapinfo.length
     if regionmapinfo[i][0]  
       regiondata = regionmapinfo[i].clone
@@ -74,7 +74,6 @@ class BetterRegionMap
   def initialize(region = -1, show_player = true, can_fly = true, wallmap = false, species = nil)
     showBlk
     playerpos = changePlayerPos
-    echoln(playerpos)
     @region = (region < 0) ? playerpos[0] : region
     @species = species
     @show_player = (show_player && playerpos[0] == @region)
@@ -522,13 +521,16 @@ end
 # Overwrites some old methods to use the new region map                        #
 #==============================================================================#
 
+ItemHandlers::UseFromBag.add(:TOWNMAP, proc { |item|
+  next (pbBetterRegionMap(-1, true, false)) ? 2 : 0 #(@region, show player ,allow flying)
+})
+
 ItemHandlers::UseInField.add(:TOWNMAP, proc { |item|
-  pbFadeOutIn {
-    ret = pbBetterRegionMap
+  pbFadeOutIn(99999) {
+    ret = pbBetterRegionMap(-1, true, true) #(@region, show player ,allow flying)
     $game_temp.fly_destination = ret if ret
-    next 99999 if ret   # Ugly hack to make Bag scene not reappear if flying
   }
-  next ($game_temp.fly_destination) ? 2 : 0
+  next (pbFlyToNewLocation) ? 1 : 0
 })
 
 MenuHandlers.add(:pokegear_menu, :map, {

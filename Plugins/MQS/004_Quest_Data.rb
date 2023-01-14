@@ -74,10 +74,10 @@ module QuestModule
     :Stage1 => "Talk to your Rivals",
     :Stage2 => "Defeat 5 or more trainers",
     :Stage3 => "Get the Oldrod",
-    :Location1 => "Dinning Room/Outside Deck",
-    :Location2 => "Cabins",
-    :Location3 => "Outside Deck.",
-    :QuestDescription => "Explore the yacht the way you want but you'll need to talk to both your rivals, defeat at least 5 trainers and receive the Oldrod to arrive in Hester City.",
+    :Location1 => "Yacht's Dinning Room/Outside Deck",
+    :Location2 => "The Yacht's Cabins F1 and B1F",
+    :Location3 => "Yacht's F1's Deck.",
+    :QuestDescription => "Explore the yacht the way you want! You'll arrive in Hester City once you talked to both your rivals, defeated at least 5 trainers and received the Oldrod.",
     :RewardString => "You'll arrive at your destination"
   }
 end

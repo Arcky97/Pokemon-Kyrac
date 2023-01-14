@@ -2,12 +2,12 @@
 [0]
 Filename=mapRegion0.png
 Name="Kyrac Region"
-#Version 0
+#Version 1
 Point=39,9,Home,"Your house",13,36,12,
 Point=38,9,Home,,13,36,12,
 Point=39,10,Home,Dock,13,36,12,
 Point=38,10,Home,,13,36,12,
-#Version 1
+#Version 2
 Point=45,10,"Hester City",Haven,79,52,18,
 Point=46,10,"Hester City","Flower Garden",79,52,18,
 Point=45,11,"Hester City",Mart,79,52,18,
@@ -17,7 +17,7 @@ Point=43,10,"Route 25",,,,,
 Point=42,10,"Route 26",,,,,
 Point=41,10,"Route 27",,,,,
 Point=40,10,"Route 27",,,,,
-#Version 2
+#Version 3
 Point=47,11,"Hester Forest",,,,,
 Point=47,10,"Route 1",,,,,
 Point=48,10,"Route Intersection","Radio Tower",17,17,20,
