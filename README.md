@@ -169,7 +169,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added a script for double battles with the Rivals.
 
-### V1.4.5C - Release January 13 2023
+### V1.4.5D - Release January 13 2023
 
 - First Release of the Year
 

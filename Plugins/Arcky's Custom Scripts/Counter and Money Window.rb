@@ -1,11 +1,8 @@
-def DisplayCounterWindow(object,var,total)
+def DisplayCounterWindow(object,gameVar,total)
     close_counter
-    var = $game_variables[var]
-    if total != nil
-      $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}/{3}</ar>", object, var, total))
-    else
-      $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}</ar>", object, var))
-    end
+    gameVar = $game_variables[gameVar]
+    total != 0 ? gameVar.to_s + "/" + total.to_s : nil
+    $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}</ar>", object, total))    
     $counterwindow.setSkin("Graphics/Windowskins")
     $counterwindow.resizeToFit($counterwindow.text, Graphics.width)
     $counterwindow.width = 160 if $counterwindow.width >= 130
@@ -34,34 +31,34 @@ def DisplayCounterWindow(object,var,total)
     $moneywindow = nil
   end
 
-  def itemCounter(var, useMapAllName, mapName)
-    number = $game_variables[var]
+  def itemCounter(gameVar, mapNameToUse=nil, object="Items")
+    gameVar = $game_variables[gameVar]
     mapList = []
-    if number == 0
+    if gameVar == 0
       $itemCounter = 0
-      if useMapAllName
+      if mapNameToUse
         mapinfos = load_data("Data/MapInfos.rxdata")
-        for i in 1..999
+        for i in 1..mapinfos.length
           mapIDName = sprintf("Data/Map%03d.rxdata", i)
           next if !File.exist?(mapIDName)
           map = load_data(mapIDName)
-          next if !mapinfos[i].name.include? mapName
+          next if mapinfos[i].name!= mapNameToUse
           mapList.push(sprintf("%03d", i))
-          $itemCounter += evenCounter(map)
+          $itemCounter += eventCounter(map)
         end
       else
         mapID = $game_map.map_id 
         map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
-        $itemCounter = evenCounter(map) 
+        $itemCounter = eventCounter(map) 
       end
     end
-    DisplayCounterWindow("Items",var,$itemCounter)
+    DisplayCounterWindow("Items",gameVar,$itemCounter)
   end
 
-  def evenCounter(map)
+  def eventCounter(map)
     itemCounter = 0
     for i in map.events.keys
-      next if !map.events[i].name.include? "Item" 
+      next if map.events[i].name!= "Item" 
       itemCounter += 1
     end
     return itemCounter
