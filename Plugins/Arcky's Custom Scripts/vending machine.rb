@@ -31,7 +31,7 @@ def pbMenu(input, discount, itemlist)
     $bag.add(itemlist[choice])
     bonus(choice, item, itemlist) if random(numb, item) == 5
     pbMenu(input, discount, itemlist)
-  end
+end
 
 def letterChecker(item)
     if item.starts_with_vowel?
