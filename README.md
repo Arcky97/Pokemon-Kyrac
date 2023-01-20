@@ -15,7 +15,7 @@
   + [V1.3.3A - Release December 31 2022](#V133A---Release-December-31-2022)
   + [V1.4.2A - Release January 13 2023](#V142A---Release-January-13-2023)
   + [V1.4.6A - Release January 17 2023](#V146A---Release-January-17-2023)
-
+  + [V1.4.xA - Release January 20 2023](#V14xA---Release-January-20-2023)
 - [Credits](#Credits)
 
 ## Story
