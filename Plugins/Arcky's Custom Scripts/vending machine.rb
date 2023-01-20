@@ -9,7 +9,7 @@ def pbMenu(input, discount, itemlist)
     (0...itemlist.size).to_a.map{|i| 
       next _INTL("{1} - ${2}", GameData::Item.get(itemlist[i]).name, ((GameData::Item.get(itemlist[i]).price) * discount).round)
     }, -1)
-    return if 0>choice || choice>7
+    return if 0>choice 
     if $player.money < ((GameData::Item.get(itemlist[choice]).price) * discount).round
       pbMessage(_INTL("\\GYou don't have enought \\c[3]money\\c[0]!"))
       return
