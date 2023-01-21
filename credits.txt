@@ -41,6 +41,8 @@ https://www.pokecommunity.com/showthread.php?t=446303
 Gen 5 Battle UI: Taiga
 https://reliccastle.com/resources/1134/
 
+EVs and IVs in Summary: Deoxysprime, SoulfulLex
+https://reliccastle.com/resources/703/
 
 edits in script:
 Settings: line 34, 38
@@ -58,3 +60,4 @@ Battle_Scene_Menus: line 206, 217-222
 Battle_Scene_Objects: line 14-15, 221-228
 SafariBattle: line 86-87
 Battle_Scene: line 128-130 (essentials deluxe)
+Battler_UseMoveSuccessChecks: line 112

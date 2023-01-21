@@ -15,7 +15,7 @@
   + [V1.3.3A - Release December 31 2022](#V133A---Release-December-31-2022)
   + [V1.4.2A - Release January 13 2023](#V142A---Release-January-13-2023)
   + [V1.4.6A - Release January 17 2023](#V146A---Release-January-17-2023)
-  + [V1.4.8A - Release January 20 2023](#V148A---Release-January-20-2023)
+  + [V1.4.9C - Release January 20 2023](#V149C---Release-January-20-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -190,11 +190,19 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Finished the Counter and made it as universal as I could, it'll use the same script call for all counters in the game but just with different arguments (not imortant for the player to know)
 
-### V1.4.8A - Release January 20 2023
+### V1.4.9C - Release January 20 2023
 
 - Added the new Universal Item Counter to the Items that can be found in the Yacht's F1 Lab (a.k.a. Prof. Oak's Lab)
 
 - Added a script that'll handle the naming of the Rivals instead of doing it with a very long event.
+
+- Added the new trainer and item counter script to all the trainers and items on the yacht.
+
+- Fixed an issue with the notification being too early when you complete the Yacht Quest.
+
+- Fixed an issue with your Pokémon not obeying you when they are above Lv. 10 and you have no gym badges.
+
+
 
 ## Credits:
 

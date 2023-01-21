@@ -21,7 +21,7 @@ end
 
 
 def regionArray
-  regionmapinfo = [[$game_switches[140], 0, 0, "MapRegion0"], [$game_switches[135], 24, 4, "MapRegion1"], [$game_switches[136], 27, 14, "MapRegion2"], [$game_switches[137], 30, 33, "MapRegion3"]]
+  regionmapinfo = [[$game_switches[140], 0, 0, "MapRegion0"], [$game_switches[135], 24, 4, "MapRegion1"], [$game_switches[136], 27, 14, "MapRegion2"], [$game_switches[137], 30, 33, "MapRegion3"], [$game_switches[138], 33, 69]]
   for i in 0...regionmapinfo.length
     if regionmapinfo[i][0]  
       regiondata = regionmapinfo[i].clone

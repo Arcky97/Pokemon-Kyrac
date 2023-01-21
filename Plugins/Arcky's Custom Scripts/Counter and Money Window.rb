@@ -16,8 +16,8 @@ def closeCounter
   $counterwindow = nil
 end
 
-def pbDisplayMoneyWindow
-  close_money
+def displayMoneyWindow
+  closeMoney
   $moneywindow = Window_AdvancedTextPokemon.new(_INTL("Money:\n<ar>${1}</ar>", $player.money.to_s_formatted))
   $moneywindow.setSkin("Graphics/Windowskins")
   $moneywindow.resizeToFit($moneywindow.text, Graphics.width)
@@ -25,7 +25,7 @@ def pbDisplayMoneyWindow
   return $moneywindow
 end
 
-def close_money 
+def closeMoney
   return if !$moneywindow
   $moneywindow.dispose
   $moneywindow = nil
