@@ -141,7 +141,6 @@ def onItemStuck()
         increase = @percentageOnMaxLevel / 2
         decrease = @percentageOnMaxLevel / 4
         random = @counter[1] != 0 ? rand(1..10) : 11
-        echoln(random)
         if random >= 1 || random <=5 #items get stuck first then remaining items drop down
             for i in 1...@counter[1]
                 increase = (@percentageOnMaxLevel) + increase / 2
