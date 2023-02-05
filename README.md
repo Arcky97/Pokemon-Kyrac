@@ -16,7 +16,7 @@
   + [V1.4.2A - Release January 13 2023](#V142A---Release-January-13-2023)
   + [V1.4.6A - Release January 17 2023](#V146A---Release-January-17-2023)
   + [V1.4.9C - Release January 20 2023](#V149C---Release-January-20-2023)
-  + [V1.5.0A - Release February 4 2023](#150A---Release-February-4-2023)
+  + [V1.5.1A - Release February 4 2023](#151A---Release-February-4-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -203,11 +203,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed an issue with your Pokémon not obeying you when they are above Lv. 10 and you have no gym badges.
 
-### V1.5.0A - Release February 4 2023
+### V1.5.1A - Release February 4 2023
 
 - I know it's been a while since I released an update but I've been working on a script and didn't made much progress in the game overall.
 
 - Added Hugen City (one of the final but bigest city you'll visit in the main story)
+
+- Updated the Vending Machine script, the Vending Machines have more possible outcomes now.
 
 ## Credits:
 

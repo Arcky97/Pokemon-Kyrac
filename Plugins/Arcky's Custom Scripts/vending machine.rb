@@ -18,7 +18,7 @@ def pbMenu()
     @qty = @multyBuy ? quantity() : 1
     @itemPrice = (((GameData::Item.get(@itemList[@choice]).price) * @discount).round) * @qty
     if $player.money < @itemPrice
-      pbMessage(_INTL("\\GYou don't have enought \\c[3]money\\c[0]!"))
+      pbMessage(_INTL("\\GYou don't have enough \\c[3]money\\c[0]!"))
       return
     end
     if !$bag.can_add?(@itemList[@choice], @qty)
@@ -27,9 +27,11 @@ def pbMenu()
     end
     pbSEPlay("Mart buy item")
     $player.money -= @itemPrice
+    @bonusPercentage = maxLevel(10)
     itemStuckCalculator()
     $bag.add(@itemList[@choice], @qty)
-    #bonus() if random() <= maxLevel(10)
+    return if @qty == 0
+    bonus() if ((rand(1..1000))*0.1).round(1) <= @bonusPercentage
     pbMenu()
 end
 
@@ -42,20 +44,26 @@ def quantity()
 end
 
 def itemStuckCalculator()
-    percentageItemStuck = random()
+    @percentageItemStuck = random(@qty)
     @percentageOnMaxLevel = maxLevel(65)
-    @counter = countItemPercentage(percentageItemStuck)
+    @counter = countItemPercentage(@percentageItemStuck)
     if @qty == 1
-        @start = letterChecker()
-        action = percentageItemStuck[0] > @percentageOnMaxLevel ? onItemStuck() : pbMessage(_INTL("\\se[Vending machine sound]\\G{1} \\c[1]{2} \\c[0]dropped down!",@start, @item)) 
+        if @percentageItemStuck[0] > @percentageOnMaxLevel
+            onItemStuck()
+        else
+            pbMessage(_INTL("\\se[Vending machine sound]\\G{1} \\c[1]{2} \\c[0]dropped down!",letterChecker(), @item))
+        end
     else 
-        onItemStuck() if @counter[0] !=0 
-        pbMessage(_INTL("\\se[Vending machine sound]\\G{1} \\c[1]{2} \\c[0]dropped down!",@start, itemname = @counter[1] > 1 ? @items : @item)) if @counter[0] == 0
+        if @counter[0] != 0
+            onItemStuck()
+        else
+            pbMessage(_INTL("\\se[Vending machine sound]\\G{1} \\c[1]{2} \\c[0]dropped down!",@qty, itemname = @counter[1] > 1 ? @items : @item))
+        end
     end
 end
 
-def random()
-    return random = Array.new(@qty) {((rand(1..1000))*0.1).round(1)}
+def random(qty)
+    return random = Array.new(qty) {((rand(1..1000))*0.1).round(1)}
 end
 
 def maxLevel(basePercentage)
@@ -96,8 +104,18 @@ def bonus()
     end
 end
 
-def onItemFree()
-    
+def noKick(qty = @qty)
+    pbMessage(_INTL("\\GYou lost {1} \\c[1]{2} \\c[0]and \\c[3]${3}\\c[0]!", qty, @itemNameStuck, @itemPrice))
+    @qty = 0
+end
+
+def yesKick(qty = @qty)
+    if ((rand(1..1000))*0.1).round(1) > maxLevel(65)
+        pbMessage(_INTL("\\GYour kick didn't work and you lost your {1} \\c[1]{2} \\c[0]and \\c[3]${3}\\c[0]!", qty, @items, @itemPrice))
+    else 
+        pbMessage(_INTL("\\se[Vending machine sound]\\GYour kick worked and {1} \\c[1]{2} \\c[0]dropped down!", qty, @items))
+        @bonusPercentage = maxLevel(20)
+    end
 end
 
 def onItemStuck()
@@ -106,49 +124,50 @@ def onItemStuck()
             [_INTL("Yes"),_INTL("No")], -1)
         if kick != 0
             pbMessage(_INTL("\\GLooks like you don't mind wasting your money (\\c[3]${1}\\c[0])!", @itemPrice))
+            @qty = 0
             return true
         end
-        random = random()
+        random = random(@qty)
         if random[0] > maxLevel(65)
             pbMessage(_INTL("\\GYour kick didn't work and you lost your \\c[1]{1} \\c[0]and \\c[3]${2}\\c[0]!", @item, @itemPrice))
+            @qty = 0
             return true
         end
         pbMessage(_INTL("\\se[Vending machine sound]\\GYour kick worked and the \\c[1]{1} \\c[0]dropped down!", @item))
         return false
     else
-        random = @counter[0] != 0 || @counter[1] != 0 ? rand(1..2) : 3
-        if random == 1 #items get stuck first then remaining items drop down
-            pbMessage(_INTL("\\GOh no! {1} \\c[1]{2} \\c[0]got stuck! But the other {3} \\c[1]{4} \\c[0]got them dropping down!", @counter[0], itemname = @counter[0] > 1 ? @items : @item, @counter[1], itemname = @counter[1] > 1 ? @items : @item))
-            return false
-        elsif random == 2    
-            kick = pbMessage(_INTL("\\G{1} \\c[1]{2} \\c[0]dropped down! But {3} \\c[1]{4} \\c[0]got stuck! Do you want to kick the machine to get them out?!", @counter[1], itemname = @counter[1] > 1 ? @items : @item, @counter[0], itemname = @counter[0] > 1 ? @items : @item),
+        @itemNameStuck = @counter[0] > 1 ? @items : @item
+        @itemNameFree = @counter[1] > 1 ? @items : @item
+        increase = @percentageOnMaxLevel / 2
+        decrease = @percentageOnMaxLevel / 4
+        random = @counter[1] != 0 ? rand(1..10) : 11
+        echoln(random)
+        if random >= 1 || random <=5 #items get stuck first then remaining items drop down
+            for i in 1...@counter[1]
+                increase = (@percentageOnMaxLevel) + increase / 2
+            end
+            for i in 1...@counter[0]
+                decrease = (@percentageOnMaxLevel) - decrease / 4
+            end
+            @itemUnstuck = increase - decrease
+            if ((rand(1..1000))*0.1).round(1) <= @itemUnstuck
+                pbMessage(_INTL("\\GOh no! {1} \\c[1]{2} \\c[0]got stuck! But the other {3} \\c[1]{4} \\c[0]got them dropping down!", @counter[0], @itemNameStuck, @counter[1], @itemNameFree))
+            else
+                pbMessage(_INTL("\\GOh no! {1} \\c[1]{2} \\c[0]got stuck! The other {3} \\c[1]{4} \\c[0]failed to get the {1} \\c[1]{2} \\c[0]dropping down", @counter[0], @itemNameStuck, @counter[1], @itemNameFree))
+                kick = pbMessage(_INTL("\\GDo you want to kick the machine to get them all out?"),
                 [_INTL("Yes"),_INTL('No')], -1)
-            if kick != 0
-                return true
+                action = kick != 0 ? noKick() : yesKick()
             end
-            kickWorked = countItemPercentage(random())
-            if kickWorked[0] > kickWorked[1]
-                pbMessage(_INTL("\\GYour kick didn't work and you lost your {1}{2} \\c[1]{3} \\c[0]and \\c[3]${4}\\c[0]!", @counter[0], @item, @itemPrice))
-                return true
-            else 
-                pbMessage(_INTL("\\se[Vending machine sound]\\GYour kick worked and {1} \\c[1]{2} \\c[0]dropped down!", @counter[0], @items))
-                return false
-            end
-        else #random == 3 items will first drop down and then remaining items will get stuck
-            pbMessage(_INTL("\\GOh no! The \\c[1]{2} \\c[0]dropped down!", @items)) if counter[0] == 0
-            kick = pbMessage(_INTL("\\GOh no! The \\c[1]{2} \\c[0]got stuck! Do you want to kick the machine to get them out?", @items),
-                [_INTL("Yes"),_INTL("no")], -1) if counter[1] == 0
-            if kick != 0
-                pbMessage(_INTL("\\GLooks like you don't mind wasting your money (\\c[3]${1}\\c[0])!", @itemPrice))
-                return true
-            end
-            random = random()
-            if random[0] > maxLevel(65)
-                pbMessage(_INTL("\\GYour kick didn't work and you lost your \\c[1]{1} \\c[0]and \\c[3]${2}\\c[0]!", @item, @itemPrice))
-                return true
-            end
-            pbMessage(_INTL("\\se[Vending machine sound]\\GYour kick worked and the \\c[1]{1} \\c[0]dropped down!", @item))
-            return false
+        elsif random >= 6 || random <=10    
+            kick = pbMessage(_INTL("\\G{1} \\c[1]{2} \\c[0]dropped down! But {3} \\c[1]{4} \\c[0]got stuck! Do you want to kick the machine to get them out?!", @counter[1], @itemNameFree, @counter[0], @itemNameStuck),
+                [_INTL("Yes"),_INTL('No')], -1)
+            @itemPrice = (@itemPrice / @qty) * @counter[0]
+            @qty -= @counter[0]
+            action = kick != 0 ? noKick(@counter[0]) : yesKick(@counter[0])
+        else # random == 11 which means all items got stuck
+            kick = pbMessage(_INTL("\\G{1} \\c[1]{2} \\cOh no, all {3} \\c[1]{4} \\c[0]got stuck! Do you want to kick the machine to get them out?!", @counter[1], @itemNameFree, @counter[0], @itemNameStuck),
+                [_INTL("Yes"),_INTL('No')], -1)
+            action = kick != 0 ? noKick(@counter[0]) : yesKick()
         end
     end
 end
