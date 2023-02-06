@@ -425,6 +425,13 @@ MapPosition = 0,13,11
 SnapEdges = true
 MapSize = 2,111010
 #-------------------------------
+[121]   # Hugen City
+Name = Hugen City
+Outdoor = true
+ShowArea = true
+Bicycle = true
+SnapEdges = true
+#-------------------------------
 [122]   # Yacht - F1 - Outside
 Name = Yacht Deck
 Outdoor = true
