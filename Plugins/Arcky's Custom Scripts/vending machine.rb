@@ -1,9 +1,15 @@
-def pbVendingMachine(name, number, items, multyBuy = false)
-    @discount = (100 - number).to_f / 100
+def pbVendingMachine(name, var1, var2, var3, var4, items, multyBuy = false, min = 1, max = 10, discount = 0)
     pbMessage(_INTL("Look! It's a Vending Machine!"))
     @input = name
+    @itemsBought = var1
+    @itemsWon = var2
+    @itemsStuck = var3
+    @itemsLost = var4
     @itemList = items
-    @multyBuy = multyBuy   
+    @multyBuy = multyBuy
+    @multyBuyMin = min
+    @multyBuyMax = max
+    @discount = (100 - discount).to_f / 100
     pbMenu()
 end
 
@@ -16,6 +22,7 @@ def pbMenu()
     @item = GameData::Item.get(@itemList[@choice]).name
     @items = GameData::Item.get(@itemList[@choice]).name_plural 
     @qty = @multyBuy ? quantity() : 1
+    $game_variables[@itemsBought] += @qty
     @itemPrice = (((GameData::Item.get(@itemList[@choice]).price) * @discount).round) * @qty
     if $player.money < @itemPrice
       pbMessage(_INTL("\\GYou don't have enough \\c[3]money\\c[0]!"))
@@ -37,9 +44,9 @@ end
 
 def quantity()
     params = ChooseNumberParams.new
-    params.setRange(1, 10)
-    params.setInitialValue(1)
-    params.setCancelValue(0)
+    params.setRange(@multyBuyMin, @multyBuyMax)
+    params.setInitialValue(@multyBuyMin)
+    params.setCancelValue(@multyBuyMin)
     return @qty = pbMessageChooseNumber(_INTL("\\GHow many {1} do you want to buy?", @item), params)
 end
 
@@ -100,18 +107,20 @@ def bonus()
         $bag.add(@itemList[@choice])
         start = @item.last == "s" ? "Some more" : "Another"
         pbMessage(_INTL("\\se[Vending machine sound]\\GBonus! {1} \\c[1]{2} \\c[0]dropped down!",start, @item))
-        $game_variables[40] += 1
+        $game_variables[@itemsWon] += 1
     end
 end
 
 def noKick(qty = @qty)
     pbMessage(_INTL("\\GYou lost {1} \\c[1]{2} \\c[0]and \\c[3]${3}\\c[0]!", qty, @itemNameStuck, @itemPrice))
+    $game_variables[@itemsLost] += qty
     @qty = 0
 end
 
 def yesKick(qty = @qty)
     if ((rand(1..1000))*0.1).round(1) > maxLevel(65)
         pbMessage(_INTL("\\GYour kick didn't work and you lost your {1} \\c[1]{2} \\c[0]and \\c[3]${3}\\c[0]!", qty, @items, @itemPrice))
+        $game_variables[@itemsLost] += qty
     else 
         pbMessage(_INTL("\\se[Vending machine sound]\\GYour kick worked and {1} \\c[1]{2} \\c[0]dropped down!", qty, @items))
         @bonusPercentage = maxLevel(20)
@@ -122,14 +131,17 @@ def onItemStuck()
     if @qty == 1
         kick = pbMessage(_INTL("\\GOh no! Your \\c[1]{1} \\c[0]got stuck! Do you want to try to kick the machine?", @item),
             [_INTL("Yes"),_INTL("No")], -1)
+        $game_variables[@itemsStuck] += 1
         if kick != 0
             pbMessage(_INTL("\\GLooks like you don't mind wasting your money (\\c[3]${1}\\c[0])!", @itemPrice))
+            $game_variables[@itemsLost] += 1
             @qty = 0
             return true
         end
         random = random(@qty)
         if random[0] > maxLevel(65)
             pbMessage(_INTL("\\GYour kick didn't work and you lost your \\c[1]{1} \\c[0]and \\c[3]${2}\\c[0]!", @item, @itemPrice))
+            $game_variables[@itemsLost] += 1
             @qty = 0
             return true
         end
@@ -151,8 +163,10 @@ def onItemStuck()
             @itemUnstuck = increase - decrease
             if ((rand(1..1000))*0.1).round(1) <= @itemUnstuck
                 pbMessage(_INTL("\\GOh no! {1} \\c[1]{2} \\c[0]got stuck! But the other {3} \\c[1]{4} \\c[0]got them dropping down!", @counter[0], @itemNameStuck, @counter[1], @itemNameFree))
+                $game_variables[@itemsStuck] += @counter[0]
             else
                 pbMessage(_INTL("\\GOh no! {1} \\c[1]{2} \\c[0]got stuck! The other {3} \\c[1]{4} \\c[0]failed to get the {1} \\c[1]{2} \\c[0]dropping down", @counter[0], @itemNameStuck, @counter[1], @itemNameFree))
+                $game_variables[@itemsStuck] += @qty
                 kick = pbMessage(_INTL("\\GDo you want to kick the machine to get them all out?"),
                 [_INTL("Yes"),_INTL('No')], -1)
                 action = kick != 0 ? noKick() : yesKick()
@@ -160,12 +174,14 @@ def onItemStuck()
         elsif random >= 6 || random <=10    
             kick = pbMessage(_INTL("\\G{1} \\c[1]{2} \\c[0]dropped down! But {3} \\c[1]{4} \\c[0]got stuck! Do you want to kick the machine to get them out?!", @counter[1], @itemNameFree, @counter[0], @itemNameStuck),
                 [_INTL("Yes"),_INTL('No')], -1)
+            $game_variables[@itemsLost] += @counter[0]
             @itemPrice = (@itemPrice / @qty) * @counter[0]
             @qty -= @counter[0]
             action = kick != 0 ? noKick(@counter[0]) : yesKick(@counter[0])
         else # random == 11 which means all items got stuck
             kick = pbMessage(_INTL("\\G{1} \\c[1]{2} \\cOh no, all {3} \\c[1]{4} \\c[0]got stuck! Do you want to kick the machine to get them out?!", @counter[1], @itemNameFree, @counter[0], @itemNameStuck),
                 [_INTL("Yes"),_INTL('No')], -1)
+            $game_variables[@itemsLost] += @counter[0]
             action = kick != 0 ? noKick(@counter[0]) : yesKick()
         end
     end
