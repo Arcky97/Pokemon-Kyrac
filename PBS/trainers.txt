@@ -433,3 +433,12 @@ LoseText = Very good.
 Pokemon = PIKACHU,24
 Pokemon = RAICHU,26
 
+#-------------------------------
+[LEADER_Blaine,Blaime]
+LoseText = I'm nothing compared to my brother!
+Pokemon = MOLTRES,80
+Pokemon = ENTEI,82
+Pokemon = HOOH,80
+Pokemon = HEATRAN,81
+Pokemon = RESHIRAM,83
+Pokemon = ARCANINE,85
