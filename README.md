@@ -218,6 +218,64 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added 29 new OST's that will not be used for Maps and Battles.
 
+- Added a Bike Theme OST
+
+- Added a Champion Battle OST
+
+- Added a Special Battle OST
+
+- Added a Special Character Theme OST
+
+- Added an Elite Four Battle OST
+
+- Added an OST for Flutford Town
+
+- Added an OST for Hester City
+
+- Added an OST for Franta Town
+
+- Added an OST for Tila Town
+
+- Added an OST for Player's Home map
+
+- Added an OST for Route 1
+
+- Added an OST for Route 2
+
+- Added an OST for Route 3
+
+- Added an OST for Route 4
+
+- Added an OST for Route Intersection
+
+- Added a Poke Center OST
+
+- Added a Surf Theme OST
+
+- Added a Wild Battle OST
+
+- Added a Wild Battle Victory OST
+
+- Added a Trainer Battle OST
+
+- Added a Trainer Victory OST
+
+- Added a Gym Battle OST
+
+- Added a Gym Victory OST
+
+- Added a Gym Theme OST
+
+- Added an OST for the Indigo Plateau (Dream) map
+
+- Added a Mart OST
+
+- Added a Radio Tower Mart OST
+
+- Added an OST for the Yacht (S.S. R.B.P.)
+
+- Added a Champion OST
+
 - Added and fixed more things but I forgot what since it's been so long since I released a new update XD
 
 ## Credits:
