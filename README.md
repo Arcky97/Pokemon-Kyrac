@@ -17,6 +17,7 @@
   + [V1.4.6A - Release January 17 2023](#V146A---Release-January-17-2023)
   + [V1.4.9C - Release January 20 2023](#V149C---Release-January-20-2023)
   + [V1.5.1A - Release February 4 2023](#151A---Release-February-4-2023)
+  + [V1.6.31E - Release February 22 2023](#1631E---Release-February-22-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -210,6 +211,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added Hugen City (one of the final but bigest city you'll visit in the main story)
 
 - Updated the Vending Machine script, the Vending Machines have more possible outcomes now.
+
+### V1.6.31E - Release February 22 2023
+
+- Added the Trainer School's Gym
+
+- Added 29 new OST's that will not be used for Maps and Battles.
+
+- Added and fixed more things but I forgot what since it's been so long since I released a new update XD
 
 ## Credits:
 

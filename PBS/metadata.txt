@@ -5,12 +5,12 @@ StartMoney = 30000
 StartItemStorage = POTION
 Home = 3,26,6,8
 StorageCreator = Paul
-WildBattleBGM = Battle wild
-TrainerBattleBGM = TrainerBattleMusic
-WildVictoryBGM = Battle victory wild
-TrainerVictoryBGM = Battle victory trainer
-SurfBGM = Surfing
-BicycleBGM = Bicycle
+WildBattleBGM = Pkmn Kyrac - Wild Battle
+TrainerBattleBGM = Pkmn Kyrac - Trainer Battle
+WildVictoryBGM = Pkmn Kyrac - Wild Victory
+TrainerVictoryBGM = Pkmn Kyrac - Trainer Victory
+SurfBGM = Pkmn Kyrac - Surf Theme
+BicycleBGM = Pkmn Kyrac - Bike Theme
 #-------------------------------
 [1]
 TrainerType = POKEMONTRAINER_Red

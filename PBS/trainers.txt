@@ -419,8 +419,6 @@ Pokemon = WEEDLE,15
 Pokemon = KAKUNA,18
 Pokemon = BEEDRILL,21
 #-------------------------------
-
-#-------------------------------
 [LEADER_Misty,Misty]
 Items = FULLRESTORE,FULLRESTORE
 LoseText = Very good.
@@ -432,7 +430,6 @@ Items = FULLRESTORE,FULLRESTORE
 LoseText = Very good.
 Pokemon = PIKACHU,24
 Pokemon = RAICHU,26
-
 #-------------------------------
 [LEADER_Blaine,Blaime]
 LoseText = I'm nothing compared to my brother!
@@ -442,3 +439,12 @@ Pokemon = HOOH,80
 Pokemon = HEATRAN,81
 Pokemon = RESHIRAM,83
 Pokemon = ARCANINE,85
+#-------------------------------
+[CYNTHIA,Cynthia]
+LoseText = Simply maginificant
+Pokemon = SPIRITOMB,15
+Pokemon = BUDEW,15
+Pokemon = TOGEPI,16
+Pokemon = RIOLU,16
+Pokemon = FEEBAS,15
+Pokemon = GIBLE,18

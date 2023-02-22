@@ -308,92 +308,92 @@ BaseMoney = 100
 Name = Gym Leader
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Misty]
 Name = Gym Leader
 Gender = Female
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Surge]
 Name = Gym Leader
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Erika]
 Name = Gym Leader
 Gender = Female
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Koga]
 Name = Gym Leader
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Sabrina]
 Name = Gym Leader
 Gender = Female
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Blaine]
 Name = Gym Leader
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [LEADER_Giovanni]
 Name = Gym Leader
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [ELITEFOUR_Lorelei]
 Name = Elite Four
 Gender = Female
 BaseMoney = 100
-BattleBGM = Battle Elite
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Elite 4 Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [ELITEFOUR_Bruno]
 Name = Elite Four
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Elite
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Elite 4 Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [ELITEFOUR_Agatha]
 Name = Elite Four
 Gender = Female
 BaseMoney = 100
-BattleBGM = Battle Elite
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Elite 4 Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [ELITEFOUR_Lance]
 Name = Elite Four
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Elite
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Elite 4 Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [CHAMPION]
 Name = Champion
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Champion
-VictoryBGM = Battle victory leader
+BattleBGM = Pkmn Kyrac - Champion Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
 #-------------------------------
 [PRINCIPAL_DUDE]
 Name = Principal Dude
@@ -453,6 +453,12 @@ SkillLevel = 38
 Name = Gym Leader
 Gender = Male
 BaseMoney = 100
-BattleBGM = Battle Gym Leader
-VictoryBGM = Battle victory leader
-
+BattleBGM = Pkmn Kyrac - Gym Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
+#-------------------------------
+[CYNTHIA]
+Name = Champion
+Gender = Female
+BaseMoney = 100
+BattleBGM = Pkmn Kyrac - Cynthia Battle
+VictoryBGM = Pkmn Kyrac - Gym Victory
