@@ -364,6 +364,7 @@ end
 #===============================================================================
 def pbSpawnOnStepTaken(repel_active)
   return if $player.able_pokemon_count == 0 #check if trainer has pokemon
+  return if $game_switches[114] #checks if the player is on a bridge
   #First we choose a tile near the player
   pos = pbChooseTileOnStepTaken
   return if !pos
@@ -742,9 +743,9 @@ def pbSingleOrDoubleWildBattle(map_id,x,y,pokemon)
       encounter2 = $PokemonEncounters.choose_wild_pokemon($game_temp.encounter_type)
       EventHandlers.trigger(:on_wild_species_chosen, encounter2)
       setBattleRule("double")
-      WildBattle.start(pokemon, encounter2, can_override: true)
+      WildBattle.start(pokemon, encounter2, can_override: true) if !$game_switches[114]
   else
-    WildBattle.start(pokemon, can_override: true)
+    WildBattle.start(pokemon, can_override: true) if !$game_switches[114]
   end
   $game_temp.encounter_type = nil
   $game_temp.encounter_triggered = true
