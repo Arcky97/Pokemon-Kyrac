@@ -56,8 +56,8 @@ def countItems(map, mapArrayToUse)
   for i in map.events.keys
     next if !map.events[i].name.include?("Item") 
     itemCounter += 1
-    for j in 0...bonusArray.length
-      next if !map.events[i].name.include?(bonusArray[j]) 
+    for j in 0...bonusArray[0].length
+      next  if !map.events[i].name.include?(bonusArray[j])
       bonusCounter += 1
     end
   end
@@ -66,7 +66,7 @@ end
 
 def fieldMoveItems
   fieldMoves = {
-    1 => "RC",
+    1 => "RS",
     3 => "CU",
     4 => "SU",
     5 => "ST",
