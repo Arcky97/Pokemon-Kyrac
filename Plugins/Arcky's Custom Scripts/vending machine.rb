@@ -1,4 +1,4 @@
-def pbVendingMachine(name, var1, var2, var3, var4, items, multyBuy = false, min = 1, max = 10, discount = 0)
+def pbVendingMachine(name, var1, var2, var3, var4, items, discount = 0, multyBuy = false, min = 1, max = 10)
     pbMessage(_INTL("Look! It's a Vending Machine!"))
     @input = name
     @itemsBought = var1
@@ -10,6 +10,7 @@ def pbVendingMachine(name, var1, var2, var3, var4, items, multyBuy = false, min 
     @multyBuyMin = min
     @multyBuyMax = max
     @discount = (100 - discount).to_f / 100
+    echoln(@discount)
     pbMenu()
 end
 

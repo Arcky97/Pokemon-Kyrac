@@ -49,7 +49,7 @@ module QuestModule
     :QuestGiver => "Yourself",
     :Stage1 => "Find all items",
     :Location1 => "Your Home's Garden.",
-    :QuestDescription => "Go through the maze and try to find all off the items there are to find (10 in total) ",
+    :QuestDescription => "Go through the maze and try to find all off the hidden items. (10 in total) ",
     :RewardString => "A lot of useful items."
   }
 
@@ -63,8 +63,8 @@ module QuestModule
     :Location1 => "Your Home's Garden.",
     :Location2 => "Use your phone!.",
     :Location3 => "Your Home's Garden.",
-    :QuestDescription => "You noticed the guards are drunk and they might have hidden the evidence somewhere in your Home's garden. It's your task to find it.",
-    :RewardString => "Your mother will forgive for sneeking around in her bedroom!"
+    :QuestDescription => "You noticed the guards are drunk and they might have hidden the evidence somewhere in your Home's garden. Let's find it!",
+    :RewardString => "Your mother will forgive you for sneeking around in her bedroom!"
   }
 
   Quest7 = {
@@ -73,7 +73,8 @@ module QuestModule
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Explore the Yacht!",
     :Location1 => "The Yacht",
-    :QuestDescription => "Explore the yacht the way you want! Talk to both your rivals, defeat at least 5 trainers and receive the Oldrod then you'll arrive in Hester City.",
+    :QuestDescription => "Explore the yacht the way you want! Talk to both your rivals, defeat at least 5 trainers and receive the Oldrod from the fisherman.",
     :RewardString => "You'll arrive at your destination"
   }
+
 end
