@@ -1,6 +1,6 @@
 @eventIDs = [
     [13,
-        [28]
+        [28, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
     ],
     [15,
         [21, 22, 23, 24]
@@ -27,25 +27,44 @@
 
 @eventPositionsToIgnore = [
     [13,
-        [42, 37],
+        [2, 35],
+        [10, 35],
+        [14, 35],
+        [18, 35],
+        [22, 35],
+        [27, 32],
+        [28, 37],
+        [29, 16],
+        [30, 11],
+        [32, 11],
+        [32, 37],
+        [36, 38],
+        [40, 11],
+        [40, 38],
+        [42, 11],
         [42, 38],
-        [43, 37],
+        [42, 39],
+        [43, 16],
         [43, 38],
-        [44, 37],
+        [43, 39],
         [44, 38],
-        [45, 37],
-        [49, 37],
-        [50, 37],
-        [51, 37],
+        [44, 39],
+        [45, 38],
+        [45, 39],
+        [46, 38],
+        [50, 38],
         [51, 38],
-        [52, 37],
         [52, 38],
-        [53, 37],
         [53, 38],
-        [54, 37],
+        [53, 39],
         [54, 38],
-        [55, 37],
-        [55, 38]
+        [54, 39],
+        [55, 38],
+        [55, 39],
+        [56, 38],
+        [56, 39],
+        [57, 38],
+        [57, 39]
     ],
     [17,
         [14, 10],
@@ -124,7 +143,12 @@ def checkEventSize()
         @getMapEventIDs = @eventIDs[i] if @eventIDs[i][0] == @map
     end
     for i in 0...@eventPositionsToIgnore.length
-        @getMapPositionsToIgnore = @eventPositionsToIgnore[i][0] == @map && @eventPositionsToIgnore != nil ? @eventPositionsToIgnore[i] : [9999,9999]
+        if @eventPositionsToIgnore[i][0] == @map && @eventPositionsToIgnore[i] != nil
+            @getMapPositionsToIgnore = @eventPositionsToIgnore[i]
+            break 
+        else
+            @getMapPositionsToIgnore = [9999,9999]
+        end
     end
     if @getMapEventIDs != nil
         for i in 0...@getMapEventIDs[1].length
