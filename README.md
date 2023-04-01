@@ -19,6 +19,7 @@
   + [V1.5.1A - Release February 4 2023](#151A---Release-February-4-2023)
   + [V1.6.31E - Release February 22 2023](#1631E---Release-February-22-2023)
   + [V1.6.33H - Release March 31 2023](#1633H---Release-March-31-2023)
+  + [V1.7.1B - Release April 31 2023](#171B---Release-April-1-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -102,10 +103,10 @@ Second Round:
 - 1st Member: Dragon Type
 - 2nd Member: Electric Type
 - 3rd Member: Steel Type
-- 4th Member: Flying Type
+- 4th Member: Dark Type
 - Champion: Mixed Type
 
-Third Round or First Rematch:
+Third Round:
 - 1st Member: Fairy Type
 - 2nd Member: Bug Type
 - 3rd Member: Poison type
@@ -285,9 +286,21 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Edited Player's Home map
 
-- Several rewrites of NPC dialoges.
+- A lot of rewrites for NPC dialogues.
 
-- Several bugs fixed.
+- A lot of bugs fixed.
+
+### V1.7.1B - Release April 1 2023
+
+- Added Trainer School Class Room
+
+- Added Trainer School Computer Room
+
+- Fixed a typo in the lab's event
+
+- Fixed a typo in the Yacht's F1 cabins
+
+- Updated the dock's legs to be longer now
 
 ## Credits:
 
