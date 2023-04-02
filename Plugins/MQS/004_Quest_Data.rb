@@ -18,7 +18,7 @@ module QuestModule
     :Stage3 => "Hit even more plants!",
     :Location1 => "Anywhere",
     :QuestDescription => "Hit as many plants as you can! Any plant counts, in houses, buildings, yachts, PokéCenters, Marts, etc...",
-    :RewardString => "A bunch of plants being mad"
+    :RewardString => "A bunch of plants being mad."
   }
   Quest3 = {
     :ID => "3",
@@ -74,7 +74,16 @@ module QuestModule
     :Stage1 => "Explore the Yacht!",
     :Location1 => "The Yacht",
     :QuestDescription => "Explore the yacht the way you want! Talk to both your rivals, defeat at least 5 trainers and receive the Oldrod from the fisherman.",
-    :RewardString => "You'll arrive at your destination"
+    :RewardString => "You'll arrive at your destination."
   }
 
+  Quest8 = {
+    :ID => "7",
+    :Name => "FPI at the Trainer School!",
+    :QuestGiver => "Prof. Oak",
+    :Stage1 => "Go to the Trainer School!",
+    :Location1 => "Hester City",
+    :QuestDescription => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
+    :RewardString => "a gift from \\v[52]."
+  }
 end
