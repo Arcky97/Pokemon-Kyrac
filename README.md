@@ -302,6 +302,12 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Updated the dock's legs to be longer now
 
+### V1.7.3A - Release April 2 2023
+
+- Edited Hester City
+
+- New story events added in Hester City
+
 ## Credits:
 
 Essentials: Maruno
