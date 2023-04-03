@@ -19,7 +19,7 @@
   + [V1.5.1A - Release February 4 2023](#151A---Release-February-4-2023)
   + [V1.6.31E - Release February 22 2023](#1631E---Release-February-22-2023)
   + [V1.6.33H - Release March 31 2023](#1633H---Release-March-31-2023)
-  + [V1.7.1B - Release April 31 2023](#171D---Release-April-1-2023)
+  + [V1.7.4C - Release April 31 2023](#174C---Release-April-1-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -302,11 +302,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Updated the dock's legs to be longer now
 
-### V1.7.3A - Release April 2 2023
+### V1.7.4C - Release April 2 2023
 
 - Edited Hester City
 
 - New story events added in Hester City
+
+- More new story events added in Hester City
 
 ## Credits:
 
