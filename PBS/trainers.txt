@@ -367,6 +367,252 @@ Pokemon = SCATTERBUG,8
 Pokemon = VENONAT,8
 Pokemon = DUSTOX,9
 #-------------------------------
+Hester City Trainer School
+#-------------------------------
+[RIVAL1_F,TrainerSchool,13]
+LoseText = ...
+Pokemon = KLINK,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,13]
+LoseText = ...
+Pokemon = KLINK,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,13]
+Items = POTION
+LoseText = ...
+Pokemon = SPHEAL,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,13]
+Items = POTION
+LoseText = ...
+Pokemon = SPHEAL,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,14]
+LoseText = ...
+Pokemon = SPHEAL,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,14]
+LoseText = ...
+Pokemon = SPHEAL,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,14]
+Items = POTION
+LoseText = ...
+Pokemon = PICHU,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,14]
+Items = POTION
+LoseText = ...
+Pokemon = PICHU,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,15]
+LoseText = ...
+Pokemon = TRAPINCH,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,15]
+LoseText = ...
+Pokemon = TRAPINCH,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,15]
+Items = POTION
+LoseText = ...
+Pokemon = FLETCHLING,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,15]
+Items = POTION
+LoseText = ...
+Pokemon = FLETCHLING,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,16]
+LoseText = ...
+Pokemon = FLETCHLING,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,16]
+LoseText = ...
+Pokemon = FLETCHLING,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,16]
+Items = POTION
+LoseText = ...
+Pokemon = ZIGZAGOON,12
+    Form = 1
+#-------------------------------
+[RIVAL2_F,TrainerSchool,16]
+Items = POTION
+LoseText = ...
+Pokemon = ZIGZAGOON,12
+    Form = 1
+#-------------------------------
+[RIVAL1_F,TrainerSchool,17]
+LoseText = ...
+Pokemon = ROGGENROLA,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,17]
+LoseText = ...
+Pokemon = ROGGENROLA,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,17]
+Items = POTION
+LoseText = ...
+Pokemon = TRAPINCH,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,17]
+Items = POTION
+LoseText = ...
+Pokemon = TRAPINCH,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,18]
+LoseText = ...
+Pokemon = PICHU,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,18]
+LoseText = ...
+Pokemon = PICHU,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,18]
+Items = POTION
+LoseText = ...
+Pokemon = GRUBBIN,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,18]
+Items = POTION
+LoseText = ...
+Pokemon = GRUBBIN,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,19]
+LoseText = ...
+Pokemon = TIMBURR,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,19]
+LoseText = ...
+Pokemon = TIMBURR,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,19]
+Items = POTION
+LoseText = ...
+Pokemon = ROGGENROLA,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,19]
+Items = POTION
+LoseText = ...
+Pokemon = ROGGENROLA,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,20]
+LoseText = ...
+Pokemon = GRUBBIN,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,20]
+LoseText = ...
+Pokemon = GRUBBIN,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,20]
+Items = POTION
+LoseText = ...
+Pokemon = SOLOSIS,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,20]
+Items = POTION
+LoseText = ...
+Pokemon = SOLOSIS,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,21]
+LoseText = ...
+Pokemon = SOLOSIS,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,21]
+LoseText = ...
+Pokemon = SOLOSIS,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,21]
+Items = POTION
+LoseText = ...
+Pokemon = TOGEPI,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,21]
+Items = POTION
+LoseText = ...
+Pokemon = TOGEPI,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,22]
+LoseText = ...
+Pokemon = TOGEPI,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,22]
+LoseText = ...
+Pokemon = TOGEPI,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,22]
+Items = POTION
+LoseText = ...
+Pokemon = KLINK,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,22]
+Items = POTION
+LoseText = ...
+Pokemon = KLINK,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,23]
+LoseText = ...
+Pokemon = ZIGZAGOON,12
+    Form = 1
+#-------------------------------
+[RIVAL1_M,TrainerSchool,23]
+LoseText = ...
+Pokemon = ZIGZAGOON,12
+    Form = 1
+#-------------------------------
+[RIVAL2_M,TrainerSchool,23]
+Items = POTION
+LoseText = ...
+Pokemon = BUDEW,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,23]
+Items = POTION
+LoseText = ...
+Pokemon = BUDEW,12
+#-------------------------------
+[RIVAL1_F,TrainerSchool,24]
+LoseText = ...
+Pokemon = BUDEW,12
+#-------------------------------
+[RIVAL1_M,TrainerSchool,24]
+LoseText = ...
+Pokemon = BUDEW,12
+#-------------------------------
+[RIVAL2_M,TrainerSchool,24]
+Items = POTION
+LoseText = ...
+Pokemon = TIMBURR,12
+#-------------------------------
+[RIVAL2_F,TrainerSchool,24]
+Items = POTION
+LoseText = ...
+Pokemon = TIMBURR,10
+#-------------------------------
+[FPIGRUNT_M,Peggy]
+LoseText = Wow!
+Pokemon = SCRAGGY, 10
+#-------------------------------
+[FPIGRUNT_M,Pedro]
+LoseText = Wow!
+Pokemon = WOOPER, 10
+#-------------------------------
+[FPIGRUNT_M,Peter]
+LoseText = Wow!
+Pokemon = MAKUHITA, 10
+#-------------------------------
+[FPIGRUNT_M,Parker]
+LoseText = Wow!
+Pokemon = BIDOOF, 10
+#-------------------------------
+[FPIGRUNT_M,Paula]
+LoseText = Wow!
+Pokemon = BLITZLE, 10
+#-------------------------------
+[FPIGRUNT_M,Philip]
+LoseText = Wow!
+Pokemon = MAREEP, 10
+#-------------------------------
 Hester City Gym
 #-------------------------------
 [LEADER_Bergium,Bergium]

@@ -7,7 +7,6 @@ def teleporting()
 end
 
 def addSwitchTeleport(switchID, switchName, mapID, mapX, mapY)
-    
     $telSwitches = [] if $telSwitches == nil
     $telSwitches.push(switchName) if $game_switches[switchID] && !$telSwitches.include?(switchName)
 end

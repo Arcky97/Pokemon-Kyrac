@@ -376,10 +376,10 @@ Bicycle = true
 MapPosition = 0,45,7
 SnapEdges = true
 #-------------------------------
-[074]   # Route 10
-Name = Route 10
-Outdoor = true
-ShowArea = true
+[074]   # Trainer School Class 2
+Name = Trainer School
+Outdoor = false
+ShowArea = false
 MapPosition = 0,55,10
 SnapEdges = true
 MapSize = 3,111
