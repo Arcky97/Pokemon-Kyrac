@@ -17,11 +17,12 @@
   + [V1.4.6A - Release January 17 2023](#V146A---Release-January-17-2023)
   + [V1.4.9C - Release January 20 2023](#V149C---Release-January-20-2023)
   + [V1.5.1A - Release February 4 2023](#151A---Release-February-4-2023)
-  + [V1.6.31E - Release February 22 2023](#1631E---Release-February-22-2023)
-  + [V1.6.33H - Release March 31 2023](#1633H---Release-March-31-2023)
-  + [V1.7.1D - Release April 1 2023](#171D---Release-April-1-2023)
-  + [V1.7.7C - Release April 2 2023](#177C---Release-April-2-2023)
-  + [V1.8.3A - Release April 11 2023](#183A---Release-April-11-2023)
+  + [V1.6.31E - Release February 22 2023](#V1631E---Release-February-22-2023)
+  + [V1.6.33H - Release March 31 2023](#V1633H---Release-March-31-2023)
+  + [V1.7.1D - Release April 1 2023](#V171D---Release-April-1-2023)
+  + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
+  + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
+  + [V1.8.8F - Release April 15 2023](#V188F---Release-April-15-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -318,7 +319,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added FPI/FPE Victory OST
 
-### V1.8.3A - Release April 11 2023
+### V1.8.3D - Release April 11 2023
 
 - Added Trainer School Library.
 
@@ -329,6 +330,20 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - The monitor in the Trainer school Computer Room is now displaying information about the different starters in the game.
 
 - Probably bugs fixed but don't remember XD.
+
+### V1.8.8F - Release April 15 2023
+
+- New story events added in the Trainer School.
+
+- Added a Dark room effect in the Hidden Room of the Trainer School's Library.
+
+- New FPI Overworld and Trainer Sprites added.
+
+- Added FPI Boss Battle OST.
+
+- Added FPI Boss Victory OST.
+
+- More bugs fixed and improvements.
 
 ## Credits:
 

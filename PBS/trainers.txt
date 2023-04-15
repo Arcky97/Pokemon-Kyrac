@@ -589,29 +589,30 @@ Items = POTION
 LoseText = ...
 Pokemon = TIMBURR,10
 #-------------------------------
-[FPIGRUNT_M,Peggy]
-LoseText = Wow!
-Pokemon = SCRAGGY, 10
+[FPIGRUNT_F,Peggy]
+LoseText = We were defeated by some kids?
+Pokemon = NATU, 10
 #-------------------------------
 [FPIGRUNT_M,Pedro]
-LoseText = Wow!
-Pokemon = WOOPER, 10
+LoseText = This can't be!
+Pokemon = INKAY, 10
 #-------------------------------
 [FPIGRUNT_M,Peter]
-LoseText = Wow!
-Pokemon = MAKUHITA, 10
+LoseText = This can't be happening!
+Pokemon = WOOBAT, 10
 #-------------------------------
 [FPIGRUNT_M,Parker]
-LoseText = Wow!
-Pokemon = BIDOOF, 10
+LoseText = But we're not giving up so easily!
+Pokemon = RALTS, 10
 #-------------------------------
-[FPIGRUNT_M,Paula]
-LoseText = Wow!
-Pokemon = BLITZLE, 10
+[FPIGRUNT_F,Paula]
+LoseText = It doesn't even matter anymore!
+Pokemon = DOTTLER, 10
 #-------------------------------
 [FPIGRUNT_M,Philip]
-LoseText = Wow!
-Pokemon = MAREEP, 10
+LoseText = Because you're running out of time!
+Pokemon = SLOWPOKE, 10
+	Form = 1
 #-------------------------------
 Hester City Gym
 #-------------------------------
