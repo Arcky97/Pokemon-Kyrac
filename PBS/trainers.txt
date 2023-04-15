@@ -614,6 +614,12 @@ LoseText = Because you're running out of time!
 Pokemon = SLOWPOKE, 11
 	Form = 1
 #-------------------------------
+[FPIADMIN, Lisa, 1]
+LoseText = This is impossible, you must be cheating!
+Pokémon = KIRLIA, 22
+Pokémon = DOTTLER, 23
+Pokémon = XATU, 25
+#-------------------------------
 Hester City Gym
 #-------------------------------
 [LEADER_Bergium,Bergium]

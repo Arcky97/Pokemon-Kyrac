@@ -465,6 +465,14 @@ SkillLevel = 40
 BattleBGM = Pkmn Kyrac - FPI-FPE Battle
 VictoryBGM = Pkmn Kyrac - FPI-FPE Victory
 #-------------------------------
+[FPIADMIN]
+Name = FPI Admin
+Gender = Female
+BaseMoney = 80
+SkillLevel = 70
+BattleBGM = Pkmn Kyrac - FPI-FPE Admin Battle
+VictoryBGM = Pkmn Kyrac - FPI-FPE Admin Victory
+#-------------------------------
 [LEADER_Bergium]
 Name = Gym Leader
 Gender = Male
