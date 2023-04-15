@@ -587,38 +587,38 @@ Pokemon = TIMBURR,12
 [RIVAL2_F,TrainerSchool,24]
 Items = POTION
 LoseText = ...
-Pokemon = TIMBURR,10
+Pokemon = TIMBURR,12
 #-------------------------------
 [FPIGRUNT_F,Peggy]
 LoseText = We were defeated by some kids?
-Pokemon = NATU, 10
+Pokemon = NATU,10
 #-------------------------------
 [FPIGRUNT_M,Pedro]
 LoseText = This can't be!
-Pokemon = INKAY, 10
+Pokemon = INKAY,10
 #-------------------------------
 [FPIGRUNT_M,Peter]
 LoseText = This can't be happening!
-Pokemon = WOOBAT, 10
+Pokemon = WOOBAT,10
 #-------------------------------
 [FPIGRUNT_M,Parker]
 LoseText = But we're not giving up so easily!
-Pokemon = RALTS, 10
+Pokemon = RALTS,10
 #-------------------------------
 [FPIGRUNT_F,Paula]
 LoseText = It doesn't even matter anymore!
-Pokemon = DOTTLER, 11
+Pokemon = DOTTLER,11
 #-------------------------------
 [FPIGRUNT_M,Philip]
 LoseText = Because you're running out of time!
-Pokemon = SLOWPOKE, 11
+Pokemon = SLOWPOKE,11
 	Form = 1
 #-------------------------------
-[FPIADMIN, Lisa, 1]
-LoseText = This is impossible, you must be cheating!
-Pokémon = KIRLIA, 22
-Pokémon = DOTTLER, 23
-Pokémon = XATU, 25
+[FPIADMIN,Brian]
+LoseText = This is impossible, you must have cheated!
+Pokemon = KIRLIA,22
+Pokemon = DOTTLER,23
+Pokemon = XATU,25
 #-------------------------------
 Hester City Gym
 #-------------------------------
