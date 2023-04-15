@@ -379,14 +379,8 @@ https://reliccastle.com/resources/943/
 
 Grogo for making the script work.
 
-Lily In The Water for helping with the story and ideas.
-
 Zeta for helping making Maps and sprites.
 
-AcobraYT for making the custom OST's.
-
-Pancreas for making trainer teams and NPC lines.
-
-Alpal76, Zeta, Pancreas for testing the game.
+Zeta for testing the game.
 
 And Arcky, the main developer, for doing a bit of everything.
