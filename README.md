@@ -22,7 +22,7 @@
   + [V1.7.1D - Release April 1 2023](#V171D---Release-April-1-2023)
   + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
   + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
-  + [V1.8.8F - Release April 15 2023](#V188F---Release-April-15-2023)
+  + [V1.8.7F - Release April 15 2023](#V187F---Release-April-15-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -331,7 +331,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Probably bugs fixed but don't remember XD.
 
-### V1.8.8F - Release April 15 2023
+### V1.8.7F - Release April 15 2023
 
 - New story events added in the Trainer School.
 
@@ -340,8 +340,6 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - New FPI Overworld and Trainer Sprites added.
 
 - Added FPI Boss Battle OST.
-
-- Added FPI Boss Victory OST.
 
 - More bugs fixed and improvements.
 

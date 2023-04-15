@@ -607,11 +607,11 @@ Pokemon = RALTS, 10
 #-------------------------------
 [FPIGRUNT_F,Paula]
 LoseText = It doesn't even matter anymore!
-Pokemon = DOTTLER, 10
+Pokemon = DOTTLER, 11
 #-------------------------------
 [FPIGRUNT_M,Philip]
 LoseText = Because you're running out of time!
-Pokemon = SLOWPOKE, 10
+Pokemon = SLOWPOKE, 11
 	Form = 1
 #-------------------------------
 Hester City Gym
