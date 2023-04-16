@@ -23,7 +23,7 @@
   + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
   + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
-  + [V1.8.13A - Release April 16 2023](#V1813A---Release-April-16-2023)
+  + [V1.8.14A - Release April 16 2023](#V1814A---Release-April-16-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -352,13 +352,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Finished the story events in the library.
 
-### V1.8.13A - Release April 16 2023
+### V1.8.14A - Release April 16 2023
 
 - Added an OST for the Yacht's Game Corner.
 
 - Added a different OST for the Yacht's Lab.
 
-- Added a mysterious OST for the hidden room in the library.
+- Added an OST for the hidden room in the library.
+
+- The Servants' Room door in the Player's house now says different things before and after getting breakfast and talking to Julia.
 
 ## Credits:
 
