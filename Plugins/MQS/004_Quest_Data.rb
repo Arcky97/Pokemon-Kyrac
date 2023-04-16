@@ -82,8 +82,8 @@ module QuestModule
     :Name => "FPI at the Trainer School!",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Go to the Trainer School!",
-    :Stage2 => "Help your Rivals fight the FPI Grunts!"
-    :Stage3 => "Find the FPI Boss in the Trainer School's Library"
+    :Stage2 => "Help your Rivals fight the FPI Grunts!",
+    :Stage3 => "Find the FPI Boss in the Trainer School's Library",
     :Location1 => "Hester City",
     :Location2 => "Trainer School",
     :Location3 => "Trainer School's Library",

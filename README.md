@@ -23,7 +23,7 @@
   + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
   + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
-  + [V1.9.7A - Release April 16 2023](#V197A---Release-April-16-2023)
+  + [V1.9.8A - Release April 16 2023](#V198A---Release-April-16-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -34,7 +34,9 @@ Many people, citizens and FPO members, didn’t agree with these experiments.
 
 Internal strife within the FPO, along with the discontent at the experiments, led to the FPO splitting into three organizations–the FPI, the FPE, and the original but now weaker FPO.
 
-A secret, “perfect” legendary the FPO was working on was also split into three different forms that fled across the region. Two of them are known. The FPI and the FPE are currently searching for them so they can reunite them and dominate the region, and perhaps the world, with their new legendary.
+A secret, “perfect” legendary the FPO was working on was also split into three different forms that fled across the region. Two of them are known. 
+
+The FPI and the FPE are currently searching for them so they can reunite them and dominate the region, and perhaps the world, with their new legendary.
 
 You have never met your father. But you do know that he is the founder of the FPO. As you embark on your journey, he gives you one important mission:
 
@@ -352,7 +354,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Finished the story events in the library.
 
-### V1.9.7A - Release April 16 2023
+### V1.9.8A - Release April 16 2023
 
 - Added a Multi Save and Auto Save Plugin.
 
@@ -371,6 +373,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Edited the player's bed room map
 
 - Decreased the events on the Dream Map from 5 to just 2 events.
+
+- Reduced the amount of Game Switches needed for events to function.
 
 ## Credits:
 
