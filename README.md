@@ -366,6 +366,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Added more tasks to Quest 8.
 
+- Added Quest 9.
+
 ## Credits:
 
 Essentials: Maruno

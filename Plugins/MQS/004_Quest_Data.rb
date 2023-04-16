@@ -85,9 +85,19 @@ module QuestModule
     :Stage2 => "Help your Rivals fight the FPI Grunts!"
     :Stage3 => "Find the FPI Boss in the Trainer School's Library"
     :Location1 => "Hester City",
-    :Location2 => "Trainer School"
-    :Location3 => "Trainer School's Library"
+    :Location2 => "Trainer School",
+    :Location3 => "Trainer School's Library",
     :QuestDescription => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
     :RewardString => "a gift from \\v[52]."
+  }
+
+  Quest9 = {
+    :ID => "9",
+    :Name => "The Dark Type Gym!",
+    :QuestGiver => "Yourself",
+    :Stage1 => "Find another way into the Gym in Hester City!",
+    :Location1 => "Hester City",
+    :QuestDescription => "The Gym in Hester City seems to be closed from the outside. Maybe talking to the people in Hester City might help you find a way into the gym.",
+    :RewardString => "You got to fight the Gym Leader, got his badge and a TM."
   }
 end
