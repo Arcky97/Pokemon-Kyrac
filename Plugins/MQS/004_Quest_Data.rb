@@ -78,11 +78,15 @@ module QuestModule
   }
 
   Quest8 = {
-    :ID => "7",
+    :ID => "8",
     :Name => "FPI at the Trainer School!",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Go to the Trainer School!",
+    :Stage2 => "Help your Rivals fight the FPI Grunts!"
+    :Stage3 => "Find the FPI Boss in the Trainer School's Library"
     :Location1 => "Hester City",
+    :Location2 => "Trainer School"
+    :Location3 => "Trainer School's Library"
     :QuestDescription => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
     :RewardString => "a gift from \\v[52]."
   }

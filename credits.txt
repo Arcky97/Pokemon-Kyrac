@@ -29,9 +29,6 @@ Rival team script: Grogo, Arcky and also parts of the script above was used (the
 Essentials Deluxe: Lucidious89
 https://www.pokecommunity.com/showthread.php?t=478494
 
-Visible Overworld Wild Encounters: derFischae
-https://www.pokecommunity.com/showthread.php?t=429019
-
 Modern Quest System + UI: ThatWelshOne_,mej71,derFischae,Marin
 https://reliccastle.com/resources/709/
 
@@ -43,6 +40,9 @@ https://reliccastle.com/resources/1134/
 
 EVs and IVs in Summary: Deoxysprime, SoulfulLex
 https://reliccastle.com/resources/703/
+
+Auto Multi Save: http404error
+https://reliccastle.com/resources/1059/
 
 edits in script:
 Settings: line 34, 38
