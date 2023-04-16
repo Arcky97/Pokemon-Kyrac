@@ -23,6 +23,7 @@
   + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
   + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
+  + [V1.8.13A - Release April 16 2023](#V1813A---Release-April-16-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -350,6 +351,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed an issue with the Animation of the shelves in the library.
 
 - Finished the story events in the library.
+
+### V1.8.13A - Release April 16 2023
+
+- Added an OST for the Yacht's Game Corner.
+
+- Added a different OST for the Yacht's Lab.
+
+- Added a mysterious OST for the hidden room in the library.
 
 ## Credits:
 
