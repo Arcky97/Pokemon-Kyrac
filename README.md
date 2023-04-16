@@ -23,7 +23,7 @@
   + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
   + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
-  + [V1.9.5A - Release April 16 2023](#V195A---Release-April-16-2023)
+  + [V1.9.6A - Release April 16 2023](#V196A---Release-April-16-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -352,7 +352,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Finished the story events in the library.
 
-### V1.9.5A - Release April 16 2023
+### V1.9.6A - Release April 16 2023
 
 - Added a Multi Save and Auto Save Plugin.
 
@@ -367,6 +367,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added more tasks to Quest 8.
 
 - Added Quest 9.
+
+- Edited the player's bed room map
 
 ## Credits:
 
