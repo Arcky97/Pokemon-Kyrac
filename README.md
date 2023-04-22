@@ -23,7 +23,8 @@
   + [V1.7.7C - Release April 2 2023](#V177C---Release-April-2-2023)
   + [V1.8.3D - Release April 11 2023](#V183D---Release-April-11-2023)
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
-  + [V1.9.8A - Release April 16 2023](#V198A---Release-April-16-2023)
+  + [V1.9.8D - Release April 16 2023](#V198D---Release-April-16-2023)
+  + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -354,7 +355,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Finished the story events in the library.
 
-### V1.9.8A - Release April 16 2023
+### V1.9.8D - Release April 16 2023
 
 - Added a Multi Save and Auto Save Plugin.
 
@@ -374,7 +375,27 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Decreased the events on the Dream Map from 5 to just 2 events.
 
-- Reduced the amount of Game Switches needed for events to function.
+- Reduced the amount of Game Switches needed for events to function in the player's home maps (interior).
+
+### V1.9.15I - Release April 22 2023
+
+- The event handling the breakfast event has been reduced from 9 to just 1 event.
+
+- Reduced the amount of Game Switches needed for events to function in the player's home's garden.
+
+- Reduced the amount of Game Switches needed for events to function in the Yacht's lab.
+
+- Reworked the counter script used to display item, trainer and money on several maps.
+
+- Made a small script to avoid writing the same dialogue twice with minimal difference depending on the player's gender.
+
+- Reworked a lot of events.
+
+- Several bugs fixed
+
+- Several Typos have been corrected.
+
+- Grammar for dialogues has been improved.
 
 ## Credits:
 

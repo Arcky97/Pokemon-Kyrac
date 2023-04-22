@@ -423,25 +423,25 @@ SkillLevel = 48
 Name = Rival
 Gender = Female
 BaseMoney = 30
-BattleBGM = hgssgrunt
+BattleBGM = Pkmn Kyrac - Rival Battle
 #-------------------------------
 [RIVAL1_M]
 Name = Rival
 Gender = Male
 BaseMoney = 30
-BattleBGM = hgssgrunt
+BattleBGM = Pkmn Kyrac - Rival Battle
 #-------------------------------
 [RIVAL2_F]
 Name = Rival
 Gender = Female
 BaseMoney = 30
-BattleBGM = hgssgrunt
+BattleBGM = Pkmn Kyrac - Rival Battle
 #-------------------------------
 [RIVAL2_M]
 Name = Rival
 Gender = Male
 BaseMoney = 30
-BattleBGM = hgssgrunt
+BattleBGM = Pkmn Kyrac - Rival Battle
 #-------------------------------
 [OLDMAN]
 Name = Old Man

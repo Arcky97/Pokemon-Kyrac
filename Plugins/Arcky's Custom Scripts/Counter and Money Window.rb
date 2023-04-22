@@ -1,8 +1,8 @@
-def displayCounterWindow(object, gameVar, itemTotal=0, bonusTotal=0)
+def displayCounterWindow(object, value, total=0, bonusTotal=0)
   closeCounter
-  itemsFound = $game_variables[gameVar]
-  total = bonusTotal != 0 ? itemTotal.to_s + "(+" + bonusTotal.to_s + ")" : itemTotal
-  counter = itemTotal != 0 ? itemsFound.to_s + "/" + total.to_s : itemsFound
+  itemsFound = value != 0 && object != "Money" ? $game_variables[value] : $player.money.to_s_formatted
+  total = bonusTotal != 0 && bonusTotal != nil ? total.to_s + "(+" + bonusTotal.to_s + ")" : total
+  counter = total != 0 ? itemsFound.to_s + "/" + total.to_s : itemsFound
   $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}</ar>", object, counter))    
   $counterwindow.setSkin("Graphics/Windowskins")
   $counterwindow.resizeToFit($counterwindow.text, Graphics.width)
@@ -16,52 +16,42 @@ def closeCounter
   $counterwindow = nil
 end
 
-def displayMoneyWindow
-  closeMoney
-  $moneywindow = Window_AdvancedTextPokemon.new(_INTL("Money:\n<ar>${1}</ar>", $player.money.to_s_formatted))
-  $moneywindow.setSkin("Graphics/Windowskins")
-  $moneywindow.resizeToFit($moneywindow.text, Graphics.width)
-  $moneywindow.width = 160 if $moneywindow.width <= 160
-  return $moneywindow
-end
-
-def closeMoney
-  return if !$moneywindow
-  $moneywindow.dispose
-  $moneywindow = nil
-end
-
-def itemCounter(gameVar, mapArrayToUse=nil, object="Items")
+def objectCounter(object, value, total=0, mapArrayToUse=nil)
+  total = 0 if $player.badge_count > 0
   arrayMaps = arrayDecider(mapArrayToUse)
-  itemCounter = []
-  if mapArrayToUse
-    for i in 1...arrayMaps.length
-      mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[i])
-      map = load_data(mapIDName)
-      itemCounter.push(countItems(map, mapArrayToUse))
+  objectCounter = []
+  if total == 0
+    if mapArrayToUse
+      for i in 1...arrayMaps.length
+        mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[i])
+        map = load_data(mapIDName)
+        objectCounter.push(countObjects(object, map, mapArrayToUse))
+      end
+    else
+      mapID = $game_map.map_id 
+      map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
+      objectCounter = countObjects(object, map, mapArrayToUse) #returns [objectCounter, bonusCounter]
     end
-  else
-    mapID = $game_map.map_id 
-    map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
-    itemCounter = countItems(map, mapArrayToUse) #returns [itemCounter, bonusCounter]
+    objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length > 2
+    objectCounter[0] -= objectCounter[1] # objectCounter - bonusCounter
   end
-  itemCounter = itemCounter.transpose.map(&:sum) if itemCounter.length > 2
-  itemCounter[0] -= itemCounter[1] # itemCounter - bonusCounter
-  displayCounterWindow("Items", gameVar, itemCounter[0], itemCounter[1])
+  total = objectCounter[0] if objectCounter[0] != nil
+  bonusTotal = objectCounter[1] if objectCounter[1] != nil
+  displayCounterWindow(object, value, total, bonusTotal)
 end
 
-def countItems(map, mapArrayToUse)
+def countObjects(object, map, mapArrayToUse)
   bonusArray = fieldMoveItems
-  itemCounter, bonusCounter = 0, 0
+  objectCounter, bonusCounter = 0, 0
   for i in map.events.keys
-    next if !map.events[i].name.include?("Item") 
-    itemCounter += 1
+    next if !map.events[i].name.include?(object.chop) 
+    objectCounter += 1
     for j in 0...bonusArray[0].length
       next  if !map.events[i].name.include?(bonusArray[j])
       bonusCounter += 1
     end
   end
-  return itemCounter, bonusCounter
+  return objectCounter, bonusCounter
 end
 
 def fieldMoveItems
@@ -81,17 +71,12 @@ def fieldMoveItems
 end
 
 def arrayDecider(mapArrayToUse)
-  arrayYacht = $game_variables[63] if $game_variables[63] !=0
+  arrayMaps = $arrayMaps if $arrayMaps !=0
   case mapArrayToUse
-  when "YachtBegin"
-    arrayYacht = [0, 32, 22, 30, 14, 18, 12, 38, 122, 36, 37, 25, 26, 27]
-  when "YachtGym"
-    arrayYacht.push(28) if !arrayYacht.include?(28)
-  when "YachtFinal"
-    arrayYacht.push()
-  when "YachtPost"
-    arrayYacht.push()
+  when "Yacht"
+    arrayMaps = [0, 32, 22, 14, 18, 12, 38, 122, 36, 37, 25, 26, 27]
+    arrayMaps.push(30) if $player.badge_count >= 1
   end
-  $game_variables[63] = arrayYacht
-  return arrayYacht
+  $arrayMaps = arrayMaps
+  return arrayMaps
 end

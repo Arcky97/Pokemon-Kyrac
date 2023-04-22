@@ -34,6 +34,7 @@
 #   Maybe auto-save slots should act like a queue instead of cycling around.
 
 # Autosave every 100 steps
+=begin
 EventHandlers.add(:on_player_step_taken, :auto_save, proc {
   $player.autosave_steps = 0 if !$player.autosave_steps
   $player.autosave_steps += 1
@@ -44,7 +45,7 @@ EventHandlers.add(:on_player_step_taken, :auto_save, proc {
     echoln("done.")
   end
 })
-
+=end
 #===============================================================================
 #
 #===============================================================================
