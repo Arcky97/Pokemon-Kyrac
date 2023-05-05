@@ -25,6 +25,7 @@
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
   + [V1.9.8D - Release April 16 2023](#V198D---Release-April-16-2023)
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
+  + [V1.11.3J - Release May 5 2023](#V1113J---Release-May-5-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -397,11 +398,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Grammar for dialogues has been improved.
 
-### V1.10.0A - Release May 5 2023
+### V1.11.3J - Release May 5 2023
 
 - Reworked Route 2 completely.
 
 - Added shadow effect for Bridges and Buildings.
+
+- Many bugs fixed and improvements have been made.
+
 
 ## Credits:
 
