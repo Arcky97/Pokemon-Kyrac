@@ -98,9 +98,11 @@ class Game_Player < Game_Character
   end
 end
 
+
 #===============================================================================
 # Fixed being unable to set the player's movement speed during a move route.
 #===============================================================================
+=begin
 class Game_Player < Game_Character
   def set_movement_type(type)
     meta = GameData::PlayerMetadata.get($player&.character_ID || 1)
@@ -136,7 +138,7 @@ class Game_Player < Game_Character
     @character_name = new_charset if new_charset
   end
 end
-
+=end
 #===============================================================================
 # Fixed crash when ending a Bug Catching Contest.
 #===============================================================================

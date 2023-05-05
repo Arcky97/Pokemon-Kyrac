@@ -397,6 +397,12 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Grammar for dialogues has been improved.
 
+### V1.10.0A - Release May 5 2023
+
+- Reworked Route 2 completely.
+
+- Added shadow effect for Bridges and Buildings.
+
 ## Credits:
 
 Essentials: Maruno

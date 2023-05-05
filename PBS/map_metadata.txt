@@ -174,6 +174,7 @@ Bicycle = true
 MapPosition = 0,48,8
 SnapEdges = true
 MapSize = 1,11
+Flags = ForceBikeDown
 #-------------------------------
 [042]   # Franta Town
 Name = Franta Town
