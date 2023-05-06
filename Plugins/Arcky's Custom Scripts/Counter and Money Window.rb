@@ -1,8 +1,11 @@
 def displayCounterWindow(object, value, total=0, bonusTotal=0)
   closeCounter
   itemsFound = value != 0 && object != "Money" ? $game_variables[value] : $player.money.to_s_formatted
+  echoln(total)
   total = bonusTotal != 0 && bonusTotal != nil ? total.to_s + "(+" + bonusTotal.to_s + ")" : total
+  echoln(total)
   counter = total != 0 ? itemsFound.to_s + "/" + total.to_s : itemsFound
+  echoln(counter)
   $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}</ar>", object, counter))    
   $counterwindow.setSkin("Graphics/Windowskins")
   $counterwindow.resizeToFit($counterwindow.text, Graphics.width)
@@ -20,7 +23,7 @@ def objectCounter(object, value, total=0, mapArrayToUse=nil)
   total = 0 if $player.badge_count > 0
   arrayMaps = arrayDecider(mapArrayToUse)
   objectCounter = []
-  if total == 0
+  if total == 0 && value != 0
     if mapArrayToUse
       for i in 1...arrayMaps.length
         mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[i])

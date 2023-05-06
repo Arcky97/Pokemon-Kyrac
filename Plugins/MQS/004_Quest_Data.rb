@@ -59,12 +59,10 @@ module QuestModule
     :QuestGiver => "Yourself",
     :Stage1 => "Find the evidence!",
     :Stage2 => "Tell your mother!",
-    :Stage3 => "Fight the guards!",
     :Location1 => "Your Home's Garden.",
     :Location2 => "Use your phone!.",
-    :Location3 => "Your Home's Garden.",
     :QuestDescription => "You noticed the guards are drunk and they might have hidden the evidence somewhere in your Home's garden. Let's find it!",
-    :RewardString => "Your mother will forgive you for sneeking around in her bedroom!"
+    :RewardString => "Now that your mom is aware of the guards being drunk, she'll want your help on learning the guards a lesson. (Follow up Quest requires 5 badges)"
   }
 
   Quest7 = {
@@ -74,7 +72,7 @@ module QuestModule
     :Stage1 => "Explore the Yacht!",
     :Location1 => "The Yacht",
     :QuestDescription => "Explore the yacht the way you want! Talk to both your rivals, defeat at least 5 trainers and receive the Oldrod from the fisherman.",
-    :RewardString => "You'll arrive at your destination."
+    :RewardString => "You'll arrive in Hester City."
   }
 
   Quest8 = {

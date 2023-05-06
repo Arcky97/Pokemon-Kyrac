@@ -25,7 +25,7 @@
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
   + [V1.9.8D - Release April 16 2023](#V198D---Release-April-16-2023)
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
-  + [V1.11.3J - Release May 5 2023](#V1113J---Release-May-5-2023)
+  + [V1.11.3J - Release May 6 2023](#V1113J---Release-May-6-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -398,14 +398,41 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Grammar for dialogues has been improved.
 
-### V1.11.3J - Release May 5 2023
+### V1.11.3L - Release May 6 2023
 
 - Reworked Route 2 completely.
 
 - Added shadow effect for Bridges and Buildings.
 
-- Many bugs fixed and improvements have been made.
+- Fixed the closed eyes graphic on the player after spawning in the player's bedroom at the intro scene of the game.
 
+- Fixed the Player's Mother's Assistant not picking up the phone at any time (before and after it was mentioned to do so in the quest log).
+
+- After the Player called their Mother's Assistant, Quest 6 will be completed.
+
+- Edited a Quest 6 and 7's Rewardstring.
+
+- Fixed the road block at the Player's Home's Garden when going to the West or North-West.
+
+- Fixed Rivals not going to the correct position after getting their starter and thus also not for the next part where they would get the pokedex.
+
+- Fixed the Rival names when saying "Tell us please!" before the first rival battle begins.
+
+- Fixed the money counter when finding money.
+
+- Fixed the crash when interacting with the beer next to the Player's Rival in the Yacht's Dinning Room.
+
+- Fixed infinity Items in 2 bins on the Yacht's F1's Cabins.
+
+- Fixed Infinity Item from Liz on the Yacht's F1's Cabins.
+
+- Fixed the Guard not wanting to battle in his cabin when you haven't fought any trainers on the Yacht yet.
+
+- Fixed the Guard battling again even if you defeated him before in his Cabin on the Yacht.
+
+- Fixed Ralph giving the Player 2 Black Belts.
+
+- Fixed the battle with the Twins on the Yacht's B1F's Cabins showing the battle sprite twice.
 
 ## Credits:
 
