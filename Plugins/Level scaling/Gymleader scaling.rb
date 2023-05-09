@@ -3,7 +3,6 @@ Secondevo=40
 Gymvar=32
 Idlist=[19,20,21]
 GymList=[[1,3,2],[1,3,2,20],[2,3,1],[2,3,1,17],[2,1,10],[2,1,3,2],[3,2,10],[3,2,1,18],[3,1,14],[3,1,2,12]]
-
 def setNewStage(pokemon)	
     2.times do |evolvedTimes|
       evolutions = GameData::Species.get(pokemon.species).get_evolutions(false)
@@ -44,41 +43,55 @@ def path(gymlist)
 	return pathlist
 end
       
-EventHandlers.add(:on_trainer_load, :gyms,
+EventHandlers.add(:on_trainer_load, :trainers,
   proc { |trainer|
    if trainer
-     if trainer.name=="Brock" 
-       if $trainer.badge_count == 0 && $game_switches[108] 
-        for pkmn in trainer.party
+      if trainer.name=="Brock" 
+        if $trainer.badge_count == 0 && $game_switches[108] 
+          for pkmn in trainer.party
             pkmn.level+=2
+          end
         end
-       end
-     end
-		if Idlist.include?($game_map.map_id) && $Trainer.badge_count>0
-			if $Trainer.badge_count<3 
-				list=$game_variables[Gymvar][0...$game_variables[Gymvar].length]
-			end
-			if $Trainer.badge_count>2 &&  $Trainer.badge_count<5
-				list=$game_variables[Gymvar][3...$game_variables[Gymvar].length]
-			end
-			if $Trainer.badge_count>4 && $Trainer.badge_count<8
-				list=$game_variables[Gymvar][5...$game_variables[Gymvar].length]
-			end
-			if $Trainer.badge_count>7 && $Trainer.badge_count<12
-				list=$game_variables[Gymvar][8...$game_variables[Gymvar].length]
-			end
-			pathlist=path(GymList)
-			for i in 0...pathlist.length
-				if list==pathlist[i]
-					for pkmn in trainer.party
-						pkmn.level+= GymList[i][-1]
-						setNewStage(pkmn)
-						pkmn.reset_moves
-						pkmn.calc_stats
-					end
-				end
-			end
-		end
+      end
+      if $game_variables[56] >= 5 && $game_switches[55] #TrainerYacht Variable and is on Yacht Switch
+        for pkmn in trainer.party
+          pkmn.level+=2
+          if $game_variables[56].between?(9, 15) #Defeated between 9 and 15 or more Trainers on the Yacht will increase 3 levels.
+            pkmn.level+=1
+          elsif $game_variables[56].between?(14, 20) #Defeated between 14 and 20 Trainers on the Yacht will increase 4 levels.
+            pkmn.level+=2
+          elsif $game_variables[56].between?(19, 30) #Defeated between 19 and 30 Trainers on the Yacht will increase 6 levels.
+            pkmn.level+=4
+          end 
+          pkmn.reset_moves
+          pkmn.calc_stats
+        end
+      end 
+      if Idlist.include?($game_map.map_id) && $Trainer.badge_count>0
+        if $Trainer.badge_count<3 
+          list=$game_variables[Gymvar][0...$game_variables[Gymvar].length]
+        end
+        if $Trainer.badge_count>2 &&  $Trainer.badge_count<5
+          list=$game_variables[Gymvar][3...$game_variables[Gymvar].length]
+        end
+        if $Trainer.badge_count>4 && $Trainer.badge_count<8
+          list=$game_variables[Gymvar][5...$game_variables[Gymvar].length]
+        end
+        if $Trainer.badge_count>7 && $Trainer.badge_count<12
+          list=$game_variables[Gymvar][8...$game_variables[Gymvar].length]
+        end
+        pathlist=path(GymList)
+        for i in 0...pathlist.length
+          if list==pathlist[i]
+            for pkmn in trainer.party
+              pkmn.level+= GymList[i][-1]
+              setNewStage(pkmn)
+              pkmn.reset_moves
+              pkmn.calc_stats
+            end
+          end
+        end
+      end
    end
   }
 )

@@ -224,41 +224,37 @@ Yacht - B1F - Cabins
 #-------------------------------
 [GAMBLER,Old Man]
 LoseText = Skiddadle already!!!
-Pokemon = MUNNA,7
+Pokemon = MUNNA,5
 #-------------------------------
 [SAILOR,Giuseppie]
 LoseText = I haven't seen a strong trainer like you in ages.
-Pokemon = MACHOP,7
-Pokemon = TIMBURR,8
+Pokemon = MACHOP,5
+Pokemon = TIMBURR,6
 #-------------------------------
 [GENTLEMAN,Marx]
 LoseText = Im-Impossible!
-Pokemon = MAGIKARP,7
+Pokemon = MAGIKARP,5
 #-------------------------------
 [AROMALADY,Clara]
-LoseText = Fantastica!
-Pokemon = PSYDUCK,8
-#-------------------------------
-[AROMALADY,Clara,1]
 LoseText = Fantastico!
-Pokemon = PSYDUCK,8
+Pokemon = PSYDUCK,6
 #-------------------------------
 [TWINS,Rose & Ruby]
 LoseText = Our supa sneaky surprize combo didn't work!?
-Pokemon = CATERPIE,7
-Pokemon = WEEDLE,7
-Pokemon = EKANS,9
+Pokemon = CATERPIE,5
+Pokemon = WEEDLE,5
+Pokemon = EKANS,6
 #-------------------------------
 [BIKER,Brent]
 LoseText = What! How?
-Pokemon = MAGIKARP,14
+Pokemon = MAGIKARP,9
 	Name = Gyarados
 #-------------------------------
 [BUGCATCHER, Matthew]
 LoseText = Wow, you are pretty strong!
-Pokemon = SCATTERBUG,8
-Pokemon = VENONAT,8
-Pokemon = DUSTOX,9
+Pokemon = SCATTERBUG,6
+Pokemon = VENONAT,6
+Pokemon = CASCOON,7
 #-------------------------------
 Yacht - F1 - Cabins
 #-------------------------------
@@ -270,18 +266,18 @@ Pokemon = TIRTOUGA,6
 #-------------------------------
 [JUGGLER,James]
 LoseText = You're a prodigy!
-Pokemon = AIPOM,7
-Pokemon = MIMEJR,8
+Pokemon = AIPOM,5
+Pokemon = MIMEJR,6
 #-------------------------------
 [CRUSHGIRL,Cathy]
 LoseText = This battle was truely amazing!
-Pokemon = GRIMER,6
-Pokemon = WOOPER,6
-Pokemon = ODDISH,7
+Pokemon = GRIMER,5
+Pokemon = WOOPER,5
+Pokemon = ODDISH,6
 #-------------------------------
 [BLACKBELT,Ralph]
 LoseText = I have no words for what I just witnessed!
-Pokemon = MANKEY,7
+Pokemon = MANKEY,5
 #-------------------------------
 [BEAUTY,Liz]
 LoseText = Get out of my room!
@@ -292,80 +288,72 @@ Pokemon = HOPPIP,5
 LoseText = You are a tough one!
 Pokemon = GROWLITHE,6
 #-------------------------------
-[YACHTGUARD,Benjamin,1]
-LoseText = You are a tough one!
-Pokemon = GROWLITHE,8
-#-------------------------------
-[YACHTGUARD,Benjamin,2]
-LoseText = You are a tough one!
-Pokemon = GROWLITHE,10
-#-------------------------------
 [YOUNGSTER,Simon]
 LoseText = Oof, that one hurts!
-Pokemon = EEVEE,9
-Pokemon = SLAKOTH,8
+Pokemon = EEVEE,7
+Pokemon = SLAKOTH,6
 #-------------------------------
 [OLDMAN,Blaime]
 LoseText = I'm nothing compared to my brother!
-Pokemon = NUMEL,9
-Pokemon = HOUNDOUR,9
-Pokemon = LITWICK,10
+Pokemon = NUMEL,7
+Pokemon = HOUNDOUR,7
+Pokemon = LITWICK,8
 #-------------------------------
 [YOUNGSTER,Jill]
 LoseText = This was a lot of fun!
-Pokemon = BUIZEL,7
-Pokemon = TEPIG,8
+Pokemon = BUIZEL,5
+Pokemon = TEPIG,6
 #-------------------------------
 [AROMALADY,Lori]
 LoseText = Oh my!
-Pokemon = STARYU,7
+Pokemon = STARYU,5
 #-------------------------------
 [COOLTRAINER_F,Leona]
 LoseText = You are a though one!
-Pokemon = DARUMAKA,8
-Pokemon = STUFFUL,8
+Pokemon = DARUMAKA,6
+Pokemon = STUFFUL,6
 #-------------------------------
 [COOLTRAINER_M,Tyson]
 LoseText = You are really strong!
-Pokemon = LITLEO,8
-Pokemon = CHEWTLE,8
+Pokemon = LITLEO,6
+Pokemon = CHEWTLE,6
 #-------------------------------
 Yacht - F1 - Deck
 #-------------------------------
 [FISHERMAN,Frank]
 LoseText = Or is it?
-Pokemon = POLIWAG,8
-Pokemon = FINNEON,8
+Pokemon = POLIWAG,6
+Pokemon = FINNEON,6
 #-------------------------------
 [SWIMMER2_M, Rick]
 LoseText = I almost drowned when I realised I lost!
-Pokemon = STARYU,9
-Pokemon = HORSEA,10
+Pokemon = STARYU,7
+Pokemon = HORSEA,8
 #-------------------------------
 [SWIMMER2_M, Gregg]
 LoseText = My Pokémon!
-Pokemon = WINGULL,10
+Pokemon = WINGULL,7
 #-------------------------------
 [SWIMMER_M, Ron]
 LoseText = It's my wife's fault!
-Pokemon = SHELLOS,9
+Pokemon = SHELLOS,7
 	Form = 1
 #-------------------------------
 [SWIMMER_F, Wendy]
 LoseText = ...
-Pokemon = SHELLOS,9
+Pokemon = SHELLOS,7
 #-------------------------------
 [TUBER2_M, Toby]
 LoseText = You are really strong!
-Pokemon = MUDKIP,9
+Pokemon = MUDKIP,7
 #-------------------------------
 Hester City Forest
 #-------------------------------
 [BUGCATCHER, Matthew,1]
 LoseText = Wow, you are pretty strong!
-Pokemon = SCATTERBUG,8
-Pokemon = VENONAT,8
-Pokemon = DUSTOX,9
+Pokemon = SCATTERBUG,14
+Pokemon = VENONAT,14
+Pokemon = DUSTOX,15
 #-------------------------------
 Hester City Trainer School
 #-------------------------------

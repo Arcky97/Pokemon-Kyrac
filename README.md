@@ -25,7 +25,7 @@
   + [V1.8.10G - Release April 15 2023](#V1810G---Release-April-15-2023)
   + [V1.9.8D - Release April 16 2023](#V198D---Release-April-16-2023)
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
-  + [V1.11.3J - Release May 6 2023](#V1113J---Release-May-6-2023)
+  + [V1.12.32R - Release May 6 2023](#V11232RL---Release-May-6-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -398,11 +398,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Grammar for dialogues has been improved.
 
-### V1.11.3L - Release May 6 2023
+### V1.12.32R - Release May 6 2023
 
 - Reworked Route 2 completely.
 
 - Added shadow effect for Bridges and Buildings.
+
+- Modified the Level Scaling script used for the gyms to scale trainer's Pokémon levels on the Yacht.
 
 - Fixed the closed eyes graphic on the player after spawning in the player's bedroom at the intro scene of the game.
 
@@ -432,7 +434,27 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed Ralph giving the Player 2 Black Belts.
 
-- Fixed the battle with the Twins on the Yacht's B1F's Cabins showing the battle sprite twice.
+- Fixed the battle with the Twins on the Yacht's B1F Cabins showing the battle sprite twice.
+
+- Removed Second Version of Trainer Clara on the Yacht's B1F Cabins.
+
+- Removed the Second and Third Version of Trainer Benjamin on the Yacht's B1F Cabins.
+
+- Changed the levels for all Trainers on the Yacht (about 25 trainers).
+
+- Changed the levels for Trainer Mathew's rematch team in Hester Forest.
+
+- Edited the Pokémon for Trainer Mathew's first battle on the Yacht.
+
+- Added OverWorld Encounter on the Yacht's F1 Deck.
+
+- Fixed not showing correct Rival(1) name on the Yacht's F1 Deck.
+
+- Fixed not showing correct Rival(2) name on the Yacht's B1F Dinning Room.
+
+- Fixed Move Routes not working for Rivals and Prof. Oak after leaving the Yacht for the first time.
+
+- Fixed the Events when the player is near the Trainer School to Continue the Story.
 
 ## Credits:
 
