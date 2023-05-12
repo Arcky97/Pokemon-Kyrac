@@ -470,7 +470,7 @@ Name = FPI Admin
 Gender = Female
 BaseMoney = 80
 SkillLevel = 70
-BattleBGM = Pkmn Kyrac - FPI-FPE Admin Battle
+BattleBGM = Pkmn Kyrac - FPI-FPE Boss Battle
 VictoryBGM = Pkmn Kyrac - FPI-FPE Admin Victory
 #-------------------------------
 [LEADER_Bergium]

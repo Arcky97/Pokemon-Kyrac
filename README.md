@@ -26,6 +26,7 @@
   + [V1.9.8D - Release April 16 2023](#V198D---Release-April-16-2023)
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
   + [V1.12.32R - Release May 6 2023](#V11232RL---Release-May-6-2023)
+  + [V1.12.38E - Release May 12 2023](#V1.12.38E---Release-May-12-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -455,6 +456,22 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed Move Routes not working for Rivals and Prof. Oak after leaving the Yacht for the first time.
 
 - Fixed the Events when the player is near the Trainer School to Continue the Story.
+
+### V1.12.38E - Release May 12 2023
+
+- Cleaned up used Switches.
+
+- Cleaned up used Variables.
+
+- Reworked the Story event in Hester City.
+
+- Edited the Sign interactions.
+
+- Added a Counter for the switches in the Trainer School Library.
+
+- Changed the Battle Music with the FPI Admin in the Hidden Room in the Library.
+
+- Fixed some bugs, typos and made improvements where needed.
 
 ## Credits:
 
