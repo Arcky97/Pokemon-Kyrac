@@ -267,6 +267,30 @@ module EssentialsDeluxe
       :speech  => ["This is a good time to use a Potion!"]
     }
   }
+
+  #-----------------------------------------------------------------------------
+  # First rival battle in the lab on the yacht.
+  #-----------------------------------------------------------------------------
+  FPI_ADMIN_BRIAN = {
+    "damage_foe" => {
+      :speech => ["Such a weak move won't get you to victory, my friend!"]
+    },
+    "criticalHit" => {
+      :speech => ["Even if it was a Critical, it's still nothing!"]
+    },
+    "lowhp_foe" => {
+      :speech => ["You won't get much further than this!"]
+    },
+    "beforeNext_foe" => {
+      :speech => ["{1} wasn't even my strongest Pokémon!"]
+    },
+    "afterLast" => {
+      :speech => ["Don't underestimate me, kid!"]
+    },
+    "lowhp_final" => {
+      :speech => ["It's over!"]
+    }
+  }
   #-----------------------------------------------------------------------------
   # Cyclist Carl on Route 2
   #-----------------------------------------------------------------------------

@@ -6,6 +6,7 @@ def yachtQuestSeven ()
         pbMessage(_INTL("\\xnb[Captain]Attention! This is your Captain speaking! I'm grateful to announce that the Yacht has succesfully arrived in Hester City!"))
         pbMessage(_INTL("\\xnb[Captain]The Yacht will leave only in a few hours. Feel free to come back any time in case you forgot something."))
         pbMessage(_INTL("\\xnb[Captain]To all travellers, thanks for traveling with us and have a safe trip in East-Kyrac! We hope to see you again!"))
+        completeQuest(:Quest4)
     end
 end
 
