@@ -473,6 +473,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed some bugs, typos and made improvements where needed.
 
+### V1.15.1C - Release May 17 2023
+
+- Reworked Route 1 completely.
+
+- Added Volteon's Pause Menu.
+
+- We have side stairs now too.
+
+- Improvements and bugs fixed.
+
 ## Credits:
 
 Essentials: Maruno

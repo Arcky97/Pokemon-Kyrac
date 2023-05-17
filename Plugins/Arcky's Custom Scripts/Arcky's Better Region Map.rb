@@ -1,6 +1,7 @@
 
 def pbBetterRegionMap(region = -1, show_player = true, can_fly = false, wallmap = false, species = nil)
   scene = BetterRegionMap.new(region, show_player, can_fly, wallmap, species)
+  echoln(scene)
   return scene.flydata
 end
 
@@ -95,7 +96,8 @@ class BetterRegionMap
     @window["map"] = Sprite.new(@mapvp)
     @window["map"].bmp("Graphics/Pictures/#{regionArray[3]}")
     for hidden in Settings::REGION_MAP_EXTRAS
-      if hidden[0] == @region && ((wallmap && hidden[5]) || # always show if looking at wall map, irrespective of switch
+      
+=begin      if hidden[0] == @region && ((wallmap && hidden[5]) || # always show if looking at wall map, irrespective of switch
                                    (!wallmap && hidden[1] > 0 && $game_switches[hidden[1]]))
         if !@window["map2"]
           @window["map2"] = BitmapSprite.new(480,320,@mapoverlayvp)
@@ -103,7 +105,7 @@ class BetterRegionMap
         pbDrawImagePositions(@window["map2"].bitmap, [
           ["Graphics/Pictures/#{hidden[4]}", hidden[2] * TileWidth, hidden[3] * TileHeight, 0, 0, -1, -1],
         ])
-      end
+=end      end
     end
     @window["player"] = Sprite.new(@mapoverlayvp)
     if @show_player

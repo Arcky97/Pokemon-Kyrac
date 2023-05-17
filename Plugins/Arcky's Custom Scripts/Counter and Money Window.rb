@@ -1,11 +1,8 @@
 def displayCounterWindow(object, value, total=0, bonusTotal=0)
   closeCounter
   itemsFound = value != 0 && object != "Money" ? $game_variables[value] : $player.money.to_s_formatted
-  echoln(total)
   total = bonusTotal != 0 && bonusTotal != nil ? total.to_s + "(+" + bonusTotal.to_s + ")" : total
-  echoln(total)
   counter = total != 0 ? itemsFound.to_s + "/" + total.to_s : itemsFound
-  echoln(counter)
   $counterwindow = Window_AdvancedTextPokemon.new(_INTL("{1}:<ar>{2}</ar>", object, counter))    
   $counterwindow.setSkin("Graphics/Windowskins")
   $counterwindow.resizeToFit($counterwindow.text, Graphics.width)
@@ -28,29 +25,34 @@ def objectCounter(object, value, total=0, mapArrayToUse=nil)
       for i in 1...arrayMaps.length
         mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[i])
         map = load_data(mapIDName)
-        objectCounter.push(countObjects(object, map, mapArrayToUse))
+        objectCounter.push(countObjects(object, map))
       end
     else
       mapID = $game_map.map_id 
       map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
-      objectCounter = countObjects(object, map, mapArrayToUse) #returns [objectCounter, bonusCounter]
+      objectCounter = countObjects(object, map) #returns [objectCounter, bonusCounter]
     end
     objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length > 2
     objectCounter[0] -= objectCounter[1] # objectCounter - bonusCounter
   end
+  echoln(objectCounter)
   total = objectCounter[0] if objectCounter[0] != nil
   bonusTotal = objectCounter[1] if objectCounter[1] != nil
   displayCounterWindow(object, value, total, bonusTotal)
 end
 
-def countObjects(object, map, mapArrayToUse)
+def countObjects(object, map)
   bonusArray = fieldMoveItems
   objectCounter, bonusCounter = 0, 0
+  echoln(bonusArray)
   for i in map.events.keys
     next if !map.events[i].name.include?(object.chop) 
     objectCounter += 1
-    for j in 0...bonusArray[0].length
-      next  if !map.events[i].name.include?(bonusArray[j])
+    for j in 0...bonusArray.length
+      echoln(bonusArray[j])
+      echoln(map.events[i].name)
+      echoln(map.events[i].name.include?(bonusArray[j]))
+      next if !map.events[i].name.include?(bonusArray[j])
       bonusCounter += 1
     end
   end

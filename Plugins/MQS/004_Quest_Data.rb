@@ -88,9 +88,18 @@ module QuestModule
     :QuestDescription => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
     :RewardString => "a gift from \\v[52]."
   }
-
   Quest9 = {
     :ID => "9",
+    :Name => "Talk to Prof. Oak",
+    :QuestGiver => "Prof. Oak",
+    :Stage1 => "Talk to Prof. Oak.",
+    :Location1 => "Prof Oak's lab on the Yacht.",
+    :QuestDescription => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
+    :RewardString => ""
+  }
+
+  Quest10 = {
+    :ID => "10",
     :Name => "The Dark Type Gym!",
     :QuestGiver => "Yourself",
     :Stage1 => "Find another way into the Gym in Hester City!",
