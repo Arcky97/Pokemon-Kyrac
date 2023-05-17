@@ -27,6 +27,7 @@
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
   + [V1.12.32R - Release May 6 2023](#V11232RL---Release-May-6-2023)
   + [V1.12.38E - Release May 12 2023](#V1.12.38E---Release-May-12-2023)
+  + [V1.15.1C - Release May 17 2023](#V1.15.1C---Release-May-17-2023)
 - [Credits](#Credits)
 
 ## Story
