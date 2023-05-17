@@ -27,7 +27,7 @@
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
   + [V1.12.32R - Release May 6 2023](#V11232R---Release-May-6-2023)
   + [V1.12.38E - Release May 12 2023](#V11238E---Release-May-12-2023)
-  + [V1.15.1C - Release May 17 2023](#V1151C---Release-May-17-2023)
+  + [V1.15.1E - Release May 17 2023](#V1151E---Release-May-17-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -474,7 +474,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed some bugs, typos and made improvements where needed.
 
-### V1.15.1C - Release May 17 2023
+### V1.15.1E - Release May 17 2023
 
 - Reworked Route 1 completely.
 
@@ -483,6 +483,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - We have side stairs now too.
 
 - Improvements and bugs fixed.
+
+- Fixed the Entrance and Exit of Hester Forest
 
 ## Credits:
 
