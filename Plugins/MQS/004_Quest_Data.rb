@@ -95,7 +95,7 @@ module QuestModule
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",
     :QuestDescription => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
-    :RewardString => ""
+    :RewardString => "nothing yet"
   }
 
   Quest10 = {
