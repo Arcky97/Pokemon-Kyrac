@@ -1,10 +1,42 @@
-def trainerSchoolMonitor()
-    starters = [["Budew", "Roselia", "Rosereade"], ["Fletchling"], ["Grubbin"], ["Klink"], ["Pichu"], ["Roggenrola"], ["Solosis"], ["Spheal"], ["Timburr"], ["Togepi"], ["Trapinch"], ["Zigzagoon (Galarian)"], ["Cancel"]]
+def trainerSchoolMonitor(input)
+    starters = [[:BUDEW, :ROSELIA, :ROSERADE]]
+    evolutionMethod = [["by reaching High Friendship during Daytime", "by using a Shiny Stone"]]
+    species = GameData::Species.get(starters[input][0])
+    show_image_pokemon_retain_open(starters[input][0])
+    pbMessage(_INTL("{1}, the {2} Pokémon, is a \\c[20]{3}\\c[0]/\\c[24]{4} \\c[0]type and evolves into {5} {6}. {7}", species.name, species.real_category, 
+        species.types[0].name.capitalize, species.types[1].name.capitalize, starters[input][1].name.capitalize, evolutionMethod[input][0], species.real_pokedex_entry))
+    choice = pbMessage(_INTL("Do you want to continue reading about {1}'s evolution?", species.name), [_INTL("Yes"),_INTL("No")], -1)
+    return if choice != 0
+    close_image_pokemon
+    species = GameData::Species.get(starters[input][1])
+    show_image_pokemon_retain_open(starters[input][1])
+    pbMessage(_INTL("{1}, the {2} Pokémon, is a \\c[20]{3}\\c[0]/\\c[24]{4} \\c[0]type and evolves into {5} {6}. {7}", species.name, species.real_category, 
+        species.types[0].name.capitalize, species.types[1].name.capitalize, starters[input][2].name.capitalize, evolutionMethod[input][1], species.real_pokedex_entry))
+    choice = pbMessage(_INTL("Do you want to continue reading about {1}'s evolution?", species.name), [_INTL("Yes"),_INTL("No")], -1)
+    return if choice != 0
+    close_image_pokemon
+    species = GameData::Species.get(starters[input][2])
+    show_image_pokemon_retain_open(starters[input][2])
+    pbMessage(_INTL("{1}, the {2} Pokémon, is a \\c[20]{3}\\c[0]/\\c[24]{4} \\c[0]type. {7}", species.name, species.real_category, 
+        species.types[0].name.capitalize, species.types[1].name.capitalize, starters[input][2].name.capitalize, evolutionMethod[input][1], species.real_pokedex_entry))
+    close_image_pokemon
+end
+
+
+
+
+=begin
+ #starters = [["Budew", "Roselia", "Roserade"], ["Fletchling"], ["Grubbin"], ["Klink"], ["Pichu"], ["Roggenrola"], ["Solosis"], ["Spheal"], ["Timburr"], ["Togepi"], ["Trapinch"], ["Zigzagoon (Galarian)"], ["Cancel"]]
+    choice = pbMessage(_INTL("Which Starter would you like to display on the monitor?"),
+    (0...starters.size).to_a.map{|i|
+        next _INTL("{1}", starters[i][0])
+        }, -1)
+    return if choice == 12 || choice == -1
     information = [
         [
             "Budew, the Bud Pokémon, is a \\c[20]Grass\\c[0]/\\c[24]Poison \\c[0]type and evolves into Roselia by reaching High Friendship during Daytime. Over the winter, it closes its bud and endures the cold. In spring, the bud opens and releases pollen.",
-            "Roselia",
-            "Roserade"
+            "Roselia, the Torn Pokémon, is a \\c[20]Grass\\c[0]/\\c[24]Poison \\c[0]Type and evolves into Roserade by using a Shiny Stone. A roselia that drinks nutritionally rich springwater blooms with lovely flowers. The fragrance of its flowers has the effect of making its foe careless.",
+            "Roserade, the Bouquet Pokémon, is a \\c[20]Grass\\c[0]/\\c[24]Poison \\c[0]Type. It attracts prey with a sweet aroma, then downs it with thorny whips hidden in its arms."
         ],    
         "Fletchling, the Tiny Robin Pokémon, is a \\c[23]Normal\\c[0]/\\c[18]Flying \\c[0]type and evolves into Fletchinder at level 17. These friendly Pokémon send signals to one another with beautiful chirps and tail-feather movements.",
         "Grubbin, the Larva Pokémon, is a \\c[11]Bug \\c[0]type and evolves into Charjabug at level 20. It spits a sticky thread to stop opponents in their tracks, and then it grabs them in its sharp, sturdy mandibles to take them down.",
@@ -17,15 +49,13 @@ def trainerSchoolMonitor()
         "Togepi, the Spike Ball Pokémon, is a \\c[15]Fairy \\c[0]type and evolves into Togetic by reaching High Friendship. As its energy, it uses the feelings of compassion and pleasure exuded by people and Pokémon. It stores up happy feelings in its shell, then shares them out.",
         "Trapinch, the Ant Pit Pokémon, is a \\c[21]Ground \\c[0]type and evolves into Vibrava at level 35. Its big jaws crunch through boulders. Because its head is so big, it has a hard time getting back upright if it tips over onto its back.",
         "(Galarian) Zigzagoon, the Tiny Raccoon Pokémon, is a \\c[23]Normal\\c[0]/\\c[12]Dark \\c[0]Type and evolves into (Galarian) Linoone at level 20. It's restlessness has it constantly running around. If it sees another Pokémon, it will purposely run into them in order to start a fight.",
-        ]
-    choice = pbMessage(_INTL("Which Starter would you like to display on the monitor?"),
-    (0...starters.size).to_a.map{|i|
-        next _INTL("{1}", starters[i][0])
-        }, -1)
-    return if choice == 12 || choice == -1
-    pbMessage(_INTL("{1}", information[choice][0]))
-    choiceTwo = pbMessage(_INTL("Do you want to continue reading about {1}'s evolution?", starters[choice][0]), [_INTL("Yes"),_INTL("No")], -1)
-    return if choiceTwo == 1 || choiceTwo == -1
-    pbMessage(_INTL("{1}", information[choice][1]))
-    choiceThree = pbMessage(_INTL("Do you want to keep reading about {1}'s evolution?", starters[choice][1]), [_INTL("Yes"),INTL("No")], -1)
-end
+        ]   
+    echoln(GameData::Species.get(displayImage[input][0]).name) #species name
+    echoln(GameData::Species.get(displayImage[input][0]).real_pokedex_entry) #pokedex entry
+    echoln(GameData::Species.get(displayImage[input][0]).real_category) #pokemon category
+    echoln(GameData::Species.get(displayImage[input][0]).types[1].name.capitalize) #Pokemon type
+=end
+
+
+
+    

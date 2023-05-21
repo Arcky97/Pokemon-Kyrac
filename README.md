@@ -27,7 +27,7 @@
   + [V1.9.15I - Release April 22 2023](#V1915I---Release-April-22-2023)
   + [V1.12.32R - Release May 6 2023](#V11232R---Release-May-6-2023)
   + [V1.12.38E - Release May 12 2023](#V11238E---Release-May-12-2023)
-  + [V1.15.2N - Release May 17 2023](#V1152N---Release-May-17-2023)
+  + [V1.15.3O - Release May 17 2023](#V1153O---Release-May-17-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -474,7 +474,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed some bugs, typos and made improvements where needed.
 
-### V1.15.2N - Release May 17 2023
+### V1.15.3O - Release May 17 2023
 
 - Reworked Route 1 completely.
 
@@ -493,6 +493,10 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Improved the exit and entrance of the Yacht.
 
 - Fixed the Quest 7 script once you complete the Yacht quest.
+
+- Fixed entrances of the Open Mart in Hester City, transfering the player to NPC house.
+
+- Improved the script used for the monitor in the Trainer School's Computer class room.
 
 ## Credits:
 
