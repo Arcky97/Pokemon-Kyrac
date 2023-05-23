@@ -20,7 +20,7 @@ class PokemonGlobalMetadata
   end
 end
 
-
+=begin
 def regionArray
   regionmapinfo = [[$game_switches[53], 24, 4, "MapRegion0"], [$game_switches[56], 27, 14, "MapRegion1"], [$game_switches[61], 30, 33, "MapRegion2"], [$game_switches[137], 33, 69, "MapRegion3"]]
   for i in 0...regionmapinfo.length
@@ -61,7 +61,7 @@ def changeTownMapData(region)
   end
   return newdata
 end
-
+=end
 
 class BetterRegionMap
   CursorAnimateDelay = 12.0
@@ -75,12 +75,12 @@ class BetterRegionMap
 
   def initialize(region = -1, show_player = true, can_fly = true, wallmap = false, species = nil)
     showBlk
-    playerpos = changePlayerPos
+    playerpos = $game_map ? $game_map.metadata&.town_map_position : nil #changePlayerPos
     @region = (region < 0) ? playerpos[0] : region
     @species = species
     @show_player = (show_player && playerpos[0] == @region)
     @can_fly = can_fly
-    @data = changeTownMapData(region)
+    @data = load_data("Data/town_map.dat")[@region] #changeTownMapData(region)
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
     @mapvp = Viewport.new(16, 32, 480, 320)
@@ -94,10 +94,9 @@ class BetterRegionMap
     @sprites["bg"].bmp("Graphics/Pictures/mapbg")
     @window = SpriteHash.new
     @window["map"] = Sprite.new(@mapvp)
-    @window["map"].bmp("Graphics/Pictures/#{regionArray[3]}")
+    @window["map"].bmp("Graphics/Pictures/#{@data[1]}") #@window["map"].bmp("Graphics/Pictures/#{regionArray[3]}")
     for hidden in Settings::REGION_MAP_EXTRAS
-      
-=begin      if hidden[0] == @region && ((wallmap && hidden[5]) || # always show if looking at wall map, irrespective of switch
+      if hidden[0] == @region && ((wallmap && hidden[5]) || # always show if looking at wall map, irrespective of switch
                                    (!wallmap && hidden[1] > 0 && $game_switches[hidden[1]]))
         if !@window["map2"]
           @window["map2"] = BitmapSprite.new(480,320,@mapoverlayvp)
@@ -105,7 +104,7 @@ class BetterRegionMap
         pbDrawImagePositions(@window["map2"].bitmap, [
           ["Graphics/Pictures/#{hidden[4]}", hidden[2] * TileWidth, hidden[3] * TileHeight, 0, 0, -1, -1],
         ])
-=end      end
+      end
     end
     @window["player"] = Sprite.new(@mapoverlayvp)
     if @show_player

@@ -1,10 +1,18 @@
 def trainerSchoolMonitor(input)
-    starters = [[:BUDEW, :ROSELIA, :ROSERADE]]
-    evolutionMethod = [["by reaching High Friendship during Daytime", "by using a Shiny Stone"]]
+    starters = [[:BUDEW, :ROSELIA, :ROSERADE], [:FLETCHLING, :FLETCHINDER, :TALONFLAME], [:GRUBBIN, :CHARJABUG, :VIKAVOLT], [:KLINK, :KLANG, :KLINKLANG], [:PICHU, :PIKACHU, [:RAICHU, :RAICHU_1]], [:ROGGENROLA, :BOLDORE, :GIGALITH], 
+    [:SOLOSIS, :DUOSION, :REUNICLUS], [:SPHEAL, :SEALEO, :WALREIN], [:TIMBURR, :GURDURR, :CONKELDURR], [:TOGEPI, :TOGETIC, :TOGEKISS], [:TRAPINCH, :VIBRAVA, :FLYGON], [:ZIGZAGOON_1, :LINOONE, :OBSTAGOON]]
+    evolutionMethod = [["by reaching High Friendship during Daytime", "by using a Shiny Stone"], ["at level 17"], ["at level 20"], ["at level 38"], ["by reaching High Friendship"], ["at level 25"], ["at level 32"], ["at level 32"], ["at level 25"], ["by reaching High Friendship"], ["at level 35"], ["at level 20"]]
+    typeColor = [[20, 24], [23, 18], [11], [27], [14], [26], [25], [22, 28], [16], [15], [21], [12, 23]]
     species = GameData::Species.get(starters[input][0])
     show_image_pokemon_retain_open(starters[input][0])
-    pbMessage(_INTL("{1}, the {2} Pokémon, is a \\c[20]{3}\\c[0]/\\c[24]{4} \\c[0]type and evolves into {5} {6}. {7}", species.name, species.real_category, 
-        species.types[0].name.capitalize, species.types[1].name.capitalize, starters[input][1].name.capitalize, evolutionMethod[input][0], species.real_pokedex_entry))
+    pokemon = input == 11 ? "Galarian #{species.name}" : species.name
+    type = typeColor[input][1] ? "\\c[#{typeColor[input][0]}]#{species.types[0].name.capitalize}\\c[0]/\\c[#{typeColor[input][1]}]#{species.types[1].name.capitalize}" : "\\c[#{typeColor[input][0]}]#{species.types[0].name.capitalize}"
+    pbMessage(_INTL("{1}, the {2} Pokémon, is a {3} \\c[0]type and evolves into {4} {5}. {6}", pokemon, species.real_category, type, starters[input][1].name.capitalize, evolutionMethod[input][0], species.real_pokedex_entry))
+    close_image_pokemon
+end
+
+
+=begin
     choice = pbMessage(_INTL("Do you want to continue reading about {1}'s evolution?", species.name), [_INTL("Yes"),_INTL("No")], -1)
     return if choice != 0
     close_image_pokemon
@@ -20,10 +28,7 @@ def trainerSchoolMonitor(input)
     pbMessage(_INTL("{1}, the {2} Pokémon, is a \\c[20]{3}\\c[0]/\\c[24]{4} \\c[0]type. {7}", species.name, species.real_category, 
         species.types[0].name.capitalize, species.types[1].name.capitalize, starters[input][2].name.capitalize, evolutionMethod[input][1], species.real_pokedex_entry))
     close_image_pokemon
-end
-
-
-
+=end
 
 =begin
  #starters = [["Budew", "Roselia", "Roserade"], ["Fletchling"], ["Grubbin"], ["Klink"], ["Pichu"], ["Roggenrola"], ["Solosis"], ["Spheal"], ["Timburr"], ["Togepi"], ["Trapinch"], ["Zigzagoon (Galarian)"], ["Cancel"]]

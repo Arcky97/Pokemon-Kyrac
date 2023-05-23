@@ -55,14 +55,14 @@ Name = Yacht BF1
 MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
-[015]   # Route 01
+[015]   # Route 01 new
 Name = Route 1
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,47,10
+MapPosition = 0,35,21
 SnapEdges = true
-MapSize = 1,1
+MapSize = 2,11
 #-------------------------------
 [016]   # Poke center
 Name = Poke Center
@@ -75,7 +75,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 BicycleAlways = false
-MapPosition = 0,48,10
+MapPosition = 0,37,21
 SafariMap = false
 SnapEdges = true
 MapSize = 1,1
@@ -166,12 +166,12 @@ MapPosition = 0,49,10
 SnapEdges = true
 MapSize = 3,111
 #-------------------------------
-[041]   # Route 02
+[041]   # Route 02 new
 Name = Route 2
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,48,8
+MapPosition = 0,37,22
 SnapEdges = true
 MapSize = 1,11
 Flags = ForceBikeDown
@@ -181,7 +181,7 @@ Name = Franta Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,52,10
+MapPosition = 0,41,25
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
@@ -190,7 +190,7 @@ Name = \PN's House F2
 MapPosition = 0,39,9
 SnapEdges = true
 #-------------------------------
-[044]   # Tila Town
+[044]   # Tila Town new
 Name = Tila Town
 Outdoor = true
 ShowArea = true
@@ -204,7 +204,7 @@ Name = Route 3
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,45,6
+MapPosition = 0,38,24
 SnapEdges = true
 MapSize = 3,110011
 #-------------------------------
@@ -213,7 +213,7 @@ Name = Flutford Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,44,6
+MapPosition = 0,31,24
 SnapEdges = true
 MapSize = 1,11
 #-------------------------------
@@ -364,7 +364,7 @@ SnapEdges = true
 Name = A Farmer's farm
 Outdoor = true
 ShowArea = true
-MapPosition = 0,49,8
+MapPosition = 0,38,22
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
@@ -373,7 +373,7 @@ Name = Sea Shore
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,45,7
+MapPosition = 0,32,25
 SnapEdges = true
 #-------------------------------
 [074]   # Trainer School Class 2
@@ -402,7 +402,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 HealingSpot = 16,7,4
-MapPosition = 0,45,10
+MapPosition = 0,33,21
 SnapEdges = true
 MapSize = 2,1111
 #-------------------------------
@@ -413,7 +413,7 @@ Name = Green Houses
 Name = Hester Forest
 Outdoor = true
 ShowArea = true
-MapPosition = 0,47,11
+MapPosition = 0,35,22
 SnapEdges = true
 #-------------------------------
 [082]   # Route 18-19
@@ -440,4 +440,12 @@ Name = Yacht Deck
 Outdoor = true
 ShowArea = true
 MapPosition = 0,40,10
+SnapEdges = true
+#-------------------------------
+[127]   # Hester Beach
+Name = Hester Beach
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 0,32,22
 SnapEdges = true
