@@ -3693,7 +3693,7 @@ BattleUse = OnFoe
 Flags = PokeBall
 Description = A new type of Poké Ball that increases the catch-rate when used on Bug-Type Pokémon.
 #-------------------------------
-[CDREADBALL]
+[DREADBALL]
 Name = Dread Ball
 NamePlural = Dread Balls
 Pocket = 3

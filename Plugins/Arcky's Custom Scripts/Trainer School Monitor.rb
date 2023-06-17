@@ -11,6 +11,45 @@ def trainerSchoolMonitor(input)
     close_image_pokemon
 end
 
+def trainerSchoolTypeMatchUps
+    types = [:BUG, :DARK, :DRAGON, :ELECTRIC, :FAIRY, :FIGHTING, :FIRE, :FLYING, :GHOST, :GRASS, :GROUND, :ICE, :NORMAL, :POISON, :PSYCHIC, :ROCK, :STEEL, :WATER]
+    choice = pbMessage(_INTL("Which Type would you like to read about?"),
+                       (0...types.size).to_a.map { |i|
+                         _INTL("#{GameData::Type.get(types[i]).name}")
+                       }, -1)
+    return if 0 > choice 
+    superEffective = []
+    notEffective = []
+    noEffect = []
+    GameData::Type.each do |type|
+      if type.weaknesses.include?(types[choice])
+        superEffective << [type.name, (types.index(type.id)) + 11]
+      elsif type.resistances.include?(types[choice])
+        notEffective << [type.name, (types.index(type.id)) + 11]
+      elsif type.immunities.include?(types[choice])
+        noEffect << [type.name, (types.index(type.id)) + 11]
+      end
+    end
+    noEffect = noEffect != [] ? "And have no effect against #{formatTypeList(noEffect)}" : "No types are immune to \\c[#{choice + 11}]#{GameData::Type.get(types[choice]).name}"
+    pbMessage(_INTL("\\c[#{choice + 11}]#{GameData::Type.get(types[choice]).name} \\c[0]type moves are super-effective against #{formatTypeList(superEffective)}. Not very effective against #{formatTypeList(notEffective)}. #{noEffect}."))
+  end
+
+  def formatTypeList(types)
+    case types.size
+    when 0
+      "no Pokémon"
+    when 1
+        "\\c[#{types[0][1]}]#{types[0][0]} \\c[0]type Pokémon"
+    when 2
+      "\\c[#{types[0][1]}]#{types[0][0]}\\c[0] and \\c[#{types[1][1]}]#{types[1][0]} \\c[0]type Pokémon"
+    else
+        lastType = types.pop
+        formattedList = types.map { |type| 
+            "\\c[#{type[1]}]#{type[0]}\\c[0]" }.join(', ')
+        "#{formattedList} and \\c[#{lastType[1]}]#{lastType[0]} \\c[0]type Pokémon"
+    end
+  end
+
 
 =begin
     choice = pbMessage(_INTL("Do you want to continue reading about {1}'s evolution?", species.name), [_INTL("Yes"),_INTL("No")], -1)

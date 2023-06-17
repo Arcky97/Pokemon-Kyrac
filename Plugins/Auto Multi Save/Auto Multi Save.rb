@@ -311,6 +311,7 @@ class PokemonLoadScreen
         if @save_data[:player].mystery_gift_unlocked
           commands[cmd_mystery_gift = commands.length] = _INTL('Mystery Gift') # Honestly I have no idea how to make Mystery Gift work well with this.
         end
+        map_name = @save_data[:variables][62]
       end
       commands[cmd_new_game = commands.length]  = _INTL('New Game')
       commands[cmd_options = commands.length]   = _INTL('Options')
@@ -319,10 +320,9 @@ class PokemonLoadScreen
       commands[cmd_quit = commands.length]      = _INTL('Quit Game')
       cmd_left = -3
       cmd_right = -2
-
       map_id = show_continue ? @save_data[:map_factory].map.map_id : 0
       @scene.pbStartScene(commands, show_continue, @save_data[:player],
-                          @save_data[:frame_count] || 0, @save_data[:stats], map_id)
+                          @save_data[:frame_count] || 0, @save_data[:stats], map_id, map_name)
       @scene.pbSetParty(@save_data[:player]) if show_continue
       if first_time
         @scene.pbStartScene2

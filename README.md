@@ -28,6 +28,7 @@
   + [V1.12.32R - Release May 6 2023](#V11232R---Release-May-6-2023)
   + [V1.12.38E - Release May 12 2023](#V11238E---Release-May-12-2023)
   + [V1.15.3O - Release May 17 2023](#V1153O---Release-May-17-2023)
+  + [V1.18.25R - Release June 17 2023](#V11825R---Release-June-17-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -497,6 +498,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed entrances of the Open Mart in Hester City, transfering the player to NPC house.
 
 - Improved the script used for the monitor in the Trainer School's Computer class room.
+
+### V1.18.25R - Release June 17 2023
+
+- Created and added a Chapter summary screen that appears around the start of a new chapter.
+
+- Reworked Hester City
+
+- Reworked Hester Beach
+
+- So many changes and improvements made that I won't even bother summing them up XD
 
 ## Credits:
 

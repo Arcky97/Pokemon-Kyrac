@@ -35,7 +35,6 @@ def objectCounter(object, value, total=0, mapArrayToUse=nil)
     objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length > 2
     objectCounter[0] -= objectCounter[1] # objectCounter - bonusCounter
   end
-  echoln(objectCounter)
   total = objectCounter[0] if objectCounter[0] != nil
   bonusTotal = objectCounter[1] if objectCounter[1] != nil
   displayCounterWindow(object, value, total, bonusTotal)
@@ -44,14 +43,10 @@ end
 def countObjects(object, map)
   bonusArray = fieldMoveItems
   objectCounter, bonusCounter = 0, 0
-  echoln(bonusArray)
   for i in map.events.keys
     next if !map.events[i].name.include?(object.chop) 
     objectCounter += 1
     for j in 0...bonusArray.length
-      echoln(bonusArray[j])
-      echoln(map.events[i].name)
-      echoln(map.events[i].name.include?(bonusArray[j]))
       next if !map.events[i].name.include?(bonusArray[j])
       bonusCounter += 1
     end

@@ -1,6 +1,6 @@
 @eventIDs = [
     [13,
-        [28, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+        [28, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51]
     ],
     [15,
         [21, 22, 23, 24]
@@ -21,7 +21,10 @@
         [8]
     ],
     [79,
-        [79, 81]
+        [62, 63, 64, 79, 81]
+    ],
+    [127,
+        [6, 11, 12, 13, 18, 19, 20, 23, 24, 25]
     ]
 ]
 
@@ -42,8 +45,6 @@
         [40, 11],
         [40, 38],
         [42, 11],
-        [42, 38],
-        [42, 39],
         [43, 16],
         [43, 38],
         [43, 39],
@@ -231,7 +232,7 @@ def checkEventSize()
         $gameEventSizes[@map] = eventSizes == $gameEventSizes[@map] ? return : eventSizes
     end
 end
-
+  
 def checkPlayerPosition()
     for i in 0...$gameEventSizes[@map].length
         for j in 0...@getMapPositionsToIgnore.length

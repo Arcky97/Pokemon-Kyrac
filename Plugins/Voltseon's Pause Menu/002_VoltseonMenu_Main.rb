@@ -240,13 +240,13 @@ class VoltseonsPauseMenu_Scene
     @sprites["location"].bitmap = Bitmap.new(bmp.width, bmp.height)
     @sprites["location"].bitmap.blt(0, 0, bmp, Rect.new(0, 0, bmp.width, bmp.height))
     bmp.dispose
-    mapname = $game_map.name
+    mapname = $game_variables[62] #$game_map.name
     base_color = $PokemonSystem.from_current_menu_theme(LOCATION_TEXTCOLOR, Color.new(248, 248, 248))
     shdw_color = $PokemonSystem.from_current_menu_theme(LOCATION_TEXTOUTLINE, Color.new(48, 48, 48))
     x_offset = @sprites["location"].bitmap.width - 64
     pbSetSystemFont(@sprites["location"].bitmap)
-    pbDrawTextPositions(@sprites["location"].bitmap, [[$game_map.name, x_offset, 12, 1, base_color, shdw_color, true]])
-    @sprites["location"].x = -@sprites["location"].bitmap.width + (@sprites["location"].bitmap.text_size($game_map.name).width + 64 + 32)
+    pbDrawTextPositions(@sprites["location"].bitmap, [[mapname, x_offset, 12, 1, base_color, shdw_color, true]])
+    @sprites["location"].x = -@sprites["location"].bitmap.width + (@sprites["location"].bitmap.text_size(mapname).width + 64 + 32)
     @sprites["location"].x -= @sprites["location"].bitmap.width if @hidden
     @components.each { |component| component.refresh }
     @should_refresh = false

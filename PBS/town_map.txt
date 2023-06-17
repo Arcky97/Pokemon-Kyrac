@@ -9,35 +9,35 @@ Point=22,15,Home,Beach,13,36,12,
 Point=23,15,Home,Dock,13,36,12,
 
 #Version 2
-Point=33,21,"Hester City",Haven,79,52,18,
-Point=34,21,"Hester City","Flower Garden",79,52,18,
-Point=33,22,"Hester City",Mart,79,52,18,
-Point=34,22,"Hester City","Trainer School",79,52,18,
+Point=33,21,"Hester City",Haven,79,52,18,56
+Point=34,21,"Hester City","Flower Garden",79,52,18,56
+Point=33,22,"Hester City",Mart,79,52,18,56
+Point=34,22,"Hester City","Trainer School",79,52,18,56
 
 #Version 3
-Point=35,22,"Hester Forest",,,,,
-Point=32,22,"Hester Beach",,,,,
-Point=35,21,"Route 1",,,,,
-Point=36,21,"Route 1",,,,,
-Point=37,21,"Route Intersection","Radio Tower",17,17,20,
-Point=37,22,"Route 2",,,,,
-Point=37,23,"Route 2",,,,,
-Point=38,22,"Farmers Farm",,,,,
-Point=36,24,"Tila Town",,44,15,19,
-Point=37,24,"Tila Town",,44,15,19,
-Point=32,24,"Route 3",,,,,
-Point=33,23,"Route 3",,,,,
-Point=33,24,"Route 3",,,,,
-Point=34,24,"Route 3",,,,,
-Point=35,24,"Route 3",,,,,
-Point=32,25,"Sea Shore",,,,,
-Point=31,24,"Flutford Town",,46,14,34,
-Point=31,25,"Flutford Town",,46,14,34,
-Point=38,24,"Route 4",,,,,
-Point=39,24,"Route 4",,,,,
-Point=39,25,"Route 4",,,,,
-Point=40,25,"Route 4",,,,,
-Point=41,25,"Franta Town",,42,8,12,
+Point=35,22,"Hester Forest",,,,,61
+Point=32,22,"Hester Beach",,,,,61
+Point=35,21,"Route 1",,,,,61
+Point=36,21,"Route 1",,,,,61
+Point=37,21,"Route Intersection","Radio Tower",17,17,20,61
+Point=37,22,"Route 2",,,,,61
+Point=37,23,"Route 2",,,,,61
+Point=38,22,"Farmers Farm",,,,,61
+Point=36,24,"Tila Town",,44,15,19,61
+Point=37,24,"Tila Town",,44,15,19,61
+Point=32,24,"Route 3",,,,,61
+Point=33,23,"Route 3",,,,,61
+Point=33,24,"Route 3",,,,,61
+Point=34,24,"Route 3",,,,,61
+Point=35,24,"Route 3",,,,,61
+Point=32,25,"Sea Shore",,,,,61
+Point=31,24,"Flutford Town",,46,14,34,61
+Point=31,25,"Flutford Town",,46,14,34,61
+Point=38,24,"Route 4",,,,,61
+Point=39,24,"Route 4",,,,,61
+Point=39,25,"Route 4",,,,,61
+Point=40,25,"Route 4",,,,,61
+Point=41,25,"Franta Town",,42,8,12,61
 
 #Version 4
 Point=51,7,"Route 5",,,,,

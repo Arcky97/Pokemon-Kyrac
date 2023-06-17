@@ -1,7 +1,6 @@
 
 def pbBetterRegionMap(region = -1, show_player = true, can_fly = false, wallmap = false, species = nil)
   scene = BetterRegionMap.new(region, show_player, can_fly, wallmap, species)
-  echoln(scene)
   return scene.flydata
 end
 
@@ -20,67 +19,33 @@ class PokemonGlobalMetadata
   end
 end
 
-=begin
-def regionArray
-  regionmapinfo = [[$game_switches[53], 24, 4, "MapRegion0"], [$game_switches[56], 27, 14, "MapRegion1"], [$game_switches[61], 30, 33, "MapRegion2"], [$game_switches[137], 33, 69, "MapRegion3"]]
-  for i in 0...regionmapinfo.length
-    if regionmapinfo[i][0]  
-      regiondata = regionmapinfo[i].clone
-    end
+def editData
+  data = load_data("Data/town_map.dat")[@region]
+  newData = []
+  for i in 0...data[2].length
+    next if data[2][i][7] && !$game_switches[data[2][i][7]]
+    newData.append(data[2][i])
   end
-  return regiondata
-end
+  data = [data[0], data[1], newData]
+  return data
+end  
 
-def changePlayerPos
-  position = $game_map ? $game_map.metadata&.town_map_position.clone : nil
-  position[1] -= regionArray[1]
-  if $game_switches[55] # the player is on the yacht
-    case $game_variables[47] # check value of the game variable ID 47
-    when 1 
-      position[1] += 1
-    when 2
-      position[1] += 2
-    when 3
-      position[1] += 3
-    when 4
-      position[1] += 4
-    when 5
-      position[1] += 5
-    end
-  end
-  return position
-end
-
-def changeTownMapData(region)
-  newdata = load_data("Data/town_map.dat")[region].clone
-  data = [newdata[0], newdata[1], newdata[2][0, (regionArray[2]-1)]]
-  for i in 0...regionArray[2]
-    if true
-      newdata[2][i][0] -= regionArray[1]
-    end
-  end
-  return newdata
-end
-=end
 
 class BetterRegionMap
   CursorAnimateDelay = 12.0
   CursorMoveSpeed = 4.0
   TileWidth = 16.0
   TileHeight = 16.0
-
   FlyPointAnimateDelay = 20.0
-
   attr_reader :flydata
-
   def initialize(region = -1, show_player = true, can_fly = true, wallmap = false, species = nil)
     showBlk
-    playerpos = $game_map ? $game_map.metadata&.town_map_position : nil #changePlayerPos
+    playerpos = $game_map ? $game_map.metadata&.town_map_position : nil
     @region = (region < 0) ? playerpos[0] : region
     @species = species
     @show_player = (show_player && playerpos[0] == @region)
     @can_fly = can_fly
-    @data = load_data("Data/town_map.dat")[@region] #changeTownMapData(region)
+    @data = editData
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
     @mapvp = Viewport.new(16, 32, 480, 320)
@@ -94,12 +59,12 @@ class BetterRegionMap
     @sprites["bg"].bmp("Graphics/Pictures/mapbg")
     @window = SpriteHash.new
     @window["map"] = Sprite.new(@mapvp)
-    @window["map"].bmp("Graphics/Pictures/#{@data[1]}") #@window["map"].bmp("Graphics/Pictures/#{regionArray[3]}")
+    @window["map"].bmp("Graphics/Pictures/#{@data[1]}")
     for hidden in Settings::REGION_MAP_EXTRAS
       if hidden[0] == @region && ((wallmap && hidden[5]) || # always show if looking at wall map, irrespective of switch
                                    (!wallmap && hidden[1] > 0 && $game_switches[hidden[1]]))
         if !@window["map2"]
-          @window["map2"] = BitmapSprite.new(480,320,@mapoverlayvp)
+          @window["map2"] = BitmapSprite.new(960,640,@mapoverlayvp)
         end
         pbDrawImagePositions(@window["map2"].bitmap, [
           ["Graphics/Pictures/#{hidden[4]}", hidden[2] * TileWidth, hidden[3] * TileHeight, 0, 0, -1, -1],
@@ -110,10 +75,10 @@ class BetterRegionMap
     if @show_player
       map_metadata = $game_map.metadata
       if playerpos[0] == @region
-        mapsize = map_metadata.town_map_size
         gender = $Trainer.gender.to_digits(3)
+        mapsize = map_metadata.town_map_size
         @map_x = playerpos[1] 
-        @map_y =  playerpos[2] 
+        @map_y =  playerpos[2]
         if mapsize != nil
           sqwidth  = mapsize[0]
           sqheight = (mapsize[1].length.to_f / mapsize[0]).ceil
@@ -123,7 +88,8 @@ class BetterRegionMap
         end
         @map_x += ($game_player.x * sqwidth / $game_map.width).floor if sqwidth > 1
         @map_y += ($game_player.y * sqheight / $game_map.height).floor if sqheight > 1
-        @window["player"].bmp("Graphics/Pictures/mapPlayer#{gender}")
+        filename = GameData::TrainerType.player_map_icon_filename($player.trainer_type)
+        @window["player"].bmp(filename)
         @window["player"].x = TileWidth * @map_x + (TileWidth / 2.0)
         @window["player"].y = TileHeight * @map_y + (TileHeight / 2.0)
         @window["player"].center_origins
@@ -136,21 +102,16 @@ class BetterRegionMap
       @window["areahighlight"].bitmap.clear
       # Fill the array "points" with all squares of the region map in which the
       # species can be found
-      
       mapwidth = @window["map"].bitmap.width/BetterRegionMap::TileWidth
       data = calculatePointsAndCenter(mapwidth)
-
       points = data[0]
       minxy = data[1]
       maxxy = data[2]
-      
       # Draw coloured squares on each square of the region map with a nest
       pointcolor   = Color.new(0,248,248)
       pointcolorhl = Color.new(192,248,248)
-      
       sqwidth = TileWidth.round
       sqheight = TileHeight.round
-      
       for j in 0...points.length
         if points[j]
           x = (j % mapwidth) * sqwidth
@@ -171,11 +132,9 @@ class BetterRegionMap
         end
       end
     end
-    
     @sprites["cursor"] = Sprite.new(@viewport2)
     @sprites["cursor"].bmp("Graphics/Pictures/mapCursor")
     @sprites["cursor"].src_rect.width = @sprites["cursor"].bmp.height
-    
     if @species != nil && minxy[0] != nil && maxxy[1] != nil
       @map_x = ((minxy[0] + maxxy[0]) / 2).round
       @map_y = ((minxy[1] + maxxy[1]) / 2).round
@@ -194,21 +153,16 @@ class BetterRegionMap
       @map_x += ($game_player.x * sqwidth / $game_map.width).floor if sqwidth > 1
       @map_y += ($game_player.y * sqheight / $game_map.height).floor if sqheight > 1
     end
-    
     @sprites["cursor"].x = 16 + TileWidth * @map_x
     @sprites["cursor"].y = 32 + TileHeight * @map_y
-    
     @sprites["cursor"].z = 11
-    
     # Center the window on the cursor
-    windowminx = -1 * (@window["map"].bmp.width / 2)
+    windowminx = -1 * (@window["map"].bmp.width / 2) 
     windowminx = 0 if windowminx > 0
     windowminy = -1 * (@window["map"].bmp.height / 2)
     windowminy = 0 if windowminy > 0
-    
     mapwidth = @window["map"].bmp.width
     mapheigth = @window["map"].bmp.height
-    
     if @sprites["cursor"].x > (Settings::SCREEN_WIDTH / 2)
       if mapwidth > Settings::SCREEN_WIDTH
         @window.x = (Settings::SCREEN_WIDTH / 2 ) - @sprites["cursor"].x
@@ -227,7 +181,6 @@ class BetterRegionMap
       end
       @sprites["cursor"].y += @window.y
     end
-    
     @sprites["cursor"].ox = (@sprites["cursor"].bmp.height - TileWidth) / 2.0
     @sprites["cursor"].oy = @sprites["cursor"].ox
     @sprites["txt"] = TextSprite.new(@viewport)
@@ -249,12 +202,10 @@ class BetterRegionMap
     @sprites["arrowDown"].bmp("Graphics/Pictures/mapArrowDown")
     @sprites["arrowDown"].center_origins
     @sprites["arrowDown"].xyz = Graphics.width / 2, Graphics.height - 24
-
     update_text
     @dirs = []
     @mdirs = []
     @i = 0
-
     if can_fly
       @spots = {}
       n = 0
@@ -265,17 +216,14 @@ class BetterRegionMap
             @window["point#{n}"] = Sprite.new(@mapvp)
             @window["point#{n}"].bmp("Graphics/Pictures/mapFly")
             @window["point#{n}"].src_rect.width = @window["point#{n}"].bmp.height
-            @window["point#{n}"].x = TileWidth * x + (TileWidth / 2)
-            @window["point#{n}"].y = TileHeight * y + (TileHeight / 2)
-            @window["point#{n}"].oy = @window["point#{n}"].bmp.height / 2.0
-            @window["point#{n}"].ox = @window["point#{n}"].oy
+            @window["point#{n}"].x = (TileWidth * x + (TileWidth / 2) - 16)
+            @window["point#{n}"].y = (TileHeight * y + (TileHeight / 2) - 16)
             @spots[[x, y]] = healspot
             n += 1
           end
         end
       end
     end
-
     hideBlk { update(false) }
     main
   end
@@ -354,16 +302,13 @@ class BetterRegionMap
     @sprites["arrowRight"].visible = @window.x > -1 * (@window["map"].bmp.width - 480)
     @sprites["arrowUp"].visible = @window.y < 0
     @sprites["arrowDown"].visible = @window.y > -1 * (@window["map"].bmp.height - 320)
-
     if update_gfx
       Graphics.update
       Input.update
     end
-    
     intensity = (Graphics.frame_count % 40) * 12
     intensity = 480 - intensity if intensity > 240
     @window["areahighlight"].opacity = intensity
-    
     @i += 1
     if @i % CursorAnimateDelay == 0
       @sprites["cursor"].src_rect.x += @sprites["cursor"].src_rect.width
@@ -376,7 +321,6 @@ class BetterRegionMap
         @window[e].src_rect.x = 0 if @window[e].src_rect.x >= @window[e].bmp.width
       end
     end
-
     if @i % 2 == 0
       case @i % 32
       when 0...8
@@ -396,7 +340,6 @@ class BetterRegionMap
         @sprites["arrowDown"].y += 1
       end
     end
-
     # Cursor movement
     if @dirs.include?(6)
       @hor_count ||= 0
@@ -442,7 +385,6 @@ class BetterRegionMap
         @sy = nil
       end
     end
-
     # Map movement
     if @mdirs.include?(6)
       @hor_count ||= 0
@@ -700,13 +642,19 @@ def calculatePointsAndCenter(mapwidth)
   minxy = [nil, nil] # top-leftmost tile
   maxxy = [nil, nil] # bottom-rightmost tile
   GameData::Encounter.each_of_version($PokemonGlobal.encounter_version) do |enc_data|
-    #next if data.include?(enc_data)
     next if !pbFindEncounter(enc_data.types, @species)   # Species isn't in encounter table
     # Get the map belonging to the encounter table
     map_metadata = GameData::MapMetadata.try_get(enc_data.map)
     next if !map_metadata || map_metadata.has_flag?("HideEncountersInPokedex")
     mappos = map_metadata.town_map_position
     next if mappos[0] != @region   # Map isn't in the region being shown
+    data = editData
+    checkPos = mappos[1..2]
+    newdata = []
+    for i in 0...data[2].length
+      newdata.push(data[2][i][0..1])
+    end
+    next if !newdata.include?(checkPos)
     # Get the size and shape of the map in the Town Map
     mapsize = map_metadata.town_map_size
     if mapsize && mapsize[0] > 0
@@ -799,21 +747,16 @@ class PokemonPokedexInfo_Scene
     base   = Color.new(88,88,80)
     shadow = Color.new(168,184,184)
     @sprites["areahighlight"].bitmap.clear
-    
-    mapwidth = @sprites["areamap"].bitmap.width/BetterRegionMap::TileWidth
-    data = calculatePointsAndCenter(mapwidth)
-
+    town_map_width = 1 + PokemonRegionMap_Scene::RIGHT - PokemonRegionMap_Scene::LEFT
+    data = calculatePointsAndCenter(town_map_width)
     points = data[0]
     minxy = data[1]
     maxxy = data[2]
-    
     # Draw coloured squares on each square of the region map with a nest
     pointcolor   = Color.new(0,248,248)
     pointcolorhl = Color.new(192,248,248)
     sqwidth = BetterRegionMap::TileWidth
     sqheight = BetterRegionMap::TileWidth
-    
-    
     # Center the window on the center of visible areas
     if minxy[0] != nil && maxxy[0] != nil
       center_x = ((minxy[0]+maxxy[0])/2).round * sqwidth
@@ -822,10 +765,8 @@ class PokemonPokedexInfo_Scene
       center_x = Settings::SCREEN_WIDTH/2
       center_y = Settings::SCREEN_HEIGHT/2 - 40
     end
-    
     windowminx = -1 * (@sprites["areamap"].bmp.width - Settings::SCREEN_WIDTH + 16)
     windowminy = -1 * (@sprites["areamap"].bmp.height - Settings::SCREEN_HEIGHT + 16)
-    
     if center_x > (Settings::SCREEN_WIDTH / 2)
       @sprites["areamap"].x = (480 / 2 ) - center_x
       if (@sprites["areamap"].x < windowminx)
@@ -842,41 +783,37 @@ class PokemonPokedexInfo_Scene
     else
       @sprites["areamap"].y = windowminy
     end
-    
-    for j in 0...points.length
-      if points[j]
-        x = (j%mapwidth)*sqwidth
-        x += @sprites["areamap"].x
-        y = (j/mapwidth)*sqheight
-        y += @sprites["areamap"].y - 8
-        @sprites["areahighlight"].bitmap.fill_rect(x,y,sqwidth,sqheight,pointcolor)
-        if j-mapwidth<0 || !points[j-mapwidth]
-          @sprites["areahighlight"].bitmap.fill_rect(x,y-2,sqwidth,2,pointcolorhl)
-        end
-        if j+mapwidth>=points.length || !points[j+mapwidth]
-          @sprites["areahighlight"].bitmap.fill_rect(x,y+sqheight,sqwidth,2,pointcolorhl)
-        end
-        if j%mapwidth==0 || !points[j-1]
-          @sprites["areahighlight"].bitmap.fill_rect(x-2,y,2,sqheight,pointcolorhl)
-        end
-        if (j+1)%mapwidth==0 || !points[j+1]
-          @sprites["areahighlight"].bitmap.fill_rect(x+sqwidth,y,2,sqheight,pointcolorhl)
-        end
+    points.length.times do |j|
+      next if !points[j]
+      x = (j % town_map_width) * sqwidth
+      x += (Graphics.width - @sprites["areamap"].bitmap.width) / 2
+      y = (j / town_map_width) * sqheight
+      y += (Graphics.height + 32 - @sprites["areamap"].bitmap.height) / 2
+      @sprites["areahighlight"].bitmap.fill_rect(x, y, sqwidth, sqheight, pointcolor)
+      if j - town_map_width < 0 || !points[j - town_map_width]
+        @sprites["areahighlight"].bitmap.fill_rect(x, y - 2, sqwidth, 2, pointcolorhl)
+      end
+      if j + town_map_width >= points.length || !points[j + town_map_width]
+        @sprites["areahighlight"].bitmap.fill_rect(x, y + sqheight, sqwidth, 2, pointcolorhl)
+      end
+      if j % town_map_width == 0 || !points[j - 1]
+        @sprites["areahighlight"].bitmap.fill_rect(x - 2, y, 2, sqheight, pointcolorhl)
+      end
+      if (j + 1) % town_map_width == 0 || !points[j + 1]
+        @sprites["areahighlight"].bitmap.fill_rect(x + sqwidth, y, 2, sqheight, pointcolorhl)
       end
     end
-    
     # Set the text
     textpos = []
     if points.length==0
       pbDrawImagePositions(overlay,[
          [sprintf("Graphics/Pictures/Pokedex/overlay_areanone"),108,188]
       ])
-      textpos.push([_INTL("Area unknown"),Graphics.width/2,Graphics.height/2,2,base,shadow])
+      textpos.push([_INTL("Area unknown"),Graphics.width/2,(Graphics.height / 2) + 6,2,base,shadow])
     end
     textpos.push([pbGetMessage(MessageTypes::RegionNames,@region),414,50,2,base,shadow])
     textpos.push([_INTL("{1}'s area",GameData::Species.get(@species).name),
        Graphics.width/2,358,2,base,shadow])
-       
     textpos.push([_INTL("Full view"),Graphics.width/2,310,2,base,shadow])
     pbDrawTextPositions(overlay,textpos)
   end
@@ -892,7 +829,7 @@ class PokemonPokedexInfo_Scene
       dorefresh = false
       if Input.trigger?(Input::A)
         pbSEStop
-        pbPlayCrySpecies(@species,@form) if @page==1
+        Pokemon.play_cry(@species,@form) if @page==1 
       elsif Input.trigger?(Input::B)
         pbPlayCloseMenuSE
         break
@@ -952,4 +889,4 @@ class PokemonPokedexInfo_Scene
     return @index
   end
 end
-                                          
+                               

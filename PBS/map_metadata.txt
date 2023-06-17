@@ -11,8 +11,8 @@ MapPosition = 0,13,12
 SnapEdges = true
 BattleBack = field
 #-------------------------------
-[003]   # Player's House F1
-Name = \PN's house F1
+[003]   # Player's House
+Name = \PN's house
 MapPosition = 0,39,9
 SnapEdges = true
 #-------------------------------
@@ -20,7 +20,7 @@ SnapEdges = true
 Name = Player's House Elevator
 MapPosition = 0,39,9
 #-------------------------------
-[005]   # Player's House F3
+[005]
 Name = Player's House F3
 MapPosition = 0,39,9
 SnapEdges = true
@@ -84,6 +84,13 @@ MapSize = 1,1
 Name = Yacht B1F
 Outdoor = false
 MapPosition = 0,40,10
+SnapEdges = true
+#-------------------------------
+[020]   # MAP020
+Name = New Franta Town
+Outdoor = true
+ShowArea = true
+Bicycle = true
 SnapEdges = true
 #-------------------------------
 [022]   # Yacht - F1 - Cabins
@@ -376,6 +383,9 @@ Bicycle = true
 MapPosition = 0,32,25
 SnapEdges = true
 #-------------------------------
+[069]   # Trainer School
+Name = Trainer School
+#-------------------------------
 [074]   # Trainer School Class 2
 Name = Trainer School
 Outdoor = false
@@ -390,7 +400,7 @@ Outdoor = false
 MapPosition = 0,39,9
 SnapEdges = true
 #-------------------------------
-[077]   # Player's House B3F
+[077]
 Name = Player's House B3F
 Outdoor = false
 MapPosition = 0,39,9
