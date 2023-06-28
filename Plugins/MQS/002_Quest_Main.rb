@@ -333,7 +333,6 @@ class QuestData
     quests = getQuestStages(quest)
     return quests.length
   end
-  
 end
 
 # Global variable to make it easier to refer to methods in above class

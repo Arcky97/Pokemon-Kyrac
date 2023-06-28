@@ -29,6 +29,7 @@
   + [V1.12.38E - Release May 12 2023](#V11238E---Release-May-12-2023)
   + [V1.15.3O - Release May 17 2023](#V1153O---Release-May-17-2023)
   + [V1.20.25R - Release June 17 2023](#V12025R---Release-June-17-2023)
+  + [V1.21.1C - Release June 28 2023](#V1211C---Release-June-28-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -514,6 +515,18 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Merged Radio Tower onto 1 map.
 
 - So many changes and improvements made that I won't even bother summing them up XD
+
+### V1.22.1C - Release June 2023
+
+- Added a script that gives a description of the item when finding or getting it for the first time (will not show up in a market but it'll count it as well.)
+
+- Merged The Yacht F1 maps onto 1 map.
+
+- Moved Prof. Oak's last position in the lab 1 tile.
+
+- Fixed the music not changing on the Yacht F1 map in the Lab, Poké Center and Game Corner.
+
+
 
 ## Credits:
 

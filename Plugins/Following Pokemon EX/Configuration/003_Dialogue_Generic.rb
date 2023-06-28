@@ -5,14 +5,14 @@
 #-------------------------------------------------------------------------------
 # All dialogues with the Music Note animation
 #-------------------------------------------------------------------------------
-EventHandlers.add(:following_pkmn_talk, :music_generic, proc { |pkmn, random_val|
+EventHandlers.add(:following_pkmn_talk, :music_generic, proc { |pkmn, random_val, nameBox|
   if random_val == 0
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_MUSIC)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
     messages = [
       _INTL("{1} seems to want to play with {2}."),
-      _INTL("{1} is singing and humming."),
-      _INTL("{1} is looking up at {2} with a happy expression."),
+      _INTL("{3}*sings and hums*"),
+      _INTL("{3}*looks up at {2} with a happy expression"),
       _INTL("{1} swayed and danced around as it pleased."),
       _INTL("{1} is jumping around in a carefree way!"),
       _INTL("{1} is showing off its agility!"),
@@ -120,7 +120,7 @@ EventHandlers.add(:following_pkmn_talk, :music_generic, proc { |pkmn, random_val
         PBMoveRoute::Jump, 0, 0
       ])
     end
-    pbMessage(_INTL(messages[value], pkmn.name, $player.name))
+    pbMessage(_INTL(messages[value], pkmn.name, $player.name, nameBox))
     next true
   end
 })

@@ -334,7 +334,6 @@ class PokemonLoadScreen
       loop do # Inner loop is used for going to other menus and back and stuff (vanilla)
         command = @scene.pbChoose(commands, cmd_continue)
         pbPlayDecisionSE if command != cmd_quit
-
         case command
         when cmd_continue
           @scene.pbEndScene

@@ -84,10 +84,19 @@ module FollowingPkmn
     first_pkmn = FollowingPkmn.get_pokemon
     GameData::Species.play_cry(first_pkmn)
     random_val = rand(6)
+    case first_pkmn.gender
+    when 0
+      nameColor = "\\xnb"
+    when 1
+      nameColor = "\\xna"
+    else
+      nameColor = "\\xnc"
+    end
+    nameBox = "#{nameColor}[#{first_pkmn.name}]"
     if $PokemonGlobal&.follower_hold_item
       EventHandlers.trigger_2(:following_pkmn_item, first_pkmn, random_val)
     else
-      EventHandlers.trigger_2(:following_pkmn_talk, first_pkmn, random_val)
+      EventHandlers.trigger_2(:following_pkmn_talk, first_pkmn, random_val, nameBox)
     end
     pbTurnTowardEvent(event, $game_player)
     return true

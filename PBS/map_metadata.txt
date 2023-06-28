@@ -16,7 +16,7 @@ Name = \PN's house
 MapPosition = 0,39,9
 SnapEdges = true
 #-------------------------------
-[004]   # Player's House Elevator
+[004]   # Radio Tower
 Name = Player's House Elevator
 MapPosition = 0,39,9
 #-------------------------------
@@ -25,7 +25,7 @@ Name = Player's House F3
 MapPosition = 0,39,9
 SnapEdges = true
 #-------------------------------
-[006]   # Player's House Room 3
+[006]
 Name = Player's House Room 3
 MapPosition = 0,39,9
 #-------------------------------
@@ -99,6 +99,10 @@ Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
+[024]   # Yacht F1
+Name = Yacht F1
+MapPosition = 0,24,15
+#-------------------------------
 [025]   # Yacht - B1F - Dining Room
 Name = Yacht B1F
 Outdoor = false
@@ -135,7 +139,7 @@ Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
-[033]   # Player's House Room 1
+[033]
 Name = \PN's Bedroom
 Outdoor = false
 MapPosition = 0,39,9
@@ -192,7 +196,7 @@ MapPosition = 0,41,25
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
-[043]   # Player's House F2
+[043]
 Name = \PN's House F2
 MapPosition = 0,39,9
 SnapEdges = true
@@ -394,7 +398,7 @@ MapPosition = 0,55,10
 SnapEdges = true
 MapSize = 3,111
 #-------------------------------
-[076]   # Player's House Room 2
+[076]
 Name = Parent's Bedroom
 Outdoor = false
 MapPosition = 0,39,9

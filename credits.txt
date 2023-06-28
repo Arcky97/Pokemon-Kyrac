@@ -46,7 +46,7 @@ https://reliccastle.com/resources/1059/
 
 edits in script:
 Settings: line 34, 38
-UI_pokemart: line 225-229, 232-240, 258, 261-265, 273, 275-278, 327, 729, 740 and 743
+UI_pokemart: line 90, 22-230, 233-241, 259, 262-266, 274, 276-279, 328, 730, 741 and 744
 UI_options: line 20,32
 Messages: line 324
 TerrainTag: line 202-206
@@ -64,3 +64,4 @@ Battler_UseMoveSuccessChecks: line 105-136
 UI_Pokedex_Main: line 379-390
 Auto Multi Save: line 314, 325
 UI_Load: Line 14, 22, 86-87, 102 and 112
+Game_System: Line 65

@@ -18,10 +18,10 @@ module FollowingPkmn
 
   # The key the player needs to press to toggle followers. Set this to nil if
   # you want to disable this feature. (:JUMPUP is the A key by default)
-  TOGGLE_FOLLOWER_KEY       = :JUMPUP
+  TOGGLE_FOLLOWER_KEY       = nil
 
   # Show the option to toggle Following Pokemon in the Options screen.
-  SHOW_TOGGLE_IN_OPTIONS    = true
+  SHOW_TOGGLE_IN_OPTIONS    = false
 
   # The key the player needs to press to quickly cycle through their party. Set
   # this to nil if you want to disable this feature

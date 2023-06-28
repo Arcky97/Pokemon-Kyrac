@@ -1,18 +1,22 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-[041] # Route 02
+[015] # Route 01 new
 Land,21
-    100,GROWLITHE,9,15
+    100,VULPIX_1,12,15
 #-------------------------------
-[081] # Hester Forest
+[040] # Route 04 New
 Land,21
     100,GROWLITHE,9,14
+#-------------------------------
+[041] # Route 02 new
+Land,21
+    100,GROWLITHE,9,15
 #-------------------------------
 [045] # Route 03
 Land,21
     100,GROWLITHE,9,14
 #-------------------------------
-[040] # Route 04
+[081] # Hester Forest
 Land,21
     100,GROWLITHE,9,14
 #-------------------------------
