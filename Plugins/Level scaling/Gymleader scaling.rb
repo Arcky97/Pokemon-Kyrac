@@ -46,13 +46,6 @@ end
 EventHandlers.add(:on_trainer_load, :trainers,
   proc { |trainer|
    if trainer
-      if trainer.name=="Brock" 
-        if $trainer.badge_count == 0 && $game_switches[108] 
-          for pkmn in trainer.party
-            pkmn.level+=2
-          end
-        end
-      end
       if $game_variables[56] >= 5 && $game_switches[55] #TrainerYacht Variable and is on Yacht Switch
         for pkmn in trainer.party
           pkmn.level+=2

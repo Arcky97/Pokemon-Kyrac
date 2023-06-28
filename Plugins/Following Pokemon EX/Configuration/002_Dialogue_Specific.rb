@@ -419,7 +419,7 @@ EventHandlers.add(:following_pkmn_talk, :sunny_weather, proc { |pkmn, _random_va
 #-------------------------------------------------------------------------------
 EventHandlers.add(:following_pkmn_talk, :speciestalk, proc { |pkmn, _random_val, nameBox|
   case pkmn.species
-  when :GROWLITHE
+  when :ARCANINE
     messages = [
       _INTL("{3}Hello {2}. Woof!"),
       _INTL("{3}*Sings and hums*")

@@ -23,6 +23,7 @@ EventHandlers.add(:following_pkmn_item, :regular, proc { |_pkmn, _random_val|
     :BLACKAPRICORN, :WHITEAPRICORN
   ]
   # If no message or quantity is specified the default message is used and the quantity of item is 1
-  next true if FollowingPkmn.item(items.sample)
+  item = items.sample
+  next true if FollowingPkmn.item(item)
 })
 #-------------------------------------------------------------------------------

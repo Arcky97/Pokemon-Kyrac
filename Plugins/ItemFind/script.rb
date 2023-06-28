@@ -116,15 +116,17 @@ class ItemLog
     @found_items = []
   end
 
-  def register(item, showMessage = true)
+  def register(item)
     if !@found_items.include?(item)
       @found_items.push(item)
-      return if !showMessage
-      scene = PokemonItemFind_Scene.new
-      scene.pbStartScene
-      scene.pbShow(item)
     end
   end
+end
+
+def showItemScene(item)
+  scene = PokemonItemFind_Scene.new
+  scene.pbStartScene
+  scene.pbShow(item)
 end
 
 #-------------------------------------------------------------------------------
@@ -135,20 +137,29 @@ end
 
 alias pbItemBall_itemfind pbItemBall
 def pbItemBall(item,quantity=1)
-  result = pbItemBall_itemfind(item,quantity)
-  $item_log.register(item) if result
+  result = pbItemBall_itemfind(item, quantity)
+  if result
+    $item_log.register(item)
+    ItemLog.showItemScene(item)
+  end
   return result
 end
 
 alias pbReceiveItem_itemfind pbReceiveItem
 def pbReceiveItem(item,quantity=1)
-  result = pbReceiveItem_itemfind(item,quantity)
-  $item_log.register(item) if result
+  result = pbReceiveItem_itemfind(item, quantity)
+  if result
+    $item_log.register(item)
+    ItemLog.showItemScene(item)
+  end
   return result
 end
 
 alias pbPickBerry_itemfind pbPickBerry
 def pbPickBerry(berry, qty = 1)
   pbPickBerry_itemfind(berry,qty)
-  $item_log.register(berry) if $bag.has?(berry)
+  if $bag.has?(berry)
+      $item_log.register(berry)
+      ItemLog.showItemScene(berry)
+  end
 end

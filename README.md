@@ -526,8 +526,6 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the music not changing on the Yacht F1 map in the Lab, Poké Center and Game Corner.
 
-
-
 ## Credits:
 
 Essentials: Maruno
