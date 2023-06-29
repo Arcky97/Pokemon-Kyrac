@@ -76,8 +76,6 @@ module FollowingPkmn
         itemname, pocket, PokemonBag.pocket_names[pocket - 1]))
       #pbMessage(_INTL("You put the {1} in\\nyour Bag's <icon=bagPocket{2}>\\c[1]{3}\\c[0] pocket.",
       #  itemname, pocket, PokemonBag.pocket_names[pocket - 1]))
-      $item_log.register(item)
-      ItemLog.showItemScene(item)
       #doesn't work yet
       $PokemonGlobal.follower_hold_item = false
       $PokemonGlobal.time_taken         = 0

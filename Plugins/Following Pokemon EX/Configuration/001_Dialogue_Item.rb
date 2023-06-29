@@ -14,14 +14,15 @@ EventHandlers.add(:following_pkmn_item, :battle_map, proc { |_pkmn, _random_val|
 # Generic Item Dialogue
 #-------------------------------------------------------------------------------
 EventHandlers.add(:following_pkmn_item, :regular, proc { |_pkmn, _random_val|
-  items = [
-    :POTION,        :SUPERPOTION,  :FULLRESTORE,    :REVIVE,        :PPUP,
-    :PPMAX,         :RARECANDY,    :REPEL,          :MAXREPEL,      :ESCAPEROPE,
-    :HONEY,         :TINYMUSHROOM, :PEARL,          :NUGGET,        :GREATBALL,
-    :ULTRABALL,     :THUNDERSTONE, :MOONSTONE,      :SUNSTONE,      :DUSKSTONE,
-    :REDAPRICORN,   :BLUEAPRICORN, :YELLOWAPRICORN, :GREENAPRICORN, :PINKAPRICORN,
-    :BLACKAPRICORN, :WHITEAPRICORN
-  ]
+items = []
+$bag.pockets.each_with_index do |pocket, index|
+  next if index == 4 || index == 8  # Skip pocket 4 (TM's and HM's) and 8 (Key Items)
+
+  pocket.each do |item, quantity|
+    # next if item == :MASTERBALL #to exclude items
+    items << item
+  end
+end
   # If no message or quantity is specified the default message is used and the quantity of item is 1
   item = items.sample
   next true if FollowingPkmn.item(item)

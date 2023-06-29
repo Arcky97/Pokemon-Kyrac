@@ -68,7 +68,19 @@ class Player_Quests
       end
     end
     @active_quests.push(Quest.new(quest,color,story))
-    pbMessage(_INTL("\\se[{1}]<ac><c2=#{colorQuest("red")}>New quest discovered!</c2>\nCheck your quest log for more details!</ac>",QUEST_JINGLE))
+    if story
+      $blur_effect = BlurEffect.new
+      $blur_effect.start_blur
+      $game_system.message_position = 1
+      $game_system.message_frame = 1
+      pbMessage(_INTL("\\se[#{QUEST_JINGLE}]\\ts[3]\\l[5]\\n<ac><fs=25><c2=#{colorQuest("red")}>New Story Quest:</c2></fs>\\n<fs=35>#{$quest_data.getName(quest.name)}</fs></ac>\\wtnp[30]"))
+      $blur_effect.dispose
+      $blur_effect = nil
+      $game_system.message_position = 2
+      $game_system.message_frame = 0
+    else
+      pbMessage(_INTL("\\se[{1}]<ac><c2=#{colorQuest("red")}>New quest discovered!</c2>\nCheck your quest log for more details!</ac>",QUEST_JINGLE))
+    end
   end
   
   def failQuest(quest,color,story)
