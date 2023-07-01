@@ -90,7 +90,7 @@ module FollowingPkmn
     when 1
       nameColor = "\\xna"
     else
-      nameColor = "\\xnc"
+      nameColor = "\\xni"
     end
     nameBox = "#{nameColor}[#{first_pkmn.name}]"
     if $PokemonGlobal&.follower_hold_item

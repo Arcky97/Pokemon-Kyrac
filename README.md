@@ -29,7 +29,8 @@
   + [V1.12.38E - Release May 12 2023](#V11238E---Release-May-12-2023)
   + [V1.15.3O - Release May 17 2023](#V1153O---Release-May-17-2023)
   + [V1.20.25R - Release June 17 2023](#V12025R---Release-June-17-2023)
-  + [V1.21.3D - Release June 28 2023](#V1213D---Release-June-28-2023)
+  + [V1.22.3D - Release June 28 2023](#V1223D---Release-June-28-2023)
+  + [V1.25.3E - Release July 1 2023](#V1253E---Release-July-1-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -516,7 +517,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - So many changes and improvements made that I won't even bother summing them up XD
 
-### V1.22.3D - Release June 2023
+### V1.22.3D - Release June 28 2023
 
 - Added a script that gives a description of the item when finding or getting it for the first time (will not show up in a market but it'll count it as well.)
 
@@ -529,6 +530,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Added a Story Quest summary screen just like the Chapter Summary screen.
 
 - The Following Pokémon now gives a random item from the bag with exception of TM's, Hm's and Key Items.
+
+### V1.25.3E - Release July 1 2023
+
+- Added a new option in the settings where you can now choose the color for your name for certain messages and interactions with the following pokémon.
+
+- Added more colors to use in the name window plugin.
+
+- Reworked the Chapter and Quest Summary Screen script
+
+
 
 ## Credits:
 

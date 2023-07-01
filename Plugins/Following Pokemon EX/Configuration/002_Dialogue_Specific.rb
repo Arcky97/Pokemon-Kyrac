@@ -25,7 +25,7 @@ EventHandlers.add(:following_pkmn_talk, :status, proc { |pkmn, _random_val, name
   when :POISON
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_POISON)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
-    pbMessage(_INTL("{3}*shivers with the effects of being poisoned.", pkmn.name, nameBox))
+    pbMessage(_INTL("{3}*shivers with the effects of being poisoned*", pkmn.name, nameBox))
   when :BURN
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_ANGRY)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
@@ -33,7 +33,7 @@ EventHandlers.add(:following_pkmn_talk, :status, proc { |pkmn, _random_val, name
   when :FROZEN
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_ELIPSES)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
-    pbMessage(_INTL("{3}*has it very cold for being frozen solid*", pkmn.name))
+    pbMessage(_INTL("{3}*Has it very cold for being frozen solid*", pkmn.name))
   when :SLEEP
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_ELIPSES)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
@@ -49,7 +49,7 @@ EventHandlers.add(:following_pkmn_talk, :status, proc { |pkmn, _random_val, name
 # Specific message if the map has the Pokemon Lab metadata flag
 #-------------------------------------------------------------------------------
 EventHandlers.add(:following_pkmn_talk, :pokemon_lab, proc { |pkmn, _random_val, nameBox|
-  if $game_variables[62] == "Prof. Oak's Lab"
+  if $game_variables[62].include?("Lab")
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_ELIPSES)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
     messages = [
@@ -87,14 +87,14 @@ EventHandlers.add(:following_pkmn_talk, :pokemon_center, proc { |pkmn, _random_v
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
     messages = [
       _INTL("{3}*looks happy to see the nurse*"),
-      _INTL("{1} looks a little better just being in the Pokémon Center."),
-      _INTL("{1} seems fascinated by the healing machinery."),
-      _INTL("{1} looks like it wants to take a nap."),
-      _INTL("{1} chirped a greeting at the nurse."),
-      _INTL("{1} is watching {2} with a playful gaze."),
-      _INTL("{1} seems to be completely at ease."),
-      _INTL("{1} is making itself comfortable."),
-      _INTL("There's a content expression on {1}'s face.")
+      _INTL("{3}*shows to be looking a little better just being in the Pokémon Center*"),
+      _INTL("{3}*Gets fascinated by the healing machinery*"),
+      _INTL("{3}*Wants to take a nap*"),
+      _INTL("{3}*Chirps a greeting at the nurse*"),
+      _INTL("{3}*watches {2} with a playful gaze*"),
+      _INTL("{3}* completely at ease*"),
+      _INTL("{3}*Gets comfortable*"),
+      _INTL("{3}*Shows a content expression on the face*")
     ]
     pbMessage(_INTL(messages.sample, pkmn.name, $player.name, nameBox))
     next true
@@ -104,20 +104,20 @@ EventHandlers.add(:following_pkmn_talk, :pokemon_center, proc { |pkmn, _random_v
 # Specific message if the map has the Gym metadata flag
 #-------------------------------------------------------------------------------
 EventHandlers.add(:following_pkmn_talk, :gym, proc { |pkmn, _random_val, nameBox|
-  if $game_map.metadata&.has_flag?("GymMap")
+  if $game_map.metadata&.has_flag?("GymMap") || $game_variables[62].include?("Entrance")
     FollowingPkmn.animation(FollowingPkmn::ANIMATION_EMOTE_ANGRY)
     pbMoveRoute($game_player, [PBMoveRoute::Wait, 20])
     messages = [
-      _INTL("{1} looks eager to battle!"),
-      _INTL("{1} is looking at {2} with a determined gleam in its' eye."),
-      _INTL("{1} is trying to intimidate the other trainers."),
-      _INTL("{1} trusts {2} to come up with a winning strategy."),
-      _INTL("{1} is keeping an eye on the gym leader."),
-      _INTL("{1} is ready to pick a fight with someone."),
-      _INTL("{1} looks like it might be preparing for a big showdown!"),
-      _INTL("{1} wants to show off how strong it is!"),
-      _INTL("{1} is...doing warm-up exercises?"),
-      _INTL("{1} is growling quietly in contemplation...")
+      _INTL("{3}*eagers to battle*"),
+      _INTL("{3}*looks at {2} with a determined gleam in the eye*"),
+      _INTL("{3}*Tries to intimidate the other trainers*"),
+      _INTL("{3}*Has trust in {2} to come up with a winning strategy*"),
+      _INTL("{3}*Keeps an eye on the gym leader."),
+      _INTL("{3} is ready to pick a fight with someone."),
+      _INTL("{3}* prepares for a big showdown!"),
+      _INTL("{3}*wants to show off how strong it is*"),
+      _INTL("{3}*does warm-up exercises*"),
+      _INTL("{3}*growls quietly in contemplation...*")
     ]
     pbMessage(_INTL(messages.sample, pkmn.name, $player.name, nameBox))
     next true

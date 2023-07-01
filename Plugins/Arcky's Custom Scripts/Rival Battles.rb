@@ -1,8 +1,7 @@
-#this method is only called when the Rival battle is a double battle
 def main()
     @starterchoice = $game_variables[7]
     @rival = $game_switches[51] ? [:RIVAL1_F,:RIVAL2_M] : [:RIVAL1_M,:RIVAL2_F]
-    @MidBattle = [nil, :RIVAL_BATTLE_LAB,:RIVAL1_TRAINER_SCHOOL_BATTLE, :RIVAL2_TRAINER_SCHOOL_BATTLE]
+    @MidBattle = [nil, :RIVAL_BATTLE_LAB]
 end
 
 def pbRivalDoubleBattle(name,nr)
@@ -18,4 +17,7 @@ def pbRivalPartnerBattle(name,rival)
         pbRegisterPartner(@rival[1],name,(@starterchoice + 12))
     end
 end
-#this method is only called when one of the Rivals is battled
+
+def pbRivalSingleBattle(name,rival)
+    main()
+end
