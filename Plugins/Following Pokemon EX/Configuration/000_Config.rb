@@ -9,12 +9,18 @@ module FollowingPkmn
   ANIMATION_COME_OUT        = 30
   ANIMATION_COME_IN         = 29
 
+  ANIMATION_EMOTE_EXCLAM    = 3
+  ANIMATION_EMOTE_QUESTION  = 4
   ANIMATION_EMOTE_HEART     = 9
-  ANIMATION_EMOTE_MUSIC     = 12
   ANIMATION_EMOTE_HAPPY     = 10
+  ANIMATION_EMOTE_SMILE     = 11
+  ANIMATION_EMOTE_MUSIC     = 12
   ANIMATION_EMOTE_ELIPSES   = 13
-  ANIMATION_EMOTE_ANGRY     = 15
+  ANIMATION_EMOTE_SAD       = 14
+  ANIMATION_EMOTE_MAD       = 15
+  ANIMATION_EMOTE_ANGRY     = 16
   ANIMATION_EMOTE_POISON    = 17
+
 
   # The key the player needs to press to toggle followers. Set this to nil if
   # you want to disable this feature. (:JUMPUP is the A key by default)

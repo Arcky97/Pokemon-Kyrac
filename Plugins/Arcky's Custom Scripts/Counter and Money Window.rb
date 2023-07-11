@@ -27,12 +27,13 @@ def objectCounter(object, value, total=0, mapArrayToUse=nil)
         map = load_data(mapIDName)
         objectCounter.push(countObjects(object, map))
       end
+      echoln(objectCounter)
     else
       mapID = $game_map.map_id 
       map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
       objectCounter = countObjects(object, map) #returns [objectCounter, bonusCounter]
     end
-    objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length > 2
+    objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length >= 2
     objectCounter[0] -= objectCounter[1] # objectCounter - bonusCounter
   end
   total = objectCounter[0] if objectCounter[0] != nil
@@ -41,7 +42,7 @@ def objectCounter(object, value, total=0, mapArrayToUse=nil)
 end
 
 def countObjects(object, map)
-  bonusArray = fieldMoveItems
+  bonusArray = fieldMoveItems + badgeItems
   objectCounter, bonusCounter = 0, 0
   for i in map.events.keys
     next if !map.events[i].name.include?(object.chop) 
@@ -70,12 +71,25 @@ def fieldMoveItems
   return ret
 end
 
+def badgeItems
+  badgeCount = {
+    1 => "1 Badge",
+    2 => "2 Badges",
+    3 => "3 Badges",
+    4 => "4 Badges"
+  }
+  ret = []
+  for maxBadgeCount in badgeCount.keys 
+    ret.push(badgeCount[maxBadgeCount]) if $player.badge_count < maxBadgeCount
+  end 
+  return ret 
+end
+
 def arrayDecider(mapArrayToUse)
   arrayMaps = $arrayMaps if $arrayMaps !=0
   case mapArrayToUse
   when "Yacht"
-    arrayMaps = [0, 32, 22, 14, 18, 12, 38, 122, 36, 37, 25, 26, 27]
-    arrayMaps.push(30) if $player.badge_count >= 1
+    arrayMaps = [0, 24, 31, 122]
   end
   $arrayMaps = arrayMaps
   return arrayMaps

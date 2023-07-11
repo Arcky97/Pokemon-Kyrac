@@ -46,13 +46,13 @@ https://reliccastle.com/resources/1059/
 
 edits in script:
 Settings: line 34, 38
-UI_pokemart: line 90, 22-230, 233-241, 259, 262-266, 274, 276-279, 328, 730, 741 and 744
-UI_options: line 20,32
+UI_pokemart: line 225-229, 232-240, 258, 261-265, 273, 275-278, 327, 635, 649, 658 732, 743 and 746
+UI_options: line 20,32, 115-150, 258-264, 589-602
 Messages: line 324
 TerrainTag: line 202-206
 UI_pokegear: line 204-219
 MessageConfig: line 345-362 (more colors added)
-002_Quest_Main (plugin): line 169-189 added and 238-243 added (I made an Advance to Next Stage Silent Function)
+002_Quest_Main (plugin): line 71-83, 181-202 added and 250-2254 added (I made an Advance to Next Stage Silent Function)
 Messages: line 369-382 (replaced with a plugin now)
 Battle_PokeBallEffects: line 187-196
 Battle_scene: line 10-11
@@ -65,3 +65,4 @@ UI_Pokedex_Main: line 379-390
 Auto Multi Save: line 314, 325
 UI_Load: Line 14, 22, 86-87, 102 and 112
 Game_System: Line 65
+Settings: Line 437-448

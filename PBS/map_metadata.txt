@@ -20,26 +20,12 @@ SnapEdges = true
 Name = Player's House Elevator
 MapPosition = 0,39,9
 #-------------------------------
-[005]
-Name = Player's House F3
-MapPosition = 0,39,9
-SnapEdges = true
-#-------------------------------
-[006]
-Name = Player's House Room 3
-MapPosition = 0,39,9
-#-------------------------------
 [007]   # Trainer School F1
 Name = Trainer School
 SnapEdges = true
 #-------------------------------
 [009]   # Trainer School F2
 Name = Trainer School
-#-------------------------------
-[012]   # Yacht - F1 - Lab
-Name = Prof. Oak's Lab
-MapPosition = 0,40,10
-SnapEdges = true
 #-------------------------------
 [013]   # \PN's House's Garden
 Name = \PN's Property
@@ -49,11 +35,6 @@ Bicycle = true
 MapPosition = 0,38,9
 SnapEdges = true
 MapSize = 2,1111
-#-------------------------------
-[014]   # Yacht - F1 - Hallway
-Name = Yacht BF1
-MapPosition = 0,40,10
-SnapEdges = true
 #-------------------------------
 [015]   # Route 01 new
 Name = Route 1
@@ -80,23 +61,11 @@ SafariMap = false
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
-[018]   # Yacht - F1 - Cabins
-Name = Yacht B1F
-Outdoor = false
-MapPosition = 0,40,10
-SnapEdges = true
-#-------------------------------
 [020]   # MAP020
 Name = New Franta Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-SnapEdges = true
-#-------------------------------
-[022]   # Yacht - F1 - Cabins
-Name = Cabins
-Outdoor = false
-MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
 [024]   # Yacht F1
@@ -120,30 +89,7 @@ Name = Yacht B1F
 Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
-#-------------------------------
-[028]   # Yacht - F1 - Locked Room
-Name = Yacht B1F
-Outdoor = false
-MapPosition = 0,40,10
-SnapEdges = true
-#-------------------------------
-[030]   # Yacht - F1 - GameCorner
-Name = Game Corner
-Outdoor = false
-MapPosition = 0,40,10
-SnapEdges = true
-#-------------------------------
-[032]   # Yacht - F1 - Entrance
-Name = Yacht B1F
-Outdoor = false
-MapPosition = 0,40,10
-SnapEdges = true
-#-------------------------------
-[033]
-Name = \PN's Bedroom
-Outdoor = false
-MapPosition = 0,39,9
-SnapEdges = true
+
 #-------------------------------
 [036]   # Yacht - B1F - Hallway
 Name = Yacht F1
@@ -152,12 +98,6 @@ MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
 [037]   # Yacht - B1F - Cabins
-Name = Yacht F1
-Outdoor = false
-MapPosition = 0,40,10
-SnapEdges = true
-#-------------------------------
-[038]   # Yacht - F1 - PokéCenter
 Name = Yacht F1
 Outdoor = false
 MapPosition = 0,40,10
@@ -196,11 +136,6 @@ MapPosition = 0,41,25
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
-[043]
-Name = \PN's House F2
-MapPosition = 0,39,9
-SnapEdges = true
-#-------------------------------
 [044]   # Tila Town new
 Name = Tila Town
 Outdoor = true
@@ -228,118 +163,6 @@ MapPosition = 0,31,24
 SnapEdges = true
 MapSize = 1,11
 #-------------------------------
-[047]   # Radio Tower - F1
-Name = Radio Tower F1
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[048]   # Radio Tower - F2
-Name = Radio Tower F2
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[049]   # Radio Tower - F3
-Name = Radio Tower F3
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[050]   # Radio Tower - F4
-Name = Radio Tower F4
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[051]   # Radio Tower - B1F
-Name = Radio Tower B1F
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[052]   # Radio Tower - B2F
-Name = Radio Tower B2F
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[053]   # Radio Tower - B3F
-Name = Radio Tower B3F
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[054]   # Radio Tower - F5
-Name = Radio Tower F5
-Outdoor = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[055]   # Radio Tower - F6
-Name = Radio Tower F6
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[056]   # Radio Tower - F7
-Name = Radio Tower F7
-Outdoor = false
-ShowArea = false
-Bicycle = false
-BicycleAlways = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[057]   # Radio Tower - F8
-Name = Radio Tower F8
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[058]   # Radio Tower - F9
-Name = Radio Tower F9
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[059]   # Radio Tower - F10
-Name = Radio Tower F10
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[060]   # Radio Tower - F11
-Name = Radio Tower F11
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[061]   # Radio Tower - F12
-Name = Radio Tower F12
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
 [062]   # Route 5
 Name = Route 5
 Outdoor = true
@@ -358,18 +181,6 @@ BicycleAlways = false
 MapPosition = 0,16,7
 SnapEdges = true
 MapSize = 1,111
-#-------------------------------
-[064]   # Radio Tower - Elevator Left
-Name = Radio Tower Elevator
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
-#-------------------------------
-[065]   # Radio Tower - Elevator Right
-Name = Radio Tower Elevator
-Outdoor = false
-MapPosition = 0,12,10
-SnapEdges = true
 #-------------------------------
 [066]   # Farmer's Farm
 Name = A Farmer's farm
@@ -397,18 +208,6 @@ ShowArea = false
 MapPosition = 0,55,10
 SnapEdges = true
 MapSize = 3,111
-#-------------------------------
-[076]
-Name = Parent's Bedroom
-Outdoor = false
-MapPosition = 0,39,9
-SnapEdges = true
-#-------------------------------
-[077]
-Name = Player's House B3F
-Outdoor = false
-MapPosition = 0,39,9
-SnapEdges = true
 #-------------------------------
 [079]   # Hester City
 Name = Hester City

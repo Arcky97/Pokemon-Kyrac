@@ -31,6 +31,7 @@
   + [V1.20.25R - Release June 17 2023](#V12025R---Release-June-17-2023)
   + [V1.22.3D - Release June 28 2023](#V1223D---Release-June-28-2023)
   + [V1.25.3E - Release July 1 2023](#V1253E---Release-July-1-2023)
+  + [V1.26.7C - Release July 10 2023](#V1267C---Release-July-10-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -539,7 +540,19 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Reworked the Chapter and Quest Summary Screen script
 
+### V1.26.7C - Release July 10 2023
 
+- Fixed Spawn position after leaving the Player's house.
+
+- at the Mart Counter, the screen scrolls left/right again (wasn't so before because of Snap to Edges).
+
+- Made the Yacht F1 map a lot smaller to hopefully reduce the lag I was having (even on my Gaming Computer).
+
+- Merged all Maps of the Yacht B1F on 1 big map (that hopefully will not lag).
+
+- Fixed the Object Counter script.
+
+- Items are now locked by badge count and field moves (in the name of the event).
 
 ## Credits:
 

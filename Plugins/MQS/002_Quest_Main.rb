@@ -69,13 +69,13 @@ class Player_Quests
     end
     @active_quests.push(Quest.new(quest,color,story))
     if story
-      $blur_effect = BlurEffect.new
-      $blur_effect.start_blur
+      $summaryScreen = SummaryScreen.new
+      $summaryScreen.main
       $game_system.message_position = 1
       $game_system.message_frame = 1
       pbMessage(_INTL("\\se[#{QUEST_JINGLE}]\\ts[3]\\l[5]\\n<ac><fs=25><c2=#{colorQuest("red")}>New Story Quest:</c2></fs>\\n<fs=35>#{$quest_data.getName(quest.name)}</fs></ac>\\wtnp[30]"))
-      $blur_effect.dispose
-      $blur_effect = nil
+      $summaryScreen.dispose
+      $summaryScreen = nil
       $game_system.message_position = 2
       $game_system.message_frame = 0
     else

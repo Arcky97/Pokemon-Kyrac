@@ -92,11 +92,12 @@ module FollowingPkmn
     else
       nameColor = "\\xni"
     end
-    nameBox = "#{nameColor}[#{first_pkmn.name}]"
+    pkmnName = "#{nameColor}[#{first_pkmn.name}]"
+    playerName = "#{$game_variables[64]}[#{$player.name}]"
     if $PokemonGlobal&.follower_hold_item
-      EventHandlers.trigger_2(:following_pkmn_item, first_pkmn, random_val)
+      EventHandlers.trigger_2(:following_pkmn_item, first_pkmn, random_val, playerName)
     else
-      EventHandlers.trigger_2(:following_pkmn_talk, first_pkmn, random_val, nameBox)
+      EventHandlers.trigger_2(:following_pkmn_talk, first_pkmn, random_val, pkmnName, playerName)
     end
     pbTurnTowardEvent(event, $game_player)
     return true

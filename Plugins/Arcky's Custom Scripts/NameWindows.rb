@@ -229,9 +229,7 @@ def pbDisplayNameWindow(params)
     else
         colortag = getSkinColor(msgwindow.windowskin,0,isDarkSkin)
     end
-    echoln(text)
     text = colortag+text
-    echoln(text)
     ### Controls
     textchunks=[]
     controls=[]
