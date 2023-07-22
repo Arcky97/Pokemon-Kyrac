@@ -32,6 +32,7 @@
   + [V1.22.3D - Release June 28 2023](#V1223D---Release-June-28-2023)
   + [V1.25.3E - Release July 1 2023](#V1253E---Release-July-1-2023)
   + [V1.26.7C - Release July 10 2023](#V1267C---Release-July-10-2023)
+  + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -552,7 +553,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the Object Counter script.
 
-- Items are now locked by badge count and field moves (in the name of the event).
+- Some findable Items are now locked by badge count and field moves (in the name of the event).
+
+### V1.27.1A - Release July 17 2023
+
+- The Poke Ball when the follower appears/dissapears is now the same kind of Poké Ball the follower was caught/received in.
+
+- Updated the check for when the Yacht Quest (Quest 7) is completed.
 
 ## Credits:
 

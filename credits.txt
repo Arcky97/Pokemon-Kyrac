@@ -66,3 +66,4 @@ Auto Multi Save: line 314, 325
 UI_Load: Line 14, 22, 86-87, 102 and 112
 Game_System: Line 65
 Settings: Line 437-448
+002_VoltseonMenu_Main: line 57-58 and 266 added and line 51-56 commented.

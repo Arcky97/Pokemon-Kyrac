@@ -5,10 +5,84 @@ module FollowingPkmn
   FOLLOWER_COMMON_EVENT     = nil
 
   # Animation IDs from followers
-  # Change this if you are not using the Animations.rxdata provided in the script.
-  ANIMATION_COME_OUT        = 30
-  ANIMATION_COME_IN         = 29
+  #These are the PokeBall animation ID's for every type of ball
+  #The Follower was caught/received in a Poke Ball.
+  ANIMATION_COME_IN_POKEBALL = 29
+  ANIMATION_COME_OUT_POKEBALL = 30
+  #The Follower was caught/received in a Cherish Ball.
+  ANIMATION_COME_IN_CHERISHBALL = 31
+  ANIMATION_COME_OUT_CHERISHBALL = 32
+  #The Follower was caught/received in a Dive Ball.
+  ANIMATION_COME_IN_DIVEBALL = 33
+  ANIMATION_COME_OUT_DIVEBALL = 34
+  #The Follower was caught/received in a Dream Ball.
+  ANIMATION_COME_IN_DREAMBALL = 35
+  ANIAMTION_COME_OUT_DREAMBALL = 36 
+  #The Follower was caught/received in a Dusk Ball.
+  ANIMATION_COME_IN_DUSKBALL = 37
+  ANIMATION_COME_OUT_DUSKBALL = 38
+  #The Follower was caught/received in a Fast Ball.
+  ANIMATION_COME_IN_FASTBALL = 39
+  ANIMATION_COME_OUT_FASTBALL = 40
+  #The Follower was caught/received in a Friend Ball.
+  ANIMATION_COME_IN_FRIENDBALL = 41
+  ANIMATION_COME_OUT_FRIENDBALL = 42
+  #The Follower was caught/recieved in a Great Ball.
+  ANIMATION_COME_IN_GREATBALL = 43
+  ANIMATION_COME_OUT_GREATBALL = 44
+  #The Follower was caught/received in a Heal Ball.
+  ANIMATION_COME_IN_HEALBALL = 45
+  ANIMATION_COME_OUT_HEALBALL = 46
+  #The Follower was caught/received in a Heavy Ball.
+  ANIMATION_COME_IN_HEAVYBALL = 47
+  ANIMATION_COME_OUT_HEAVYBALL = 48
+  #The Follower was caught/received in a Level Ball.
+  ANIMATION_COME_IN_LEVELBALL = 49
+  ANIMATION_COME_OUT_LEVELBALL = 50
+  #The Follower was caught/received in a Love Ball.
+  ANIMATION_COME_IN_LOVEBALL = 51
+  ANIMATION_COME_OUT_LOVEBALL = 52
+  #The Follower was caught/received in a Lure Ball.
+  ANIMATION_COME_IN_LUREBALL = 53
+  ANIMATION_COME_OUT_LUREBALL = 54
+  #The Follower was caught/received in a Luxery Ball.
+  ANIMATION_COME_IN_LUXURYBALL = 55
+  ANIMATION_COME_OUT_LUXURYBALL = 56
+  #The Follower was caught/received in a Master Ball.
+  ANIMATION_COME_IN_MASTERBALL = 57
+  ANIMATION_COME_OUT_MASTERBALL = 58
+  #The Follower was caught/received in a Moon Ball.
+  ANIMATION_COME_IN_MOONBALL = 59
+  ANIMTION_COME_OUT_MOONBALL = 60
+  #The Follower was caught/received in a Nest Ball.
+  ANIMATION_COME_IN_NESTBALL = 61
+  ANIMATION_COME_OUT_NESTBALL = 62
+  #The Follower was caught/received in a Net Ball.
+  ANIMATION_COME_IN_NETBALL = 63
+  ANIMATION_COME_OUT_NETBALL = 64
+  #The Follower was caught/received in a Premier Ball.
+  ANIMATION_COME_IN_PREMIERBALL = 65
+  ANIMATION_COME_OUT_PREMIERBALL = 66
+  #The Follower was caught/received in a Quick Ball.
+  ANIMATION_COME_IN_QUICKBALL = 67
+  ANIMATION_COME_OUT_QUICKBALL = 68
+  #The Follower was caught/received in a Repeat Ball.
+  ANIMATION_COME_IN_REPEATBALL = 69
+  ANIMATION_COME_OUT_REPEATBALL = 70
+  #The Follower was caught/received in a Safari Ball.
+  ANIMATION_COME_IN_SAFARIBALL = 71
+  ANIMATION_COME_OUT_SAFARIBALL = 72
+  #The Follower was caught/received in a Sport Ball.
+  ANIMATION_COME_IN_SPORTBALL = 73
+  ANIMATION_COME_OUT_SPORTBALL = 74
+  #The Follower was caught/received in a Timer Ball.
+  ANIMATION_COME_IN_TIMERBALL = 75
+  ANIMATION_COME_OUT_TIMERBALL = 76
+  #The Follower was caught/received in an ultra Ball.
+  ANIMATION_COME_IN_ULTRABALL = 77
+  ANIMATION_COME_OUT_ULTRABALL = 78
 
+  #The Different Animation Marks that will appear above the Follower's head.
   ANIMATION_EMOTE_EXCLAM    = 3
   ANIMATION_EMOTE_QUESTION  = 4
   ANIMATION_EMOTE_HEART     = 9
@@ -21,10 +95,9 @@ module FollowingPkmn
   ANIMATION_EMOTE_ANGRY     = 16
   ANIMATION_EMOTE_POISON    = 17
 
-
   # The key the player needs to press to toggle followers. Set this to nil if
   # you want to disable this feature. (:JUMPUP is the A key by default)
-  TOGGLE_FOLLOWER_KEY       = nil
+  TOGGLE_FOLLOWER_KEY       = :JUMPUP
 
   # Show the option to toggle Following Pokemon in the Options screen.
   SHOW_TOGGLE_IN_OPTIONS    = false

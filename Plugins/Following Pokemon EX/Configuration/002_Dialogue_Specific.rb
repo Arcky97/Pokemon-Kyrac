@@ -159,7 +159,7 @@ EventHandlers.add(:following_pkmn_talk, :indoormaps, proc { |pkmn, _random_val, 
       ]
     else
       messages = [
-        _INTL("")
+        _INTL("hai")
       ]
     end
   when /Gym/i
@@ -177,26 +177,26 @@ EventHandlers.add(:following_pkmn_talk, :indoormaps, proc { |pkmn, _random_val, 
     ]
   when /Factory/i
     messages = [
-      _INTL("")
+      _INTL("hai")
     ]
   end
   if $game_switches[99] #The Switch 99 is On. (Change this to any number you want.) Used for Random NPC's House.
     case pkmn.species 
     when :PICHU, :PIKACHU, :RAICHU, :RAICHU_1 #The Follower is Pichu, Pikachu, Raichu or Alolan Raichu.
       messages = [
-        _INTL("")
+        _INTL("hai")
       ]
     when :GROWLITHE, :ARCANINE #The Follower is Growlithe or Arcanine.
       messages = [
-        _INTL("")
+        _INTL("hai")
       ]
     else #The Follower is none of the Pokémon stated above.
       messages = [
-        _INTL("")
+        _INTL("hai")
       ]
     end 
   end
-  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
   next true
 })
 
@@ -212,31 +212,31 @@ EventHandlers.add(:following_pkmn_talk, :pokecenter, proc { |pkmn, _random_val, 
     case pkmn.species 
     when :VOLTORB, :ELECTRODE #The Follower is Voltorb or Electrode.
       messages = [
-        _INTL("")
+        _INTL("hai")
       ]
     else #The Follower is none of the Pokémon stated above.
       messages = [
-        _INTL("")
+        _INTL("hai")
       ]
     end
   elsif $game_switches[98] #The Game Switch (Pokémon Healed) is On.
     messages = [
-      _INTL("")
+      _INTL("hai")
     ]
     !$game_switches[98] #If you want to make the Script choose only one time a dialogue after the Follower was healed, then you can turn off the Switch like this.
   elsif $game_switches[97] #The Game Switch (Just Bought Item) is On.
   end
-  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
   next true
 })
 
 EventHandlers.add(:following_pkmn_talk, :shiny, proc { |pkmn, _random_val, pkmnName, playerName|
   if pkmn.shiny?
     messages = [
-      _INTL("")
+      _INTL("hai")
     ]
   end 
-  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
   next true
 })
 
@@ -308,7 +308,7 @@ EventHandlers.add(:following_pkmn_talk, :status, proc { |pkmn, _random_val, pkmn
       ]
     end
   end
-  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+  pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
   next true if pkmn.status != :NONE
 })
 
@@ -350,7 +350,7 @@ EventHandlers.add(:following_pkmn_talk, :storm_weather, proc { |pkmn, _random_va
         _INTL("{1} was startled by the lightning and snuggled up to {2}!")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
 })
@@ -382,7 +382,7 @@ EventHandlers.add(:following_pkmn_talk, :snow_weather, proc { |pkmn, _random_val
         _INTL("{1} made its body slightly smaller because of the cold...")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName, playerName)) if messages
     next true
   end
 })
@@ -413,7 +413,7 @@ EventHandlers.add(:following_pkmn_talk, :blizzard_weather, proc { |pkmn, _random
         _INTL("{1} is shaking like a leaf!")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
 })
@@ -451,7 +451,7 @@ EventHandlers.add(:following_pkmn_talk, :sandstorm_weather, proc { |pkmn, _rando
         _INTL("The sand seems to be bothering {1}.")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
 })
@@ -485,7 +485,7 @@ EventHandlers.add(:following_pkmn_talk, :forest_map, proc { |pkmn, _random_val, 
         _INTL("{1} was surprised when it got hit by a branch!")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
 })
@@ -531,7 +531,7 @@ EventHandlers.add(:following_pkmn_talk, :rainy_weather, proc { |pkmn, _random_va
         _INTL("{1} is slipping in the water and almost fell over!")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
 })
@@ -586,7 +586,7 @@ EventHandlers.add(:following_pkmn_talk, :sunny_weather, proc { |pkmn, _random_va
         _INTL("{1} shielded its vision against the sparkling light!")
       ]
     end
-    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName))
+    pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
 })

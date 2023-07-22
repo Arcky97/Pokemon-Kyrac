@@ -90,16 +90,25 @@ module QuestModule
   }
   Quest9 = {
     :ID => "9",
-    :Name => "Talk to Prof. Oak",
+    :Name => "Talk to Prof. Oak.",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",
     :QuestDescription => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
     :RewardString => "nothing yet"
   }
-
   Quest10 = {
     :ID => "10",
+    :Name => "Find Nelson's key.",
+    :QuestGiver => "Nelson",
+    :Stage1 => "Find the key that was(n't) lost.",
+    :Location1 => "Somewhere on the Yacht.",
+    :QuestDescription => "Nelson desperately asked you to search for his key he lost on the Yacht. Talk to him again and maybe a miracle will happen.",
+    :RewardString => "Nelson's broke now!"
+  }
+
+  Quest11 = {
+    :ID => "11",
     :Name => "The Dark Type Gym!",
     :QuestGiver => "Yourself",
     :Stage1 => "Find another way into the Gym in Hester City!",

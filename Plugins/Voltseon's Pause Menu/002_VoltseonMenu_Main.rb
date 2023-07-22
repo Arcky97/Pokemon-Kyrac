@@ -48,10 +48,14 @@ class VoltseonsPauseMenu_Scene
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @sprites = {}
     # Background
+=begin
     @sprites["backshade"]        = Sprite.new(@viewport)
     @sprites["backshade"].bitmap = Bitmap.new(Graphics.width, Graphics.height)
     @sprites["backshade"].z      = -10
     @sprites["backshade"].bitmap.fill_rect(0, 0, Graphics.width, Graphics.height, BACKGROUND_TINT)
+=end
+    # Background with blurr
+    @scene = SummaryScreen.new(nil, 10)
     # Location window
     @sprites["location"] = Sprite.new(@viewport)
     # Menu arrows
@@ -259,6 +263,7 @@ class VoltseonsPauseMenu_Scene
     @pause_menu.dispose
     @components.each { |component| component.dispose }
     pbDisposeSpriteHash(@sprites)
+    @scene.dispose
     @viewport.dispose
   end
 end

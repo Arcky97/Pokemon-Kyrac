@@ -7,7 +7,7 @@ def trainerSchoolMonitor(input)
     show_image_pokemon_retain_open(starters[input][0])
     pokemon = input == 11 ? "Galarian #{species.name}" : species.name
     type = typeColor[input][1] ? "\\c[#{typeColor[input][0]}]#{species.types[0].name.capitalize}\\c[0]/\\c[#{typeColor[input][1]}]#{species.types[1].name.capitalize}" : "\\c[#{typeColor[input][0]}]#{species.types[0].name.capitalize}"
-    pbMessage(_INTL("{1}, the {2} Pokémon, is a {3} \\c[0]type and evolves into {4} {5}. {6}", pokemon, species.real_category, type, starters[input][1].name.capitalize, evolutionMethod[input][0], species.real_pokedex_entry))
+    pbMessage(_INTL("{1}, the {2} Pokémon, is a {3}-Type \\c[0]and evolves into {4} {5}. {6}", pokemon, species.real_category, type, starters[input][1].name.capitalize, evolutionMethod[input][0], species.real_pokedex_entry))
     close_image_pokemon
 end
 
@@ -31,7 +31,7 @@ def trainerSchoolTypeMatchUps
       end
     end
     noEffect = noEffect != [] ? "And have no effect against #{formatTypeList(noEffect)}" : "No types are immune to \\c[#{choice + 11}]#{GameData::Type.get(types[choice]).name}"
-    pbMessage(_INTL("\\c[#{choice + 11}]#{GameData::Type.get(types[choice]).name} \\c[0]type moves are super-effective against #{formatTypeList(superEffective)}. Not very effective against #{formatTypeList(notEffective)}. #{noEffect}."))
+    pbMessage(_INTL("\\c[#{choice + 11}]#{GameData::Type.get(types[choice]).name}-Type \\c[0]moves are super-effective against #{formatTypeList(superEffective)}. Not very effective against #{formatTypeList(notEffective)}. #{noEffect}."))
   end
 
   def formatTypeList(types)
@@ -39,14 +39,14 @@ def trainerSchoolTypeMatchUps
     when 0
       "no Pokémon"
     when 1
-        "\\c[#{types[0][1]}]#{types[0][0]} \\c[0]type Pokémon"
+        "\\c[#{types[0][1]}]#{types[0][0]}-Type \\c[0]Pokémon"
     when 2
-      "\\c[#{types[0][1]}]#{types[0][0]}\\c[0] and \\c[#{types[1][1]}]#{types[1][0]} \\c[0]type Pokémon"
+      "\\c[#{types[0][1]}]#{types[0][0]}-Type \\c[0]and \\c[#{types[1][1]}]#{types[1][0]}-Type \\c[0]Pokémon"
     else
         lastType = types.pop
         formattedList = types.map { |type| 
-            "\\c[#{type[1]}]#{type[0]}\\c[0]" }.join(', ')
-        "#{formattedList} and \\c[#{lastType[1]}]#{lastType[0]} \\c[0]type Pokémon"
+            "\\c[#{type[1]}]#{type[0]}-Type\\c[0]" }.join(', ')
+        "#{formattedList} and \\c[#{lastType[1]}]#{lastType[0]}-Type \\c[0]Pokémon"
     end
   end
 

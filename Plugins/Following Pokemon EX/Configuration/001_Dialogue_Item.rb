@@ -13,7 +13,7 @@ EventHandlers.add(:following_pkmn_item, :battle_map, proc { |_pkmn, _random_val|
 #-------------------------------------------------------------------------------
 # Generic Item Dialogue
 #-------------------------------------------------------------------------------
-EventHandlers.add(:following_pkmn_item, :regular, proc { |_pkmn, _random_val|
+EventHandlers.add(:following_pkmn_item, :regular, proc { |_pkmn, _random_val, playerName|
 items = []
 $bag.pockets.each_with_index do |pocket, index|
   next if index == 4 || index == 8  # Skip pocket 4 (TM's and HM's) and 8 (Key Items)
@@ -25,6 +25,6 @@ $bag.pockets.each_with_index do |pocket, index|
 end
   # If no message or quantity is specified the default message is used and the quantity of item is 1
   item = items.sample
-  next true if FollowingPkmn.item(item)
+  next true if FollowingPkmn.item(item, playerName)
 })
 #-------------------------------------------------------------------------------

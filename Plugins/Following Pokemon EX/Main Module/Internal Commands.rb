@@ -46,12 +46,12 @@ module FollowingPkmn
   #-----------------------------------------------------------------------------
   # Script Command for Following Pokémon finding an item in the field
   #-----------------------------------------------------------------------------
-  def self.item(item, quantity = 1, message = nil)
+  def self.item(item, playerName, quantity = 1, message = nil)
     return false if !FollowingPkmn.can_check?
     return false if !$PokemonGlobal.follower_hold_item
     pokename = FollowingPkmn.get_pokemon&.name
-    message = _INTL("{1} seems to be holding something...") if nil_or_empty?(message)
-    pbMessage(_INTL(message, pokename))
+    message = _INTL("{2}{1} seems to be holding something...") if nil_or_empty?(message)
+    pbMessage(_INTL(message, playerName, pokename))
     item = GameData::Item.get(item)
     return false if !item || quantity < 1
     itemname = (quantity > 1) ? item.name_plural : item.name
@@ -60,17 +60,17 @@ module FollowingPkmn
     if $bag.add(item, quantity)   # If item can be picked up
       meName = (item.is_key_item?) ? "Key item get" : "Item get"
       if item == :LEFTOVERS
-        pbMessage(_INTL("\\me[{1}]{3} found some \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename))
+        pbMessage(_INTL("\\me[{1}]{4}{3} found some \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename, playerName))
       elsif item == :DNASPLICERS
-        pbMessage(_INTL("\\me[{1}]{3} found \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename))
+        pbMessage(_INTL("\\me[{1}]{4}{3} found \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename, playerName))
       elsif item.is_machine?   # TM or HM
-        pbMessage(_INTL("\\me[{1}]{4} found \\c[1]{2} {3}\\c[0]!\\wtnp[30]", meName, itemname, GameData::Move.get(move).name, pokename))
+        pbMessage(_INTL("\\me[{1}]{5}{4} found \\c[1]{2} {3}\\c[0]!\\wtnp[30]", meName, itemname, GameData::Move.get(move).name, pokename, playerName))
       elsif quantity>1
-        pbMessage(_INTL("\\me[{1}]{4} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", meName, quantity, itemname, pokename))
+        pbMessage(_INTL("\\me[{1}]{5}{4} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", meName, quantity, itemname, pokename, playerName))
       elsif itemname.starts_with_vowel?
-        pbMessage(_INTL("\\me[{1}]{3} found an \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename))
+        pbMessage(_INTL("\\me[{1}]{4}{3} found an \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename, playerName))
       else
-        pbMessage(_INTL("\\me[{1}]{3} found a \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename))
+        pbMessage(_INTL("\\me[{1}]{4}{3} found a \\c[1]{2}\\c[0]!\\wtnp[30]", meName, itemname, pokename, playerName))
       end
       pbMessage(_INTL("You put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
         itemname, pocket, PokemonBag.pocket_names[pocket - 1]))
@@ -83,17 +83,17 @@ module FollowingPkmn
     end
     # Can't add the item
     if item == :LEFTOVERS
-      pbMessage(_INTL("{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname))
+      pbMessage(_INTL("{3}{1} found some \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname, playerName))
     elsif item == :DNASPLICERS
-      pbMessage(_INTL("{1} found \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname))
+      pbMessage(_INTL("{3}{1} found \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname, playerName))
     elsif item.is_machine?   # TM or HM
-      pbMessage(_INTL("{1} found \\c[1]{2} {3}\\c[0]!\\wtnp[30]", pokename, itemname, GameData::Move.get(move).name))
+      pbMessage(_INTL("{4}{1} found \\c[1]{2} {3}\\c[0]!\\wtnp[30]", pokename, itemname, GameData::Move.get(move).name, playerName))
     elsif quantity>1
-      pbMessage(_INTL("{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", pokename, quantity, itemname))
+      pbMessage(_INTL("{4}{1} found {2} \\c[1]{3}\\c[0]!\\wtnp[30]", pokename, quantity, itemname, playerName))
     elsif itemname.starts_with_vowel?
-      pbMessage(_INTL("{1} found an \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname))
+      pbMessage(_INTL("{3}{1} found an \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname, playerName))
     else
-      pbMessage(_INTL("{1} found a \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname))
+      pbMessage(_INTL("{3}{1} found a \\c[1]{2}\\c[0]!\\wtnp[30]", pokename, itemname, playerName))
     end
     pbMessage(_INTL("But your Bag is full..."))
     return false
