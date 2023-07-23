@@ -33,6 +33,7 @@
   + [V1.25.3E - Release July 1 2023](#V1253E---Release-July-1-2023)
   + [V1.26.7C - Release July 10 2023](#V1267C---Release-July-10-2023)
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
+  + [V1.28.8A - Release July 23 2023](#V1288A---Release-July-23-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -560,6 +561,22 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - The Poke Ball when the follower appears/dissapears is now the same kind of Poké Ball the follower was caught/received in.
 
 - Updated the check for when the Yacht Quest (Quest 7) is completed.
+
+### V1.28.8A - Release July 23 2023
+
+- Changed the Choice/Menu Skin.
+
+- Changed the Message Skin.
+
+- Changed the Name Window Skin.
+
+- Edited the colors for text to match with the Dark Skin.
+
+- Edited the UI_PokeMart to use the correct skins.
+
+- Removed the Message Skin option from the Settings Menu.
+
+- Removed the Choice/Menu Skin option from the Settings Menu.
 
 ## Credits:
 

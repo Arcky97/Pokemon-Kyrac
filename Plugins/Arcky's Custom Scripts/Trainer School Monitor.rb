@@ -102,4 +102,39 @@ def trainerSchoolTypeMatchUps
 
 
 
+def revertColors
+  textcolors = [
+    ["57A8F5", "485058",   "# 1  Blue"],
+    ["F8A8B8", "485058",   "# 2  Red"],
+    ["B0D090", "485058",   "# 3  Green"],
+    ["A8E0E0", "485058",   "# 4  Cyan"],
+    ["E8A0E0", "485058",   "# 5  Magenta"],
+    ["F8E888", "485058",   "# 6  Yellow"],
+    ["D0D0D8", "485058",   "# 7  Grey"],
+    ["C8C8D0", "485058",   "# 8  White"],
+    ["B8A8E0", "485058",   "# 9  Purple"],
+    ["F8C898", "485058",   "# 10 Orange"],
+    ["C8E097", "485058",   "# 11 Bug Type"],
+    ["96A0A7", "485058",   "# 12 Dark Type"],
+    ["B79BFC", "485058",   "# 13 Dragon Type"],
+    ["FAE99E", "485058",   "# 14 Electric Type"],
+    ["FED6E4", "485058",   "# 15 Fairy Type"],
+    ["DF9793", "485058",   "# 16 Fighting Type"],
+    ["F7BF97", "485058",   "# 17 Fire Type"],
+    ["C7D4EF", "485058",   "# 18 Flying Type"],
+    ["A9B4D6", "485058",   "# 19 Ghost Type"],
+    ["B1DEAD", "485058",   "# 20 Grass Type"],
+    ["EFDFB4", "485058",   "# 21 Ground Type"],
+    ["B9E7E0", "485058",   "# 22 Ice Type"],
+    ["C9CED1", "485058",   "# 23 Normal Type"],
+    ["D5B5E4", "485058",   "# 24 Poison Type"],
+    ["FBABC3", "485058",   "# 25 Psychic Type"],
+    ["E2DBC6", "485058",   "# 26 Rock Type"],
+    ["ADC7D1", "485058",   "# 27 Steel Type"],
+    ["A8C8EB", "485058",   "# 28 Water Type"]
+  ]
+  for i in 0...textcolors.length 
+    echoln("\"#{textcolors[i][0]}\", \"#{textcolors[i][1]}\",   #{textcolors[i][2]}")
+  end 
+end
     

@@ -14,20 +14,20 @@
 # CONFIGURATION
 #===============================================================================
 # SHIFT NAMEWINDOW IN X AXIS (except when specifying a particular X location)
-OFFSET_NAMEWINDOW_X=5 
+OFFSET_NAMEWINDOW_X = 0
 # SHIFT NAMEWINDOW IN Y AXIS (except when specifying a particular Y location)
-OFFSET_NAMEWINDOW_Y=0 
+OFFSET_NAMEWINDOW_Y = 2 
 # WHETHER THE TEXT SHOULD BE CENTERED (0=right, 1=center, 2=right)
-DEFAULT_ALIGNMENT=1   
+DEFAULT_ALIGNMENT = 1   
 # ENSURES A MIN. WIDTH OF THE WINDOW
-MIN_WIDTH=50       
+MIN_WIDTH = 50       
 # DEFAULT FONT
-DEFAULT_FONT="Power Green Narrow" # "Power Clear", etc.
+DEFAULT_FONT = "Power Green Narrow" # "Power Clear", etc.
 # DEFAULT FONT SIZE
-DEFAULT_FONT_SIZE=nil
+DEFAULT_FONT_SIZE = nil
 # DEFAULT WINDOWSKIN (nil = based on the currently displayed message windowskin)
 # (File inside Graphics/Windowskins/)
-DEFAULT_WINDOWSKIN=nil
+DEFAULT_WINDOWSKIN = "NameWindow"
 #===============================================================================
 # END CONFIGURATION / Don't touch anything below this point or you'll get a bonk
 #===============================================================================
@@ -121,16 +121,16 @@ def pbDisplayNameWindow(params)
     end
     namewindow=Window_AdvancedTextPokemon.new(_INTL(fullName.to_s))
     if isDark==true
-        namewindow.setSkin("Graphics/Windowskins/speech black")
+        namewindow.setSkin("Graphics/Windowskins/NameWindow")
     end
     if newSkin!=nil
         if newSkin==DEFAULT_WINDOWSKIN
-        if isDark==true
+            if isDark==true
+            else
+                namewindow.setSkin("Graphics/Windowskins/"+newSkin)
+            end
         else
-            namewindow.setSkin("Graphics/Windowskins/"+newSkin)
-        end
-        else
-        namewindow.setSkin("Graphics/Windowskins/"+newSkin) 
+            namewindow.setSkin("Graphics/Windowskins/"+newSkin) 
         end
     end
     namewindow.resizeToFit(namewindow.text,Graphics.width)
@@ -389,52 +389,52 @@ def pbDisplayNameWindow(params)
                     # Sets a particular color (Red)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "E82010", "F8A8B8", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "F8A8B8", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xnb"
                     # Sets a particular color (Blue)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "006BF9", "57A8F5", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "57A8F5", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xnc" 
                     # Sets a particular color (Green)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "60B048", "B0D090", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "B0D090", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xnd"
                     # Sets a particular color (Cyan)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "48D8D8", "A8E0E0", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "A8E0E0", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xne"
                     # sets a particular color (Magenta)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "D038B8", "E8A0E0", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "E8A0E0", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xnf"
                     # sets a particular color (Yellow)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "E8D020", "F8E888", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "F8E888", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xng"
                     # sets a particular color (Grey)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "A0A0A8", "D0D0D8", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "D0D0D8", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xnh"
                     # sets a particular color (White)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "F0F0F8", "C8C8D0", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "C8C8D0", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xni"
                     # sets a particular color (purple)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "9040E8", "B8A8E0", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "B8A8E0", "485058", "0", "0", nil, "0", "0", "0"])
                 when "xnj"
                     # sets a particular color (Orange)
                     string = controls[i][1]
                     namewindow.dispose if namewindow
-                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "F89818", "F8C898", "0", "0", nil, "0", "0", "0"])
+                    namewindow = pbDisplayNameWindow([msgwindow, string, false, "F8C898", "485058", "0", "0", nil, "0", "0", "0"])
                 when "f"
                     facewindow.dispose if facewindow
                     facewindow = PictureWindow.new("Graphics/Pictures/#{param}")
