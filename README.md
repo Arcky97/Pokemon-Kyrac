@@ -578,6 +578,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Removed the Choice/Menu Skin option from the Settings Menu.
 
+- Changed the font of the Name Window.
+
 ## Credits:
 
 Essentials: Maruno
