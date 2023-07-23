@@ -22,7 +22,7 @@ DEFAULT_ALIGNMENT = 1
 # ENSURES A MIN. WIDTH OF THE WINDOW
 MIN_WIDTH = 50       
 # DEFAULT FONT
-DEFAULT_FONT = "Power Green Narrow" # "Power Clear", etc.
+DEFAULT_FONT = "Power Green" # "Power Clear", etc.
 # DEFAULT FONT SIZE
 DEFAULT_FONT_SIZE = nil
 # DEFAULT WINDOWSKIN (nil = based on the currently displayed message windowskin)
@@ -61,8 +61,8 @@ def pbDisplayNameWindow(params)
     newY         = params[9]  if !params[9].nil?
     newSkin      = params[10] if params[10] != (nil || "0")
     newSkin      = DEFAULT_WINDOWSKIN if newSkin=="nil" || (newSkin==nil || newSkin=="0") 
-    msgwindow=params[0]
-    fullName=(params[1].split(","))[0]
+    msgwindow = params[0]
+    fullName = (params[1].split(","))[0]
     # Handle text alignment
     align=""
     alignEnd=""
@@ -92,7 +92,7 @@ def pbDisplayNameWindow(params)
         end
     end
     fullName.insert(0,align)
-    fullName+=alignEnd
+    fullName += alignEnd
     # Handle text color
     # If base or shadow are empty somehow, load windowskin-sensitive colors
     if colorBase.nil? || colorBase.empty?
@@ -134,9 +134,9 @@ def pbDisplayNameWindow(params)
         end
     end
     namewindow.resizeToFit(namewindow.text,Graphics.width)
-    namewindow.width=MIN_WIDTH if namewindow.width<=MIN_WIDTH
+    namewindow.width = MIN_WIDTH if namewindow.width <= MIN_WIDTH
     namewindow.width = namewindow.width
-    namewindow.y=msgwindow.y-namewindow.height
+    namewindow.y = msgwindow.y - namewindow.height
     if newX != (nil || "0") && !newX.empty?
         namewindow.x=newX.to_i
     else
@@ -151,9 +151,9 @@ def pbDisplayNameWindow(params)
     namewindow.viewport=msgwindow.viewport
     namewindow.z=msgwindow.z
     return namewindow
-    end
+end
 
-    def pbMessageDisplay(msgwindow,message,letterbyletter=true,commandProc=nil)
+def pbMessageDisplay(msgwindow,message,letterbyletter=true,commandProc=nil)
     return if !msgwindow
     oldletterbyletter=msgwindow.letterbyletter
     msgwindow.letterbyletter=(letterbyletter) ? true : false
@@ -259,6 +259,7 @@ def pbDisplayNameWindow(params)
         controls[i][2] = textlen
     end
     text = textchunks.join("")
+    
     signWaitCount = 0
     signWaitTime = Graphics.frame_rate/2
     haveSpecialClose = false
@@ -323,7 +324,7 @@ def pbDisplayNameWindow(params)
         end
         for i in 0...controls.length
             next if !controls[i]
-            next if controls[i][2]>msgwindow.position || msgwindow.waitcount!=0
+            next if controls[i][2] > msgwindow.position || msgwindow.waitcount!=0
             control = controls[i][0]
             param = controls[i][1]
             case control
