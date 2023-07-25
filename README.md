@@ -33,7 +33,7 @@
   + [V1.25.3E - Release July 1 2023](#V1253E---Release-July-1-2023)
   + [V1.26.7C - Release July 10 2023](#V1267C---Release-July-10-2023)
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
-  + [V1.28.8A - Release July 23 2023](#V1288A---Release-July-23-2023)
+  + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -562,7 +562,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Updated the check for when the Yacht Quest (Quest 7) is completed.
 
-### V1.28.8A - Release July 23 2023
+### V1.28.38E - Release July 23 2023
 
 - Changed the Choice/Menu Skin.
 
@@ -579,6 +579,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Removed the Choice/Menu Skin option from the Settings Menu.
 
 - Changed the font of the Name Window.
+
+- Updated all the Base Colors and Shadow Colors for each Color of text possible.
+
+- Updated the Colors used in the Option Menu.
+
+- For the Color of the Player's Name option, the Color you select now live shows the actual Color of your choice.
+
+- Updated the Counter Window.
+
+- Edited the Money, Coins and Battle Point Script so they look the same as the Counter Window.
 
 ## Credits:
 

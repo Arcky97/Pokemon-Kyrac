@@ -55,7 +55,7 @@ class VoltseonsPauseMenu_Scene
     @sprites["backshade"].bitmap.fill_rect(0, 0, Graphics.width, Graphics.height, BACKGROUND_TINT)
 =end
     # Background with blurr
-    @scene = SummaryScreen.new(nil, 10)
+    @scene = SummaryScreen.new(nil, nil, 10)
     # Location window
     @sprites["location"] = Sprite.new(@viewport)
     # Menu arrows

@@ -217,20 +217,35 @@ class PokemonMartAdapter
     end
   
     def pbStartBuyOrSellScene(buying, stock, adapter)
-      # Scroll right before showing screen
-      pbScrollMap(6, 5, 5)
+      # Scroll right/left before showing screen
+      echoln($position)
+      if $position == "Left" # facing left
+        pbScrollMap(6, 5, 5)
+      elsif $position == "Right" # facing right
+        pbScrollMap(4, 5, 5)
+      end
       @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
       @viewport.z = 99999
       @stock = stock
       @adapter = adapter
       @sprites = {}
       @sprites["background"] = IconSprite.new(0, 0, @viewport)
-      @sprites["background"].setBitmap("Graphics/Pictures/martScreen")
+      if $position == "Left" # facing left
+        @sprites["background"].setBitmap("Graphics/Pictures/martScreen")
+      elsif $position == "Right" # facing right
+        @sprites["background"].setBitmap("Graphics/Pictures/martScreenMir")
+      end
       @sprites["icon"] = ItemIconSprite.new(36, Graphics.height - 50, nil, @viewport)
       winAdapter = buying ? BuyAdapter.new(adapter) : SellAdapter.new(adapter)
-      @sprites["itemwindow"] = Window_PokemonMart.new(
+      if $position == "Left" # facing left
+        @sprites["itemwindow"] = Window_PokemonMart.new(
         stock, winAdapter, Graphics.width - 316 - 16, 10, 330 + 16, Graphics.height - 124
-      )
+        )
+      elsif $position == "Right" # facing right
+        @sprites["itemwindow"] = Window_PokemonMart.new(
+        stock, winAdapter, Graphics.width - 316 - 208, 10, 330 + 16, Graphics.height - 124
+        )
+      end
       @sprites["itemwindow"].viewport = @viewport
       @sprites["itemwindow"].index = 0
       @sprites["itemwindow"].refresh
@@ -252,7 +267,11 @@ class PokemonMartAdapter
       @sprites["moneywindow"].setSkin("Graphics/Windowskins/MainSystem")
       @sprites["moneywindow"].visible = true
       @sprites["moneywindow"].viewport = @viewport
-      @sprites["moneywindow"].x = 0
+      if $position == "Left" # facing left
+        @sprites["moneywindow"].x = 0
+      elsif $position == "Right" # facing right
+        @sprites["moneywindow"].x = 320
+      end
       @sprites["moneywindow"].y = 0
       @sprites["moneywindow"].width = 190
       @sprites["moneywindow"].height = 96
@@ -262,6 +281,10 @@ class PokemonMartAdapter
       pbPrepareWindow(@sprites["qtywindow"])
       @sprites["qtywindow"].setSkin("Graphics/Windowskins/MainSystem")
       @sprites["qtywindow"].viewport = @viewport
+      if $position == "Right" # facing right
+        @sprites["qtywindow"].x = 320
+        @sprites["qtywindow"].y = 0
+      end
       @sprites["qtywindow"].width = 190
       @sprites["qtywindow"].height = 64
       @sprites["qtywindow"].baseColor = Color.new(248, 248, 248)
@@ -330,8 +353,12 @@ class PokemonMartAdapter
     def pbEndBuyScene
       pbDisposeSpriteHash(@sprites)
       @viewport.dispose
-      # Scroll left after showing screen
-      pbScrollMap(4, 5, 5)
+      # Scroll left/right after showing screen
+      if $position == "Left" # facing left
+        pbScrollMap(4, 5, 5)
+      elsif $position == "Right" # facing right
+        pbScrollMap(6, 5, 5)
+      end
     end
   
     def pbEndSellScene
