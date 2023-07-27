@@ -69,7 +69,7 @@ class Player_Quests
     end
     @active_quests.push(Quest.new(quest,color,story))
     if story
-      SummaryScreen.new([["New Story Quest:", 25], ["#{$quest_data.getName(quest.name)}", 28]])
+      SummaryScreen.new([["New Story Quest:", 35, "red"], ["#{$quest_data.getName(quest.name)}", 50, nil]], 120, 25, 170)
       #pbMessage(_INTL("\\se[#{QUEST_JINGLE}]\\ts[3]\\l[5]\\n<ac><fs=25><c2=#{colorQuest("red")}>New Story Quest:</c2></fs>\\n<fs=35>#{$quest_data.getName(quest.name)}</fs></ac>\\wtnp[30]"))
     else
       pbMessage(_INTL("\\se[{1}]<ac><c2=#{colorQuest("red")}>New quest discovered!</c2>\nCheck your quest log for more details!</ac>",QUEST_JINGLE))

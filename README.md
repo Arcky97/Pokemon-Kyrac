@@ -34,6 +34,7 @@
   + [V1.26.7C - Release July 10 2023](#V1267C---Release-July-10-2023)
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
   + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
+  + [V1.29.1C - Release July 27 2023](#V1291c---Release-July-27-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -589,6 +590,13 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Updated the Counter Window.
 
 - Edited the Money, Coins and Battle Point Script so they look the same as the Counter Window.
+
+### V1.29.1C - Release July 27 2023
+
+- Edited the Choice Menu Selection indicator.
+
+- Updated the Summary Script, it now takes colors for text optionally.
+
 
 ## Credits:
 

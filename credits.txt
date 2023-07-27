@@ -67,4 +67,6 @@ UI_Load: Line 14, 22, 86-87, 102 and 112
 Game_System: Line 65
 Settings: Line 437-448
 002_VoltseonMenu_Main: line 57-58 and 266 added and line 51-56 commented.
+UI_Save: Line 37-38 added and 41, 43, 45, 47 and 49 edited.
+SpriteWindow_text: line: 1109 - 1114 renamed to drawCursorMart and line 1116 - 1121 added. 1232-1244 edited.
 

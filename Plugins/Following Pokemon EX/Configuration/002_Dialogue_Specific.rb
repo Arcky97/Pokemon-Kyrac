@@ -208,7 +208,7 @@ EventHandlers.add(:following_pkmn_talk, :indoormaps, proc { |pkmn, _random_val, 
 #-------------------------------------------------------------------------------
 
 EventHandlers.add(:following_pkmn_talk, :pokecenter, proc { |pkmn, _random_val, pkmnName, playerName|
-  if $game_switches[1] #The Game Switch (Blacked out Healed) is On.
+  if $game_switches[1] #The Game Switch (Starting Over) is On.
     case pkmn.species 
     when :VOLTORB, :ELECTRODE #The Follower is Voltorb or Electrode.
       messages = [
@@ -223,7 +223,7 @@ EventHandlers.add(:following_pkmn_talk, :pokecenter, proc { |pkmn, _random_val, 
     messages = [
       _INTL("hai")
     ]
-    !$game_switches[98] #If you want to make the Script choose only one time a dialogue after the Follower was healed, then you can turn off the Switch like this.
+    !$game_switches[98] #If you want to make the Script choose only one time a dialogue after the Follower was healed, then you can turn off the Switch like this. You'll need to turn it off by default on leaving the Poké Center.
   elsif $game_switches[97] #The Game Switch (Just Bought Item) is On.
   end
   pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
@@ -589,4 +589,9 @@ EventHandlers.add(:following_pkmn_talk, :sunny_weather, proc { |pkmn, _random_va
     pbMessage(_INTL(messages.sample, pkmn.name, $player.name, pkmnName, playerName)) if messages
     next true
   end
+})
+
+
+EventHandlers.add(:following_pkmn_talk, :forest_map, proc { |pkmn, _random_val, pkmnName|
+
 })

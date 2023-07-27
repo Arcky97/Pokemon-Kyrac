@@ -174,7 +174,7 @@ class PokemonMartAdapter
   
     def drawItem(index, count, rect)
       textpos = []
-      rect = drawCursor(index, rect)
+      rect = drawCursorMart(index, rect)
       ypos = rect.y
       if index == count - 1
         textpos.push([_INTL("CANCEL"), rect.x, ypos + 2, false, self.baseColor, self.shadowColor])
@@ -745,9 +745,9 @@ class PokemonMartAdapter
       cmdBuy  = -1
       cmdSell = -1
       cmdQuit = -1
-      commands[cmdBuy = commands.length]  = _INTL("I'm here to buy")
-      commands[cmdSell = commands.length] = _INTL("I'm here to sell") if !cantsell
-      commands[cmdQuit = commands.length] = _INTL("No, thanks")
+      commands[cmdBuy = commands.length]  = _INTL("I'm here to buy!")
+      commands[cmdSell = commands.length] = _INTL("I'm here to sell!") if !cantsell
+      commands[cmdQuit = commands.length] = _INTL("No, thanks!")
       cmd = pbMessage(speech || _INTL("\\xnb[Salesman]Welcome! How may I help you?"), commands, cmdQuit + 1)
       loop do
         if cmdBuy >= 0 && cmd == cmdBuy
