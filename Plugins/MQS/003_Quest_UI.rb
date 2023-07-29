@@ -43,7 +43,7 @@ class Window_Quest < Window_DrawableCommand
       next if i<self.top_item || i>self.top_item+self.page_item_max
       drawItem(i,@item_max,itemRect(i))
     end
-    drawCursor(self.index,itemRect(self.index)) if itemCount >0
+    drawCursorMart(self.index,itemRect(self.index)) if itemCount >0
   end
   
   def update
@@ -237,7 +237,7 @@ class QuestList_Scene
       ["#{questName}",6,6,0,Color.new(248,248,248),Color.new(0,0,0),true]
     ])
     # Quest description
-    questDesc = "<c2=#{colorQuest("blue")}>Overview:</c2> #{$quest_data.getQuestDescription(quest.id)}"
+    questDesc = "<c2=#{colorQuest("blue")}>Overview:</c2> #{$quest_data.getQuestDescription(quest.id, quest.stage)}"
     drawFormattedTextEx(@sprites["overlay3"].bitmap,38,52,
       436,questDesc,@base,@shadow)
     # Stage description

@@ -311,14 +311,24 @@ class QuestData
   end
 
   # Get overall quest description
-  def getQuestDescription(quest)
-    return "#{QuestModule.const_get(quest)[:QuestDescription]}"
+
+  def getQuestDescription(quest, stage)
+    desc = ("QuestDescription" + "#{stage}").to_sym
+    if QuestModule.const_get(quest).key?(desc)
+      return "#{QuestModule.const_get(quest)[desc]}"
+    else
+      return "#{QuestModule.const_get(quest)[:QuestDescription]}"
+    end
   end
 
   # Get current task location
   def getStageLocation(quest,stage)
     loc = ("Location" + "#{stage}").to_sym
-    return "#{QuestModule.const_get(quest)[loc]}"
+    if QuestModule.const_get(quest).key?(loc)
+      return "#{QuestModule.const_get(quest)[loc]}"
+    else 
+      return "#{QuestModule.const_get(quest)[:Location]}"
+    end  
   end  
 
   # Get summary of current task

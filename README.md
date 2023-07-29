@@ -597,6 +597,15 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Updated the Summary Script, it now takes colors for text optionally.
 
+- Reworked the quests and tasks.
+
+- Fixed the newItem script.
+
+- Fixed Julia not coming out of the house at the right spot.
+
+- Fixed the Player spawning on the Yacht on the wrong spot.
+
+- Fixed the Father's Assistant not spawning on the right spot.
 
 ## Credits:
 

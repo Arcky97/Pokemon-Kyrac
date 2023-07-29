@@ -118,7 +118,7 @@ class ItemLog
 
   def register(item)
     if !@found_items.include?(item)
-      @found_items.push(item)
+      @found_items.push(item)   
     end
   end
 end
@@ -138,9 +138,8 @@ end
 alias pbItemBall_itemfind pbItemBall
 def pbItemBall(item,quantity=1)
   result = pbItemBall_itemfind(item, quantity)
-  if result
-    $item_log.register(item)
-    ItemLog.showItemScene(item)
+  if result 
+    ItemLog.showItemScene(item) if !$item_log.register(item) != nil
   end
   return result
 end
@@ -149,8 +148,7 @@ alias pbReceiveItem_itemfind pbReceiveItem
 def pbReceiveItem(item,quantity=1)
   result = pbReceiveItem_itemfind(item, quantity)
   if result
-    $item_log.register(item)
-    ItemLog.showItemScene(item)
+    ItemLog.showItemScene(item) if $item_log.register(item) != nil
   end
   return result
 end
@@ -159,7 +157,6 @@ alias pbPickBerry_itemfind pbPickBerry
 def pbPickBerry(berry, qty = 1)
   pbPickBerry_itemfind(berry,qty)
   if $bag.has?(berry)
-      $item_log.register(berry)
-      ItemLog.showItemScene(berry)
+      ItemLog.showItemScene(berry) if !$item_log.register(berry) != nil
   end
 end

@@ -1,14 +1,14 @@
 class SummaryScreen
-  BLUE = [Color.new(51, 141, 249), Color.new(120, 184, 232)] # Blue
-  RED = [Color.new(237, 77, 64), Color.new(248, 168, 184)] # Red
-  GREEN = [Color.new(128, 192, 109), Color.new(176, 208, 144)] # Green
-  CYAN = [Color.new(109, 224, 224), Color.new(168, 224, 224)] # Cyan
-  MAGENTA = [Color.new(217, 96, 198), Color.new(232, 160, 224)] # Magenta
-  YELLOW = [Color.new(237, 217, 77), Color.new(248, 232, 136)] # Yellow
-  GREY = [Color.new(179, 179, 185), Color.new(208, 208, 216)] # Grey
-  WHITE = [Color.new(243, 243, 249), Color.new(200, 200, 208)] # White
-  PURPLE = [Color.new(166, 102, 237), Color.new(184, 168, 224)] # Purple
-  ORANGE = [Color.new(249, 173, 70), Color.new(248, 200, 152)] # Orange
+  BLUE = Color.new(51, 141, 249) # Blue
+  RED = Color.new(237, 77, 64) # Red
+  GREEN = Color.new(128, 192, 109) # Green
+  CYAN = Color.new(109, 224, 224) # Cyan
+  MAGENTA = Color.new(217, 96, 198) # Magenta
+  YELLOW = Color.new(237, 217, 77) # Yellow
+  GREY = Color.new(179, 179, 185) # Grey
+  WHITE = Color.new(243, 243, 249) # White
+  PURPLE = Color.new(166, 102, 237) # Purple
+  ORANGE = Color.new(249, 173, 70) # Orange
   DEFAULT = [MessageConfig::LIGHT_TEXT_MAIN_COLOR, MessageConfig::LIGHT_TEXT_SHADOW_COLOR] # Default White
 
   def initialize(message = nil, messageDuration = 120, duration = 25, opacity = 170)
@@ -47,15 +47,15 @@ class SummaryScreen
 
   def main  
     bitmap = Graphics.snap_to_bitmap
-    blurr = Bitmap.new(Graphics.width / 4, Graphics.height / 4)
-    blurr.stretch_blt(blurr.rect, bitmap, bitmap.rect)
-    blurr.blur
+    blur = Bitmap.new(Graphics.width / 4, Graphics.height / 4)
+    blur.stretch_blt(blur.rect, bitmap, bitmap.rect)
+    blur.blur
 
-    @sprites["blurr"] = Sprite.new(@viewport)
-    @sprites["blurr"].bitmap = blurr 
-    @sprites["blurr"].zoom_x = 4
-    @sprites["blurr"].zoom_y = 4
-    @sprites["blurr"].opacity = 0
+    @sprites["blur"] = Sprite.new(@viewport)
+    @sprites["blur"].bitmap = blur
+    @sprites["blur"].zoom_x = 4
+    @sprites["blur"].zoom_y = 4
+    @sprites["blur"].opacity = 0
 
     @sprites["backshade"] = Sprite.new(@viewport)
     @sprites["backshade"].bitmap = Bitmap.new(Graphics.width, Graphics.height)
@@ -77,7 +77,7 @@ class SummaryScreen
     startY = 0
     # Now we need to center the texts horizontally and draw them in the viewport
     @message.each_with_index do |text, index|
-      fontColor = @fontColor[index] ? getColor(@fontColor[index]) : DEFAULT
+      fontColor = @fontColor[index] ? getColor(@fontColor[index]) : DEFAULT[0]
       @sprites["displaytext#{index}"] = BitmapSprite.new(@textviewport.rect.width, @textviewport.rect.height, @textviewport)
       @sprites["displaytext#{index}"].x = 0
       @sprites["displaytext#{index}"].y = startY
@@ -86,30 +86,28 @@ class SummaryScreen
       @sprites["displaytext#{index}"].opacity = 0
       pbSetSystemFont(@sprites["displaytext#{index}"].bitmap)
       @sprites["displaytext#{index}"].bitmap.font.size = @fontSize[index]
-      pbDrawTextPositions(@sprites["displaytext#{index}"].bitmap, [[_INTL("#{text}"), Graphics.width / 2, 0, 2, fontColor[0], DEFAULT[1]]])
+      pbDrawTextPositions(@sprites["displaytext#{index}"].bitmap, [[_INTL("#{text}"), Graphics.width / 2, 0, 2, fontColor, DEFAULT[1]]])
       opacityLevel = 255 / @duration.to_f
       for i in 0..@duration
         @sprites["displaytext#{index}"].opacity += opacityLevel
         Graphics.update
       end
     end
-  
     pbWait(@messageDuration + 60)
-    (@message.length - 1).downto(0) do |i|
-      for j in 0..@duration
-        @sprites["displaytext#{i}"].opacity -= @duration.to_f
-        Graphics.update
-      end
-      @sprites["displaytext#{i}"].dispose
+  for i in 0..@duration 
+    (@message.length - 1).downto(0) do |j|
+      @sprites["displaytext#{j}"].opacity -= @duration.to_f
+      Graphics.update
+      @sprites["displaytext#{j}"].dispose if !@sprites["displaytext#{j}"]
     end
-  
+  end
     @textviewport.dispose
     dispose
   end
 
   def fadeIn
     for i in 0...@duration
-      @sprites["blurr"].opacity += @opacityLevel
+      @sprites["blur"].opacity += @opacityLevel
       @sprites["backshade"].opacity += @opacityLevel
       Graphics.update
     end
@@ -117,7 +115,7 @@ class SummaryScreen
 
   def fadeOut
     for i in 0...@duration
-      @sprites["blurr"].opacity -= @opacityLevel
+      @sprites["blur"].opacity -= @opacityLevel
       @sprites["backshade"].opacity -= @opacityLevel
       Graphics.update
     end
@@ -125,8 +123,10 @@ class SummaryScreen
 
   def dispose
     fadeOut
-    @sprites["blurr"].dispose
+    @sprites["blur"].dispose
     @sprites["backshade"].dispose
     @viewport.dispose
   end
 end
+
+

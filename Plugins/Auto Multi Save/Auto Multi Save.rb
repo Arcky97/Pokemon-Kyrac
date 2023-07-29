@@ -514,7 +514,7 @@ class PokemonSaveScreen
   def getSaveInfoBoxContents(slot)
     full_path = SaveData.get_full_path(slot)
     if !File.file?(full_path)
-      return _INTL("<ac><c3=3050C8,D0D0C8>(empty)</c3></ac>")
+      return _INTL("<ac><c3=338DF9,485058>(empty)</c3></ac>")
     end
     temp_save_data = SaveData.read_from_file(full_path)
 
@@ -529,7 +529,7 @@ class PokemonSaveScreen
     end
 
     # Map name
-    map_str = pbGetMapNameFromId(temp_save_data[:map_factory].map.map_id)
+    map_str = $game_variables[62] #pbGetMapNameFromId(temp_save_data[:map_factory].map.map_id)
 
     # Elapsed time
     totalsec = (temp_save_data[:frame_count] || 0) / Graphics.frame_rate
@@ -541,8 +541,8 @@ class PokemonSaveScreen
       elapsed_str = _INTL("Time<r>{1}m<br>", min)
     end
 
-    return "<c3=3050C8,D0D0C8>#{datetime_str}</c3>"+ # blue
-           "<ac><c3=209808,90F090>#{map_str}</c3></ac>"+ # green
+    return "<c3=338DF9,485058>#{datetime_str}</c3>"+ # blue
+           "<ac><c3=80C06D,485058>#{map_str}</c3></ac>"+ # green
            "#{elapsed_str}"
   end
 end
