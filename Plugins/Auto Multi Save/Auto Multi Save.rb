@@ -514,7 +514,7 @@ class PokemonSaveScreen
   def getSaveInfoBoxContents(slot)
     full_path = SaveData.get_full_path(slot)
     if !File.file?(full_path)
-      return _INTL("<ac><c3=338DF9,485058>(empty)</c3></ac>")
+      return _INTL("<ac><c3=4D9BFA,485058>(empty)</c3></ac>")
     end
     temp_save_data = SaveData.read_from_file(full_path)
 
@@ -541,8 +541,8 @@ class PokemonSaveScreen
       elapsed_str = _INTL("Time<r>{1}m<br>", min)
     end
 
-    return "<c3=338DF9,485058>#{datetime_str}</c3>"+ # blue
-           "<ac><c3=80C06D,485058>#{map_str}</c3></ac>"+ # green
+    return "<c3=4D9BFA,485058>#{datetime_str}</c3>"+ # blue
+           "<ac><c3=90C87F,485058>#{map_str}</c3></ac>"+ # green
            "#{elapsed_str}"
   end
 end

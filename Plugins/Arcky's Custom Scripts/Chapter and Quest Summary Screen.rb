@@ -85,7 +85,14 @@ class SummaryScreen
       @sprites["displaytext#{index}"].bitmap.clear
       @sprites["displaytext#{index}"].opacity = 0
       pbSetSystemFont(@sprites["displaytext#{index}"].bitmap)
-      @sprites["displaytext#{index}"].bitmap.font.size = @fontSize[index]
+      fontSize = @fontSize[index]
+      @sprites["displaytext#{index}"].bitmap.font.size = fontSize
+      loop do
+        textWidth = @sprites["displaytext#{index}"].bitmap.text_size(text).width
+        break if textWidth < @textviewport.rect.width
+        fontSize -= 1
+        @sprites["displaytext#{index}"].bitmap.font.size = fontSize
+      end
       pbDrawTextPositions(@sprites["displaytext#{index}"].bitmap, [[_INTL("#{text}"), Graphics.width / 2, 0, 2, fontColor, DEFAULT[1]]])
       opacityLevel = 255 / @duration.to_f
       for i in 0..@duration

@@ -34,7 +34,8 @@
   + [V1.26.7C - Release July 10 2023](#V1267C---Release-July-10-2023)
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
   + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
-  + [V1.29.1C - Release July 27 2023](#V1291c---Release-July-27-2023)
+  + [V1.29.1C - Release July 27 2023](#V1291C---Release-July-27-2023)
+  + [V1.29.4C - Release July 31 2023](#V1294C---Release-July-31-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -606,6 +607,22 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed the Player spawning on the Yacht on the wrong spot.
 
 - Fixed the Father's Assistant not spawning on the right spot.
+
+### V1.29.4C - Release July 31 2023
+
+- Removed the Phone from the Poke Gear.
+
+- Reworked some Dialogues on the Player's House's Garden map.
+
+- Added some extra colloring when mentioning an Item or Object
+
+- Fixed a crash on leaving Prof. Oak's lab for the first time.
+
+- Fixed a crash when talking to Ralph in his cabin on the Yacht. 
+
+- Fixed Ralph not moving after finding the Black Belt.
+
+- Fixed the Battle not starting with Ralph after giving back his Black Belt.
 
 ## Credits:
 

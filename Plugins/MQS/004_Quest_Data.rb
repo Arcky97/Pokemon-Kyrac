@@ -31,15 +31,18 @@ module QuestModule
     :ID => "3",
     :Name => "The journey begins!",
     :QuestGiver => "Your Mother",
-    :Stage1 => "Talk to the Guards.",
-    :Stage2 => "Find the evidence.",
-    :Stage3 => "Talk to the Guards again.",
-    :Stage4 => "Go to the Yacht!",
-    :Location => "The Front Gate of Your Home's Garden.",
-    :Location2 => "Your Home's Garden's Maze.",
-    :Location4 => "The Dock, South of your House.",
+    :Stage1 => "Go to the Yacht!",
+    :Stage2 => "Talk to the Guards.",
+    :Stage3 => "Find the evidence.",
+    :Stage4 => "Talk to the Guards again.",
+    :Stage5 => "Go to the Yacht!",
+    :Location => "The Dock, South of your House.",
+    :Location2 => "The Front Gate of Your Home.",
+    :Location3 => "Your Home's Garden's Maze.",
+    :Location4 => "The Front Gate of Your Home.",
+    :QuestDescription1 => "Even if you lived here your whole life, you know very little about the Kyrac Region. You'll be going to the first City by using your Father's Yacht.",
     :QuestDescription => "Julia noticed there's something odd about the guards this morning, go talk to them to find out what's wrong.",
-    :QuestDescription4 => "Now that you found the evidence to proof the Guards have been drunk, you should let your mother know by phone. How? Well there should be a phone on the Yacht perhaps.",   
+    :QuestDescription5 => "Now that you found the evidence to proof the Guards have been drunk, you should let your mother know by phone. How? Well there should be a phone on the Yacht perhaps. So get going and get on the Yacht!",   
     :RewardString => "You are now a pro-detective! Next step? Becoming a pro in Pokémon Battling!"
   }
 
@@ -65,7 +68,7 @@ module QuestModule
     :Stage3 => "Battle your Rivals!",
     :Location => "Prof Oak's Lab.",
     :QuestDescription => "It is time to choose your official Starter Pokémon and challenge your Rivals to a Pokémon Battle.",
-    :RewardString => "You'll arrive in Hester City."
+    :RewardString => "You got your Official Starter Pokémon, how cool is that?"
   }
 
   #Story Quest 4
@@ -75,7 +78,7 @@ module QuestModule
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Explore the Yacht!",
     :Location1 => "The Yacht",
-    :QuestDescription3 => "Explore the Yacht the way you want! Talk to both your rivals, defeat at least 5 trainers and receive the Oldrod from the fisherman.",
+    :QuestDescription => "Explore the Yacht the way you want! Talk to both your rivals, defeat at least 5 trainers and receive the Oldrod from the fisherman.",
     :RewardString => "You'll arrive in Hester City."
   }
   
@@ -83,7 +86,7 @@ module QuestModule
   #Story Quest 5
   Quest7 = {
     :ID => "7",
-    :Name => "FPI at the Trainer School!",
+    :Name => "The FPI at the Trainer School!",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Go to the Trainer School!",
     :Stage2 => "Help your Rivals fight the FPI Grunts!",

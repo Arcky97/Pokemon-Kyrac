@@ -6238,14 +6238,6 @@ Price = 0
 Flags = KeyItem
 Description = A device that allows you to access the Pokémon storage system. There are some places where it won't work.
 #-------------------------------
-[YACHTTICKET]
-Name = Yacht Ticket
-NamePlural = Yacht Tickets
-Pocket = 8
-Price = 0
-Flags = KeyItem
-Description = A ticket required to board the Yacht owned by your family. That's right it's a private Yacht baby!
-#-------------------------------
 [OLDSEAMAP]
 Name = Old Sea Map
 NamePlural = Old Sea Maps
@@ -6269,3 +6261,11 @@ Pocket = 8
 Price = 0
 Flags = KeyItem
 Description = The item you don't recognize that you found in your mom's bedroom's drawer.
+#--------------------------------
+Name = Quest Log
+NamePlural = Quest Log
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = KeyItem
+Description = Press F to quickly open your Quest Log.

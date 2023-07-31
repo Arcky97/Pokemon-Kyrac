@@ -34,15 +34,15 @@ SORT_QUESTS = true
 # Add in your own colors here!
 def colorQuest(color)
   color = color.downcase if color
-  return "7DC076EF" if color == "blue"
-  return "089D5EBF" if color == "red"
-  return "26CC4B56" if color == "green"
-  return "6F697395" if color == "cyan"
-  return "5CFA729D" if color == "magenta"
-  return "135D47BF" if color == "yellow"
-  return "56946F5A" if color == "gray"
-  return "7FDE6B39" if color == "white"
-  return "751272B7" if color == "purple"
-  return "0E7F4F3F" if color == "orange"
-  return "2D4A5694" # Returns the default dark gray color if all other options are exhausted
+  return "7E692D49" if color == "blue"
+  return "2D9D2D49" if color == "red"
+  return "3F322D49" if color == "green"
+  return "738F2D49" if color == "cyan"
+  return "65DB2D49" if color == "magenta"
+  return "337D2D49" if color == "yellow"
+  return "62F72D49" if color == "gray"
+  return "7FDE2D49" if color == "white"
+  return "75F62D49" if color == "purple"
+  return "2EDF2D49" if color == "orange"
+  return "7FDE2D49" # Returns the default dark gray color if all other options are exhausted
 end

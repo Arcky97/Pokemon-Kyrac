@@ -7,8 +7,8 @@ class Window_Quest < Window_DrawableCommand
     @quests = []
     super(x,y,width,height,viewport)
     self.windowskin = nil
-    @selarrow = AnimatedBitmap.new("Graphics/Pictures/selarrow")
-    RPG::Cache.retain("Graphics/Pictures/selarrow")
+    @selarrow = AnimatedBitmap.new("Graphics/Pictures/selarrow_white")
+    RPG::Cache.retain("Graphics/Pictures/selarrow_white")
   end
   
   def quests=(value)
@@ -66,11 +66,11 @@ class QuestList_Scene
     @viewport = Viewport.new(0,0,Graphics.width,Graphics.height)
     @viewport.z = 99999
     @sprites = {}
-    @base = Color.new(80,80,88)
-    @shadow = Color.new(160,160,168)
-    addBackgroundPlane(@sprites,"bg","QuestUI/bg_1",@viewport)
+    @base = Color.new(248, 248, 248)
+    @shadow = Color.new(72, 80, 88)
+    addBackgroundPlane(@sprites,"bg","QuestUI/bg_1_dark",@viewport)
     @sprites["base"] = IconSprite.new(0,0,@viewport)
-    @sprites["base"].setBitmap("Graphics/Pictures/QuestUI/bg_2")
+    @sprites["base"].setBitmap("Graphics/Pictures/QuestUI/bg_2_dark")
     @sprites["page_icon1"] = IconSprite.new(0,4,@viewport)
     if SHOW_FAILED_QUESTS
       @sprites["page_icon1"].setBitmap("Graphics/Pictures/QuestUI/page_icon1a")
@@ -111,13 +111,13 @@ class QuestList_Scene
     @sprites["overlay2"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     @sprites["overlay2"].opacity = 0
     pbSetSystemFont(@sprites["overlay2"].bitmap)
-    @sprites["overlay3"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
+    @sprites["overlay3"] = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
     @sprites["overlay3"].opacity = 0
     pbSetSystemFont(@sprites["overlay3"].bitmap)
-    @sprites["overlay_control"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
+    @sprites["overlay_control"] = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
     pbSetSystemFont(@sprites["overlay_control"].bitmap)
     pbDrawTextPositions(@sprites["overlay1"].bitmap,[
-      [_INTL("{1} tasks", @quests_text[@current_quest]),6,6,0,Color.new(248,248,248),Color.new(0,0,0),true]
+      [_INTL("{1} tasks", @quests_text[@current_quest]), 6, 6, 0, Color.new(248,248,248), Color.new(72, 80, 88), true]
     ])
     drawFormattedTextEx(@sprites["overlay_control"].bitmap,38,320,
       436,"<c2=#{colorQuest("red")}>ARROWS:</c2> Navigate",@base,@shadow)
@@ -171,7 +171,7 @@ class QuestList_Scene
     @sprites["itemlist"].quests = @quests[@current_quest]
     @sprites["pageIcon"].x = @sprites["page_icon1"].x + 32*@current_quest
     pbDrawTextPositions(@sprites["overlay1"].bitmap,[
-      [_INTL("{1} tasks", @quests_text[@current_quest]),6,6,0,Color.new(248,248,248),Color.new(0,0,0),true]
+      [_INTL("{1} tasks", @quests_text[@current_quest]),6,6,0,Color.new(248,248,248),Color.new(72, 80, 88), true]
     ])
   end
   
@@ -265,7 +265,7 @@ class QuestList_Scene
     # Total number of stages for quest
     questLength = $quest_data.getMaxStagesForQuest(quest.id)
     # Map quest was originally started
-    originalMap = quest.location
+    originalMap =  quest.location
     # Vary text according to map name
     loc = originalMap.include?("Route") ? "on" : "in"
     # Format time
