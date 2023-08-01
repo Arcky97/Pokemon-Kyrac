@@ -35,7 +35,7 @@
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
   + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
   + [V1.29.1C - Release July 27 2023](#V1291C---Release-July-27-2023)
-  + [V1.29.4C - Release July 31 2023](#V1294C---Release-July-31-2023)
+  + [V1.29.18V - Release July 31 2023](#V12918V---Release-July-31-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -608,13 +608,41 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the Father's Assistant not spawning on the right spot.
 
-### V1.29.4C - Release July 31 2023
+### V1.29.18V - Release July 31 2023
 
 - Removed the Phone from the Poke Gear.
 
 - Reworked some Dialogues on the Player's House's Garden map.
 
 - Added some extra colloring when mentioning an Item or Object
+
+- The green (roofed) house in the North of Hester City is now called "NPC House 1".
+
+- The green (roofed) house in the North of Hester City (Second one next to the Poké Center) is now called "NPC House 2".
+
+- The green (roofed) house in the North of Hester City (First one next to the Poké Center) is now called "NPC House 3".
+
+- the blue (roofed) house in the North-West of Hester City (South of the dock) is now called "NPC House 4"
+
+- the small blue (roofed) house in the North-West of Hester City (South-West of the dock) is now called "NPC House 5".
+
+- the small blue (roofed) house in the North-West of Hester City (South of the dock) is now called "NPC House 6".
+
+- the small bleu (roofed) house in the North-West of Hester City (South-East of the dock) is now called "NPC House 7".
+
+- the green (roofed) house in the South of Hester City (South-West of the Trainer School) is now called "NPC House 8".
+
+- the green (roofed) house in the South of Hester City (South-East of the Trainer School) is now called "NPC House 9".
+
+- the Poké Center in Hester City is now called "Hester City Poké Center".
+
+- When you go to the Dock in Hester City, the map name will change to "Hester City - Docks".
+
+- When you go to the Mart in Hester City, the map name will change to "Hester City - Mart".
+
+- When you go to the Beach in the East of Hester City (not the Hester Beach map itself), the map name will change to "Hester City - Beach".
+
+- Anywhere else in Hester city, the map name will be "Hester City".
 
 - Fixed a crash on leaving Prof. Oak's lab for the first time.
 
@@ -623,6 +651,42 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed Ralph not moving after finding the Black Belt.
 
 - Fixed the Battle not starting with Ralph after giving back his Black Belt.
+
+- Fixed NPC Bill giving you an item over and over.
+
+- Fixed Healing Balls not playing in the Yacht's Poké Center.
+
+- Fixed move route of NPC Roberto in the Yacht's Poké Center.
+
+- Fixed the 3rd cabin on the Yacht B1F crashing the game when entering.
+
+- Fixed the color for Bug-Type mentioned by Trainer Mathew.
+
+- Fixed the servant repeating the kitchen warning when talked to her before trying to enter the kitchen.
+
+- Fixed the transparancy for the Yacht in Hester City.
+
+- Fixed the spawn position when leaving the Poké Center in Hester City.
+
+- Fixed the spawn position when leaving the green (roofed) house in the North of Hester City.
+
+- Fixed the spawn position when leaving the green (roofed) house (the backdoor) in the North of Hester City.
+
+- Fixed the spawn position when leaving the green (roofed) house in the North of Hester City (Second one next to the Poké Center).
+
+- Fixed the spawn position when leaving the green (roofed) house (the backdoor) in the North of Hester City (Second one next to the Poké Center).
+
+- Fixed the spawn position when leaving the green (roofed) house in the North of Hester City (First one next to the Poké Center).
+
+- Fixed the spawn position when leaving the green (roofed) house (the backdoor) in the North of Hester City (First one next to the Poke Center).
+
+- Fixed the spawn position when leaving the green (roofed) house in the South of Hester City (South-West of the Trainer School).
+
+- Fixed the spawn position when leaving the green (roofed) house in the South of Hester City (South-East of the Trainer School).
+
+- Fixed the spawn position when leaving the Trainer School in Hester City.
+
+- Fixed the Map name not being Hester City when leaving the Yacht for the First time.
 
 ## Credits:
 
