@@ -20,29 +20,31 @@ def objectCounter(object, value, total=0, mapArrayToUse=nil)
   objectCounter = []
   if total == 0 && value != 0
     if mapArrayToUse
-      for i in 1...arrayMaps.length
-        mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[i])
+      for i in 1...arrayMaps[0].length
+        mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[0][i])
         map = load_data(mapIDName)
-        objectCounter.push(countObjects(object, map))
+        objectCounter.push(countObjects(object, map, arrayMaps[1]))
       end
     else
       mapID = $game_map.map_id 
       map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
-      objectCounter = countObjects(object, map) #returns [objectCounter, bonusCounter]
+      objectCounter = countObjects(object, map, arrayMaps[1]) #returns [objectCounter, bonusCounter]
     end
     objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length >= 2
     objectCounter[0] -= objectCounter[1] # objectCounter - bonusCounter
+    #objectCounter[0] -= arrayMaps[1].length
   end
   total = objectCounter[0] if objectCounter[0] != nil
   bonusTotal = objectCounter[1] if objectCounter[1] != nil
   displayCounterWindow(object, value, total, bonusTotal)
 end
 
-def countObjects(object, map)
+def countObjects(object, map, eventsToExcl)
   bonusArray = fieldMoveItems + badgeItems
   objectCounter, bonusCounter = 0, 0
+  eventsToExcl = [0] if !eventsToExcl
   for i in map.events.keys
-    next if !map.events[i].name.include?(object.chop) 
+    next if !map.events[i].name.include?(object.chop) || eventsToExcl.include?(map.events[i].id)
     objectCounter += 1
     for j in 0...bonusArray.length
       next if !map.events[i].name.include?(bonusArray[j])
@@ -86,7 +88,7 @@ def arrayDecider(mapArrayToUse)
   arrayMaps = $arrayMaps if $arrayMaps !=0
   case mapArrayToUse
   when "Yacht"
-    arrayMaps = [0, 24, 31, 122]
+    arrayMaps = [[0, 24, 31, 122], [53]] #map IDs to count objects from, event IDs to exclude in the count.
   end
   $arrayMaps = arrayMaps
   return arrayMaps

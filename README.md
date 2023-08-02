@@ -35,7 +35,7 @@
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
   + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
   + [V1.29.1C - Release July 27 2023](#V1291C---Release-July-27-2023)
-  + [V1.29.18V - Release July 31 2023](#V12918V---Release-July-31-2023)
+  + [V1.29.20W - Release July 31 2023](#V12920W---Release-July-31-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -608,13 +608,17 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the Father's Assistant not spawning on the right spot.
 
-### V1.29.18V - Release July 31 2023
+### V1.29.32AF - Release July 31 2023
 
 - Removed the Phone from the Poke Gear.
 
 - Reworked some Dialogues on the Player's House's Garden map.
 
 - Added some extra colloring when mentioning an Item or Object
+
+- Trainer Mathew on the Yacht B1F will now dissapear once the Yacht has arrived in Hester City.
+
+- NPC Taylor and NPC Mike will dissapear once the Yacht has arrived in Hester City.
 
 - The green (roofed) house in the North of Hester City is now called "NPC House 1".
 
@@ -643,6 +647,30 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - When you go to the Beach in the East of Hester City (not the Hester Beach map itself), the map name will change to "Hester City - Beach".
 
 - Anywhere else in Hester city, the map name will be "Hester City".
+
+- Changed the line after trying to go anywhere except the Trainer School or Poké center from "You should head to the Trainer School instead!" to "(name box with player's name)I should probably head to the Trainer School isntead!".
+
+- After the Trainer School event with the FPI, when the player tries to enter the Gym building it will now say "(name box with player's name)The door is locked, there might be another way to enter the gym.".
+
+- Added the missing map Transfer event to go from Hester City to Route 1.
+
+- Added a little Arrow Icon to indicate something is in the North-East of the Sign.
+
+- Added a little Arrow Icon to indicate something is in the South-East of the Sign.
+
+- Added a little Arrow Icon to indicate something is in the South-West of the Sign.
+
+- Added a little Arrow Icon to indicate something is in the North-West of the Sign.
+
+- Updated the little Arrow Icon to indicate something is in the North of the Sign.
+
+- Updated the little Arrow Icon to indicate something is in the East of the Sign. 
+
+- Updated the little Arrow Icon to indicate something is in the South of the Sign.
+
+- Updated the little Arrow Icon to indicate something is in the West of the Sign.
+
+- Instead of the Sign skin, the signs use a name window to indicate it is the Sign "speaking".
 
 - Fixed a crash on leaving Prof. Oak's lab for the first time.
 
@@ -687,6 +715,26 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed the spawn position when leaving the Trainer School in Hester City.
 
 - Fixed the Map name not being Hester City when leaving the Yacht for the First time.
+
+- Fixed the Trainer Counter on the Yacht when fighting the Trainer couple Windy and Ron. When defeated together, counter will be increased by 2 at once. When defeated indiviually the Counter will only be increased by 1 (also 2 in total if you defeat them both individually).
+
+- Fixed the color of Rival 2's Starter in the name window.
+
+- Fixed a missing exclamation mart when Rival 2 says "I'm going in!".
+
+- Fixed the map transfer event from Hester City to Route 1 so it prevents the player from going to Route 1 before finishing the FPI in the Trainer School event.
+
+- Fixed the different dialogues the Rivals say before and after fighting the grunts with them.
+
+- Fixed the color of the ??? in the name box having the wrong color when a NPC talks but the player don't know yet who.
+
+- Fixed the Correct Quest updating in the Trainer School after defeating the Grunts.
+
+- Fixed the wrong Quest being activated after leaving the Yacht for the first time.
+
+- Fixed the wrong Quest Stage being activated after the Rivals entered the Trainer School.
+
+- Fixed the wrong Quest Stage being activated after defeating the FPI Grunts in the Trainer School. 
 
 ## Credits:
 
