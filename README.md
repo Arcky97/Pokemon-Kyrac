@@ -35,7 +35,7 @@
   + [V1.27.0A - Release July 17 2023](#V1270A---Release-July-17-2023)
   + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
   + [V1.29.1C - Release July 27 2023](#V1291C---Release-July-27-2023)
-  + [V1.29.20W - Release July 31 2023](#V12920W---Release-July-31-2023)
+  + [V1.29.33AK - Release July 31 2023](#V12933AK---Release-July-31-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -608,7 +608,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the Father's Assistant not spawning on the right spot.
 
-### V1.29.32AG - Release July 31 2023
+### V1.29.33AK - Release July 31 2023
 
 - Removed the Phone from the Poke Gear.
 
