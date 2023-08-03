@@ -529,7 +529,7 @@ class PokemonSaveScreen
     end
 
     # Map name
-    map_str = $game_variables[62] #pbGetMapNameFromId(temp_save_data[:map_factory].map.map_id)
+    map_str = temp_save_data[:variables][62]
 
     # Elapsed time
     totalsec = (temp_save_data[:frame_count] || 0) / Graphics.frame_rate

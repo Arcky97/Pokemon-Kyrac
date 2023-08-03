@@ -608,7 +608,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the Father's Assistant not spawning on the right spot.
 
-### V1.29.32AF - Release July 31 2023
+### V1.29.32AG - Release July 31 2023
 
 - Removed the Phone from the Poke Gear.
 
@@ -671,6 +671,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Updated the little Arrow Icon to indicate something is in the West of the Sign.
 
 - Instead of the Sign skin, the signs use a name window to indicate it is the Sign "speaking".
+
+- Added some extra dialogues for Diana in the Trainer School Library.
 
 - Fixed a crash on leaving Prof. Oak's lab for the first time.
 
@@ -735,6 +737,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed the wrong Quest Stage being activated after the Rivals entered the Trainer School.
 
 - Fixed the wrong Quest Stage being activated after defeating the FPI Grunts in the Trainer School. 
+
+- Fixed the map names on the Multi Save screen showing the same map name every time.
+
+- Fixed the map name when entering the Trainer School Library.
+
+- Fixed one of the FPI Grunts still be visuable when they shouldn't be yet.
+
+- Fixed when you black out in 1 of the grunt battles with your rival, if you finished the other battle already, it let's you battle the same grunts again.
+
+- Fixed after blacking out and saving your game, on restart the music is not playing anymore.
 
 ## Credits:
 
