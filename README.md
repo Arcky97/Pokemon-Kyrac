@@ -36,6 +36,7 @@
   + [V1.28.38E - Release July 23 2023](#V12838E---Release-July-23-2023)
   + [V1.29.1C - Release July 27 2023](#V1291C---Release-July-27-2023)
   + [V1.29.33AK - Release July 31 2023](#V12933AK---Release-July-31-2023)
+  + [V1.29.35G - Release August 13 2023](#V12935G---Release-August-13-2023)
 - [Credits](#Credits)
 
 ## Story
@@ -147,6 +148,16 @@ It works similar to how mega evolution works but it's been triggered outside of 
 ## Future Plans
 
 ## Release Notes
+
+### Version format explanation
+
+- v1 - release version
+
+- v1.0 - Feature/maps added.
+
+- v1.0.1 - Improvements made.
+
+- v1.0.1B - Bug/Typos fixes.
 
 ### V1.0.1B - Release December 21 2022
 
@@ -747,6 +758,28 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed when you black out in 1 of the grunt battles with your rival, if you finished the other battle already, it let's you battle the same grunts again.
 
 - Fixed after blacking out and saving your game, on restart the music is not playing anymore.
+
+### V1.29.35G - Release Agust 13 2023
+
+- The Switch Counter stays visible as long as you haven't activated all 3 of them.
+
+- When talking to one of the Book shelves that has a hidden switch, the player will show an exclamation mark first to indicate something's odd more specifically.
+
+- Fixed when you black out on the 3rd grunt battle (the one you fight alone). The Grunt coming out of the library being visible already.
+
+- Fixed when you black out, the Follower Pokémon doesn't appear.
+
+- Fixed a missing space on a dialogue a rivals says after defeating all the grunts in the trainer school.
+
+- Fixed the tile next to the Trainer School door being passable while it shouldn't.
+
+- Fixed the wait time for the follower to enter the library door while the follower has been turned off (for this event only).
+
+- Fixed the scene when entering the Library for the first time with NPC Diana.
+
+- Fixed Quest 7 being marked as completed upon entering the library for the first time.
+
+- Fixed and edited on how the follower is toggled upon entering and leaving the hidden room in the library.
 
 ## Credits:
 
