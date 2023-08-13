@@ -11,7 +11,7 @@
   + [Demo 1 Release Notes and Download](https://github.com/Arcky97/Pokemon-Kyrac/tree/V0.12.1F-Demo-1)
   + [Version Format Explanation](#verson-format-explanation)
   + [V1.0.1B - Release December 21 2022](#v101b---release-december-21-2022)
-  + [V1.1.3F - Release December 25 2022](#v113f---release-december-25-2022)
+  + [V1.1.3F - Release December 25 2022](#v113f---release-december-25-2022-)
   + [V1.2.0A - Release December 28 2022](#v120a---release-december-28-2022)
   + [V1.3.3A - Release December 31 2022](#v133a---release-december-31-2022)
   + [V1.4.2A - Release January 13 2023](#v142a---release-january-13-2023)
