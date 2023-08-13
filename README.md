@@ -161,7 +161,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - v1.0.1B - Bug/Typos fixes.
 
 ### V1.0.1B - Release December 21 2022
-(#table-of-content)
++ [Table of Content](#table-of-content)
 
 - Fixed an issue with the player being able to leave the player's room before having the PokeGear
 
