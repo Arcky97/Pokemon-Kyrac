@@ -761,7 +761,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed after blacking out and saving your game, on restart the music is not playing anymore.
 
-### V1.29.35G - Release Agust 13 2023
+### V1.29.35G - Release August 13 2023
 
 - The Switch Counter stays visible as long as you haven't activated all 3 of them.
 
@@ -782,6 +782,14 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Fixed Quest 7 being marked as completed upon entering the library for the first time.
 
 - Fixed and edited on how the follower is toggled upon entering and leaving the hidden room in the library.
+
+### V1.32.0A - Release August 14 2023
+
+- Added a game logo to the game.exe file.
+
+- Reworked Route 1.
+
+- Reworked Route Intersection.
 
 ## Credits:
 
