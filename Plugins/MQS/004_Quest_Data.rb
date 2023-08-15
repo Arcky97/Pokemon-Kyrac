@@ -51,7 +51,7 @@ module QuestModule
     :ID => "4",
     :Name => "The a-Maze-ing Quest!",
     :QuestGiver => "Yourself",
-    :Stage1 => "Find all items",
+    :Stage1 => "Find all the items.",
     :Location1 => "Your Home's Garden.",
     :QuestDescription => "Go through the maze and try to find all off the hidden items. (10 in total) ",
     :RewardString => "A lot of useful items."
@@ -89,21 +89,24 @@ module QuestModule
     :Name => "The FPI at the Trainer School!",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Go to the Trainer School!",
-    :Stage2 => "Help your Rivals fight the FPI Grunts!",
-    :Stage3 => "Find the FPI Boss in the Trainer School's Library",
+    :Stage2 => "Fight the FPI Grunts!",
+    :Stage3 => "Find the FPI Boss.",
     :Stage4 => "Enter the hidden room.",
     :Location1 => "Hester City",
     :Location2 => "Trainer School",
     :Location3 => "Trainer School's Library",
     :Location4 => "Trainer School's Hidden Room",
-    :QuestDescription => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
+    :QuestDescription1 => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
+    :QuestDescription2 => "Prepare yourself and head inside the Trainer School to face the FPI Grunts alongside your Rivals.",
+    :QuestDescription3 => "The FPI Boss is inside the Trainer School Library, go find him!",
+    :QuestDescription4 => "Enter the Hidden Room and stop the FPI Boss!",
     :RewardString => "a gift from \\v[52]."
   }
 
   #Story Quest 6
   Quest8 = {
     :ID => "8",
-    :Name => "Talk to Prof. Oak.",
+    :Name => "The Dark Type Gym!",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",
