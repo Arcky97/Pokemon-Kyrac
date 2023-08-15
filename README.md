@@ -783,7 +783,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed and edited on how the follower is toggled upon entering and leaving the hidden room in the library.
 
-### V1.32.1A - Release August 14 2023
+### V1.32.2A - Release August 14 2023
 
 - Added a game logo to the game.exe file.
 
