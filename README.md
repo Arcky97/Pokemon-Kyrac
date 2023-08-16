@@ -783,7 +783,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed and edited on how the follower is toggled upon entering and leaving the hidden room in the library.
 
-### V1.32.2A - Release August 14 2023
+### V1.32.2B - Release August 14 2023
 
 - Added a game logo to the game.exe file.
 
@@ -794,6 +794,8 @@ It works similar to how mega evolution works but it's been triggered outside of 
 - Changed the dialogue when trying to enter the house after leaving the house for the first time (before getting to the yacht).
 
 - Added a dialogue when talking to the shelves in the Yacht's Poké Centre.
+
+- Fixed the reward string for Quest 7, it'll now mention the Rival's name.
 
 ## Credits:
 

@@ -100,7 +100,7 @@ module QuestModule
     :QuestDescription2 => "Prepare yourself and head inside the Trainer School to face the FPI Grunts alongside your Rivals.",
     :QuestDescription3 => "The FPI Boss is inside the Trainer School Library, go find him!",
     :QuestDescription4 => "Enter the Hidden Room and stop the FPI Boss!",
-    :RewardString => "a gift from \\v[52]."
+    :RewardString => "A gift from \\v[45]."
   }
 
   #Story Quest 6
@@ -110,7 +110,7 @@ module QuestModule
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",
-    :QuestDescription => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
+    :QuestDescription1 => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
     :RewardString => "nothing yet"
   }
 

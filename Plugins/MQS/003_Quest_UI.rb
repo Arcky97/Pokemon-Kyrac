@@ -279,7 +279,10 @@ class QuestList_Scene
     end
     # Quest reward
     questReward = $quest_data.getQuestReward(quest.id)
-	active_quests = getActiveQuests
+    if questReward.include?("\\v")
+      questReward.gsub!(/\\v\[(\d+)\]/) { $game_variables[$1.to_i] }
+    end
+	  active_quests = getActiveQuests
     if questReward=="nil" || questReward=="" || active_quests.include?(quest.id)
       questReward = "???"
     end
