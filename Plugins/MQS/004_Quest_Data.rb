@@ -106,7 +106,7 @@ module QuestModule
   #Story Quest 6
   Quest8 = {
     :ID => "8",
-    :Name => "The Dark Type Gym!",
+    :Name => "Finding the gym!",
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",

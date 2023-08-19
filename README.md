@@ -797,6 +797,22 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed the reward string for Quest 7, it'll now mention the Rival's name.
 
+### V1.32.7C - Release August 19 2023
+
+- Changed the option dialogues when the professor greets you in the lab for the first time.
+
+- Changed the option dialogues after winning the first Rival Battle in the lab.
+
+- Changed Prof. Oak's respond dialogue as well.
+
+- Changed the 6th Main Quest's name to "Finding the gym!".
+
+- Liz on the Yacht now has a different position and has now dialogues depending if you battled her before or if you have been in her cabin before.
+
+- Fixed Liz's dialogue not changing after defeating/talking to the Guard on the Yacht.
+
+- Fixed a crash when leaving Liz's Cabin on the Yacht F1.
+
 ## Credits:
 
 Essentials: Maruno
