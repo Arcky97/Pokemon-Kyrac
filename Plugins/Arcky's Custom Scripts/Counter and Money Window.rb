@@ -14,37 +14,51 @@ def closeCounter
   $counterwindow = nil
 end
 
-def objectCounter(object, value, total=0, mapArrayToUse=nil)
+def objectCounter(object, value, total=0, arrayToUse=nil)
   total = 0 if $player.badge_count > 0
-  arrayMaps = arrayDecider(mapArrayToUse)
+  array = arrayDecider(arrayToUse)
   objectCounter = []
   if total == 0 && value != 0
-    if mapArrayToUse
-      for i in 1...arrayMaps[0].length
-        mapIDName = sprintf("Data/Map%03d.rxdata", arrayMaps[0][i])
+    if array[0].length > 1
+      for i in 0...array[0].length
+        mapIDName = sprintf("Data/Map%03d.rxdata", array[0][i])
         map = load_data(mapIDName)
-        objectCounter.push(countObjects(object, map, arrayMaps[1]))
+        objectCounter.push(countObjects(object, map, array[1]))
       end
+      objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length >= 2
+      objectCounter[0] -= objectCounter[1] if objectCounter[1] # objectCounter - bonusCounter
     else
-      mapID = $game_map.map_id 
+      mapID = arrayToUse ? array[0][0] : $game_map.map_id 
       map = load_data(sprintf("Data/Map%03d.rxdata", mapID))
-      objectCounter = countObjects(object, map, arrayMaps[1]) #returns [objectCounter, bonusCounter]
+      objectCounter = countObjects(object, map, array[1]) #returns [objectCounter, bonusCounter]
     end
-    objectCounter = objectCounter.transpose.map(&:sum) if objectCounter.length >= 2
-    objectCounter[0] -= objectCounter[1] # objectCounter - bonusCounter
-    #objectCounter[0] -= arrayMaps[1].length
   end
   total = objectCounter[0] if objectCounter[0] != nil
   bonusTotal = objectCounter[1] if objectCounter[1] != nil
   displayCounterWindow(object, value, total, bonusTotal)
 end
 
-def countObjects(object, map, eventsToExcl)
+def countObjects(object, map, switches)
   bonusArray = fieldMoveItems + badgeItems
   objectCounter, bonusCounter = 0, 0
-  eventsToExcl = [0] if !eventsToExcl
+  eventsToExcl = []
+  switches.each do |switch|
+    convertedSwitch = convertSwitchName(switch)
+    eventsToExcl.push(convertedSwitch)
+  end
+  lastOnSwitch = nil
+  if switches 
+    switches.reverse_each do |switch|
+      if $game_switches[switch]
+        lastOnSwitch = switch
+        break
+      end 
+    end 
+    switchName = convertSwitchName(lastOnSwitch) if lastOnSwitch
+  end 
+  eventsToExcl.delete_if { |element| element == switchName }
   for i in map.events.keys
-    next if !map.events[i].name.include?(object.chop) || eventsToExcl.include?(map.events[i].id)
+    next if !map.events[i].name.to_s.include?(object.to_s.chop) || eventsToExcl.any? { |excl| map.events[i].name.to_s.include?(excl.to_s) }
     objectCounter += 1
     for j in 0...bonusArray.length
       next if !map.events[i].name.include?(bonusArray[j])
@@ -52,6 +66,16 @@ def countObjects(object, map, eventsToExcl)
     end
   end
   return objectCounter, bonusCounter
+end
+
+def convertSwitchName(switch)
+  name = $data_system.switches[switch]
+  words = name.split(" ")
+  result = ""
+  words.each do |word|
+    result += word[0].upcase if word.length > 0
+  end 
+  return result
 end
 
 def fieldMoveItems
@@ -84,12 +108,11 @@ def badgeItems
   return ret 
 end
 
-def arrayDecider(mapArrayToUse)
-  arrayMaps = $arrayMaps if $arrayMaps !=0
-  case mapArrayToUse
+def arrayDecider(arrayToUse)
+  array = [[], []]
+  case arrayToUse
   when "Yacht"
-    arrayMaps = [[0, 24, 31, 122], [53]] #map IDs to count objects from, event IDs to exclude in the count.
+    array = [[24, 31, 122], [59, 66]] #map IDs to count objects from and game switch ID to take in account.
   end
-  $arrayMaps = arrayMaps
-  return arrayMaps
+  return array
 end

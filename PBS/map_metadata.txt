@@ -41,7 +41,7 @@ Name = Route 1
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,35,21
+MapPosition = 1,5,1
 SnapEdges = true
 MapSize = 2,11
 #-------------------------------
@@ -56,7 +56,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 BicycleAlways = false
-MapPosition = 0,37,21
+MapPosition = 1,7,1
 SafariMap = false
 SnapEdges = true
 MapSize = 1,1
@@ -72,32 +72,31 @@ SnapEdges = true
 Name = Yacht F1
 MapPosition = 0,24,15
 #-------------------------------
-[025]   # Yacht - B1F - Dining Room
+[025]
 Name = Yacht B1F
 Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
-[026]   # Yacht - B1F - Kitchen
+[026]
 Name = Yacht B1F
 Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
-[027]   # Yacht - B1F - Storage
+[027]
 Name = Yacht B1F
 Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
-
 #-------------------------------
-[036]   # Yacht - B1F - Hallway
+[036]
 Name = Yacht F1
 Outdoor = false
 MapPosition = 0,40,10
 SnapEdges = true
 #-------------------------------
-[037]   # Yacht - B1F - Cabins
+[037]
 Name = Yacht F1
 Outdoor = false
 MapPosition = 0,40,10
@@ -113,7 +112,7 @@ Name = Route 4
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,49,10
+MapPosition = 1,49,10
 SnapEdges = true
 MapSize = 3,111
 #-------------------------------
@@ -122,7 +121,7 @@ Name = Route 2
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,37,22
+MapPosition = 1,7,2
 SnapEdges = true
 MapSize = 1,11
 Flags = ForceBikeDown
@@ -132,7 +131,7 @@ Name = Franta Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,41,25
+MapPosition = 1,11,5
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
@@ -141,7 +140,7 @@ Name = Tila Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,48,7
+MapPosition = 1,6,4
 SnapEdges = true
 MapSize = 2,11
 #-------------------------------
@@ -150,7 +149,7 @@ Name = Route 3
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,38,24
+MapPosition = 1,8,4
 SnapEdges = true
 MapSize = 3,110011
 #-------------------------------
@@ -159,7 +158,7 @@ Name = Flutford Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,31,24
+MapPosition = 1,1,4
 SnapEdges = true
 MapSize = 1,11
 #-------------------------------
@@ -168,7 +167,7 @@ Name = Route 5
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,50,7
+MapPosition = 1,50,7
 SnapEdges = true
 MapSize = 2,0111
 #-------------------------------
@@ -178,7 +177,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 BicycleAlways = false
-MapPosition = 0,16,7
+MapPosition = 1,16,7
 SnapEdges = true
 MapSize = 1,111
 #-------------------------------
@@ -186,7 +185,7 @@ MapSize = 1,111
 Name = A Farmer's farm
 Outdoor = true
 ShowArea = true
-MapPosition = 0,38,22
+MapPosition = 1,8,2
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
@@ -195,7 +194,7 @@ Name = Sea Shore
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,32,25
+MapPosition = 1,2,5
 SnapEdges = true
 #-------------------------------
 [069]   # Trainer School
@@ -205,7 +204,7 @@ Name = Trainer School
 Name = Trainer School
 Outdoor = false
 ShowArea = false
-MapPosition = 0,55,10
+MapPosition = 1,55,10
 SnapEdges = true
 MapSize = 3,111
 #-------------------------------
@@ -215,7 +214,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 HealingSpot = 16,7,4
-MapPosition = 0,33,21
+MapPosition = 1,3,1
 SnapEdges = true
 MapSize = 2,1111
 #-------------------------------
@@ -226,7 +225,7 @@ Name = Green Houses
 Name = Hester Forest
 Outdoor = true
 ShowArea = true
-MapPosition = 0,35,22
+MapPosition = 1,5,2
 SnapEdges = true
 #-------------------------------
 [082]   # Route 18-19
@@ -234,7 +233,7 @@ Name = Route 99
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,13,11
+MapPosition = 1,13,11
 SnapEdges = true
 MapSize = 2,111010
 #-------------------------------
@@ -260,5 +259,5 @@ Name = Hester Beach
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,32,22
+MapPosition = 1,2,2
 SnapEdges = true

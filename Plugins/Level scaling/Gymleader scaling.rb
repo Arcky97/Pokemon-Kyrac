@@ -1,6 +1,6 @@
 Firstevo=40
 Secondevo=40
-Gymvar=32
+Gymvar=65
 Idlist=[19,20,21]
 GymList=[[1,3,2],[1,3,2,20],[2,3,1],[2,3,1,17],[2,1,10],[2,1,3,2],[3,2,10],[3,2,1,18],[3,1,14],[3,1,2,12]]
 def setNewStage(pokemon)	

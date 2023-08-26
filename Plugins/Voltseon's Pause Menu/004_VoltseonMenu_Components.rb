@@ -225,7 +225,8 @@ class VPM_NewQuestHud < Component
 
   def update
     super
-    @counter += 1
+    return if !@sprites["overlay"]
+    @counter += 1 
     if @counter > Graphics.frame_rate / 2
       @sprites["overlay"].y += 1 if @counter % (Graphics.frame_rate / 8) == 0
     else
