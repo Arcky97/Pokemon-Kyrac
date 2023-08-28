@@ -194,6 +194,8 @@ class QuestList_Scene
   end
   
   def pbQuest(quest)
+    fadeContent
+    @sprites["itemlist"].active = false
     quest.new = false
     drawQuestDesc(quest)
     15.times do

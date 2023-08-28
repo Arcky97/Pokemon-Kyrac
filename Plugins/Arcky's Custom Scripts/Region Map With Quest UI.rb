@@ -12,23 +12,26 @@ class MapBottomSprite < Sprite
       @mapname     = ""
       @maplocation = ""
       @mapdetails  = ""
-      @questname = getQuestName
+      #@questActives = getActiveQuests
+      @questName   = ""
       self.bitmap = BitmapWrapper.new(Graphics.width, Graphics.height)
       pbSetSystemFont(self.bitmap)
       refresh
     end
-  
-    def getQuestName
+
+=begin
+    def getActiveQuests
         questCount = $PokemonGlobal.quests.active_quests.count
         if questCount > 0
           if questCount == 1
-            questname = "There is #{questCount} active quest!"
+            questActives = "There is #{questCount} active quest!"
           else
-            questname = "There are #{questCount} active quests!"
+            questActives = "There are #{questCount} active quests!"
           end
         end
-        return questname
+        return questActives
     end
+=end 
 
     def mapname=(value)
       return if @mapname == value
@@ -49,13 +52,20 @@ class MapBottomSprite < Sprite
       refresh
     end
   
+    def questName=(value)
+      return if @questName == value 
+      @questName = value 
+      refresh
+    end 
+
     def refresh
       bitmap.clear
       textpos = [
         [@mapname,                     18,   4, 0, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
         [@maplocation,                 18, 360, 0, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
         [@mapdetails, Graphics.width - 16, 360, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
-        [@questname,  Graphics.width - 20,  36, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR]
+        #[@questActives,  Graphics.width - 20,  36, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
+        [@questName,     Graphics.width - 16,  4, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR]
       ]
       pbDrawTextPositions(bitmap, textpos)
     end
@@ -76,7 +86,6 @@ class MapBottomSprite < Sprite
       @region  = region
       @wallmap = wallmap
       @showQuests = quest
-      @questMap = getQuestMapPositions
     end
   
     def pbUpdate
@@ -117,6 +126,7 @@ class MapBottomSprite < Sprite
           @map_y += ($game_player.y * sqheight / $game_map.height).floor if sqheight > 1
           end
       end
+      getQuestMapPositions
       if !@map
         pbMessage(_INTL("The map data cannot be found."))
         return false
@@ -142,11 +152,13 @@ class MapBottomSprite < Sprite
       @sprites["mapbottom"].mapname     = pbGetMessage(MessageTypes::RegionNames, mapindex)
       @sprites["mapbottom"].maplocation = pbGetMapLocation(@map_x, @map_y)
       @sprites["mapbottom"].mapdetails  = pbGetMapDetails(@map_x, @map_y)
+      @sprites["mapbottom"].questName   = pbGetQuestName(@map_x, @map_y) if @showQuests
       if playerpos && mapindex == playerpos[0]
         @sprites["player"] = IconSprite.new(0, 0, @viewport)
         @sprites["player"].setBitmap(GameData::TrainerType.player_map_icon_filename($player.trainer_type))
         @sprites["player"].x = point_x_to_screen_x(@map_x)
         @sprites["player"].y = point_y_to_screen_y(@map_y)
+        @sprites["player"].z = 9997
       end
       k = 0
       (LEFT..RIGHT).each do |i|
@@ -162,20 +174,27 @@ class MapBottomSprite < Sprite
           k += 1
         end
       end
+      usedPositions = {}
       @questMap.each do |index|
         x = index[1]      # The x-coordinate of the quest
         y = index[2]      # The y-coordinate of the quest
+        if usedPositions.key?([x, y])
+          next # Skip drawing if the position is already occupied
+        end
         @sprites["mapQuest#{index}"] = AnimatedSprite.create("Graphics/Pictures/mapQuest", 2, 16)
         @sprites["mapQuest#{index}"].viewport = @viewport
         @sprites["mapQuest#{index}"].x        = point_x_to_screen_x(x)
         @sprites["mapQuest#{index}"].y        = point_y_to_screen_y(y)
-        @sprites["mapQuest#{index}"].visible  = @showQuests
+        @sprites["mapQuest#{index}"].visible  = @showQuests && $game_switches[index[4]]
         @sprites["mapQuest#{index}"].play
+        @sprites["mapQuest#{index}"].z        = 9998 if @sprites["player"].x == @sprites["mapQuest#{index}"].x && @sprites["player"].y == @sprites["mapQuest#{index}"].y
+        usedPositions[[x, y]] = true
       end
       @sprites["cursor"] = AnimatedSprite.create("Graphics/Pictures/mapCursor", 2, 5)
       @sprites["cursor"].viewport = @viewport
       @sprites["cursor"].x        = point_x_to_screen_x(@map_x)
       @sprites["cursor"].y        = point_y_to_screen_y(@map_y)
+      @sprites["cursor"].z        = 9999
       @sprites["cursor"].play
       @sprites["help"] = BitmapSprite.new(Graphics.width, 32, @viewport)
       pbSetSystemFont(@sprites["help"].bitmap)
@@ -199,7 +218,7 @@ class MapBottomSprite < Sprite
     end
   
     def location_shown?(point)
-      return point[5] if @wallmap
+      #return point[5] if @wallmap
       return point[1] > 0 && $game_switches[point[1]]
     end
   
@@ -261,6 +280,25 @@ class MapBottomSprite < Sprite
       return ""
     end
   
+    def pbGetQuestName(x, y)
+      return "" if !@map[2]
+      questName = []
+      value = ""
+      @questMap.each do |name|
+        next if name[1] != x || name[2] != y
+        @questNames = nil
+        next if !$game_switches[name[4]]
+        questName.push($quest_data.getName(name[3].id)) 
+        if questName.length >= 2
+          @questNames = questName 
+          value = "#{questName.length} Quests (press to view)"
+        else
+          value = "Quest: #{questName[0]}"
+        end
+      end
+      return value
+    end 
+
     def pbGetHealingSpot(x, y)
       return nil if !@map[2]
       @map[2].each do |point|
@@ -277,7 +315,7 @@ class MapBottomSprite < Sprite
       text = (@mode == 0) ? _INTL("ACTION: Fly") : _INTL("ACTION: Cancel Fly")
       pbDrawTextPositions(
         @sprites["help"].bitmap,
-        [[text, Graphics.width - 16, 4, 1, Color.new(248, 248, 248), Color.new(0, 0, 0)]]
+        [[text, Graphics.width - 16, 36, 1, Color.new(248, 248, 248), Color.new(0, 0, 0)]]
       )
       @sprites.each do |key, sprite|
         next if !key.include?("point")
@@ -287,17 +325,15 @@ class MapBottomSprite < Sprite
     end
   
     def getQuestMapPositions
-        questMap = []
-        activeQuests = $PokemonGlobal.quests.active_quests
-        activeQuests.each do |quest|
-            #stages = $quest_data.getQuestStages(quest.id)
-            #echoln(quest.stage) #current active stage
-            mapId = ("Map" + "#{quest.stage}").to_sym
-            map = QuestModule.const_get(quest.id)[mapId]
-            map.push(quest.id) if map
-            questMap.push(map) if map  
-        end
-        return questMap
+      @questMap = []
+      activeQuests = $PokemonGlobal.quests.active_quests
+      activeQuests.each do |quest|
+          mapId = ("Map" + "#{quest.stage}").to_sym
+          map = QuestModule.const_get(quest.id)[mapId]
+          findMap = @map[2].find { |point| point[0] == map[1] && point[1] == map[2] }
+          map.push(quest, findMap[7]) if !map.include?(quest) && !map.include?(findMap[7])
+          @questMap.push(map) if map  
+      end
     end
 
     def pbMapScene
@@ -341,6 +377,7 @@ class MapBottomSprite < Sprite
         end
         @sprites["mapbottom"].maplocation = pbGetMapLocation(@map_x, @map_y)
         @sprites["mapbottom"].mapdetails  = pbGetMapDetails(@map_x, @map_y)
+        @sprites["mapbottom"].questName   = pbGetQuestName(@map_x, @map_y) if @showQuests
         if Input.trigger?(Input::BACK)
           if @editor && @changed
             pbSaveMapData if pbConfirmMessage(_INTL("Save changes?")) { pbUpdate }
@@ -359,10 +396,29 @@ class MapBottomSprite < Sprite
         elsif Input.trigger?(Input::USE) && @editor   # Intentionally after other USE input check
           pbChangeMapLocation(@map_x, @map_y)
         elsif Input.trigger?(Input::USE) && @showQuests
-            quest_info = @questMap.find { |coords| coords && coords[1] == @map_x && coords[2] == @map_y }
-            if quest_info
-              input = pbConfirmMessage(_INTL("Would you like to view this quest in the Quest menu?"))
+          questInfo = @questMap.select { |coords| coords && coords[1] == @map_x && coords[2] == @map_y }
+          echoln(questInfo)
+          if questInfo != [] && $game_switches[questInfo[0][4]]
+            if @questNames
+              choice = pbMessage(_INTL("Which quest would you like to view info about?"), 
+              (0...@questNames.size).to_a.map{|i| 
+                next _INTL("#{@questNames[i]}")
+              }, -1)
+              input = true if choice != -1
+              questToView = questInfo[choice][3]
+            else 
+              input = pbConfirmMessage(_INTL("Would you like to view this quest in the Quest menu?")) 
+              questToView = questInfo[0][3]
             end
+            if input
+              scene = QuestList_Scene.new
+              scene.pbStartScene
+              scene.pbQuest(questToView)
+              if Input.trigger?(Input::BACK)
+                scene.pbEndScene
+              end 
+            end
+          end
         elsif Input.trigger?(Input::ACTION) && !@wallmap && !@fly_map && pbCanFly?
           pbPlayDecisionSE
           @mode = (@mode == 1) ? 0 : 1

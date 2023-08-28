@@ -3,6 +3,7 @@
 [015] # Route 01 new
 Land,21
     100,VULPIX_1,12,15
+    20,GROWLITHE,5
 #-------------------------------
 [040] # Route 04 New
 Land,21
