@@ -97,6 +97,7 @@ module QuestModule
     :Location2 => "Trainer School",
     :Location3 => "Trainer School's Library",
     :Location4 => "Trainer School's Hidden Room",
+    :Map3 => [1, 5, 3],
     :QuestDescription1 => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
     :QuestDescription2 => "Prepare yourself and head inside the Trainer School to face the FPI Grunts alongside your Rivals.",
     :QuestDescription3 => "The FPI Boss is inside the Trainer School Library, go find him!",

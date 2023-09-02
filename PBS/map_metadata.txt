@@ -182,7 +182,7 @@ SnapEdges = true
 MapSize = 1,111
 #-------------------------------
 [066]   # Farmer's Farm
-Name = A Farmer's farm
+Name = Farmer's Farm
 Outdoor = true
 ShowArea = true
 MapPosition = 1,8,2

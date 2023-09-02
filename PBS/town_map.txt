@@ -1,47 +1,47 @@
 ﻿#-------------------------------
 [0]
-Filename=mapRegion0.png
+Filename=mapRegion0
 Name="Central-Kyrac"
 #Version 1
 Point=22,14,Home,"Your house",13,36,12,
 Point=23,14,Home,"Your house",13,36,12,
-Point=22,15,Home,Beach,13,36,12,
-Point=23,15,Home,Dock,13,36,12,
+Point=22,15,Home,"Beach",13,36,12,
+Point=23,15,Home,"Dock",13,36,12,
 
 #-------------------------------
 [1]
-Filename=mapRegion1.png
+Filename=mapRegion1
 Name="West-Kyrac"
 #Version 2
-Point=4,2,"Hester City",Haven,79,52,18,56
-Point=5,2,"Hester City","Flower Garden",79,52,18,56
-Point=4,3,"Hester City",Mart,79,52,18,56
-Point=5,3,"Hester City","Trainer School",79,52,18,56
+Point=4,2,"Hester City","Haven",79,47,19,,"City"
+Point=5,2,"Hester City","Flower Garden",79,47,19,,"City"
+Point=4,3,"Hester City","Mart",79,47,19,,"City"
+Point=5,3,"Hester City","Trainer School",79,47,19,,"City"
 
 #Version 3
-Point=6,3,"Hester Forest",,,,,61
-Point=3,3,"Hester Beach",,,,,61
-Point=6,2,"Route 1",,,,,61
-Point=7,2,"Route 1",,,,,61
-Point=8,2,"Route Intersection","Radio Tower",17,17,20,61
-Point=8,3,"Route 2",,,,,61
-Point=8,4,"Route 2",,,,,61
-Point=9,3,"Farmers Farm",,,,,61
-Point=7,5,"Tila Town",,44,15,19,61
-Point=8,5,"Tila Town",,44,15,19,61
-Point=3,5,"Route 3",,,,,61
-Point=4,4,"Route 3",,,,,61
-Point=4,5,"Route 3",,,,,61
-Point=5,5,"Route 3",,,,,61
-Point=6,5,"Route 3",,,,,61
-Point=3,6,"Sea Shore",,,,,61
-Point=2,5,"Flutford Town",,46,14,34,61
-Point=2,6,"Flutford Town",,46,14,34,61
-Point=9,5,"Route 4",,,,,61
-Point=10,5,"Route 4",,,,,61
-Point=10,6,"Route 4",,,,,61
-Point=11,6,"Route 4",,,,,61
-Point=12,6,"Franta Town",,42,8,12,61
+Point=6,3,"Hester Forest",,,,,,"Location"
+Point=3,3,"Hester Beach",,,,,,"Location"
+Point=6,2,"Route 1",,,,,,"Route"
+Point=7,2,"Route 1",,,,,,"Route"
+Point=8,2,"Route Intersection","Radio Tower",17,17,20,,"Location"
+Point=8,3,"Route 2",,,,,,"Route"
+Point=8,4,"Route 2",,,,,,"Route"
+Point=9,3,"Farmer's Farm",,,,,,"Location"
+Point=7,5,"Tila Town",,44,15,19,,"Town"
+Point=8,5,"Tila Town",,44,15,19,,"Town"
+Point=3,5,"Route 3",,,,,,"Route"
+Point=4,4,"Route 3",,,,,,"Route"
+Point=4,5,"Route 3",,,,,,"Route"
+Point=5,5,"Route 3",,,,,,"Route"
+Point=6,5,"Route 3",,,,,,"Route"
+Point=3,6,"Sea Shore",,,,,,"Location"
+Point=2,5,"Flutford Town",,46,14,34,,"Town"
+Point=2,6,"Flutford Town",,46,14,34,,"Town"
+Point=9,5,"Route 4",,,,,,"Route"
+Point=10,5,"Route 4",,,,,,"Route"
+Point=10,6,"Route 4",,,,,,"Route"
+Point=11,6,"Route 4",,,,,,"Route"
+Point=12,6,"Franta Town",,42,8,12,,"Town"
 
 #Version 4
 Point=51,7,"Route 5",,,,,
