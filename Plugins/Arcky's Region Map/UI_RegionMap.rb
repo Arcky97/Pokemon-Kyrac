@@ -1,5 +1,5 @@
 #===============================================================================
-#
+# UI stuff on loading the Region Map
 #===============================================================================
 class MapBottomSprite < Sprite
     attr_reader :mapname, :maplocation
@@ -12,8 +12,9 @@ class MapBottomSprite < Sprite
       @mapname     = ""
       @maplocation = ""
       @mapdetails  = ""
-      #@questActives = getActiveQuests
       @questName   = ""
+      @questTask   = ""
+      @questLocation = ""
       self.bitmap = BitmapWrapper.new(Graphics.width, Graphics.height)
       pbSetSystemFont(self.bitmap)
       refresh
@@ -44,20 +45,40 @@ class MapBottomSprite < Sprite
       refresh
     end 
 
+    def questTask=(value)
+      return if @questTask == value 
+      @questTask = value 
+      refresh
+    end 
+
+    def questLocation=(value)
+      return if @questLocation == value 
+      @questLocation = value 
+      refresh
+    end 
+
     def refresh
       bitmap.clear
       textpos = [
         [@mapname,                     18,   4, 0, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
         [@maplocation,                 18, 360, 0, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
         [@mapdetails, Graphics.width - 16, 360, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
-        [@questName,     Graphics.width - 16,  4, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR]
+        [@questName,                  220,   4, 0, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR]
       ]
       pbDrawTextPositions(bitmap, textpos)
+      textpos = [
+        [@questTask,     220,  40, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR],
+        [@questLocation, 220,  70, 1, TEXT_MAIN_COLOR, TEXT_SHADOW_COLOR]
+      ]
+      textpos.each do |value|
+        next if !value
+        drawFormattedTextEx(bitmap, value[1], value[2], 280, value[0], value[4], value[5])
+      end
     end
   end
   
   #===============================================================================
-  #
+  # The Region Map and everything else it does and can do.
   #===============================================================================
   class PokemonRegionMap_Scene
     LEFT          = 0
@@ -116,27 +137,22 @@ class MapBottomSprite < Sprite
         pbMessage(_INTL("The map data cannot be found."))
         return false
       end
-      addBackgroundOrColoredPlane(@sprites, "background", "RegionMap/UI/mapbg", Color.new(0, 0, 0), @viewport)
+      #addBackgroundOrColoredPlane(@sprites, "background", "RegionMap/UI/mapbg", Color.new(0, 0, 0), @viewport)
+      @sprites["Background"] = IconSprite.new(0, 0, @viewport)
+      @sprites["Background"].setBitmap("Graphics/Pictures/RegionMap/UI/mapbg")
+      @sprites["Background"].x += (Graphics.width - @sprites["Background"].bitmap.width) / 2
+      @sprites["Background"].y += (Graphics.height - @sprites["Background"].bitmap.height) / 2
+      @sprites["Background"].z = 25
       @sprites["map"] = IconSprite.new(0, 0, @viewport)
-      @sprites["map"].setBitmap("Graphics/Pictures/RegionMap/Regions/#{@map[1]}")
+      @sprites["map"].setBitmap("Graphics/Pictures/RegionMap/Regions/#{@map[1]}a")
       @sprites["map"].x += (Graphics.width - @sprites["map"].bitmap.width) / 2
       @sprites["map"].y += (Graphics.height - @sprites["map"].bitmap.height) / 2
-      @sprites["map"].z = 10
-      @sprites["mapCities"] = IconSprite.new(0, 0, @viewport)
-      @sprites["mapCities"].setBitmap("Graphics/Pictures/RegionMap/Regions/#{@map[1]}Cities")
-      @sprites["mapCities"].x += (Graphics.width - @sprites["map"].bitmap.width) / 2
-      @sprites["mapCities"].y += (Graphics.height - @sprites["map"].bitmap.height) / 2
-      @sprites["mapCities"].z = 20
-      @sprites["mapRoutes"] = IconSprite.new(0, 0, @viewport)
-      @sprites["mapRoutes"].setBitmap("Graphics/Pictures/RegionMap/Regions/#{@map[1]}Routes")
-      @sprites["mapRoutes"].x += (Graphics.width - @sprites["map"].bitmap.width) / 2
-      @sprites["mapRoutes"].y += (Graphics.height - @sprites["map"].bitmap.height) / 2
-      @sprites["mapRoutes"].z = 15
-      @sprites["mapLocations"] = IconSprite.new(0, 0, @viewport)
-      @sprites["mapLocations"].setBitmap("Graphics/Pictures/RegionMap/Regions/#{@map[1]}Locations")
-      @sprites["mapLocations"].x += (Graphics.width - @sprites["map"].bitmap.width) / 2
-      @sprites["mapLocations"].y += (Graphics.height - @sprites["map"].bitmap.height) / 2
-      @sprites["mapLocations"].z = 25
+      @sprites["map"].z = 1
+      @sprites["mapB"] = IconSprite.new(0, 0, @viewport)
+      @sprites["mapB"].setBitmap("Graphics/Pictures/RegionMap/Regions/#{@map[1]}b")
+      @sprites["mapB"].x += (Graphics.width - @sprites["mapB"].bitmap.width) / 2
+      @sprites["mapB"].y += (Graphics.height - @sprites["mapB"].bitmap.height) / 2
+      @sprites["mapB"].z = 5
       Settings::REGION_MAP_EXTRAS.each do |graphic|
         next if graphic[0] != mapindex || !location_shown?(graphic)
         if !@sprites["map2"]
@@ -154,6 +170,7 @@ class MapBottomSprite < Sprite
       @sprites["mapbottom"].maplocation = pbGetMapLocation(@map_x, @map_y)
       @sprites["mapbottom"].mapdetails  = pbGetMapDetails(@map_x, @map_y)
       @sprites["mapbottom"].questName   = pbGetQuestName(@map_x, @map_y) if @showQuests
+      @sprites["mapbottom"].z = 30
       if playerpos && mapindex == playerpos[0]
         @sprites["player"] = IconSprite.new(0, 0, @viewport)
         @sprites["player"].setBitmap(GameData::TrainerType.player_map_icon_filename($player.trainer_type))
@@ -162,31 +179,57 @@ class MapBottomSprite < Sprite
         @sprites["player"].z = 9997
       end
       k = 0
-      @foundMaps = []
+      @unvisitedMaps = []
+      @visitedMaps = []
       (LEFT..RIGHT).each do |i|
         (TOP..BOTTOM).each do |j|
           healspot = pbGetHealingSpot(i, j)
-          next if !healspot || !$PokemonGlobal.visitedMaps[healspot[0]]
-          findMap = @map[2].find { |point| point[4] == healspot[0] && point[5] == healspot[1] && point[6] == healspot[2]}
-          @foundMaps.push(findMap) if !@foundMaps.include?(findMap)
-          @sprites["point#{k}"] = AnimatedSprite.create("Graphics/Pictures/RegionMap/Icons/mapFly", 2, 16)
-          @sprites["point#{k}"].viewport = @viewport
-          @sprites["point#{k}"].x        = point_x_to_screen_x(i)
-          @sprites["point#{k}"].y        = point_y_to_screen_y(j)
-          @sprites["point#{k}"].z        = 50
-          @sprites["point#{k}"].visible  = @mode == 1
-          @sprites["point#{k}"].play
-          k += 1
+          next if !healspot
+          visited = $PokemonGlobal.visitedMaps[healspot[0]]
+          map = @map[2].find { |point| point[4] == healspot[0] && point[5] == healspot[1] && point[6] == healspot[2]}
+          if visited
+            @visitedMaps.push(map) if !@visitedMaps.include?(map)
+            @sprites["point#{k}"] = AnimatedSprite.create("Graphics/Pictures/RegionMap/Icons/mapFly", 2, 16)
+            @sprites["point#{k}"].viewport = @viewport
+            @sprites["point#{k}"].x        = point_x_to_screen_x(i)
+            @sprites["point#{k}"].y        = point_y_to_screen_y(j)
+            @sprites["point#{k}"].z        = 50
+            @sprites["point#{k}"].visible  = @mode == 1
+            @sprites["point#{k}"].play
+            k += 1
+          else
+            @unvisitedMaps.push(map) if !@unvisitedMaps.include?(map)
+          end
+        end
+      end
+      if !@sprites["Visited"]
+        @sprites["Visited"] = BitmapSprite.new(480, 320, @viewport)
+        @sprites["Visited"].x = @sprites["map"].x
+        @sprites["Visited"].y = @sprites["map"].y
+      end 
+      if USE_UNVISITED_FOLDER
+        @unvisitedMaps.each do |visit|
+          @sprites["Visited"].z = 6 #the highlighted City/Town gets drawn over the locations as well.
+          pbDrawImagePositions(
+            @sprites["Visited"].bitmap,
+            [["Graphics/Pictures/RegionMap/Unvisited/map#{visit[8]}", ((visit[0] - 1) * SQUARE_WIDTH) , ((visit[1] - 1) * SQUARE_HEIGHT)]]
+          )
+        end
+      else
+        @visitedMaps.each do |visit|
+          @sprites["Visited"].z = 6 #the highlighted City/Town gets drawn over the locations as well.
+          pbDrawImagePositions(
+            @sprites["Visited"].bitmap,
+            [["Graphics/Pictures/RegionMap/Visited/map#{visit[8]}", ((visit[0] - 1) * SQUARE_WIDTH) , ((visit[1] - 1) * SQUARE_HEIGHT)]]
+          )
         end
       end
       usedPositions = {}
       @questMap.each do |index|
         x = index[1]      # The x-coordinate of the quest
         y = index[2]      # The y-coordinate of the quest
-        if usedPositions.key?([x, y])
-          next # Skip drawing if the position is already occupied
-        end
-        echoln(@showQuests)
+        next if usedPositions.key?([x, y]) # Skip drawing if the position is already occupied
+        next if index[4] && !$game_switches[index[4]] 
         @sprites["mapQuest#{index}"] = AnimatedSprite.create("Graphics/Pictures/RegionMap/Icons/mapQuest", 2, 16)
         @sprites["mapQuest#{index}"].viewport = @viewport
         @sprites["mapQuest#{index}"].x        = point_x_to_screen_x(x)
@@ -224,7 +267,6 @@ class MapBottomSprite < Sprite
     end
   
     def location_shown?(point)
-      #return point[5] if @wallmap
       return point[1] > 0 && $game_switches[point[1]]
     end
   
@@ -249,8 +291,10 @@ class MapBottomSprite < Sprite
   
     def pbGetMapLocation(x, y)
       return "" if !@map[2]
+      @amount = 0
+      @tileType = ""
       @mapSize = [[] ,[]]
-      @sprites["map3"].bitmap.clear if @sprites["map3"]
+      @sprites["highlight"].bitmap.clear if @sprites["highlight"]
       @map[2].each do |point|
         next if point[0] != x || point[1] != y
         return "" if point[7] && (@wallmap || point[7] <= 0 || !$game_switches[point[7]])
@@ -266,48 +310,85 @@ class MapBottomSprite < Sprite
           end
           @mapSize.push(map.town_map_size || [1, "1"])
         end
-        colorCurrentLocation(@mapSize)
+        if @mapSize[1].any? { |item| item.include?("Route") }
+          getRouteTileTypes
+        else
+          colorCurrentLocation
+        end
         return (@editor) ? point[2] : name
       end
       return ""
     end
   
-    def colorCurrentLocation(mapSize)
-      if !@sprites["map3"]
-        @sprites["map3"] = BitmapSprite.new(480, 320, @viewport)
-        @sprites["map3"].x = @sprites["map"].x
-        @sprites["map3"].y = @sprites["map"].y
+    def getRouteTileTypes
+      mapPos = @mapSize[0].sort_by { |x, y| [y, x] }
+      input = @mapSize[1][0] 
+      array = input.split("-")[1..-1] #excludes "Route" from the array
+      editArray = []
+      array.each do |t|
+        if t.match?(/\d+/)
+          nonDigit = t[/\D+/]
+          digit = t[/\d+/]&.to_i || 1
+          digit.times { editArray << nonDigit }
+        else
+          editArray << t
+        end
       end
-      pbDrawImagePositions(
-        @sprites["map3"].bitmap,
-        [["Graphics/Pictures/RegionMap/map-#{mapSize[1][0]}-#{mapSize[2][1]}-M", ((mapSize[0][0][0] - 1) * SQUARE_WIDTH) , ((mapSize[0][0][1] - 1) * SQUARE_HEIGHT)]]
-      )
-      #We need to draw all cities and locations again on the region map so these are on top of the orange markings of routes. Only we don't do this when a location or city
-      #is marked. so we can do a check on the type of location.
-      @map[2].each do |point| 
-        if point[0] == (mapSize[0][0][0] - 1) && point[1] == mapSize[0][0][1]
-          nearPoint = [point[0], point[1]]
-          pbDrawImagePositions(
-            @sprites["map3"].bitmap,
-            [["Graphics/Pictures/RegionMap/map-City-1111-N", (((mapSize[0][0][0] - 1) * SQUARE_WIDTH) - 32) , ((mapSize[0][0][1] - 1) * SQUARE_HEIGHT)]]
-          )
-        end 
+      editArray.each_with_index do |type, index|
+        case type
+        when /H/
+          @tileType = "mapHorizontal"
+        when /V/
+          @tileType = "mapVertical"
+        when /LU|UL/
+          @tileType = "mapTurnLeftUp"
+        when /LD|DL/
+          @tileType = "mapTurnLeftDown"
+        when /RU|UR/
+          @tileType = "mapTurnRightUp"
+        when /RD|DR/
+          @tileType = "mapTurnRightDown"
+        when /TU/
+          @tileType = "mapIntersectionUp"
+        when /TD/
+          @tileType = "mapIntersectionDown"
+        when /TL/
+          @tileType = "mapIntersectionLeft"
+        when /TR/
+          @tileType = "mapIntersectionRight"
+        when /P/
+          @tileType = "mapIntersection"
+        end
+        colorCurrentLocation(mapPos[index])
       end
-=begin
-      @sprites["areahighlight"] = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
-      pointcolor = Color.new(0, 248, 248)
-      pointcolorhl = Color.new(192, 248, 248)
-      town_map_width = 1 + PokemonRegionMap_Scene::RIGHT - PokemonRegionMap_Scene::LEFT
-      sqwidth = PokemonRegionMap_Scene::SQUARE_WIDTH
-      sqheight = PokemonRegionMap_Scene::SQUARE_HEIGHT
-      mapSize.each do |x, y|
-        x *= sqwidth 
-        y *= sqheight
-        @sprites["areahighlight"].bitmap.fill_rect(x + 16, y + 32, sqwidth, sqheight, pointcolor)
-        @sprites["areahighlight"].z = 9995
+    end
+
+    def colorCurrentLocation(mapSize = nil)
+      if !@sprites["highlight"]
+        @sprites["highlight"] = BitmapSprite.new(480, 320, @viewport)
+        @sprites["highlight"].x = @sprites["map"].x
+        @sprites["highlight"].y = @sprites["map"].y
+        @sprites["highlight"].visible = @mode != 1
       end
-      echoln("The given map size is #{mapSize}")
-=end
+      if @mapSize[1][0].include?("City") || @mapSize[1][0].include?("Town")
+        @sprites["highlight"].z = 7 #the highlighted City/Town gets drawn over the locations as well.
+        pbDrawImagePositions(
+          @sprites["highlight"].bitmap,
+          [["Graphics/Pictures/RegionMap/Highligths/map#{@mapSize[1][0]}", ((@mapSize[0][0][0] - 1) * SQUARE_WIDTH) , ((@mapSize[0][0][1] - 1) * SQUARE_HEIGHT)]]
+        )
+      elsif @mapSize[1][0].include?("Location")
+        @sprites["highlight"].z = 7 #the highlighted Location gets drawn over the City/Town(s) it's near to.
+        pbDrawImagePositions(
+          @sprites["highlight"].bitmap,
+          [["Graphics/Pictures/RegionMap/Highligths/map#{@mapSize[1][0]}", ((@mapSize[0][0][0]) * SQUARE_WIDTH) , ((@mapSize[0][0][1]) * SQUARE_HEIGHT)]]
+        )
+      else
+        @sprites["highlight"].z = 2 #the hightlighted Routes gets drawn over the Route Region map but stay below the City and Location Region Map.
+        pbDrawImagePositions(
+          @sprites["highlight"].bitmap,
+          [["Graphics/Pictures/RegionMap/Highligths/#{@tileType}", ((mapSize[0]) * SQUARE_WIDTH) , ((mapSize[1]) * SQUARE_HEIGHT)]]
+        )
+      end
     end
 
     def pbChangeMapLocation(x, y)
@@ -345,7 +426,6 @@ class MapBottomSprite < Sprite
       @questMap.each do |name|
         next if name[1] != x || name[2] != y
         @questNames = nil
-        #next if !$game_switches[name[4]]
         questName.push($quest_data.getName(name[3].id)) 
         if questName.length >= 2
           @questNames = questName 
@@ -387,7 +467,11 @@ class MapBottomSprite < Sprite
       activeQuests = $PokemonGlobal.quests.active_quests
       activeQuests.each do |quest|
           mapId = ("Map" + "#{quest.stage}").to_sym
-          map = QuestModule.const_get(quest.id)[mapId]
+          if QuestModule.const_get(quest.id).key?(mapId)
+            map = QuestModule.const_get(quest.id)[mapId]
+          else
+            map = QuestModule.const_get(quest.id)[:Map]
+          end
           findMap = @map[2].find { |point| point[0] == map[1] && point[1] == map[2] }
           map.push(quest, findMap[7]) if !map.include?(quest) && !map.include?(findMap[7])
           @questMap.push(map) if map  
@@ -411,6 +495,8 @@ class MapBottomSprite < Sprite
           y_offset += (y_offset > 0) ? -dist_per_frame : (y_offset < 0) ? dist_per_frame : 0
           @sprites["cursor"].x = new_x - x_offset
           @sprites["cursor"].y = new_y - y_offset
+          @sprites["questPreview"].y -= 15 if @sprites["questPreview"] && @sprites["questPreview"].y <= 0 && @sprites["questPreview"].y != -120
+          @sprites["questPreview"].visible = false if @sprites["questPreview"] && @sprites["questPreview"].y == -120 
           next
         end
         ox = 0
@@ -429,6 +515,22 @@ class MapBottomSprite < Sprite
         when 3, 6, 9
           ox = 1 if @map_x < RIGHT
         end
+        if Input.trigger?(Input::JUMPUP) && @mode == 1
+          choice = pbMessage(_INTL("Quick Fly: Choose one of the available locations to fly to"), 
+              (0...@visitedMaps.size).to_a.map{|i| 
+                next _INTL("#{@visitedMaps[i][2]}")
+              }, -1)
+              input = true if choice != -1
+          if @visitedMaps[choice][0] > @map_x 
+            ox = @visitedMaps[choice][0] - @map_x if @map_x < RIGHT
+          elsif @visitedMaps[choice][1] > @map_y
+            oy = @visitedMaps[choice][1] - @map_y if @map_y < BOTTOM
+          elsif @visitedMaps[choice][0] < @map_x 
+            ox = @map_x - @visitedMaps[choice][0] if @map_x < LEFT
+          elsif @visitedMaps[choice][1] < @map_y
+            oy = @map_y - @visitedMaps[choice][1] if @map_y < TOP
+          end
+        end
         if ox != 0 || oy != 0
           @map_x += ox
           @map_y += oy
@@ -441,6 +543,11 @@ class MapBottomSprite < Sprite
           @sprites["mapbottom"].maplocation = pbGetMapLocation(@map_x, @map_y)
           @sprites["mapbottom"].mapdetails  = pbGetMapDetails(@map_x, @map_y)
           @sprites["mapbottom"].questName   = pbGetQuestName(@map_x, @map_y) if @showQuests
+          @sprites["mapbottom"].questTask   = "" if @showQuests
+          @sprites["mapbottom"].questLocation = "" if @showQuests
+          @sprites["mapbottom"].z = 30
+          #makeBitmapUnvisible if @sprites["questPreview"] && @sprites["questPreview"].y == 0
+          #@sprites["questPreview"].visible = false if @sprites["questPreview"] && @sprites["questPreview"].y == -120
         end
         if Input.trigger?(Input::BACK)
           if @editor && @changed
@@ -461,25 +568,36 @@ class MapBottomSprite < Sprite
           pbChangeMapLocation(@map_x, @map_y)
         elsif Input.trigger?(Input::USE) && @showQuests
           questInfo = @questMap.select { |coords| coords && coords[1] == @map_x && coords[2] == @map_y }
-          if questInfo != [] #&& $game_switches[questInfo[0][4]]
+          questInfo = [] if questInfo.empty? || (questInfo[0][4] && !$game_switches[questInfo[0][4]])
+          if questInfo != []
             if @questNames
               choice = pbMessage(_INTL("Which quest would you like to view info about?"), 
               (0...@questNames.size).to_a.map{|i| 
                 next _INTL("#{@questNames[i]}")
               }, -1)
               input = true if choice != -1
-              questToView = questInfo[choice][3]
+              quest = questInfo[choice][3]
             else 
-              input = pbConfirmMessage(_INTL("Would you like to view this quest in the Quest menu?")) 
-              questToView = questInfo[0][3]
+              input = true
+              quest = questInfo[0][3]
             end
             if input
-              scene = QuestList_Scene.new
-              scene.pbStartScene
-              scene.pbQuest(questToView)
-              if Input.trigger?(Input::BACK)
-                scene.pbEndScene
-              end 
+              name = $quest_data.getName(quest.id)
+              descr = "Task: #{$quest_data.getStageDescription(quest.id, quest.stage)}"
+              loc = "Location: #{$quest_data.getStageLocation(quest.id, quest.stage)}"
+              @sprites["mapbottom"].questName   = "Quest: #{name}"
+              if !@sprites["questPreview"]
+                @sprites["questPreview"] = IconSprite.new(0, 0, @viewport) 
+                @sprites["questPreview"].setBitmap("Graphics/Pictures/RegionMap/UI/questPreview")
+                @sprites["questPreview"].z = 20
+                @sprites["questPreview"].visible = false
+              end
+              if !@sprites["questPreview"].visible
+                makeBitmapVisible 
+              end
+              @sprites["mapbottom"].questTask   = descr.to_s
+              @sprites["mapbottom"].questLocation = loc.to_s
+              @sprites["mapbottom"].z = 30
             end
           end
         elsif Input.trigger?(Input::ACTION) && !@wallmap && !@fly_map && pbCanFly?
@@ -491,10 +609,28 @@ class MapBottomSprite < Sprite
       pbPlayCloseMenuSE
       return nil
     end
+
+    def makeBitmapVisible
+      @sprites["questPreview"].y = -120
+      @sprites["questPreview"].visible = true
+      until @sprites["questPreview"].y == 0 do 
+        @sprites["questPreview"].y += 15
+        Graphics.update
+      end
+    end
+=begin
+    def makeBitmapUnvisible
+      @sprites["questPreview"].y = 0
+      @sprites["questPreview"].visible = true
+      until @sprites["questPreview"].y == -100 do 
+        @sprites["questPreview"].y -= 5
+      end
+    end
+=end
   end
   
   #===============================================================================
-  #
+  # Fly Region Map
   #===============================================================================
   class PokemonRegionMapScreen
     def initialize(scene)
@@ -517,7 +653,7 @@ class MapBottomSprite < Sprite
   end
   
   #===============================================================================
-  #
+  # Wall Region Map
   #===============================================================================
   def pbShowMap(region = -1, wallmap = true)
     pbFadeOutIn {
@@ -526,4 +662,53 @@ class MapBottomSprite < Sprite
       ret = screen.pbStartScreen
       $game_temp.fly_destination = ret if ret && !wallmap
     }
+  end
+  #===============================================================================
+  # Debug menu editor
+  #===============================================================================
+  class RegionMapSprite
+    def initialize(map, viewport = nil)
+      @sprite = Sprite.new(viewport)
+      @sprite.bitmap = createRegionMap(map)
+      @sprite.x = (Graphics.width / 2) - (@sprite.bitmap.width / 2)
+      @sprite.y = (Graphics.height / 2) - (@sprite.bitmap.height / 2)
+    end
+  
+    def dispose
+      @sprite.bitmap.dispose
+      @sprite.dispose
+    end
+  
+    def z=(value)
+      @sprite.z = value
+    end
+  
+    def createRegionMap(map)
+      @mapdata = pbLoadTownMapData
+      @map = @mapdata[map]
+      bitmap = AnimatedBitmap.new("Graphics/Pictures/RegionMap/Regions/#{@map[1]}").deanimate
+      retbitmap = BitmapWrapper.new(bitmap.width / 2, bitmap.height / 2)
+      retbitmap.stretch_blt(
+        Rect.new(0, 0, bitmap.width / 2, bitmap.height / 2),
+        bitmap,
+        Rect.new(0, 0, bitmap.width, bitmap.height)
+      )
+      bitmap.dispose
+      return retbitmap
+    end
+  
+    def getXY
+      return nil if !Input.trigger?(Input::MOUSELEFT)
+      mouse = Mouse.getMousePos(true)
+      return nil if !mouse
+      if mouse[0] < @sprite.x || mouse[0] >= @sprite.x + @sprite.bitmap.width
+        return nil
+      end
+      if mouse[1] < @sprite.y || mouse[1] >= @sprite.y + @sprite.bitmap.height
+        return nil
+      end
+      x = mouse[0] - @sprite.x
+      y = mouse[1] - @sprite.y
+      return [x / 8, y / 8]
+    end
   end

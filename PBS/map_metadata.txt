@@ -23,9 +23,11 @@ MapPosition = 0,39,9
 [007]   # Trainer School F1
 Name = Trainer School
 SnapEdges = true
+MapPosition = 1,4,2
 #-------------------------------
 [009]   # Trainer School F2
 Name = Trainer School
+MapPosition = 1,4,2
 #-------------------------------
 [013]   # \PN's House's Garden
 Name = \PN's Property
@@ -47,7 +49,7 @@ MapSize = 2,11
 #-------------------------------
 [016]   # Poke center
 Name = Poke Center
-MapPosition = 0,10,10
+MapPosition = 1,5,2
 SnapEdges = true
 #-------------------------------
 [017]   # Route Intersection
@@ -151,7 +153,7 @@ ShowArea = true
 Bicycle = true
 MapPosition = 1,9,5
 SnapEdges = true
-MapSize = 3,110011
+MapSize = 4,01001111
 #-------------------------------
 [046]   # Flutford Town
 Name = Flutford Town
@@ -204,7 +206,7 @@ Name = Trainer School
 Name = Trainer School
 Outdoor = false
 ShowArea = false
-MapPosition = 1,55,10
+MapPosition = 1,4,2
 SnapEdges = true
 MapSize = 3,111
 #-------------------------------
@@ -239,6 +241,7 @@ MapSize = 2,111010
 #-------------------------------
 [086]   # Trainer School Library
 Name = Trainer School Library
+MapPosition = 1,4,2
 #-------------------------------
 [121]   # Hugen City
 Name = Hugen City

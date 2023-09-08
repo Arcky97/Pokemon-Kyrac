@@ -8722,3 +8722,16 @@ TotalPP = 40
 Target = User
 FunctionCode = RaiseUserDefense1
 Description = The user withdraws its body into its hard shell, raising its Defense stat.
+#-------------------------------
+[BURNINGSHOCK]
+Name = Burning Shock
+Type = ELECTRIC
+Category = Special
+Power = 50
+Accuracy = 90
+TotalPP = 20
+Target = NearOther
+FunctionCode = ParalyzeOrBurnTarget
+Flags = CanProtect,CanMirrorMove
+EffectChance = 30
+Description = The opponent gets hit by a shock that has a 30% chance to either burn or paralyze them.

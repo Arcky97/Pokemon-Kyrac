@@ -1,10 +1,10 @@
 <body>
 <div id="map">
-  <img name="map" src="Graphics/Pictures/mapRegion0.png" alt=""/>
+  <img name="map" src="Graphics/Pictures/RegionMap/Regions/mapRegion0.png" alt=""/>
 </div>
 <form name="mf" action="javascript:void(null)">
   <div>
-    Map Filename (in Graphics/Pictures/): <input type="text" name="filename" value="mapRegion0.png"/>&nbsp;
+    Map Filename (in Graphics/Pictures/RegionMap/Regions/): <input type="text" name="filename" value="mapRegion0.png"/>&nbsp;
     <input type="button" name="btnChange" value="Change"/><br/ >
     <input type="button" name="btnRefresh" value="Refresh"/><br/ >
     Region Name: <input type="text" name="name" value="Sample Region"/>&nbsp;
@@ -19,6 +19,24 @@
     Point of Interest: <input type="text" name="poi"/><br/ >
     Fly Destination: <input type="text" name="healing"/><br/ >
     Switch: <input type="text" name="swtch"/><br/ >
+    Type of Place: <input type="text" name="top"/><br/ >
+    <!-- Add buttons for City, Town, Route, and Location -->
+    <input type="button" name="btnCity" value="City" onclick="addType('City')"/>
+    <input type="button" name="btnTown" value="Town" onclick="addType('Town')"/>
+    <input type="button" name="btnRoute" value="Route" onclick="addType('Route')"/>
+    <input type="button" name="btnLocation" value="Location" onclick="addType('Location')"/><br/ >
+    <!-- Add buttons for type selection -->
+    <input type="button" name="btnH" value="H" onclick="addType('H')"/>
+    <input type="button" name="btnV" value="V" onclick="addType('V')"/>
+    <input type="button" name="btnLU" value="LU" onclick="addType('LU')"/>
+    <input type="button" name="btnLD" value="LD" onclick="addType('LD')"/>
+    <input type="button" name="btnRU" value="RU" onclick="addType('RU')"/>
+    <input type="button" name="btnRD" value="RD" onclick="addType('RD')"/>
+    <input type="button" name="btnTL" value="TL" onclick="addType('TL')"/>
+    <input type="button" name="btnTU" value="TU" onclick="addType('TU')"/>
+    <input type="button" name="btnTD" value="TD" onclick="addType('TD')"/>
+    <input type="button" name="btnTR" value="TR" onclick="addType('TR')"/>
+    <input type="button" name="btnP" value="P" onclick="addType('P')"/><br/ >
     <input type="button" name="btnSave" value="Save" disabled="disabled"/> 
     <input type="button" name="btnCancel" value="Cancel"/><br/ >
     Single section from townmap.txt (without section heading):<br/ >
@@ -97,6 +115,29 @@
     }
   }
 
+// Initialize a variable to store the type string
+var typeString = '';
+
+// Function to add a type to the type string
+function addType(type) {
+  // Append the type to the type string
+  typeString += (typeString ? '-' : '') + type;
+
+  // Update the Type of Place input field
+  document.f.top.value = typeString;
+
+  // Enable all type buttons
+  enableAllTypeButtons();
+}
+
+// Function to enable all type buttons
+function enableAllTypeButtons() {
+  var typeButtons = ['H', 'V', 'LU', 'LD', 'RU', 'RD', 'TL', 'TU', 'TD', 'TR', 'P'];
+  for (var i = 0; i < typeButtons.length; i++) {
+    document.f['btn' + typeButtons[i]].disabled = false;
+  }
+}
+    
   function qstr(text){
     var temp; 
     temp = text.toString();
@@ -174,7 +215,7 @@
         }
         if(e[1]=="Filename"){
           o=document.getElementById("map")
-          o.innerHTML='<img name="map" src="Graphics/Pictures/'+e[2]+'" alt=""/'+'>' 
+          o.innerHTML = '<img name="map" src="Graphics/Pictures/RegionMap/Regions/' + e[2] + '" alt=""/>'; 
         } else if(e[1]=="Name"){
           document.mf.name.value=e[2]
         } else if(e[1]=="Point"){
@@ -255,7 +296,7 @@
 
   function genMapPoints(){
     ret=""
-    ret+="Filename="+qstr(getbase(document.images.map.src))+"\r\n"
+    ret+="Filename="+qstr(getbase(document.images.map.src))+ "\r\n"
     ret+="Name="+qstr(document.mf.name.value)+"\r\n"
     for(var i=0;i<mappoints.length;i++){
       ret+="Point="+[mappoints[i][0],mappoints[i][1],
@@ -336,7 +377,7 @@
       showMapPoints()
     })
     attachEvent(document.mf.btnChange,"click",function(e){
-      document.images.map.src="Graphics/Pictures/"+document.mf.filename.value
+      document.images.map.src="Graphics/Pictures/RegionMap/Regions/" + document.mf.filename.value
       genMapPoints()
       showMapPoints()
     })

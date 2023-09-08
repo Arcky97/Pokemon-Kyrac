@@ -321,6 +321,7 @@ class QuestData
 
   def getQuestDescription(quest, stage)
     desc = ("QuestDescription" + "#{stage}").to_sym
+    echoln(quest)
     if QuestModule.const_get(quest).key?(desc)
       return "#{QuestModule.const_get(quest)[desc]}"
     else

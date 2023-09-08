@@ -112,7 +112,7 @@ module QuestModule
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",
-    :Map1 => [1, 4, 2], #Regionmap0, X-position, Y-position
+    :Map => [1, 4, 2], #Regionmap1, X-position, Y-position
     :QuestDescription1 => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
     :RewardString => "nothing yet"
   }
@@ -122,7 +122,7 @@ module QuestModule
     :ID => "11",
     :Name => "The Dark Type Gym!",
     :QuestGiver => "Yourself",
-    :Stage1 => "Find another way into the Gym in Hester City!",
+    :Stage1 => "Find the Gym!",
     :Location1 => "Hester City",
     :Map1 => [1, 4, 2],
     :QuestDescription => "The Gym in Hester City seems to be closed from the outside. Maybe talking to the people in Hester City might help you find a way into the gym.",
