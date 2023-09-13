@@ -13,7 +13,7 @@ BattleBack = field
 #-------------------------------
 [003]   # Player's House
 Name = \PN's house
-MapPosition = 0,39,9
+MapPosition = 0,23,14
 SnapEdges = true
 #-------------------------------
 [004]   # Radio Tower
@@ -30,11 +30,11 @@ Name = Trainer School
 MapPosition = 1,4,2
 #-------------------------------
 [013]   # \PN's House's Garden
-Name = \PN's Property
+Name = Home
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,38,9
+MapPosition = 0,23,14
 SnapEdges = true
 MapSize = 2,1111
 #-------------------------------
@@ -218,7 +218,7 @@ Bicycle = true
 HealingSpot = 16,7,4
 MapPosition = 1,4,2
 SnapEdges = true
-MapSize = 2,1111
+MapSize = 2,0111
 #-------------------------------
 [080]   # Green Houses
 Name = Green Houses

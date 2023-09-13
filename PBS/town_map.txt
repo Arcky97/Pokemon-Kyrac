@@ -3,10 +3,10 @@
 Filename=mapRegion0
 Name="Central-Kyrac"
 #Version 1
-Point=22,14,Home,"Your house",13,36,12,,"Location2x2"
 Point=23,14,Home,"Your house",13,36,12,,"Location2x2"
-Point=22,15,Home,"Beach",13,36,12,,"Location2x2"
-Point=23,15,Home,"Dock",13,36,12,,"Location2x2"
+Point=24,14,Home,"Your house",13,36,12,,"Location2x2"
+Point=23,15,Home,"Beach",13,36,12,,"Location2x2"
+Point=24,15,Home,"Dock",13,36,12,,"Location2x2"
 
 #-------------------------------
 [1]
@@ -23,7 +23,7 @@ Point=6,3,"Hester Forest",,,,,,"Location1x1S"
 Point=3,3,"Hester Beach",,,,,,"Location1x1S"
 Point=6,2,"Route 1",,,,,,"Route-2H"
 Point=7,2,"Route 1",,,,,,"Route-2H"
-Point=8,2,"Route Intersection","Radio Tower",17,17,20,,"Location1x1S"
+Point=8,2,"Route Intersection","Radio Tower",17,14,15,,"Location1x1S"
 Point=8,3,"Route 2",,,,,,"Route-2V"
 Point=8,4,"Route 2",,,,,,"Route-2V"
 Point=9,3,"Farmer's Farm",,,,,,"Location1x1S"
