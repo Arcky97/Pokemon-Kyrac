@@ -813,7 +813,7 @@ It works similar to how mega evolution works but it's been triggered outside of 
 
 - Fixed a crash when leaving Liz's Cabin on the Yacht F1.
 
-### v1.34.0A - Release September 8 2023
+### v1.34.0A - Release September 8 2023 
 
 - New Region Map Features added.
 
