@@ -139,7 +139,6 @@ class Player_Quests
         @completed_quests.push(temp_quest)
         @active_quests.delete_at(i)
         found = true
-        echoln("The completed quest is a story quest? #{story}")
         if story
           SummaryScreen.new([["Story Quest Completed:", 35, "red"], ["#{$quest_data.getName(quest.name)}", 40, nil]], 120, 25, 170)
           #pbMessage(_INTL("\\se[#{QUEST_JINGLE}]\\ts[3]\\l[5]\\n<ac><fs=25><c2=#{colorQuest("red")}>New Story Quest:</c2></fs>\\n<fs=35>#{$quest_data.getName(quest.name)}</fs></ac>\\wtnp[30]"))
@@ -321,7 +320,6 @@ class QuestData
 
   def getQuestDescription(quest, stage)
     desc = ("QuestDescription" + "#{stage}").to_sym
-    echoln(quest)
     if QuestModule.const_get(quest).key?(desc)
       return "#{QuestModule.const_get(quest)[desc]}"
     else
@@ -344,6 +342,7 @@ class QuestData
     stg = ("Stage" + "#{stage}").to_sym
     return "#{QuestModule.const_get(quest)[stg]}"
   end 
+  
 ### Code for Percy
   # Get current stage label
   def getStageLabel(quest,stage)

@@ -1,10 +1,17 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-[040] # Route 04 New
+[015] # Route 01 new
 Land,21
     100,GROWLITHE,9,14
 #-------------------------------
-[045] # Route 03
+[020] # New Franta Town
+Land,21
+    40,PIDGEY,5
+    10,PIKACHU,5
+    20,CATERPIE,5
+    30,GROWLITHE,5
+#-------------------------------
+[041] # Route 02 new
 Land,21
     100,GROWLITHE,9,14
 #-------------------------------

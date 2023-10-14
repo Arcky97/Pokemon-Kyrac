@@ -1,47 +1,41 @@
 ﻿#-------------------------------
 [0]
-Filename=mapRegion0
-Name="Central-Kyrac"
+Filename = mapRegion0.png
+Name = Kyrac Region
 #Version 1
-Point=23,14,Home,"Your house",13,36,12,,"Location2x2"
-Point=24,14,Home,"Your house",13,36,12,,"Location2x2"
-Point=23,15,Home,"Beach",13,36,12,,"Location2x2"
-Point=24,15,Home,"Dock",13,36,12,,"Location2x2"
-
-#-------------------------------
-[1]
-Filename=mapRegion1
-Name="West-Kyrac"
+Point = 22,14,Home,Your house,13,36,12,,Size2x2
+Point = 23,14,Home,Your house,13,36,12,,Size2x2
+Point = 22,15,Home,Beach,13,36,12,,Size2x2
+Point = 23,15,Home,Dock,13,36,12,,Size2x2
 #Version 2
-Point=4,2,"Hester City","Haven",79,47,19,,"City2x2"
-Point=5,2,"Hester City","Flower Garden",79,47,19,,"City2x2"
-Point=4,3,"Hester City","Mart",79,47,19,,"City2x2"
-Point=5,3,"Hester City","Trainer School",79,47,19,,"City2x2"
-
+Point = 33,21,"Hester City",Haven,79,47,19,,Size2x2
+Point = 34,21,"Hester City","Flower Garden",79,47,19,,Size2x2
+Point = 33,22,"Hester City",Mart,79,47,19,,Size2x2
+Point = 34,22,"Hester City","Trainer School",79,47,19,,Size2x2
 #Version 3
-Point=6,3,"Hester Forest",,,,,,"Location1x1S"
-Point=3,3,"Hester Beach",,,,,,"Location1x1S"
-Point=6,2,"Route 1",,,,,,"Route-2H"
-Point=7,2,"Route 1",,,,,,"Route-2H"
-Point=8,2,"Route Intersection","Radio Tower",17,14,15,,"Location1x1S"
-Point=8,3,"Route 2",,,,,,"Route-2V"
-Point=8,4,"Route 2",,,,,,"Route-2V"
-Point=9,3,"Farmer's Farm",,,,,,"Location1x1S"
-Point=7,5,"Tila Town",,44,15,19,,"Town2x1"
-Point=8,5,"Tila Town",,44,15,19,,"Town2x1"
-Point=3,5,"Route 3",,,,,,"Route-V-H-TU-2H"
-Point=4,5,"Route 3",,,,,,"Route-V-H-TU-2H"
-Point=4,4,"Route 3",,,,,,"Route-V-H-TU-2H"
-Point=6,5,"Route 3",,,,,,"Route-V-H-TU-2H"
-Point=5,5,"Route 3",,,,,,"Route-V-H-TU-2H"
-Point=3,6,"Sea Shore",,,,,,"Location1x1S"
-Point=2,5,"Flutford Town",,46,14,34,,"Town1x2"
-Point=2,6,"Flutford Town",,46,14,34,,"Town1x2"
-Point=9,5,"Route 4",,,,,,"Route-H-LD-UR-H"
-Point=10,5,"Route 4",,,,,,"Route-H-LD-UR-H"
-Point=10,6,"Route 4",,,,,,"Route-H-LD-UR-H"
-Point=11,6,"Route 4",,,,,,"Route-H-LD-UR-H"
-Point=12,6,"Franta Town",,42,8,12,,"Town1x1"
+Point = 35,22,"Hester Forest",,,,,,Size1x1Small
+Point = 32,22,"Hester Beach",,,,,,Size1x1Small
+Point = 35,21,"Route 1",,,,,,Route1
+Point = 36,21,"Route 1",,,,,,Route1
+Point = 37,21,"Route Intersection","Radio Tower",17,14,15,,Size1x1Small
+Point = 37,22,"Route 2",,,,,,Route2
+Point = 37,23,"Route 2",,,,,,Route2
+Point = 38,22,"Farmer's Farm",,,,,,Size1x1Small
+Point = 36,24,"Tila Town",,44,15,19,,Size2x1
+Point = 37,24,"Tila Town",,44,15,19,,Size2x1
+Point = 32,24,"Route 3",,,,,,Route3
+Point = 33,24,"Route 3",,,,,,Route3
+Point = 33,23,"Route 3",,,,,,Route3
+Point = 35,24,"Route 3",,,,,,Route3
+Point = 34,24,"Route 3",,,,,,Route3
+Point = 32,25,"Sea Shore",,,,,,Size1x1Small
+Point = 31,24,"Flutford Town",,46,14,34,,Size1x2
+Point = 31,25,"Flutford Town",,46,14,34,,Size1x2
+Point = 38,24,"Route 4",,,,,,Route4
+Point = 39,24,"Route 4",,,,,,Route4
+Point = 39,25,"Route 4",,,,,,Route4
+Point = 40,25,"Route 4",,,,,,Route4
+Point = 41,25,"Franta Town",,42,8,12,,Size1x1
 
 #Version 4
 Point=51,7,"Route 5",,,,,
@@ -126,8 +120,8 @@ Point=56,13,"Route 15",,,,,
 Point=57,15,"Route 14",,,,,
 Point=57,16,"Route 14",,,,,
 Point=57,17,"Route 14",,,,,
-Point=47,16,"Flale Town",,,,,
-Point=47,17,"Flale Town",,,,,
+#Point=47,16,"Flale Town",,,,,
+#Point=47,17,"Flale Town",,,,,
 Point=48,13,"Dalo Town",,,,,
 Point=49,13,"Dalo Town",,,,,
 Point=57,13,"Linas City",,,,,

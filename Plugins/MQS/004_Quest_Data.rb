@@ -1,5 +1,5 @@
 module QuestModule
-#Prologue Arc 1: Leaving Home!
+  #Prologue Arc 1: Leaving Home!
   #Story Quest 1
   Quest1 = {
     :ID => "1",
@@ -8,6 +8,7 @@ module QuestModule
     :Stage1 => "Let's go get breakfast!",
     :Stage2 => "Talk to your mother.",
     :Location => "Your house's F1",
+    :Map => [0, 23, 14],
     :QuestDescription1 => "Use the elevator to get to the F1 of the house and get your breakfast!",
     :QuestDescription2 => "Before you can leave on your Journey, you should talk to your Mother and get the necessarily equipment to start with.",
     :RewardString => "Now you feel ready to start your Journey!"
@@ -21,8 +22,7 @@ module QuestModule
     :Stage1 => "Hit a Plant!",
     :Stage2 => "Hit more plants!",
     :Stage3 => "Hit even more plants!",
-    :Location1 => "Anywhere",
-    :Map2 => [1, 5, 2],
+    :Location => "Anywhere",
     :QuestDescription => "Hit as many plants as you can! Any plant counts, in houses, buildings, yachts, PokéCenters, Marts, etc...",
     :RewardString => "A bunch of plants being mad."
   }
@@ -41,6 +41,8 @@ module QuestModule
     :Location2 => "The Front Gate of Your Home.",
     :Location3 => "Your Home's Garden's Maze.",
     :Location4 => "The Front Gate of Your Home.",
+    :Map => [0, 23, 15],
+    :Map3 => [0, 22, 14],
     :QuestDescription1 => "Even if you lived here your whole life, you know very little about the Kyrac Region. You'll be going to the first City by using your Father's Yacht.",
     :QuestDescription => "Julia noticed there's something odd about the guards this morning, go talk to them to find out what's wrong.",
     :QuestDescription5 => "Now that you found the evidence to proof the Guards have been drunk, you should let your mother know by phone. How? Well there should be a phone on the Yacht perhaps. So get going and get on the Yacht!",   
@@ -97,7 +99,7 @@ module QuestModule
     :Location2 => "Trainer School",
     :Location3 => "Trainer School's Library",
     :Location4 => "Trainer School's Hidden Room",
-    :Map3 => [1, 5, 3],
+    :Map3 => [0, 5, 3],
     :QuestDescription1 => "The FPI is after something in the Trainer school and is keeping the students and teacher as a hostage.",
     :QuestDescription2 => "Prepare yourself and head inside the Trainer School to face the FPI Grunts alongside your Rivals.",
     :QuestDescription3 => "The FPI Boss is inside the Trainer School Library, go find him!",
@@ -112,7 +114,7 @@ module QuestModule
     :QuestGiver => "Prof. Oak",
     :Stage1 => "Talk to Prof. Oak.",
     :Location1 => "Prof Oak's lab on the Yacht.",
-    :Map => [1, 4, 2], #Regionmap1, X-position, Y-position
+    :Map => [0, 4, 2], #Regionmap1, X-position, Y-position
     :QuestDescription1 => "Prof. Oak wants to talk to you about something in person, let's have a listen to what he has to say.",
     :RewardString => "nothing yet"
   }
@@ -124,7 +126,7 @@ module QuestModule
     :QuestGiver => "Yourself",
     :Stage1 => "Find the Gym!",
     :Location1 => "Hester City",
-    :Map1 => [1, 4, 2],
+    :Map1 => [0, 4, 2],
     :QuestDescription => "The Gym in Hester City seems to be closed from the outside. Maybe talking to the people in Hester City might help you find a way into the gym.",
     :RewardString => "You got to fight the Gym Leader, got his badge and a TM."
   }

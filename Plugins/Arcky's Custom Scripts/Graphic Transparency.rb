@@ -191,12 +191,12 @@ EventHandlers.add(:on_player_step_taken, :graphic_transparency,
         @map = $game_map.map_id
         @player_xy = [$game_player.x, $game_player.y]
         $gameEventSizes = [] if $gameEventSizes == nil
-        checkEventSize() 
-        checkPlayerPosition() if $gameEventSizes[@map] != nil
+        checkEventSize
+        checkPlayerPosition if $gameEventSizes[@map] != nil
     }
 )
 
-def checkEventSize()
+def checkEventSize
     eventSizes = []
     for i in 0...@eventIDs.length
         @getMapEventIDs = @eventIDs[i] if @eventIDs[i][0] == @map
@@ -218,7 +218,7 @@ def checkEventSize()
     end
 end
   
-def checkPlayerPosition()
+def checkPlayerPosition
     for i in 0...$gameEventSizes[@map].length
         for j in 0...@getMapPositionsToIgnore.length
             if @map == @getMapEventIDs[0]

@@ -61,7 +61,6 @@ class SummaryScreen
     @sprites["backshade"].bitmap = Bitmap.new(Graphics.width, Graphics.height)
     @sprites["backshade"].bitmap.fill_rect(0, 0, Graphics.width, Graphics.height, Color.new(0, 0, 0, @opacity))
     @sprites["backshade"].opacity = 0
-
     fadeIn
   end
 

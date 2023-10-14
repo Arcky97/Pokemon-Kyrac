@@ -9,7 +9,7 @@ class MenuEntryPokemon < MenuEntry
 
   def selected(menu)
     hiddenmove = nil
-    pbFadeOutIn(99999) {
+    pbFadeOutIn(99999, true) {
       sscene = PokemonParty_Scene.new
       sscreen = PokemonPartyScreen.new(sscene,$Trainer.party)
       hiddenmove = sscreen.pbPokemonScreen

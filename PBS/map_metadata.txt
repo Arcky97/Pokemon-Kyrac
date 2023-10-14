@@ -20,10 +20,28 @@ SnapEdges = true
 Name = Player's House Elevator
 MapPosition = 0,39,9
 #-------------------------------
+[005]   # Fuwell Town
+Name = Fuwell Town
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 1,8,14
+SnapEdges = true
+MapSize = 1,1
+#-------------------------------
+[006]   # Flale Town
+Name = Flale Town
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 1,20,10
+SnapEdges = true
+MapSize = 1,1
+#-------------------------------
 [007]   # Trainer School F1
 Name = Trainer School
-SnapEdges = true
 MapPosition = 1,4,2
+SnapEdges = true
 #-------------------------------
 [009]   # Trainer School F2
 Name = Trainer School
@@ -34,7 +52,7 @@ Name = Home
 Outdoor = true
 ShowArea = true
 Bicycle = true
-MapPosition = 0,23,14
+MapPosition = 0,22,14
 SnapEdges = true
 MapSize = 2,1111
 #-------------------------------
@@ -63,12 +81,14 @@ SafariMap = false
 SnapEdges = true
 MapSize = 1,1
 #-------------------------------
-[020]   # MAP020
+[020]   # New Franta Town
 Name = New Franta Town
 Outdoor = true
 ShowArea = true
 Bicycle = true
+MapPosition = 1,32,15
 SnapEdges = true
+MapSize = 1,1
 #-------------------------------
 [024]   # Yacht F1
 Name = Yacht F1
@@ -238,6 +258,15 @@ Bicycle = true
 MapPosition = 1,13,11
 SnapEdges = true
 MapSize = 2,111010
+#-------------------------------
+[083]   # New Flutford Town
+Name = New Flutford Town
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 1,31,21
+SnapEdges = true
+MapSize = 1,1
 #-------------------------------
 [086]   # Trainer School Library
 Name = Trainer School Library
